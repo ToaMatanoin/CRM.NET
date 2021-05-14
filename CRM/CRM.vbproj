@@ -73,6 +73,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\fEmpleados.vb" />
+    <Compile Include="Entidad\eEmpleados.vb" />
     <Compile Include="Presentacion\Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>

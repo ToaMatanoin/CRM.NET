@@ -1,8 +1,8 @@
 ﻿Public Class eClientes
 
-    Dim ID_Cliente As Integer
+    Dim ID_Cliente, Cli_Telefono, Cli_TelEmpresa As Integer
     Dim Cli_Nombre, Cli_Email, Cli_NombreEmpresa,
-        Cli_EmailEmpresa, RTN, Cli_Telefono, Cli_TelEmpresa As String
+        Cli_EmailEmpresa, RTN As String
 
     Public Property pID_Cliente
         Get
@@ -81,8 +81,8 @@
 
     Public Sub New(ID_Cliente As Integer, Cli_Nombre As String,
                    Cli_Email As String, Cli_NombreEmpresa As String,
-                   Cli_EmailEmpresa As String, RTN As String, Cli_Telefono As String,
-                   Cli_TelEmpresa As String) 'Constructor Full
+                   Cli_EmailEmpresa As String, RTN As String, Cli_Telefono As Integer,
+                   Cli_TelEmpresa As Integer) 'Constructor Full
 
         pID_Cliente = ID_Cliente
         pCli_Nombre = Cli_Nombre

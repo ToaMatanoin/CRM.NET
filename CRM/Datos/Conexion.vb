@@ -2,8 +2,11 @@
 
 Public Class Conexion
     Protected Connect As New SqlConnection
+    Public Sentencia As SqlCommand
+    Public Ejecucion As SqlDataReader
+    Public Resultado As New Boolean
 
-    Protected Function ConexionDB() As Boolean
+    Public Function ConexionDB() As Boolean
         Try
             Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true")
             Connect.Open()
@@ -14,7 +17,7 @@ Public Class Conexion
         End Try
     End Function
 
-    Protected Function DesconexionDB() As Boolean
+    Public Function DesconexionDB() As Boolean
         Try
             If Connect.State = ConnectionState.Open Then
                 Connect.Close()
@@ -27,6 +30,36 @@ Public Class Conexion
             Return False
         End Try
 
+    End Function
+    Function Usuario(ByVal UsuNom As String) As Boolean
+        Dim resulta As Boolean = False
+        Try
+            Sentencia = New SqlCommand("Select * from Usuarios where Usu_Nombre='" & UsuNom & "'", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+            If Ejecucion.Read Then
+                Resultado = True
+            End If
+            Ejecucion.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return Resultado
+    End Function
+
+    Function Contrasenha(ByVal UsuNom As String) As String
+        Dim resultado As String = ""
+        Try
+            Sentencia = New SqlCommand("Select Usu_Contrasenha from Usuarios where Usu_Nombre='" & UsuNom & "'", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+
+            If Ejecucion.Read Then
+                resultado = Ejecucion.Item("Usu_Contrasenha")
+            End If
+            Ejecucion.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
     End Function
 
 End Class

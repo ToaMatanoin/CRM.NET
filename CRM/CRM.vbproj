@@ -73,41 +73,44 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clientes.Designer.vb">
+    <Compile Include="Presentacion\Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.vb">
+    <Compile Include="Presentacion\Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Comunicacion_Cliente.Designer.vb">
+    <Compile Include="Presentacion\Comunicacion_Cliente.Designer.vb">
       <DependentUpon>Comunicacion_Cliente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Comunicacion_Cliente.vb">
+    <Compile Include="Presentacion\Comunicacion_Cliente.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inicio.Designer.vb">
+    <Compile Include="Datos\Conexion.vb" />
+    <Compile Include="Datos\fClientes.vb" />
+    <Compile Include="Entidad\eClientes.vb" />
+    <Compile Include="Presentacion\Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inicio.vb">
+    <Compile Include="Presentacion\Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IniciarSesion.vb">
+    <Compile Include="Presentacion\IniciarSesion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IniciarSesion.Designer.vb">
+    <Compile Include="Presentacion\IniciarSesion.Designer.vb">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inventario.Designer.vb">
+    <Compile Include="Presentacion\Inventario.Designer.vb">
       <DependentUpon>Inventario.vb</DependentUpon>
     </Compile>
-    <Compile Include="Inventario.vb">
+    <Compile Include="Presentacion\Inventario.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Marketing.Designer.vb">
+    <Compile Include="Presentacion\Marketing.Designer.vb">
       <DependentUpon>Marketing.vb</DependentUpon>
     </Compile>
-    <Compile Include="Marketing.vb">
+    <Compile Include="Presentacion\Marketing.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -126,42 +129,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Oportunidades.Designer.vb">
+    <Compile Include="Presentacion\Oportunidades.Designer.vb">
       <DependentUpon>Oportunidades.vb</DependentUpon>
     </Compile>
-    <Compile Include="Oportunidades.vb">
+    <Compile Include="Presentacion\Oportunidades.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios.Designer.vb">
+    <Compile Include="Presentacion\Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios.vb">
+    <Compile Include="Presentacion\Usuarios.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas.Designer.vb">
+    <Compile Include="Presentacion\Ventas.Designer.vb">
       <DependentUpon>Ventas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ventas.vb">
+    <Compile Include="Presentacion\Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Clientes.resx">
+    <EmbeddedResource Include="Presentacion\Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Comunicacion_Cliente.resx">
+    <EmbeddedResource Include="Presentacion\Comunicacion_Cliente.resx">
       <DependentUpon>Comunicacion_Cliente.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
+    <EmbeddedResource Include="Presentacion\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IniciarSesion.resx">
+    <EmbeddedResource Include="Presentacion\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Inventario.resx">
+    <EmbeddedResource Include="Presentacion\Inventario.resx">
       <DependentUpon>Inventario.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Marketing.resx">
+    <EmbeddedResource Include="Presentacion\Marketing.resx">
       <DependentUpon>Marketing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -170,13 +173,13 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Oportunidades.resx">
+    <EmbeddedResource Include="Presentacion\Oportunidades.resx">
       <DependentUpon>Oportunidades.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios.resx">
+    <EmbeddedResource Include="Presentacion\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas.resx">
+    <EmbeddedResource Include="Presentacion\Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>

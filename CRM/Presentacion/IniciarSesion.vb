@@ -24,6 +24,8 @@
 
                         If contra.Equals(Txt_UsuPass.Text) Then
                             Me.Hide()
+                            Txt_UsuNom.Text = ""
+                            Txt_UsuPass.Text = ""
                             Inicio.Show()
                         Else
                             MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)

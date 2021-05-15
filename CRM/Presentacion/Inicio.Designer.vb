@@ -24,6 +24,7 @@ Partial Class Inicio
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnEmpleados = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
@@ -34,7 +35,6 @@ Partial Class Inicio
         Me.BtnComunicacion = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.BtnEmpleados = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -43,10 +43,9 @@ Partial Class Inicio
         '
         Me.Label1.BackColor = System.Drawing.Color.Aquamarine
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 16)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1397, 53)
+        Me.Label1.Size = New System.Drawing.Size(1048, 43)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "HËKIN CRM"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -62,32 +61,37 @@ Partial Class Inicio
         Me.GroupBox1.Controls.Add(Me.BtnInventario)
         Me.GroupBox1.Controls.Add(Me.BtnComunicacion)
         Me.GroupBox1.Controls.Add(Me.BtnClientes)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 73)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(1397, 188)
+        Me.GroupBox1.Size = New System.Drawing.Size(1048, 153)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'BtnEmpleados
+        '
+        Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEmpleados.Location = New System.Drawing.Point(7, 76)
+        Me.BtnEmpleados.Name = "BtnEmpleados"
+        Me.BtnEmpleados.Size = New System.Drawing.Size(123, 51)
+        Me.BtnEmpleados.TabIndex = 4
+        Me.BtnEmpleados.Text = "Empleados"
+        Me.BtnEmpleados.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BtnCerrarSesion)
-        Me.GroupBox2.Location = New System.Drawing.Point(1213, 0)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(910, 0)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(184, 106)
+        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
         'BtnCerrarSesion
         '
         Me.BtnCerrarSesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrarSesion.Location = New System.Drawing.Point(8, 23)
-        Me.BtnCerrarSesion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(6, 19)
         Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
-        Me.BtnCerrarSesion.Size = New System.Drawing.Size(164, 63)
+        Me.BtnCerrarSesion.Size = New System.Drawing.Size(123, 51)
         Me.BtnCerrarSesion.TabIndex = 2
         Me.BtnCerrarSesion.Text = "Cerrar Sesion"
         Me.BtnCerrarSesion.UseVisualStyleBackColor = True
@@ -95,10 +99,9 @@ Partial Class Inicio
         'BtnUsuarios
         '
         Me.BtnUsuarios.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnUsuarios.Location = New System.Drawing.Point(697, 23)
-        Me.BtnUsuarios.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnUsuarios.Location = New System.Drawing.Point(523, 19)
         Me.BtnUsuarios.Name = "BtnUsuarios"
-        Me.BtnUsuarios.Size = New System.Drawing.Size(164, 63)
+        Me.BtnUsuarios.Size = New System.Drawing.Size(123, 51)
         Me.BtnUsuarios.TabIndex = 2
         Me.BtnUsuarios.Text = "Usuarios"
         Me.BtnUsuarios.UseVisualStyleBackColor = True
@@ -106,10 +109,9 @@ Partial Class Inicio
         'BtnVentas
         '
         Me.BtnVentas.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnVentas.Location = New System.Drawing.Point(525, 23)
-        Me.BtnVentas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnVentas.Location = New System.Drawing.Point(394, 19)
         Me.BtnVentas.Name = "BtnVentas"
-        Me.BtnVentas.Size = New System.Drawing.Size(164, 63)
+        Me.BtnVentas.Size = New System.Drawing.Size(123, 51)
         Me.BtnVentas.TabIndex = 3
         Me.BtnVentas.Text = "Ventas"
         Me.BtnVentas.UseVisualStyleBackColor = True
@@ -117,10 +119,9 @@ Partial Class Inicio
         'BtnMarketing
         '
         Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMarketing.Location = New System.Drawing.Point(869, 23)
-        Me.BtnMarketing.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnMarketing.Location = New System.Drawing.Point(652, 19)
         Me.BtnMarketing.Name = "BtnMarketing"
-        Me.BtnMarketing.Size = New System.Drawing.Size(164, 63)
+        Me.BtnMarketing.Size = New System.Drawing.Size(123, 51)
         Me.BtnMarketing.TabIndex = 2
         Me.BtnMarketing.Text = "Marketing"
         Me.BtnMarketing.UseVisualStyleBackColor = True
@@ -128,10 +129,9 @@ Partial Class Inicio
         'BtnOportunidades
         '
         Me.BtnOportunidades.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnOportunidades.Location = New System.Drawing.Point(181, 23)
-        Me.BtnOportunidades.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnOportunidades.Location = New System.Drawing.Point(136, 19)
         Me.BtnOportunidades.Name = "BtnOportunidades"
-        Me.BtnOportunidades.Size = New System.Drawing.Size(164, 63)
+        Me.BtnOportunidades.Size = New System.Drawing.Size(123, 51)
         Me.BtnOportunidades.TabIndex = 2
         Me.BtnOportunidades.Text = "Oportunidades"
         Me.BtnOportunidades.UseVisualStyleBackColor = True
@@ -139,10 +139,9 @@ Partial Class Inicio
         'BtnInventario
         '
         Me.BtnInventario.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnInventario.Location = New System.Drawing.Point(353, 23)
-        Me.BtnInventario.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnInventario.Location = New System.Drawing.Point(265, 19)
         Me.BtnInventario.Name = "BtnInventario"
-        Me.BtnInventario.Size = New System.Drawing.Size(164, 63)
+        Me.BtnInventario.Size = New System.Drawing.Size(123, 51)
         Me.BtnInventario.TabIndex = 2
         Me.BtnInventario.Text = "Inventario"
         Me.BtnInventario.UseVisualStyleBackColor = True
@@ -150,10 +149,9 @@ Partial Class Inicio
         'BtnComunicacion
         '
         Me.BtnComunicacion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnComunicacion.Location = New System.Drawing.Point(1041, 23)
-        Me.BtnComunicacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnComunicacion.Location = New System.Drawing.Point(781, 19)
         Me.BtnComunicacion.Name = "BtnComunicacion"
-        Me.BtnComunicacion.Size = New System.Drawing.Size(164, 63)
+        Me.BtnComunicacion.Size = New System.Drawing.Size(123, 51)
         Me.BtnComunicacion.TabIndex = 1
         Me.BtnComunicacion.Text = "Comunicacion Clientes"
         Me.BtnComunicacion.UseVisualStyleBackColor = True
@@ -161,44 +159,29 @@ Partial Class Inicio
         'BtnClientes
         '
         Me.BtnClientes.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnClientes.Location = New System.Drawing.Point(9, 23)
-        Me.BtnClientes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnClientes.Location = New System.Drawing.Point(7, 19)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(164, 63)
+        Me.BtnClientes.Size = New System.Drawing.Size(123, 51)
         Me.BtnClientes.TabIndex = 0
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 269)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 219)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(1397, 270)
+        Me.GroupBox3.Size = New System.Drawing.Size(1048, 219)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         '
-        'BtnEmpleados
-        '
-        Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEmpleados.Location = New System.Drawing.Point(9, 94)
-        Me.BtnEmpleados.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnEmpleados.Name = "BtnEmpleados"
-        Me.BtnEmpleados.Size = New System.Drawing.Size(164, 63)
-        Me.BtnEmpleados.TabIndex = 4
-        Me.BtnEmpleados.Text = "Empleados"
-        Me.BtnEmpleados.UseVisualStyleBackColor = True
-        '
         'Inicio
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1421, 554)
+        Me.ClientSize = New System.Drawing.Size(1072, 450)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
         Me.GroupBox1.ResumeLayout(False)

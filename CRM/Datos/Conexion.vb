@@ -8,7 +8,15 @@ Public Class Conexion
 
     Public Function ConexionDB() As Boolean
         Try
-            Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true")
+            'Conexion Manuel'
+            'Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true")'
+
+            'Conexion Julio'
+            Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
+
+            'Conexion Josue'
+
+
             Connect.Open()
             Return True
         Catch Evento As Exception

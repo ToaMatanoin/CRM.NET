@@ -26,11 +26,11 @@ Partial Class Clientes
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
-        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtIDCliente = New System.Windows.Forms.TextBox()
@@ -53,6 +53,7 @@ Partial Class Clientes
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -104,6 +105,17 @@ Partial Class Clientes
         Me.Lb_Buscar.TabIndex = 10
         Me.Lb_Buscar.Text = "Buscar"
         '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminar.Location = New System.Drawing.Point(353, 23)
+        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(172, 63)
+        Me.BtnEliminar.TabIndex = 1
+        Me.BtnEliminar.Text = "Eliminar Cliente"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
+        '
         'GroupBox2
         '
         Me.GroupBox2.Location = New System.Drawing.Point(836, 0)
@@ -113,17 +125,6 @@ Partial Class Clientes
         Me.GroupBox2.Size = New System.Drawing.Size(184, 106)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
-        '
-        'BtnRegresar
-        '
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(864, 91)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(164, 63)
-        Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
-        Me.BtnRegresar.UseVisualStyleBackColor = True
         '
         'BtnModificar
         '
@@ -147,16 +148,16 @@ Partial Class Clientes
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
-        'BtnEliminar
+        'BtnRegresar
         '
-        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(353, 23)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(172, 63)
-        Me.BtnEliminar.TabIndex = 1
-        Me.BtnEliminar.Text = "Eliminar Cliente"
-        Me.BtnEliminar.UseVisualStyleBackColor = True
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Location = New System.Drawing.Point(864, 91)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(164, 40)
+        Me.BtnRegresar.TabIndex = 2
+        Me.BtnRegresar.Text = "Regresar"
+        Me.BtnRegresar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -396,11 +397,23 @@ Partial Class Clientes
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
         '
+        'BtnCerrar
+        '
+        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrar.Location = New System.Drawing.Point(864, 139)
+        Me.BtnCerrar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnCerrar.Name = "BtnCerrar"
+        Me.BtnCerrar.Size = New System.Drawing.Size(164, 38)
+        Me.BtnCerrar.TabIndex = 26
+        Me.BtnCerrar.Text = "Cerrar"
+        Me.BtnCerrar.UseVisualStyleBackColor = True
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1078, 617)
+        Me.Controls.Add(Me.BtnCerrar)
         Me.Controls.Add(Me.BtnRegresar)
         Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
@@ -454,4 +467,5 @@ Partial Class Clientes
     Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents Chk_Eliminar As CheckBox
+    Friend WithEvents BtnCerrar As Button
 End Class

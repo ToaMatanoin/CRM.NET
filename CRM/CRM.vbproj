@@ -74,7 +74,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\fEmpleados.vb" />
+    <Compile Include="Datos\fUsuarios.vb" />
     <Compile Include="Entidad\eEmpleados.vb" />
+    <Compile Include="Entidad\eUsuarios.vb" />
     <Compile Include="Presentacion\Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
@@ -90,6 +92,12 @@
     <Compile Include="Datos\Conexion.vb" />
     <Compile Include="Datos\fClientes.vb" />
     <Compile Include="Entidad\eClientes.vb" />
+    <Compile Include="Presentacion\Empleado.Designer.vb">
+      <DependentUpon>Empleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Empleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -156,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Comunicacion_Cliente.resx">
       <DependentUpon>Comunicacion_Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Empleado.resx">
+      <DependentUpon>Empleado.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

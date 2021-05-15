@@ -10,8 +10,10 @@
         TxtIDCliente.Enabled = False
 
         If Bandera Then
+            BtnCerrar.Visible = True
             BtnRegresar.Visible = False
         Else
+            BtnCerrar.Visible = False
             BtnRegresar.Visible = True
         End If
         Mostrar()
@@ -72,7 +74,7 @@
         TxtRTN.Text = ""
 
         BtnModificar.Visible = False
-
+        BtnEliminar.Visible = False
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -242,5 +244,7 @@
         Me.Close()
     End Sub
 
-
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+        Me.Close()
+    End Sub
 End Class

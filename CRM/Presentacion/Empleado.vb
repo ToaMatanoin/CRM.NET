@@ -1,25 +1,26 @@
-﻿Public Class Usuarios
-
+﻿Public Class Empleado
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
-    Private Sub Usuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Cmb_Buscar.Items.Add("Usu_Nombre")
+    Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
-        Cmb_Buscar.Text = "Usu_Nombre"
+        Cmb_Buscar.Items.Add("Emp_Telefono")
+        Cmb_Buscar.Items.Add("Emp_Email")
+        Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False
-        TxtIDUsu.Enabled = False
+
         If Bandera Then
+            BtnCerrar.Visible = True
             BtnRegresar.Visible = False
         Else
+            BtnCerrar.Visible = False
             BtnRegresar.Visible = True
         End If
         Mostrar()
         Limpiar()
     End Sub
-
     Private Sub Mostrar()
         Try
-            Dim Funcion As New fUsuarios
+            Dim Funcion As New fEmpleados
             TablaDatos = Funcion.Mostrar
             Dgv_Listado.Columns.Item("eliminar").Visible = False
             If TablaDatos.Rows.Count <> 0 Then
@@ -62,15 +63,16 @@
 
     Private Sub Limpiar()
         TxtIDEmp.Text = ""
-        TxtIDUsu.Text = ""
-        TxtNomUsu.Text = ""
-        TxtPassUsu.Text = ""
-        TxtCargoEmp.Text = ""
-        TxtNomEmpl.Text = ""
+        TxtNomEmp.Text = ""
+        TxtTelEmp.Text = ""
+        TxtEmailEmp.Text = ""
+        TxtDireccion.Text = ""
+        TxtCargo.Text = ""
 
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
     End Sub
+
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
         If Bandera Then
@@ -82,32 +84,34 @@
     End Sub
 
     Private Sub TrasladoInformacion()
-        TxtIDUsu.Text = Dgv_Listado.SelectedCells.Item(1).Value
-        TxtNomUsu.Text = Dgv_Listado.SelectedCells.Item(2).Value
-        TxtCargoEmp.Text = Dgv_Listado.SelectedCells.Item(3).Value
-        TxtPassUsu.Text = Dgv_Listado.SelectedCells.Item(4).Value
-        TxtIDEmp.Text = Dgv_Listado.SelectedCells.Item(5).Value
-        TxtNomEmpl.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        TxtIDEmp.Text = Dgv_Listado.SelectedCells.Item(1).Value
+        TxtNomEmp.Text = Dgv_Listado.SelectedCells.Item(2).Value
+        TxtTelEmp.Text = Dgv_Listado.SelectedCells.Item(3).Value
+        TxtEmailEmp.Text = Dgv_Listado.SelectedCells.Item(4).Value
+        TxtDireccion.Text = Dgv_Listado.SelectedCells.Item(5).Value
+        TxtCargo.Text = Dgv_Listado.SelectedCells.Item(6).Value
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And
-            TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And
+            TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Try
-                Dim TablaDatos As New eUsuarios
-                Dim Funcion As New fUsuarios
-                TablaDatos.pUsu_Nombre = TxtNomUsu.Text
-                TablaDatos.pUsu_Contrasenha = TxtPassUsu.Text
-                TablaDatos.pUsu_Cargo = TxtCargoEmp.Text
-                TablaDatos.pID_Empleado = TxtIDEmp.Text
+                Dim TablaDatos As New eEmpleados
+                Dim Funcion As New fEmpleados
+                TablaDatos.pEmp_Nombre = TxtNomEmp.Text
+                TablaDatos.pEmp_Telefono = TxtTelEmp.Text
+                TablaDatos.pEmp_Email = TxtEmailEmp.Text
+                TablaDatos.pEmp_Direccion = TxtDireccion.Text
+                TablaDatos.pEmp_Cargo = TxtCargo.Text
+
 
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Usuario fue registrado correctamente",
+                    MessageBox.Show("Empleado fue registrado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
              MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Usuario no fue registrado correctamente",
+                    MessageBox.Show("Empleado no fue registrado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
              MessageBoxIcon.Error)
                 End If
@@ -124,8 +128,8 @@
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And
-            TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And
+            TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos",
@@ -133,20 +137,20 @@
             MessageBoxIcon.Question)
             If Resultado = Windows.Forms.DialogResult.OK Then
                 Try
-                    Dim TablaDatos As New eUsuarios
-                    Dim Funcion As New fUsuarios
-                    TablaDatos.pID_Usuario = TxtIDUsu.Text
-                    TablaDatos.pUsu_Nombre = TxtNomUsu.Text
-                    TablaDatos.pUsu_Contrasenha = TxtPassUsu.Text
-                    TablaDatos.pUsu_Cargo = TxtCargoEmp.Text
+                    Dim TablaDatos As New eEmpleados
+                    Dim Funcion As New fEmpleados
                     TablaDatos.pID_Empleado = TxtIDEmp.Text
-
+                    TablaDatos.pEmp_Nombre = TxtNomEmp.Text
+                    TablaDatos.pEmp_Telefono = TxtTelEmp.Text
+                    TablaDatos.pEmp_Email = TxtEmailEmp.Text
+                    TablaDatos.pEmp_Direccion = TxtDireccion.Text
+                    TablaDatos.pEmp_Cargo = TxtCargo.Text
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("Usuario fue actualizado correctamente",
+                        MessageBox.Show("Empleado fue actualizado correctamente",
                      "Actualizando Registro", MessageBoxButtons.OK,
                       MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("Usuario no fue actualizado correctamente",
+                        MessageBox.Show("Empleado no fue actualizado correctamente",
                      "Actualizando Registro", MessageBoxButtons.OK,
                       MessageBoxIcon.Information)
                     End If
@@ -167,6 +171,24 @@
         End If
     End Sub
 
+    Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        If Chk_Eliminar.CheckState = CheckState.Unchecked Then
+            Dgv_Listado.Columns.Item("Eliminar").Visible = False
+            BtnEliminar.Visible = False
+
+        Else
+            Dgv_Listado.Columns.Item("Eliminar").Visible = True
+            BtnEliminar.Visible = True
+        End If
+    End Sub
+
+    Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
+        If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
+            Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
+            ChkCell.Value = Not ChkCell.Value
+        End If
+    End Sub
+
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Resultado As DialogResult
         Resultado = MessageBox.Show("Desea Eliminar los datos",
@@ -177,12 +199,12 @@
                 For Each row As DataGridViewRow In Dgv_Listado.Rows
                     Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
                     If LineaMarca Then
-                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Usuario").Value)
-                        Dim TablaDatos As New eUsuarios
-                        Dim Funcion As New fUsuarios
-                        TablaDatos.pID_Usuario = LlavePrimaria
+                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Empleado").Value)
+                        Dim TablaDatos As New eEmpleados
+                        Dim Funcion As New fEmpleados
+                        TablaDatos.pID_Empleado = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Usuario fue eliminado correctamente",
+                            MessageBox.Show("Empleado fue eliminado correctamente",
                     "Eliminando Registro", MessageBoxButtons.OK,
                      MessageBoxIcon.Information)
                         Else
@@ -205,38 +227,12 @@
             Call Limpiar()
         End If
     End Sub
-
-    Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
-        If Chk_Eliminar.CheckState = CheckState.Unchecked Then
-            Dgv_Listado.Columns.Item("Eliminar").Visible = False
-            BtnEliminar.Visible = False
-
-        Else
-            Dgv_Listado.Columns.Item("Eliminar").Visible = True
-            BtnEliminar.Visible = True
-        End If
-    End Sub
-
-    Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
-        If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
-            Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
-            ChkCell.Value = Not ChkCell.Value
-        End If
-    End Sub
-    Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
-        Empleado.Bandera = True
-        Empleado.ShowDialog()
-
-        TxtIDEmp.Text = Empleado.TxtIDEmp.Text
-        TxtNomEmpl.Text = Empleado.TxtNomEmp.Text
-        TxtCargoEmp.Text = Empleado.TxtCargo.Text
-
-    End Sub
-
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
         Me.Close()
     End Sub
 
-
+    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+        Me.Close()
+    End Sub
 End Class

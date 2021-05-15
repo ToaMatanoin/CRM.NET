@@ -38,4 +38,10 @@
         Me.Hide()
         Usuarios.Show()
     End Sub
+
+    Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) Handles BtnEmpleados.Click
+        Me.Hide()
+        Empleado.Show()
+    End Sub
+
 End Class

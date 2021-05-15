@@ -69,6 +69,7 @@
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
 
+        BtnIngresar.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
     End Sub
@@ -80,7 +81,7 @@
         Else
             BtnModificar.Visible = True
         End If
-
+        BtnIngresar.Visible = False
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -174,11 +175,11 @@
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
-            BtnEliminar.Visible = False
-
+            Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
+            BtnIngresar.Visible = False
         End If
     End Sub
 

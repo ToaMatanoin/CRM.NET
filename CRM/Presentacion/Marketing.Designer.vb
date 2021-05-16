@@ -23,6 +23,8 @@ Partial Class Marketing
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.DTPFechaFinalTarea = New System.Windows.Forms.DateTimePicker()
+        Me.DTPFechaInicioTarea = New System.Windows.Forms.DateTimePicker()
         Me.TxtDescripTarea = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -30,6 +32,12 @@ Partial Class Marketing
         Me.TxtNomTarea = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtDescripMarke = New System.Windows.Forms.TextBox()
+        Me.RBProyecto = New System.Windows.Forms.RadioButton()
+        Me.RBTarea = New System.Windows.Forms.RadioButton()
+        Me.CBEstra = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtIDPro = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtIDCli = New System.Windows.Forms.TextBox()
@@ -44,14 +52,6 @@ Partial Class Marketing
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.CBEstra = New System.Windows.Forms.ComboBox()
-        Me.RBTarea = New System.Windows.Forms.RadioButton()
-        Me.RBProyecto = New System.Windows.Forms.RadioButton()
-        Me.TxtDescripMarke = New System.Windows.Forms.TextBox()
-        Me.DTPFechaInicioTarea = New System.Windows.Forms.DateTimePicker()
-        Me.DTPFechaFinalTarea = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.DTPFechaFinalProyecto = New System.Windows.Forms.DateTimePicker()
         Me.DTPFechaInicioProyecto = New System.Windows.Forms.DateTimePicker()
@@ -87,6 +87,20 @@ Partial Class Marketing
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Tarea"
+        '
+        'DTPFechaFinalTarea
+        '
+        Me.DTPFechaFinalTarea.Location = New System.Drawing.Point(104, 78)
+        Me.DTPFechaFinalTarea.Name = "DTPFechaFinalTarea"
+        Me.DTPFechaFinalTarea.Size = New System.Drawing.Size(295, 22)
+        Me.DTPFechaFinalTarea.TabIndex = 9
+        '
+        'DTPFechaInicioTarea
+        '
+        Me.DTPFechaInicioTarea.Location = New System.Drawing.Point(104, 50)
+        Me.DTPFechaInicioTarea.Name = "DTPFechaInicioTarea"
+        Me.DTPFechaInicioTarea.Size = New System.Drawing.Size(295, 22)
+        Me.DTPFechaInicioTarea.TabIndex = 8
         '
         'TxtDescripTarea
         '
@@ -164,6 +178,66 @@ Partial Class Marketing
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Informacion Marketing"
+        '
+        'TxtDescripMarke
+        '
+        Me.TxtDescripMarke.Location = New System.Drawing.Point(7, 207)
+        Me.TxtDescripMarke.Multiline = True
+        Me.TxtDescripMarke.Name = "TxtDescripMarke"
+        Me.TxtDescripMarke.Size = New System.Drawing.Size(218, 162)
+        Me.TxtDescripMarke.TabIndex = 11
+        '
+        'RBProyecto
+        '
+        Me.RBProyecto.AutoSize = True
+        Me.RBProyecto.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBProyecto.Location = New System.Drawing.Point(127, 153)
+        Me.RBProyecto.Name = "RBProyecto"
+        Me.RBProyecto.Size = New System.Drawing.Size(78, 20)
+        Me.RBProyecto.TabIndex = 10
+        Me.RBProyecto.TabStop = True
+        Me.RBProyecto.Text = "Proyecto"
+        Me.RBProyecto.UseVisualStyleBackColor = True
+        '
+        'RBTarea
+        '
+        Me.RBTarea.AutoSize = True
+        Me.RBTarea.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBTarea.Location = New System.Drawing.Point(30, 153)
+        Me.RBTarea.Name = "RBTarea"
+        Me.RBTarea.Size = New System.Drawing.Size(57, 20)
+        Me.RBTarea.TabIndex = 9
+        Me.RBTarea.TabStop = True
+        Me.RBTarea.Text = "Tarea"
+        Me.RBTarea.UseVisualStyleBackColor = True
+        '
+        'CBEstra
+        '
+        Me.CBEstra.FormattingEnabled = True
+        Me.CBEstra.Location = New System.Drawing.Point(93, 113)
+        Me.CBEstra.Name = "CBEstra"
+        Me.CBEstra.Size = New System.Drawing.Size(132, 24)
+        Me.CBEstra.TabIndex = 8
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(4, 188)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(80, 16)
+        Me.Label9.TabIndex = 7
+        Me.Label9.Text = "Descripción:"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(7, 116)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(71, 16)
+        Me.Label10.TabIndex = 6
+        Me.Label10.Text = "Estrategia:"
         '
         'TxtIDPro
         '
@@ -298,80 +372,6 @@ Partial Class Marketing
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Gestionar Marketing"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(4, 188)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 16)
-        Me.Label9.TabIndex = 7
-        Me.Label9.Text = "Descripción:"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(7, 116)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(71, 16)
-        Me.Label10.TabIndex = 6
-        Me.Label10.Text = "Estrategia:"
-        '
-        'CBEstra
-        '
-        Me.CBEstra.FormattingEnabled = True
-        Me.CBEstra.Location = New System.Drawing.Point(93, 113)
-        Me.CBEstra.Name = "CBEstra"
-        Me.CBEstra.Size = New System.Drawing.Size(132, 24)
-        Me.CBEstra.TabIndex = 8
-        '
-        'RBTarea
-        '
-        Me.RBTarea.AutoSize = True
-        Me.RBTarea.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RBTarea.Location = New System.Drawing.Point(30, 153)
-        Me.RBTarea.Name = "RBTarea"
-        Me.RBTarea.Size = New System.Drawing.Size(57, 20)
-        Me.RBTarea.TabIndex = 9
-        Me.RBTarea.TabStop = True
-        Me.RBTarea.Text = "Tarea"
-        Me.RBTarea.UseVisualStyleBackColor = True
-        '
-        'RBProyecto
-        '
-        Me.RBProyecto.AutoSize = True
-        Me.RBProyecto.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RBProyecto.Location = New System.Drawing.Point(127, 153)
-        Me.RBProyecto.Name = "RBProyecto"
-        Me.RBProyecto.Size = New System.Drawing.Size(78, 20)
-        Me.RBProyecto.TabIndex = 10
-        Me.RBProyecto.TabStop = True
-        Me.RBProyecto.Text = "Proyecto"
-        Me.RBProyecto.UseVisualStyleBackColor = True
-        '
-        'TxtDescripMarke
-        '
-        Me.TxtDescripMarke.Location = New System.Drawing.Point(7, 207)
-        Me.TxtDescripMarke.Multiline = True
-        Me.TxtDescripMarke.Name = "TxtDescripMarke"
-        Me.TxtDescripMarke.Size = New System.Drawing.Size(218, 162)
-        Me.TxtDescripMarke.TabIndex = 11
-        '
-        'DTPFechaInicioTarea
-        '
-        Me.DTPFechaInicioTarea.Location = New System.Drawing.Point(104, 50)
-        Me.DTPFechaInicioTarea.Name = "DTPFechaInicioTarea"
-        Me.DTPFechaInicioTarea.Size = New System.Drawing.Size(295, 22)
-        Me.DTPFechaInicioTarea.TabIndex = 8
-        '
-        'DTPFechaFinalTarea
-        '
-        Me.DTPFechaFinalTarea.Location = New System.Drawing.Point(104, 78)
-        Me.DTPFechaFinalTarea.Name = "DTPFechaFinalTarea"
-        Me.DTPFechaFinalTarea.Size = New System.Drawing.Size(295, 22)
-        Me.DTPFechaFinalTarea.TabIndex = 9
         '
         'GroupBox5
         '

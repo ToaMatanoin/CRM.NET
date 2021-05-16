@@ -22,14 +22,15 @@ Partial Class Oportunidades
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TxtPosibilidad = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtIDClientePot = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtDescripcion = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtIDUsuario = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtEmailCli = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -38,49 +39,46 @@ Partial Class Oportunidades
         Me.TxtNomCli = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
+        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
+        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
+        Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
+        Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(289, 147)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(384, 321)
-        Me.DataGridView1.TabIndex = 19
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(251, 445)
+        Me.Label8.Location = New System.Drawing.Point(251, 485)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(20, 16)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "%"
         '
-        'TextBox2
+        'TxtPosibilidad
         '
-        Me.TextBox2.Location = New System.Drawing.Point(163, 444)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox2.TabIndex = 18
+        Me.TxtPosibilidad.Location = New System.Drawing.Point(163, 484)
+        Me.TxtPosibilidad.Name = "TxtPosibilidad"
+        Me.TxtPosibilidad.Size = New System.Drawing.Size(82, 20)
+        Me.TxtPosibilidad.TabIndex = 18
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(12, 445)
+        Me.Label7.Location = New System.Drawing.Point(12, 485)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(127, 16)
         Me.Label7.TabIndex = 17
@@ -88,9 +86,11 @@ Partial Class Oportunidades
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.TxtIDClientePot)
+        Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtDescripcion)
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.TxtIDUsuario)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Controls.Add(Me.TxtEmailCli)
         Me.GroupBox3.Controls.Add(Me.Label4)
@@ -101,14 +101,31 @@ Partial Class Oportunidades
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(12, 147)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(271, 291)
+        Me.GroupBox3.Size = New System.Drawing.Size(271, 331)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Persona a Cargo"
         '
+        'TxtIDClientePot
+        '
+        Me.TxtIDClientePot.Location = New System.Drawing.Point(119, 31)
+        Me.TxtIDClientePot.Name = "TxtIDClientePot"
+        Me.TxtIDClientePot.Size = New System.Drawing.Size(140, 22)
+        Me.TxtIDClientePot.TabIndex = 11
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(10, 34)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(92, 16)
+        Me.Label9.TabIndex = 10
+        Me.Label9.Text = "ID Cliente Pot:"
+        '
         'TxtDescripcion
         '
-        Me.TxtDescripcion.Location = New System.Drawing.Point(96, 144)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(96, 174)
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
         Me.TxtDescripcion.Size = New System.Drawing.Size(163, 141)
@@ -118,24 +135,24 @@ Partial Class Oportunidades
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(10, 147)
+        Me.Label6.Location = New System.Drawing.Point(10, 177)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 16)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Descripción:"
         '
-        'TextBox1
+        'TxtIDUsuario
         '
-        Me.TextBox1.Location = New System.Drawing.Point(119, 29)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(140, 22)
-        Me.TextBox1.TabIndex = 7
+        Me.TxtIDUsuario.Location = New System.Drawing.Point(119, 59)
+        Me.TxtIDUsuario.Name = "TxtIDUsuario"
+        Me.TxtIDUsuario.Size = New System.Drawing.Size(140, 22)
+        Me.TxtIDUsuario.TabIndex = 7
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(10, 32)
+        Me.Label5.Location = New System.Drawing.Point(10, 62)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(72, 16)
         Me.Label5.TabIndex = 6
@@ -143,7 +160,7 @@ Partial Class Oportunidades
         '
         'TxtEmailCli
         '
-        Me.TxtEmailCli.Location = New System.Drawing.Point(119, 113)
+        Me.TxtEmailCli.Location = New System.Drawing.Point(119, 143)
         Me.TxtEmailCli.Name = "TxtEmailCli"
         Me.TxtEmailCli.Size = New System.Drawing.Size(140, 22)
         Me.TxtEmailCli.TabIndex = 5
@@ -152,7 +169,7 @@ Partial Class Oportunidades
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(10, 116)
+        Me.Label4.Location = New System.Drawing.Point(10, 146)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(93, 16)
         Me.Label4.TabIndex = 4
@@ -160,7 +177,7 @@ Partial Class Oportunidades
         '
         'TxtTelCli
         '
-        Me.TxtTelCli.Location = New System.Drawing.Point(119, 85)
+        Me.TxtTelCli.Location = New System.Drawing.Point(119, 115)
         Me.TxtTelCli.Name = "TxtTelCli"
         Me.TxtTelCli.Size = New System.Drawing.Size(140, 22)
         Me.TxtTelCli.TabIndex = 3
@@ -169,7 +186,7 @@ Partial Class Oportunidades
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 88)
+        Me.Label3.Location = New System.Drawing.Point(10, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(103, 16)
         Me.Label3.TabIndex = 2
@@ -177,7 +194,7 @@ Partial Class Oportunidades
         '
         'TxtNomCli
         '
-        Me.TxtNomCli.Location = New System.Drawing.Point(119, 57)
+        Me.TxtNomCli.Location = New System.Drawing.Point(119, 87)
         Me.TxtNomCli.Name = "TxtNomCli"
         Me.TxtNomCli.Size = New System.Drawing.Size(140, 22)
         Me.TxtNomCli.TabIndex = 1
@@ -186,7 +203,7 @@ Partial Class Oportunidades
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(10, 60)
+        Me.Label2.Location = New System.Drawing.Point(10, 90)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(101, 16)
         Me.Label2.TabIndex = 0
@@ -194,35 +211,25 @@ Partial Class Oportunidades
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
-        Me.GroupBox1.Controls.Add(Me.BtnBuscar)
+        Me.GroupBox1.Controls.Add(Me.Cmb_Buscar)
+        Me.GroupBox1.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(662, 86)
+        Me.GroupBox1.Size = New System.Drawing.Size(608, 86)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         '
-        'GroupBox2
+        'Txt_Buscar
         '
-        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Location = New System.Drawing.Point(523, 0)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        '
-        'BtnRegresar
-        '
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(6, 19)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
-        Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
-        Me.BtnRegresar.UseVisualStyleBackColor = True
+        Me.Txt_Buscar.Location = New System.Drawing.Point(401, 34)
+        Me.Txt_Buscar.Multiline = True
+        Me.Txt_Buscar.Name = "Txt_Buscar"
+        Me.Txt_Buscar.Size = New System.Drawing.Size(191, 43)
+        Me.Txt_Buscar.TabIndex = 23
         '
         'BtnModificar
         '
@@ -234,15 +241,22 @@ Partial Class Oportunidades
         Me.BtnModificar.Text = "Modificar Cliente"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
-        'BtnBuscar
+        'Cmb_Buscar
         '
-        Me.BtnBuscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(394, 19)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(123, 51)
-        Me.BtnBuscar.TabIndex = 2
-        Me.BtnBuscar.Text = "Buscar Cliente"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
+        Me.Cmb_Buscar.FormattingEnabled = True
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(444, 13)
+        Me.Cmb_Buscar.Name = "Cmb_Buscar"
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 21)
+        Me.Cmb_Buscar.TabIndex = 22
+        '
+        'Lb_Buscar
+        '
+        Me.Lb_Buscar.AutoSize = True
+        Me.Lb_Buscar.Location = New System.Drawing.Point(399, 15)
+        Me.Lb_Buscar.Name = "Lb_Buscar"
+        Me.Lb_Buscar.Size = New System.Drawing.Size(40, 13)
+        Me.Lb_Buscar.TabIndex = 21
+        Me.Lb_Buscar.Text = "Buscar"
         '
         'BtnEliminar
         '
@@ -264,49 +278,101 @@ Partial Class Oportunidades
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
+        Me.GroupBox2.Location = New System.Drawing.Point(620, 55)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
+        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabStop = False
+        '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Location = New System.Drawing.Point(6, 19)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
+        Me.BtnRegresar.TabIndex = 2
+        Me.BtnRegresar.Text = "Regresar"
+        Me.BtnRegresar.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.BackColor = System.Drawing.Color.Aquamarine
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(662, 43)
+        Me.Label1.Size = New System.Drawing.Size(789, 43)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Gestionar Clientes Potenicales"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Chk_Eliminar
+        '
+        Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(289, 155)
+        Me.Chk_Eliminar.Name = "Chk_Eliminar"
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
+        Me.Chk_Eliminar.TabIndex = 20
+        Me.Chk_Eliminar.Text = "Eliminar"
+        Me.Chk_Eliminar.UseVisualStyleBackColor = True
+        '
+        'Dgv_Listado
+        '
+        Me.Dgv_Listado.AllowUserToAddRows = False
+        Me.Dgv_Listado.AllowUserToDeleteRows = False
+        Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        Me.Dgv_Listado.Location = New System.Drawing.Point(289, 181)
+        Me.Dgv_Listado.Name = "Dgv_Listado"
+        Me.Dgv_Listado.ReadOnly = True
+        Me.Dgv_Listado.RowHeadersWidth = 51
+        Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_Listado.Size = New System.Drawing.Size(512, 297)
+        Me.Dgv_Listado.TabIndex = 21
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.MinimumWidth = 6
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Width = 125
         '
         'Oportunidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(680, 474)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(810, 520)
+        Me.Controls.Add(Me.Dgv_Listado)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.TxtPosibilidad)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Oportunidades"
         Me.Text = "Oportunidades"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
+        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TxtPosibilidad As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents TxtDescripcion As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtIDUsuario As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtEmailCli As TextBox
     Friend WithEvents Label4 As Label
@@ -318,8 +384,15 @@ Partial Class Oportunidades
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BtnRegresar As Button
     Friend WithEvents BtnModificar As Button
-    Friend WithEvents BtnBuscar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnIngresar As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents TxtIDClientePot As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Chk_Eliminar As CheckBox
+    Friend WithEvents Txt_Buscar As TextBox
+    Friend WithEvents Cmb_Buscar As ComboBox
+    Friend WithEvents Lb_Buscar As Label
+    Friend WithEvents Dgv_Listado As DataGridView
+    Friend WithEvents eliminar As DataGridViewCheckBoxColumn
 End Class

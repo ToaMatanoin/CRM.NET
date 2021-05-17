@@ -75,8 +75,10 @@
   <ItemGroup>
     <Compile Include="Datos\fComunicacion_Cliente.vb" />
     <Compile Include="Datos\fEmpleados.vb" />
+    <Compile Include="Datos\fInventario.vb" />
     <Compile Include="Datos\fOportunides.vb" />
     <Compile Include="Datos\fUsuarios.vb" />
+    <Compile Include="Entidad\eInventario.vb" />
     <Compile Include="Entidad\eComunicacion_Cliente.vb" />
     <Compile Include="Entidad\eEmpleados.vb" />
     <Compile Include="Entidad\eOportunidades.vb" />

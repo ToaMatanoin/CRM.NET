@@ -57,6 +57,7 @@ Public Class fInventario
             ComandoSQL = New SqlCommand("ActualizarInventario")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
+            ComandoSQL.Parameters.AddWithValue("@ID_Producto", TablaDatos.pID_Producto)
             ComandoSQL.Parameters.AddWithValue("@Pro_Nombre", TablaDatos.pPro_Nombre)
             ComandoSQL.Parameters.AddWithValue("@Pro_Cantidad", TablaDatos.pPro_Cantidad)
             ComandoSQL.Parameters.AddWithValue("@Pro_PreVenta", TablaDatos.pPro_preventa)

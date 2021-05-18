@@ -2,27 +2,23 @@
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
 
-    Private Sub Usuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         If Bandera Then
             BtnRegresar.Visible = False
         Else
             BtnRegresar.Visible = True
         End If
-
+        TxtIDProd.Enabled = False
         Mostrar()
         Limpiar()
     End Sub
-
-
-
-
 
     Private Sub Mostrar()
         Try
             Dim Funcion As New fInventario
             TablaDatos = Funcion.Mostrar
-            Dgv_Listado.Columns.Item("Eliminar").Visible = False
+            Dgv_Listado.Columns.Item("eliminar").Visible = False
             If TablaDatos.Rows.Count <> 0 Then
                 Dgv_Listado.DataSource = TablaDatos
                 Dgv_Listado.ColumnHeadersVisible = True
@@ -63,6 +59,7 @@
 
 
     Private Sub Limpiar()
+        TxtIDProd.Text = ""
         TxtCantPro.Text = ""
         TxtNomPro.Text = ""
         TxtNomProveedor.Text = ""
@@ -75,24 +72,24 @@
 
     End Sub
 
-
-    Private Sub TrasladoInformacion()
-
-
-        Try
-            TxtCantPro.Text = Dgv_Listado.SelectedCells.Item(3).Value
-            TxtNomPro.Text = Dgv_Listado.SelectedCells.Item(2).Value
-            TxtNomProveedor.Text = Dgv_Listado.SelectedCells.Item(6).Value
-            TxtPrecioComp.Text = Dgv_Listado.SelectedCells.Item(5).Value
-            TxtPrecioVent.Text = Dgv_Listado.SelectedCells.Item(4).Value
-        Catch ex As Exception
-
-        End Try
-
-
+    Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
+        TrasladoInformacion()
+        If Bandera Then
+            BtnModificar.Visible = False
+        Else
+            BtnModificar.Visible = True
+        End If
+        BtnIngresar.Visible = False
     End Sub
 
-
+    Private Sub TrasladoInformacion()
+        TxtIDProd.Text = Dgv_Listado.SelectedCells.Item(1).Value
+        TxtCantPro.Text = Dgv_Listado.SelectedCells.Item(3).Value
+        TxtNomPro.Text = Dgv_Listado.SelectedCells.Item(2).Value
+        TxtNomProveedor.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        TxtPrecioComp.Text = Dgv_Listado.SelectedCells.Item(5).Value
+        TxtPrecioVent.Text = Dgv_Listado.SelectedCells.Item(4).Value
+    End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
@@ -157,6 +154,7 @@
 
                     Dim TablaDatos As New eInventario
                     Dim Funcion As New fInventario
+                    TablaDatos.pID_Producto = TxtIDProd.Text
                     TablaDatos.pPro_Nombre = TxtNomPro.Text
                     TablaDatos.pPro_Cantidad = TxtCantPro.Text
                     TablaDatos.pPro_preventa = TxtPrecioVent.Text
@@ -241,15 +239,11 @@
             BtnIngresar.Visible = False
         End If
     End Sub
-
-    Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
-        TrasladoInformacion()
-        If Bandera Then
-            BtnModificar.Visible = False
-        Else
-            BtnModificar.Visible = True
+    Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
+        If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
+            Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
+            ChkCell.Value = Not ChkCell.Value
         End If
-        BtnIngresar.Visible = False
     End Sub
 
 End Class

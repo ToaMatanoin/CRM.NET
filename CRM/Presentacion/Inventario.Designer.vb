@@ -43,9 +43,11 @@ Partial Class Inventario
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
+        Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TxtIDProd = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -54,6 +56,8 @@ Partial Class Inventario
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.TxtIDProd)
+        Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TxtNomProveedor)
@@ -67,11 +71,11 @@ Partial Class Inventario
         Me.GroupBox3.Controls.Add(Me.TxtNomPro)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 181)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 162)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(404, 209)
+        Me.GroupBox3.Size = New System.Drawing.Size(404, 243)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Informacion Producto"
@@ -80,7 +84,7 @@ Partial Class Inventario
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(216, 139)
+        Me.Label8.Location = New System.Drawing.Point(216, 163)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(23, 19)
@@ -91,7 +95,7 @@ Partial Class Inventario
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(216, 105)
+        Me.Label7.Location = New System.Drawing.Point(216, 129)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(23, 19)
@@ -100,7 +104,7 @@ Partial Class Inventario
         '
         'TxtNomProveedor
         '
-        Me.TxtNomProveedor.Location = New System.Drawing.Point(181, 169)
+        Me.TxtNomProveedor.Location = New System.Drawing.Point(181, 193)
         Me.TxtNomProveedor.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomProveedor.Name = "TxtNomProveedor"
         Me.TxtNomProveedor.Size = New System.Drawing.Size(213, 26)
@@ -108,7 +112,7 @@ Partial Class Inventario
         '
         'TxtPrecioVent
         '
-        Me.TxtPrecioVent.Location = New System.Drawing.Point(249, 135)
+        Me.TxtPrecioVent.Location = New System.Drawing.Point(249, 159)
         Me.TxtPrecioVent.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecioVent.Name = "TxtPrecioVent"
         Me.TxtPrecioVent.Size = New System.Drawing.Size(145, 26)
@@ -118,7 +122,7 @@ Partial Class Inventario
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(8, 139)
+        Me.Label5.Location = New System.Drawing.Point(8, 163)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 19)
@@ -129,7 +133,7 @@ Partial Class Inventario
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(8, 172)
+        Me.Label6.Location = New System.Drawing.Point(8, 196)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(151, 19)
@@ -138,7 +142,7 @@ Partial Class Inventario
         '
         'TxtPrecioComp
         '
-        Me.TxtPrecioComp.Location = New System.Drawing.Point(249, 101)
+        Me.TxtPrecioComp.Location = New System.Drawing.Point(249, 125)
         Me.TxtPrecioComp.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPrecioComp.Name = "TxtPrecioComp"
         Me.TxtPrecioComp.Size = New System.Drawing.Size(145, 26)
@@ -148,7 +152,7 @@ Partial Class Inventario
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 105)
+        Me.Label4.Location = New System.Drawing.Point(8, 129)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(125, 19)
@@ -157,7 +161,7 @@ Partial Class Inventario
         '
         'TxtCantPro
         '
-        Me.TxtCantPro.Location = New System.Drawing.Point(249, 68)
+        Me.TxtCantPro.Location = New System.Drawing.Point(249, 92)
         Me.TxtCantPro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtCantPro.Name = "TxtCantPro"
         Me.TxtCantPro.Size = New System.Drawing.Size(145, 26)
@@ -167,7 +171,7 @@ Partial Class Inventario
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(8, 71)
+        Me.Label3.Location = New System.Drawing.Point(8, 95)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 19)
@@ -176,7 +180,7 @@ Partial Class Inventario
         '
         'TxtNomPro
         '
-        Me.TxtNomPro.Location = New System.Drawing.Point(181, 33)
+        Me.TxtNomPro.Location = New System.Drawing.Point(181, 57)
         Me.TxtNomPro.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomPro.Name = "TxtNomPro"
         Me.TxtNomPro.Size = New System.Drawing.Size(213, 26)
@@ -186,7 +190,7 @@ Partial Class Inventario
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 37)
+        Me.Label2.Location = New System.Drawing.Point(8, 61)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(142, 19)
@@ -286,17 +290,6 @@ Partial Class Inventario
         Me.Label1.Text = "Gestionar Productos"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Dgv_Listado
-        '
-        Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(428, 181)
-        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4)
-        Me.Dgv_Listado.Name = "Dgv_Listado"
-        Me.Dgv_Listado.RowHeadersWidth = 51
-        Me.Dgv_Listado.Size = New System.Drawing.Size(469, 209)
-        Me.Dgv_Listado.TabIndex = 10
-        '
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
@@ -307,21 +300,55 @@ Partial Class Inventario
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
         '
-        'Eliminar
+        'Dgv_Listado
         '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.MinimumWidth = 6
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Eliminar.Width = 125
+        Me.Dgv_Listado.AllowUserToAddRows = False
+        Me.Dgv_Listado.AllowUserToDeleteRows = False
+        Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        Me.Dgv_Listado.Location = New System.Drawing.Point(428, 182)
+        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4)
+        Me.Dgv_Listado.Name = "Dgv_Listado"
+        Me.Dgv_Listado.ReadOnly = True
+        Me.Dgv_Listado.RowHeadersWidth = 51
+        Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_Listado.Size = New System.Drawing.Size(468, 210)
+        Me.Dgv_Listado.TabIndex = 12
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.MinimumWidth = 6
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Width = 125
+        '
+        'TxtIDProd
+        '
+        Me.TxtIDProd.Location = New System.Drawing.Point(181, 23)
+        Me.TxtIDProd.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIDProd.Name = "TxtIDProd"
+        Me.TxtIDProd.Size = New System.Drawing.Size(58, 26)
+        Me.TxtIDProd.TabIndex = 13
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(8, 27)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(66, 19)
+        Me.Label9.TabIndex = 12
+        Me.Label9.Text = "Codigo:"
         '
         'Inventario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(909, 418)
-        Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
+        Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
@@ -358,7 +385,9 @@ Partial Class Inventario
     Friend WithEvents TxtPrecioVent As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents Chk_Eliminar As CheckBox
-    Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
+    Friend WithEvents Dgv_Listado As DataGridView
+    Friend WithEvents eliminar As DataGridViewCheckBoxColumn
+    Friend WithEvents TxtIDProd As TextBox
+    Friend WithEvents Label9 As Label
 End Class

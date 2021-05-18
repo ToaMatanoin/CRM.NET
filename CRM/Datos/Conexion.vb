@@ -9,13 +9,13 @@ Public Class Conexion
     Public Function ConexionDB() As Boolean
         Try
             'Conexion Manuel'
-            Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true") '
+            'Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true") '
 
             'Conexion Julio'
             'Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")'
 
             'Conexion Josue'
-            'Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
+            Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
 
 
             Connect.Open()
@@ -25,6 +25,8 @@ Public Class Conexion
             Return False
         End Try
     End Function
+
+
 
     Public Function DesconexionDB() As Boolean
         Try
@@ -70,5 +72,22 @@ Public Class Conexion
         End Try
         Return resultado
     End Function
+
+    Function llenado_cb(cb As ComboBox)
+
+        Try
+            Sentencia = New SqlCommand("Select Pro_Nombre from Inventario", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+            While Ejecucion.Read
+                cb.Items.Add(Ejecucion.Item("Pro_Nombre"))
+            End While
+            Ejecucion.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Function
+
+
 
 End Class

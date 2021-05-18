@@ -74,15 +74,27 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\fComunicacion_Cliente.vb" />
+    <Compile Include="Datos\fDevoluciones.vb" />
     <Compile Include="Datos\fEmpleados.vb" />
+    <Compile Include="Datos\fEncargo.vb" />
     <Compile Include="Datos\fInventario.vb" />
+    <Compile Include="Datos\fMarketing.vb" />
     <Compile Include="Datos\fOportunides.vb" />
+    <Compile Include="Datos\fProyectos_Marketing.vb" />
+    <Compile Include="Datos\fTareas_Marketing.vb" />
     <Compile Include="Datos\fUsuarios.vb" />
+    <Compile Include="Datos\fVentas.vb" />
+    <Compile Include="Entidad\eDevoluciones.vb" />
+    <Compile Include="Entidad\eEncargo.vb" />
     <Compile Include="Entidad\eInventario.vb" />
     <Compile Include="Entidad\eComunicacion_Cliente.vb" />
     <Compile Include="Entidad\eEmpleados.vb" />
+    <Compile Include="Entidad\eMarketing.vb" />
     <Compile Include="Entidad\eOportunidades.vb" />
+    <Compile Include="Entidad\eProyectos_Marketing.vb" />
+    <Compile Include="Entidad\eTareas_Marketing.vb" />
     <Compile Include="Entidad\eUsuarios.vb" />
+    <Compile Include="Entidad\eVentas.vb" />
     <Compile Include="Presentacion\Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>

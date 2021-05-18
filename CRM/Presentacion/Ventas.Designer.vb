@@ -23,35 +23,35 @@ Partial Class Ventas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Cb_producto = New System.Windows.Forms.ComboBox()
         Me.TxtEmailEmpresa = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtTelEmpresa = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Dtp_fecha = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtNomCli = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.BtnBuscar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
+        Me.Rd_contado = New System.Windows.Forms.RadioButton()
+        Me.Rd_credito = New System.Windows.Forms.RadioButton()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.GroupBox8 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Rd_tercera_no = New System.Windows.Forms.RadioButton()
+        Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -65,7 +65,7 @@ Partial Class Ventas
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.ComboBox1)
+        Me.GroupBox4.Controls.Add(Me.Cb_producto)
         Me.GroupBox4.Controls.Add(Me.TxtEmailEmpresa)
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Controls.Add(Me.TxtTelEmpresa)
@@ -73,27 +73,27 @@ Partial Class Ventas
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(939, 68)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(319, 133)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Información Compra"
         '
-        'ComboBox1
+        'Cb_producto
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(139, 31)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(160, 27)
-        Me.ComboBox1.TabIndex = 6
+        Me.Cb_producto.FormattingEnabled = True
+        Me.Cb_producto.Location = New System.Drawing.Point(139, 31)
+        Me.Cb_producto.Margin = New System.Windows.Forms.Padding(4)
+        Me.Cb_producto.Name = "Cb_producto"
+        Me.Cb_producto.Size = New System.Drawing.Size(160, 27)
+        Me.Cb_producto.TabIndex = 6
         '
         'TxtEmailEmpresa
         '
         Me.TxtEmailEmpresa.Location = New System.Drawing.Point(167, 100)
-        Me.TxtEmailEmpresa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtEmailEmpresa.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtEmailEmpresa.Name = "TxtEmailEmpresa"
         Me.TxtEmailEmpresa.Size = New System.Drawing.Size(132, 26)
         Me.TxtEmailEmpresa.TabIndex = 5
@@ -112,7 +112,7 @@ Partial Class Ventas
         'TxtTelEmpresa
         '
         Me.TxtTelEmpresa.Location = New System.Drawing.Point(167, 68)
-        Me.TxtTelEmpresa.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtTelEmpresa.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTelEmpresa.Name = "TxtTelEmpresa"
         Me.TxtTelEmpresa.Size = New System.Drawing.Size(132, 26)
         Me.TxtTelEmpresa.TabIndex = 3
@@ -141,27 +141,27 @@ Partial Class Ventas
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox3.Controls.Add(Me.Dtp_fecha)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.TxtNomCli)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(16, 68)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(365, 113)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información Cliente"
         '
-        'DateTimePicker1
+        'Dtp_fecha
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(75, 70)
-        Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(265, 26)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.Dtp_fecha.Location = New System.Drawing.Point(75, 70)
+        Me.Dtp_fecha.Margin = New System.Windows.Forms.Padding(4)
+        Me.Dtp_fecha.Name = "Dtp_fecha"
+        Me.Dtp_fecha.Size = New System.Drawing.Size(265, 26)
+        Me.Dtp_fecha.TabIndex = 3
         '
         'Label3
         '
@@ -177,7 +177,7 @@ Partial Class Ventas
         'TxtNomCli
         '
         Me.TxtNomCli.Location = New System.Drawing.Point(107, 36)
-        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomCli.Name = "TxtNomCli"
         Me.TxtNomCli.Size = New System.Drawing.Size(233, 26)
         Me.TxtNomCli.TabIndex = 1
@@ -200,9 +200,9 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.BtnBuscar)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(16, 188)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(216, 460)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
@@ -210,58 +210,36 @@ Partial Class Ventas
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.BtnModificar)
-        Me.GroupBox5.Controls.Add(Me.BtnEliminar)
+        Me.GroupBox5.Controls.Add(Me.Label4)
+        Me.GroupBox5.Controls.Add(Me.Txt_ID_Venta)
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
         Me.GroupBox5.Location = New System.Drawing.Point(9, 23)
-        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Size = New System.Drawing.Size(185, 241)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Location = New System.Drawing.Point(8, 94)
-        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(164, 63)
-        Me.BtnModificar.TabIndex = 5
-        Me.BtnModificar.Text = "Modificar Cliente"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
-        'BtnEliminar
-        '
-        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(8, 166)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(164, 63)
-        Me.BtnEliminar.TabIndex = 4
-        Me.BtnEliminar.Text = "Eliminar Cliente"
-        Me.BtnEliminar.UseVisualStyleBackColor = True
-        '
         'BtnIngresar
         '
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Location = New System.Drawing.Point(8, 23)
-        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnIngresar.Location = New System.Drawing.Point(10, 27)
+        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(164, 63)
         Me.BtnIngresar.TabIndex = 3
-        Me.BtnIngresar.Text = "Ingresar Cliente"
+        Me.BtnIngresar.Text = "Ingresar Venta"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BtnRegresar)
         Me.GroupBox2.Location = New System.Drawing.Point(11, 342)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox2.Size = New System.Drawing.Size(184, 106)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
@@ -270,7 +248,7 @@ Partial Class Ventas
         '
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Location = New System.Drawing.Point(8, 23)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(164, 63)
         Me.BtnRegresar.TabIndex = 2
@@ -280,8 +258,8 @@ Partial Class Ventas
         'BtnBuscar
         '
         Me.BtnBuscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(20, 272)
-        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnBuscar.Location = New System.Drawing.Point(19, 272)
+        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(164, 63)
         Me.BtnBuscar.TabIndex = 2
@@ -302,48 +280,48 @@ Partial Class Ventas
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.RadioButton4)
-        Me.GroupBox6.Controls.Add(Me.RadioButton3)
+        Me.GroupBox6.Controls.Add(Me.Rd_contado)
+        Me.GroupBox6.Controls.Add(Me.Rd_credito)
         Me.GroupBox6.Location = New System.Drawing.Point(389, 68)
-        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox6.Size = New System.Drawing.Size(267, 133)
         Me.GroupBox6.TabIndex = 11
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Tipo de Venta"
         '
-        'RadioButton4
+        'Rd_contado
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Location = New System.Drawing.Point(28, 76)
-        Me.RadioButton4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(82, 21)
-        Me.RadioButton4.TabIndex = 1
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Contado"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.Rd_contado.AutoSize = True
+        Me.Rd_contado.Location = New System.Drawing.Point(28, 76)
+        Me.Rd_contado.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rd_contado.Name = "Rd_contado"
+        Me.Rd_contado.Size = New System.Drawing.Size(82, 21)
+        Me.Rd_contado.TabIndex = 1
+        Me.Rd_contado.TabStop = True
+        Me.Rd_contado.Text = "Contado"
+        Me.Rd_contado.UseVisualStyleBackColor = True
         '
-        'RadioButton3
+        'Rd_credito
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(28, 37)
-        Me.RadioButton3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(74, 21)
-        Me.RadioButton3.TabIndex = 0
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Credito"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.Rd_credito.AutoSize = True
+        Me.Rd_credito.Location = New System.Drawing.Point(28, 37)
+        Me.Rd_credito.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rd_credito.Name = "Rd_credito"
+        Me.Rd_credito.Size = New System.Drawing.Size(74, 21)
+        Me.Rd_credito.TabIndex = 0
+        Me.Rd_credito.TabStop = True
+        Me.Rd_credito.Text = "Credito"
+        Me.Rd_credito.UseVisualStyleBackColor = True
         '
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.GroupBox8)
         Me.GroupBox7.Location = New System.Drawing.Point(664, 68)
-        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox7.Size = New System.Drawing.Size(267, 133)
         Me.GroupBox7.TabIndex = 12
         Me.GroupBox7.TabStop = False
@@ -351,40 +329,40 @@ Partial Class Ventas
         '
         'GroupBox8
         '
-        Me.GroupBox8.Controls.Add(Me.RadioButton2)
-        Me.GroupBox8.Controls.Add(Me.RadioButton1)
+        Me.GroupBox8.Controls.Add(Me.Rd_tercera_no)
+        Me.GroupBox8.Controls.Add(Me.Rd_tercera_si)
         Me.GroupBox8.Location = New System.Drawing.Point(20, 31)
-        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox8.Size = New System.Drawing.Size(215, 90)
         Me.GroupBox8.TabIndex = 0
         Me.GroupBox8.TabStop = False
         Me.GroupBox8.Text = "Tercera Edad"
         '
-        'RadioButton2
+        'Rd_tercera_no
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(92, 37)
-        Me.RadioButton2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(50, 21)
-        Me.RadioButton2.TabIndex = 1
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "NO"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Rd_tercera_no.AutoSize = True
+        Me.Rd_tercera_no.Location = New System.Drawing.Point(92, 37)
+        Me.Rd_tercera_no.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rd_tercera_no.Name = "Rd_tercera_no"
+        Me.Rd_tercera_no.Size = New System.Drawing.Size(50, 21)
+        Me.Rd_tercera_no.TabIndex = 1
+        Me.Rd_tercera_no.TabStop = True
+        Me.Rd_tercera_no.Text = "NO"
+        Me.Rd_tercera_no.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Rd_tercera_si
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(21, 37)
-        Me.RadioButton1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(41, 21)
-        Me.RadioButton1.TabIndex = 0
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "SI"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Rd_tercera_si.AutoSize = True
+        Me.Rd_tercera_si.Location = New System.Drawing.Point(21, 37)
+        Me.Rd_tercera_si.Margin = New System.Windows.Forms.Padding(4)
+        Me.Rd_tercera_si.Name = "Rd_tercera_si"
+        Me.Rd_tercera_si.Size = New System.Drawing.Size(41, 21)
+        Me.Rd_tercera_si.TabIndex = 0
+        Me.Rd_tercera_si.TabStop = True
+        Me.Rd_tercera_si.Text = "SI"
+        Me.Rd_tercera_si.UseVisualStyleBackColor = True
         '
         'Dgv_Listado
         '
@@ -409,6 +387,24 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
+        'Txt_ID_Venta
+        '
+        Me.Txt_ID_Venta.Location = New System.Drawing.Point(21, 208)
+        Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
+        Me.Txt_ID_Venta.Size = New System.Drawing.Size(140, 26)
+        Me.Txt_ID_Venta.TabIndex = 4
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(49, 186)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 19)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "ID Venta"
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -421,7 +417,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Ventas"
         Me.Text = "Ventas"
         Me.GroupBox4.ResumeLayout(False)
@@ -430,6 +426,7 @@ Partial Class Ventas
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
@@ -456,19 +453,19 @@ Partial Class Ventas
     Friend WithEvents BtnRegresar As Button
     Friend WithEvents BtnBuscar As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Cb_producto As ComboBox
+    Friend WithEvents Dtp_fecha As DateTimePicker
     Friend WithEvents GroupBox5 As GroupBox
-    Friend WithEvents BtnModificar As Button
-    Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnIngresar As Button
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents RadioButton4 As RadioButton
-    Friend WithEvents RadioButton3 As RadioButton
+    Friend WithEvents Rd_contado As RadioButton
+    Friend WithEvents Rd_credito As RadioButton
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents GroupBox8 As GroupBox
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents Rd_tercera_no As RadioButton
+    Friend WithEvents Rd_tercera_si As RadioButton
     Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Txt_ID_Venta As TextBox
 End Class

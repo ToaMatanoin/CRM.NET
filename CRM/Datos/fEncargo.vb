@@ -76,7 +76,7 @@ Public Class fEncargo
         End Try
     End Function
 
-    Public Function Eliminar(TablaDatos As eTareas_Marketing) As Boolean 'Funcion Eliminar
+    Public Function Eliminar(TablaDatos As eEncargo) As Boolean 'Funcion Eliminar
         Try
             ConexionDB()
             ComandoSQL = New SqlCommand("EliminarEncargo")

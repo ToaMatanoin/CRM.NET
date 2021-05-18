@@ -107,11 +107,11 @@
     Private Sub TrasladoInformacion()
         TxtIDClientePot.Text = Dgv_Listado.SelectedCells.Item(1).Value
         TxtIDUsuario.Text = Dgv_Listado.SelectedCells.Item(2).Value
-        TxtNomCli.Text = Dgv_Listado.SelectedCells.Item(3).Value
-        TxtTelCli.Text = Dgv_Listado.SelectedCells.Item(4).Value
-        TxtEmailCli.Text = Dgv_Listado.SelectedCells.Item(5).Value
-        TxtDescripcion.Text = Dgv_Listado.SelectedCells.Item(6).Value
-        TxtPosibilidad.Text = Dgv_Listado.SelectedCells.Item(7).Value
+        TxtNomCli.Text = Dgv_Listado.SelectedCells.Item(4).Value
+        TxtTelCli.Text = Dgv_Listado.SelectedCells.Item(7).Value
+        TxtEmailCli.Text = Dgv_Listado.SelectedCells.Item(8).Value
+        TxtDescripcion.Text = Dgv_Listado.SelectedCells.Item(5).Value
+        TxtPosibilidad.Text = Dgv_Listado.SelectedCells.Item(6).Value
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click

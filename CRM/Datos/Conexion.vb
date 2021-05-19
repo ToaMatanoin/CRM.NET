@@ -12,10 +12,10 @@ Public Class Conexion
             'Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true") '
 
             'Conexion Julio'
-            Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
+            'Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
 
             'Conexion Josue'
-            'Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")'
+            Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true") '
 
 
             Connect.Open()
@@ -73,13 +73,13 @@ Public Class Conexion
         Return resultado
     End Function
 
-    Function llenado_cb(cb As ComboBox)
+    Function llenado_cb(cb As ComboBox, nombrep As String, nombret As String)
 
         Try
-            Sentencia = New SqlCommand("Select Pro_Nombre from Inventario", Connect)
+            Sentencia = New SqlCommand("Select " & nombrep & " from " & nombret & " ", Connect)
             Ejecucion = Sentencia.ExecuteReader
             While Ejecucion.Read
-                cb.Items.Add(Ejecucion.Item("Pro_Nombre"))
+                cb.Items.Add(Ejecucion.Item(nombrep))
             End While
             Ejecucion.Close()
         Catch ex As Exception

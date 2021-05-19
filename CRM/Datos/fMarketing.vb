@@ -57,6 +57,7 @@ Public Class fMarketing
             ComandoSQL = New SqlCommand("ActualizarMarketing")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
+            ComandoSQL.Parameters.AddWithValue("@ID_Marketing", TablaDatos.pID_Marketing)
             ComandoSQL.Parameters.AddWithValue("@ID_Usuario", TablaDatos.pID_Usuario)
             ComandoSQL.Parameters.AddWithValue("@ID_Producto", TablaDatos.pID_Producto)
             ComandoSQL.Parameters.AddWithValue("@ID_Cliente", TablaDatos.pID_Cliente)

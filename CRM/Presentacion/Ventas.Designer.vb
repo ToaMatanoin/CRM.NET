@@ -36,6 +36,8 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
@@ -50,8 +52,6 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -222,6 +222,24 @@ Partial Class Ventas
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(49, 186)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(72, 19)
+        Me.Label4.TabIndex = 4
+        Me.Label4.Text = "ID Venta"
+        '
+        'Txt_ID_Venta
+        '
+        Me.Txt_ID_Venta.Location = New System.Drawing.Point(21, 208)
+        Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
+        Me.Txt_ID_Venta.Size = New System.Drawing.Size(140, 26)
+        Me.Txt_ID_Venta.TabIndex = 4
+        '
         'BtnIngresar
         '
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -386,24 +404,6 @@ Partial Class Ventas
         Me.eliminar.Name = "eliminar"
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
-        '
-        'Txt_ID_Venta
-        '
-        Me.Txt_ID_Venta.Location = New System.Drawing.Point(21, 208)
-        Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
-        Me.Txt_ID_Venta.Size = New System.Drawing.Size(140, 26)
-        Me.Txt_ID_Venta.TabIndex = 4
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(49, 186)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 19)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "ID Venta"
         '
         'Ventas
         '

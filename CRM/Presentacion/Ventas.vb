@@ -12,15 +12,15 @@
             BtnRegresar.Visible = True
         End If
 
-        MostrarVentas()
+        Mostrar()
 
         nuevo.ConexionDB()
-        nuevo.llenado_cb(Cb_producto)
+        nuevo.llenado_cb(Cb_producto, "Pro_Nombre", "Inventario")
 
         Limpiar()
     End Sub
 
-    Private Sub MostrarVentas()
+    Private Sub Mostrar()
         Try
             Dim Funcion As New fVentas
             TablaDatos = Funcion.Mostrar
@@ -87,5 +87,9 @@
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
         Me.Close()
+    End Sub
+
+    Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
+
     End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class IniciarSesion
     Public nuevo As New Conexion
     Public Bandera As New Boolean
+    Public IDUSU, IDEMP, ROLUSU As String
 
     Private Sub IniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nuevo.ConexionDB()
@@ -21,8 +22,11 @@
                     If (Txt_UsuPass.Text.Equals("")) Then
                         MsgBox("Ingresa contrasea")
                     Else
-
                         If contra.Equals(Txt_UsuPass.Text) Then
+                            nuevo.ConexionDB()
+                            IDUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Usuario", "Usuarios")
+                            IDEMP = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Empleado", "Usuarios")
+                            ROLUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "Usu_Cargo", "Usuarios")
                             Me.Hide()
                             Txt_UsuNom.Text = ""
                             Txt_UsuPass.Text = ""

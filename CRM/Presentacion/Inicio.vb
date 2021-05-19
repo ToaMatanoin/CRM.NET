@@ -1,4 +1,5 @@
 ﻿Public Class Inicio
+
     Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
         Me.Hide()
         Clientes.Show()
@@ -42,6 +43,13 @@
     Private Sub BtnEmpleados_Click(sender As Object, e As EventArgs) Handles BtnEmpleados.Click
         Me.Hide()
         Empleado.Show()
+    End Sub
+
+    Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If (IniciarSesion.ROLUSU.Equals("Admin")) Then
+            BtnUsuarios.Visible = True
+            BtnEmpleados.Visible = True
+        End If
     End Sub
 
 End Class

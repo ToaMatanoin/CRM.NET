@@ -23,6 +23,9 @@
     End Sub
 
     Private Sub BtnEscribir_Click(sender As Object, e As EventArgs) Handles BtnEscribir.Click
+        TxtCorreoCli.Enabled = True
+        TxtMensaje.Enabled = True
+        TxtAsunto.Enabled = True
         Limpiar()
         BtnEnviar.Visible = True
     End Sub
@@ -126,9 +129,9 @@
 
     Private Sub TrasladoInformacion()
 
-        TxtCorreoCli.Text = Dgv_Listado.SelectedCells.Item(5).Value
-        TxtAsunto.Text = Dgv_Listado.SelectedCells.Item(6).Value
-        TxtMensaje.Text = Dgv_Listado.SelectedCells.Item(7).Value
+        TxtCorreoCli.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        TxtAsunto.Text = Dgv_Listado.SelectedCells.Item(8).Value
+        TxtMensaje.Text = Dgv_Listado.SelectedCells.Item(9).Value
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
@@ -159,7 +162,7 @@
             Try
                 Dim TablaDatos As New eComunicacion_Cliente
                 Dim Funcion As New fComunicacion_Cliente
-                ' TablaDatos.pID_Empleado = TxtEmpCod.Text'
+                TablaDatos.pID_Empleado = IniciarSesion.IDEMP
                 TablaDatos.pID_Cliente = TxtCliCod.Text
                 TablaDatos.pEmail_Asunto = TxtAsunto.Text
                 TablaDatos.pEmail_Fecha = Convert.ToString(fechaActual)

@@ -23,6 +23,7 @@ Partial Class Usuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.BtnEmpleado = New System.Windows.Forms.Button()
         Me.TxtCargoEmp = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtNomEmpl = New System.Windows.Forms.TextBox()
@@ -49,7 +50,6 @@ Partial Class Usuarios
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.BtnEmpleado = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -67,7 +67,7 @@ Partial Class Usuarios
         Me.GroupBox4.Controls.Add(Me.TxtIDEmp)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(11, 357)
+        Me.GroupBox4.Location = New System.Drawing.Point(13, 387)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
@@ -75,6 +75,15 @@ Partial Class Usuarios
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Informacion Empleado"
+        '
+        'BtnEmpleado
+        '
+        Me.BtnEmpleado.Location = New System.Drawing.Point(215, 26)
+        Me.BtnEmpleado.Name = "BtnEmpleado"
+        Me.BtnEmpleado.Size = New System.Drawing.Size(103, 32)
+        Me.BtnEmpleado.TabIndex = 7
+        Me.BtnEmpleado.Text = "Empleado"
+        Me.BtnEmpleado.UseVisualStyleBackColor = True
         '
         'TxtCargoEmp
         '
@@ -163,12 +172,12 @@ Partial Class Usuarios
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 107)
+        Me.Label4.Location = New System.Drawing.Point(10, 110)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(137, 19)
+        Me.Label4.Size = New System.Drawing.Size(98, 19)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "E-mail Empleado:"
+        Me.Label4.Text = "Contraseña:"
         '
         'TxtNomUsu
         '
@@ -182,19 +191,19 @@ Partial Class Usuarios
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 73)
+        Me.Label3.Location = New System.Drawing.Point(10, 76)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 19)
+        Me.Label3.Size = New System.Drawing.Size(132, 19)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Telefono Empleado:"
+        Me.Label3.Text = "Nombre Usuario:"
         '
         'TxtIDUsu
         '
-        Me.TxtIDUsu.Location = New System.Drawing.Point(175, 33)
+        Me.TxtIDUsu.Location = New System.Drawing.Point(175, 35)
         Me.TxtIDUsu.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIDUsu.Name = "TxtIDUsu"
-        Me.TxtIDUsu.Size = New System.Drawing.Size(161, 26)
+        Me.TxtIDUsu.Size = New System.Drawing.Size(50, 26)
         Me.TxtIDUsu.TabIndex = 1
         '
         'Label2
@@ -204,9 +213,9 @@ Partial Class Usuarios
         Me.Label2.Location = New System.Drawing.Point(8, 37)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(148, 19)
+        Me.Label2.Size = New System.Drawing.Size(127, 19)
         Me.Label2.TabIndex = 0
-        Me.Label2.Text = "Nombre Empleado:"
+        Me.Label2.Text = "Codigo Usuario:"
         '
         'GroupBox1
         '
@@ -283,7 +292,7 @@ Partial Class Usuarios
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(164, 63)
         Me.BtnModificar.TabIndex = 2
-        Me.BtnModificar.Text = "Modificar Cliente"
+        Me.BtnModificar.Text = "Modificar Usuario"
         Me.BtnModificar.UseVisualStyleBackColor = True
         '
         'BtnEliminar
@@ -294,7 +303,7 @@ Partial Class Usuarios
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(164, 63)
         Me.BtnEliminar.TabIndex = 1
-        Me.BtnEliminar.Text = "Eliminar Cliente"
+        Me.BtnEliminar.Text = "Eliminar Usuario"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
         'BtnIngresar
@@ -305,7 +314,7 @@ Partial Class Usuarios
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(164, 63)
         Me.BtnIngresar.TabIndex = 0
-        Me.BtnIngresar.Text = "Ingresar Cliente"
+        Me.BtnIngresar.Text = "Ingresar Usuario"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'Label1
@@ -337,7 +346,7 @@ Partial Class Usuarios
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(381, 214)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(381, 238)
         Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
@@ -354,20 +363,11 @@ Partial Class Usuarios
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
-        'BtnEmpleado
-        '
-        Me.BtnEmpleado.Location = New System.Drawing.Point(215, 26)
-        Me.BtnEmpleado.Name = "BtnEmpleado"
-        Me.BtnEmpleado.Size = New System.Drawing.Size(103, 32)
-        Me.BtnEmpleado.TabIndex = 7
-        Me.BtnEmpleado.Text = "Empleado"
-        Me.BtnEmpleado.UseVisualStyleBackColor = True
-        '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1022, 528)
+        Me.ClientSize = New System.Drawing.Size(1022, 552)
         Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox4)

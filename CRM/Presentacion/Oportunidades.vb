@@ -76,7 +76,7 @@
         BtnEliminar.Visible = False
     End Sub
 
-    Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
         If Bandera Then
             BtnModificar.Visible = False
@@ -97,7 +97,7 @@
         End If
     End Sub
 
-    Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
         If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
             Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
             ChkCell.Value = Not ChkCell.Value

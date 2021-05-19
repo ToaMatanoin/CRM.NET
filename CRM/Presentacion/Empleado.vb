@@ -3,7 +3,6 @@
     Public Bandera As New Boolean
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
-        Cmb_Buscar.Items.Add("Emp_Telefono")
         Cmb_Buscar.Items.Add("Emp_Email")
         Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False

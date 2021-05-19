@@ -3,6 +3,19 @@
     Private TablaDatos As New DataTable
     Public nuevo As New Conexion
     Public Bandera As New Boolean
+    Private Sub Comunicacion_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Cmb_Buscar.Items.Add("Emp_Email")
+        Cmb_Buscar.Items.Add("Cli_Email")
+        Cmb_Buscar.Items.Add("Emp_Nombre")
+        Cmb_Buscar.Items.Add("Cli_Nombre")
+        Cmb_Buscar.Text = "Emp_Email"
+
+        TxtCliCod.Enabled = False
+
+
+        Mostrar()
+        Limpiar()
+    End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
@@ -97,7 +110,7 @@
     End Sub
 
     Private Sub Limpiar()
-        TxtCorreoUsu.Text = ""
+
         TxtCorreoCli.Text = ""
         TxtAsunto.Text = ""
         TxtMensaje.Text = ""
@@ -112,7 +125,7 @@
     End Sub
 
     Private Sub TrasladoInformacion()
-        TxtCorreoUsu.Text = Dgv_Listado.SelectedCells.Item(3).Value
+
         TxtCorreoCli.Text = Dgv_Listado.SelectedCells.Item(5).Value
         TxtAsunto.Text = Dgv_Listado.SelectedCells.Item(6).Value
         TxtMensaje.Text = Dgv_Listado.SelectedCells.Item(7).Value
@@ -138,22 +151,20 @@
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
-        nuevo.ConexionDB()
-        Dim IDCli As String = nuevo.Buscar_info(TxtCorreoCli.Text, "Cli_Email", "ID_Cliente", "Cliente")
-        Dim IDUsu As String = nuevo.Buscar_info(TxtCorreoUsu.Text, "Emp_Email", "ID_Empleado", "Empleado")
         Dim fechaActual As Date = Date.Now
 
-        If TxtCorreoUsu.Text <> "" And TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And
+        If TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And
             TxtMensaje.Text <> "" Then
 
             Try
                 Dim TablaDatos As New eComunicacion_Cliente
                 Dim Funcion As New fComunicacion_Cliente
+                ' TablaDatos.pID_Empleado = TxtEmpCod.Text'
+                TablaDatos.pID_Cliente = TxtCliCod.Text
                 TablaDatos.pEmail_Asunto = TxtAsunto.Text
-                TablaDatos.pEmail_Cliente = IDCli
-                TablaDatos.pEmail_Fecha = fechaActual
+                TablaDatos.pEmail_Fecha = Convert.ToString(fechaActual)
                 TablaDatos.pEmail_Mensaje = TxtMensaje.Text
-                TablaDatos.pEmail_usuario = IDUsu
+
 
                 If Funcion.Insertar(TablaDatos) Then
                     MessageBox.Show("Mensaje enviado correctamente",
@@ -175,4 +186,13 @@
              MessageBoxIcon.Information)
         End If
     End Sub
+
+    Private Sub BtnCliente_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click
+        Clientes.Bandera = True
+        Clientes.ShowDialog()
+
+        TxtCliCod.Text = Clientes.TxtIDCliente.Text
+        TxtCorreoCli.Text = Clientes.TxtEmailCli.Text
+    End Sub
+
 End Class

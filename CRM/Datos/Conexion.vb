@@ -79,6 +79,7 @@ Public Class Conexion
             Sentencia = New SqlCommand("Select " & nombrep & " from " & nombret & " ", Connect)
             Ejecucion = Sentencia.ExecuteReader
             While Ejecucion.Read
+
                 cb.Items.Add(Ejecucion.Item(nombrep))
             End While
             Ejecucion.Close()
@@ -86,6 +87,24 @@ Public Class Conexion
             MsgBox(ex.ToString)
         End Try
 
+    End Function
+
+    Function Buscar_info(comparar As String, nombrep As String, nombrepre As String, nombret As String) As String
+        Dim info As String
+        Try
+            Sentencia = New SqlCommand("Select " & nombrep & "," & nombrepre & " from " & nombret & " ", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+            While Ejecucion.Read
+                If comparar = Ejecucion.Item(nombrep) Then
+                    info = Convert.ToString(Ejecucion.Item(nombrepre))
+                End If
+            End While
+            Ejecucion.Close()
+            Return info
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return info
     End Function
 
 

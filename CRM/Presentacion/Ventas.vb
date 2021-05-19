@@ -3,6 +3,9 @@
     Public nuevo As New Conexion
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
+    Public Tventa, Desc, IDProd As String
+
+    Public ProdCant, preventa, precompra, proveed As String
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -44,7 +47,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = TxtNomCli.Text
+            VistaDatos.RowFilter = TxtIdclli.Text
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -62,9 +65,9 @@
     End Sub
 
     Private Sub Limpiar()
-        TxtNomCli.Text = ""
-        TxtEmailEmpresa.Text = ""
-        TxtTelEmpresa.Text = ""
+        TxtIdclli.Text = ""
+        Txtcantidad.Text = ""
+        Txtpreciounidad.Text = ""
 
         Rd_contado.Checked = False
         Rd_credito.Checked = False
@@ -89,7 +92,205 @@
         Me.Close()
     End Sub
 
+    Private Sub Cb_producto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_producto.SelectedIndexChanged
+        nuevo.ConexionDB()
+        ProdCant = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_Cantidad", "Inventario")
+        preventa = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreVenta", "Inventario")
+        precompra = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
+        proveed = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Nombre_Proveedor", "Inventario")
+
+
+        IDProd = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "ID_Producto", "Inventario")
+        Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
+    End Sub
+
+    Private Sub Rd_credito_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_credito.CheckedChanged
+        Tventa = "Credito"
+    End Sub
+
+    Private Sub Rd_contado_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_contado.CheckedChanged
+        Tventa = "Contado"
+    End Sub
+
+    Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_tercera_si.CheckedChanged
+        Desc = "Si"
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+
+        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
+            Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
+
+            Dim Resultado1 As DialogResult
+            Resultado1 = MessageBox.Show("Desea Modificar los datos",
+            "Actualizando Registro", MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Question)
+            If Resultado1 = Windows.Forms.DialogResult.OK Then
+                Try
+
+                    Dim TablaDatos As New eInventario
+                    Dim Funcion As New fInventario
+                    TablaDatos.pID_Producto = IDProd
+                    TablaDatos.pPro_Nombre = Cb_producto.Text
+                    TablaDatos.pPro_Cantidad = Convert.ToInt32(ProdCant) + Convert.ToInt32(Txtcantidad.Text)
+                    TablaDatos.pPro_preventa = Convert.ToDouble(preventa)
+                    TablaDatos.pPro_precompra = Convert.ToDouble(precompra)
+                    TablaDatos.pNombre_Proveedor = proveed
+                    TablaDatos.pPro_disponible = 1
+
+                    If Funcion.Actualizar(TablaDatos) Then
+                        MessageBox.Show("prueba de devolver producto a inventario exito",
+                     "Actualizando Registro", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("prueba de devolver producto a inventario fallo",
+                     "Actualizando Registro", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+            Else
+                MessageBox.Show("Cancelado por el usuario",
+                      "Guardando Registro", MessageBoxButtons.OK,
+                       MessageBoxIcon.Information)
+            End If
+        Else
+            MessageBox.Show("Falta Informacion para almacenar",
+                      "Guardando Registro", MessageBoxButtons.OK,
+                       MessageBoxIcon.Information)
+        End If
+
+
+        Dim Resultado As DialogResult
+        Resultado = MessageBox.Show("Desea hacer una devolucion",
+        "Eliminando Registro", MessageBoxButtons.OKCancel,
+        MessageBoxIcon.Question)
+        If Resultado = Windows.Forms.DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In Dgv_Listado.Rows
+                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                    If LineaMarca Then
+                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Venta").Value)
+                        Dim TablaDatos As New eVentas
+                        Dim Funcion As New fVentas
+                        TablaDatos.pID_Ventas = LlavePrimaria
+                        If Funcion.Eliminar(TablaDatos) Then
+                            MessageBox.Show("Devolucion  fue Realizada correctamente",
+                    "Eliminando Registro", MessageBoxButtons.OK,
+                     MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Cancelado por el Usuario",
+                    "Guardando Registro", MessageBoxButtons.OK,
+                     MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+                Call Mostrar()
+                Call Limpiar()
+            Catch Evento As Exception
+                MsgBox(Evento.Message)
+            End Try
+        Else
+            MessageBox.Show("Cancelado por el Usuario",
+                    "Guardando Registro", MessageBoxButtons.OK,
+                     MessageBoxIcon.Information)
+            Call Mostrar()
+            Call Limpiar()
+        End If
+    End Sub
+
+    Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_tercera_no.CheckedChanged
+        Desc = "No"
+    End Sub
+
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
 
+        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
+            Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
+
+            Dim Resultado1 As DialogResult
+            Resultado1 = MessageBox.Show("Desea Modificar los datos",
+            "Actualizando Registro", MessageBoxButtons.OKCancel,
+            MessageBoxIcon.Question)
+            If Resultado1 = Windows.Forms.DialogResult.OK Then
+                Try
+
+                    Dim TablaDatos As New eInventario
+                    Dim Funcion As New fInventario
+                    TablaDatos.pID_Producto = IDProd
+                    TablaDatos.pPro_Nombre = Cb_producto.Text
+                    TablaDatos.pPro_Cantidad = Convert.ToInt32(ProdCant) - Convert.ToInt32(Txtcantidad.Text)
+                    TablaDatos.pPro_preventa = Convert.ToDouble(preventa)
+                    TablaDatos.pPro_precompra = Convert.ToDouble(precompra)
+                    TablaDatos.pNombre_Proveedor = proveed
+                    TablaDatos.pPro_disponible = 1
+
+                    If Funcion.Actualizar(TablaDatos) Then
+                        MessageBox.Show("prueba de venta producto a inventario exito",
+                     "Actualizando Registro", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("prueba de venta producto a inventario fallo",
+                     "Actualizando Registro", MessageBoxButtons.OK,
+                      MessageBoxIcon.Information)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+            Else
+                MessageBox.Show("Cancelado por el usuario",
+                      "Guardando Registro", MessageBoxButtons.OK,
+                       MessageBoxIcon.Information)
+            End If
+        Else
+            MessageBox.Show("Falta Informacion para almacenar",
+                      "Guardando Registro", MessageBoxButtons.OK,
+                       MessageBoxIcon.Information)
+        End If
+
+
+        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
+            Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
+
+
+            Try
+                Dim TablaDatos As New eVentas
+                Dim Funcion As New fVentas
+                'TablaDatos.pID_Usuario =
+                TablaDatos.pID_Cliente = TxtIdclli.Text
+                TablaDatos.pID_Producto = IDProd
+                TablaDatos.pVen_Fecha = Dtp_fecha.Text
+                TablaDatos.pVen_CantVendida = Txtcantidad.Text
+
+                TablaDatos.pVen_subtotal = Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text)
+
+
+                'El uno es para el entero de disponibilidad (1/si  0/no) '
+
+
+                If Funcion.Insertar(TablaDatos) Then
+                    MessageBox.Show("Inventario fue registrado correctamente",
+            "Guardando Registro", MessageBoxButtons.OK,
+             MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Inventario no fue registrado correctamente",
+            "Guardando Registro", MessageBoxButtons.OK,
+             MessageBoxIcon.Error)
+                End If
+                Mostrar()
+                Limpiar()
+            Catch Evento As Exception
+                MsgBox(Evento.Message)
+            End Try
+        Else
+            MessageBox.Show("Falta Informacion para almacenar",
+            "Guardando Registro", MessageBoxButtons.OK,
+             MessageBoxIcon.Information)
+        End If
     End Sub
 End Class

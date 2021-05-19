@@ -6,7 +6,7 @@ Public Class Marketing
     Public nuevo As New Conexion
     Private TablaDatos As New DataTable
     Public Bandera, prueba As New Boolean
-    Public marca As Integer
+    Public marca As String
 
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -23,6 +23,9 @@ Partial Class Marketing
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
+        Me.TxtID_Mark = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Txt_Estrategia = New System.Windows.Forms.TextBox()
         Me.Cb_ID_prod = New System.Windows.Forms.ComboBox()
         Me.Cb_ID_Cli = New System.Windows.Forms.ComboBox()
@@ -42,6 +45,10 @@ Partial Class Marketing
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Rb_tarea = New System.Windows.Forms.RadioButton()
+        Me.Rb_Proyecto = New System.Windows.Forms.RadioButton()
+        Me.Btn_Guardar_proy = New System.Windows.Forms.Button()
         Me.DTPFechaFinalProyecto = New System.Windows.Forms.DateTimePicker()
         Me.DTPFechaInicioProyecto = New System.Windows.Forms.DateTimePicker()
         Me.TxtDescripProyecto = New System.Windows.Forms.TextBox()
@@ -52,19 +59,12 @@ Partial Class Marketing
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.TxtID_Mark = New System.Windows.Forms.TextBox()
-        Me.Btn_Guardar_proy = New System.Windows.Forms.Button()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Rb_Proyecto = New System.Windows.Forms.RadioButton()
-        Me.Rb_tarea = New System.Windows.Forms.RadioButton()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox3
@@ -91,6 +91,35 @@ Partial Class Marketing
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Informacion Marketing"
+        '
+        'Chk_Eliminar
+        '
+        Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(203, 26)
+        Me.Chk_Eliminar.Name = "Chk_Eliminar"
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(94, 23)
+        Me.Chk_Eliminar.TabIndex = 14
+        Me.Chk_Eliminar.Text = "Eliminar"
+        Me.Chk_Eliminar.UseVisualStyleBackColor = True
+        '
+        'TxtID_Mark
+        '
+        Me.TxtID_Mark.Enabled = False
+        Me.TxtID_Mark.Location = New System.Drawing.Point(120, 26)
+        Me.TxtID_Mark.Name = "TxtID_Mark"
+        Me.TxtID_Mark.Size = New System.Drawing.Size(53, 26)
+        Me.TxtID_Mark.TabIndex = 17
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(8, 30)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(107, 19)
+        Me.Label15.TabIndex = 16
+        Me.Label15.Text = "ID Marketing:"
         '
         'Txt_Estrategia
         '
@@ -301,6 +330,47 @@ Partial Class Marketing
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.Rb_tarea)
+        Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
+        Me.GroupBox4.Location = New System.Drawing.Point(164, 26)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(263, 48)
+        Me.GroupBox4.TabIndex = 11
+        Me.GroupBox4.TabStop = False
+        '
+        'Rb_tarea
+        '
+        Me.Rb_tarea.AutoSize = True
+        Me.Rb_tarea.Location = New System.Drawing.Point(169, 19)
+        Me.Rb_tarea.Name = "Rb_tarea"
+        Me.Rb_tarea.Size = New System.Drawing.Size(73, 23)
+        Me.Rb_tarea.TabIndex = 1
+        Me.Rb_tarea.TabStop = True
+        Me.Rb_tarea.Text = "Tarea"
+        Me.Rb_tarea.UseVisualStyleBackColor = True
+        '
+        'Rb_Proyecto
+        '
+        Me.Rb_Proyecto.AutoSize = True
+        Me.Rb_Proyecto.Location = New System.Drawing.Point(23, 19)
+        Me.Rb_Proyecto.Name = "Rb_Proyecto"
+        Me.Rb_Proyecto.Size = New System.Drawing.Size(101, 23)
+        Me.Rb_Proyecto.TabIndex = 0
+        Me.Rb_Proyecto.TabStop = True
+        Me.Rb_Proyecto.Text = "Proyecto"
+        Me.Rb_Proyecto.UseVisualStyleBackColor = True
+        '
+        'Btn_Guardar_proy
+        '
+        Me.Btn_Guardar_proy.Location = New System.Drawing.Point(18, 236)
+        Me.Btn_Guardar_proy.Name = "Btn_Guardar_proy"
+        Me.Btn_Guardar_proy.Size = New System.Drawing.Size(96, 41)
+        Me.Btn_Guardar_proy.TabIndex = 10
+        Me.Btn_Guardar_proy.Text = "Guardar"
+        Me.Btn_Guardar_proy.UseVisualStyleBackColor = True
+        '
         'DTPFechaFinalProyecto
         '
         Me.DTPFechaFinalProyecto.Location = New System.Drawing.Point(145, 155)
@@ -374,9 +444,9 @@ Partial Class Marketing
         Me.Label14.Location = New System.Drawing.Point(14, 90)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(116, 19)
+        Me.Label14.Size = New System.Drawing.Size(95, 24)
         Me.Label14.TabIndex = 0
-        Me.Label14.Text = "Nombre Tarea:"
+        Me.Label14.Text = "Nombre :"
         '
         'Dgv_Listado
         '
@@ -401,76 +471,6 @@ Partial Class Marketing
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
-        'Chk_Eliminar
-        '
-        Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(203, 26)
-        Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(94, 23)
-        Me.Chk_Eliminar.TabIndex = 14
-        Me.Chk_Eliminar.Text = "Eliminar"
-        Me.Chk_Eliminar.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(8, 30)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(134, 24)
-        Me.Label15.TabIndex = 16
-        Me.Label15.Text = "ID Marketing:"
-        '
-        'TxtID_Mark
-        '
-        Me.TxtID_Mark.Enabled = False
-        Me.TxtID_Mark.Location = New System.Drawing.Point(120, 26)
-        Me.TxtID_Mark.Name = "TxtID_Mark"
-        Me.TxtID_Mark.Size = New System.Drawing.Size(53, 26)
-        Me.TxtID_Mark.TabIndex = 17
-        '
-        'Btn_Guardar_proy
-        '
-        Me.Btn_Guardar_proy.Location = New System.Drawing.Point(18, 236)
-        Me.Btn_Guardar_proy.Name = "Btn_Guardar_proy"
-        Me.Btn_Guardar_proy.Size = New System.Drawing.Size(85, 41)
-        Me.Btn_Guardar_proy.TabIndex = 10
-        Me.Btn_Guardar_proy.Text = "Guardar"
-        Me.Btn_Guardar_proy.UseVisualStyleBackColor = True
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.Rb_tarea)
-        Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
-        Me.GroupBox4.Location = New System.Drawing.Point(164, 26)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(263, 48)
-        Me.GroupBox4.TabIndex = 11
-        Me.GroupBox4.TabStop = False
-        '
-        'Rb_Proyecto
-        '
-        Me.Rb_Proyecto.AutoSize = True
-        Me.Rb_Proyecto.Location = New System.Drawing.Point(23, 19)
-        Me.Rb_Proyecto.Name = "Rb_Proyecto"
-        Me.Rb_Proyecto.Size = New System.Drawing.Size(101, 23)
-        Me.Rb_Proyecto.TabIndex = 0
-        Me.Rb_Proyecto.TabStop = True
-        Me.Rb_Proyecto.Text = "Proyecto"
-        Me.Rb_Proyecto.UseVisualStyleBackColor = True
-        '
-        'Rb_tarea
-        '
-        Me.Rb_tarea.AutoSize = True
-        Me.Rb_tarea.Location = New System.Drawing.Point(169, 19)
-        Me.Rb_tarea.Name = "Rb_tarea"
-        Me.Rb_tarea.Size = New System.Drawing.Size(73, 23)
-        Me.Rb_tarea.TabIndex = 1
-        Me.Rb_tarea.TabStop = True
-        Me.Rb_tarea.Text = "Tarea"
-        Me.Rb_tarea.UseVisualStyleBackColor = True
-        '
         'Marketing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -490,9 +490,9 @@ Partial Class Marketing
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

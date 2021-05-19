@@ -24,15 +24,15 @@ Partial Class Ventas
     Private Sub InitializeComponent()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Cb_producto = New System.Windows.Forms.ComboBox()
-        Me.TxtEmailEmpresa = New System.Windows.Forms.TextBox()
+        Me.Txtcantidad = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TxtTelEmpresa = New System.Windows.Forms.TextBox()
+        Me.Txtpreciounidad = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Dtp_fecha = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtNomCli = New System.Windows.Forms.TextBox()
+        Me.TxtIdclli = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -52,6 +52,7 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -66,9 +67,9 @@ Partial Class Ventas
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.Cb_producto)
-        Me.GroupBox4.Controls.Add(Me.TxtEmailEmpresa)
+        Me.GroupBox4.Controls.Add(Me.Txtcantidad)
         Me.GroupBox4.Controls.Add(Me.Label5)
-        Me.GroupBox4.Controls.Add(Me.TxtTelEmpresa)
+        Me.GroupBox4.Controls.Add(Me.Txtpreciounidad)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -90,13 +91,13 @@ Partial Class Ventas
         Me.Cb_producto.Size = New System.Drawing.Size(160, 27)
         Me.Cb_producto.TabIndex = 6
         '
-        'TxtEmailEmpresa
+        'Txtcantidad
         '
-        Me.TxtEmailEmpresa.Location = New System.Drawing.Point(167, 100)
-        Me.TxtEmailEmpresa.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtEmailEmpresa.Name = "TxtEmailEmpresa"
-        Me.TxtEmailEmpresa.Size = New System.Drawing.Size(132, 26)
-        Me.TxtEmailEmpresa.TabIndex = 5
+        Me.Txtcantidad.Location = New System.Drawing.Point(167, 100)
+        Me.Txtcantidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.Txtcantidad.Name = "Txtcantidad"
+        Me.Txtcantidad.Size = New System.Drawing.Size(132, 26)
+        Me.Txtcantidad.TabIndex = 5
         '
         'Label5
         '
@@ -109,13 +110,13 @@ Partial Class Ventas
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Cantidad:"
         '
-        'TxtTelEmpresa
+        'Txtpreciounidad
         '
-        Me.TxtTelEmpresa.Location = New System.Drawing.Point(167, 68)
-        Me.TxtTelEmpresa.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtTelEmpresa.Name = "TxtTelEmpresa"
-        Me.TxtTelEmpresa.Size = New System.Drawing.Size(132, 26)
-        Me.TxtTelEmpresa.TabIndex = 3
+        Me.Txtpreciounidad.Location = New System.Drawing.Point(167, 68)
+        Me.Txtpreciounidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.Txtpreciounidad.Name = "Txtpreciounidad"
+        Me.Txtpreciounidad.Size = New System.Drawing.Size(132, 26)
+        Me.Txtpreciounidad.TabIndex = 3
         '
         'Label6
         '
@@ -143,7 +144,7 @@ Partial Class Ventas
         '
         Me.GroupBox3.Controls.Add(Me.Dtp_fecha)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.TxtNomCli)
+        Me.GroupBox3.Controls.Add(Me.TxtIdclli)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(16, 68)
@@ -174,13 +175,13 @@ Partial Class Ventas
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Fecha"
         '
-        'TxtNomCli
+        'TxtIdclli
         '
-        Me.TxtNomCli.Location = New System.Drawing.Point(107, 36)
-        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4)
-        Me.TxtNomCli.Name = "TxtNomCli"
-        Me.TxtNomCli.Size = New System.Drawing.Size(233, 26)
-        Me.TxtNomCli.TabIndex = 1
+        Me.TxtIdclli.Location = New System.Drawing.Point(107, 36)
+        Me.TxtIdclli.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIdclli.Name = "TxtIdclli"
+        Me.TxtIdclli.Size = New System.Drawing.Size(233, 26)
+        Me.TxtIdclli.TabIndex = 1
         '
         'Label2
         '
@@ -210,6 +211,7 @@ Partial Class Ventas
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Chk_Eliminar)
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.Txt_ID_Venta)
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
@@ -405,6 +407,16 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
+        'Chk_Eliminar
+        '
+        Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(36, 137)
+        Me.Chk_Eliminar.Name = "Chk_Eliminar"
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(100, 23)
+        Me.Chk_Eliminar.TabIndex = 12
+        Me.Chk_Eliminar.Text = "Devolver"
+        Me.Chk_Eliminar.UseVisualStyleBackColor = True
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -439,14 +451,14 @@ Partial Class Ventas
     End Sub
 
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents TxtEmailEmpresa As TextBox
+    Friend WithEvents Txtcantidad As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents TxtTelEmpresa As TextBox
+    Friend WithEvents Txtpreciounidad As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents TxtNomCli As TextBox
+    Friend WithEvents TxtIdclli As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
@@ -468,4 +480,5 @@ Partial Class Ventas
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_ID_Venta As TextBox
+    Friend WithEvents Chk_Eliminar As CheckBox
 End Class

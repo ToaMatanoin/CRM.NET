@@ -1,7 +1,9 @@
 ﻿Public Class Comunicacion_Cliente
 
     Private TablaDatos As New DataTable
+    Public nuevo As New Conexion
     Public Bandera As New Boolean
+
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
         Me.Close()
@@ -136,17 +138,22 @@
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
+        nuevo.ConexionDB()
+        Dim IDCli As String = nuevo.Buscar_info(TxtCorreoCli.Text, "Cli_Email", "ID_Cliente", "Cliente")
+        Dim IDUsu As String = nuevo.Buscar_info(TxtCorreoUsu.Text, "Emp_Email", "ID_Empleado", "Empleado")
+        Dim fechaActual As Date = Date.Now
+
         If TxtCorreoUsu.Text <> "" And TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And
             TxtMensaje.Text <> "" Then
-            Dim fechaActual As Date = Date.Now
+
             Try
                 Dim TablaDatos As New eComunicacion_Cliente
                 Dim Funcion As New fComunicacion_Cliente
                 TablaDatos.pEmail_Asunto = TxtAsunto.Text
-                TablaDatos.pEmail_Cliente = TxtCorreoCli.Text
+                TablaDatos.pEmail_Cliente = IDCli
                 TablaDatos.pEmail_Fecha = fechaActual
                 TablaDatos.pEmail_Mensaje = TxtMensaje.Text
-                TablaDatos.pEmail_usuario = TxtCorreoUsu.Text
+                TablaDatos.pEmail_usuario = IDUsu
 
                 If Funcion.Insertar(TablaDatos) Then
                     MessageBox.Show("Mensaje enviado correctamente",

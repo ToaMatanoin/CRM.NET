@@ -26,17 +26,13 @@ Public Class fComunicacion_Cliente
     End Function
 
     Public Function Insertar(TablaDatos As eComunicacion_Cliente) As Boolean 'Funcion Insertar
-        Dim sqlC As String = "select ID_Cliente from Cliente where Cli_Email=" + TablaDatos.pEmail_Cliente
-        Dim sqlE As String = "select ID_Empleado from Empleado where Emp_Email=" + TablaDatos.pEmail_usuario
         Try
             ConexionDB()
-            Dim cmdC As New SqlCommand(sqlC)
-            Dim cmdE As New SqlCommand(sqlE)
             ComandoSQL = New SqlCommand("InsertarEmail")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
-            ComandoSQL.Parameters.AddWithValue("@ID_Empleado", sqlE)
-            ComandoSQL.Parameters.AddWithValue("@ID_Cliente", cmdC)
+            ComandoSQL.Parameters.AddWithValue("@ID_Empleado", TablaDatos.pID_Empleado)
+            ComandoSQL.Parameters.AddWithValue("@ID_Cliente", TablaDatos.pID_Cliente)
             ComandoSQL.Parameters.AddWithValue("@Email_Asunto", TablaDatos.pEmail_Asunto)
             ComandoSQL.Parameters.AddWithValue("@Email_Mensaje", TablaDatos.pEmail_Mensaje)
             ComandoSQL.Parameters.AddWithValue("@Email_Fecha", TablaDatos.pEmail_Fecha)

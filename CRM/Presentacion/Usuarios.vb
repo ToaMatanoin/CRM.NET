@@ -77,7 +77,11 @@
         If Bandera Then
             BtnModificar.Visible = False
         Else
-            BtnModificar.Visible = True
+            If Chk_Eliminar.Checked Then
+                'no mostrar modificar con el chek eliminar activo'
+            Else
+                BtnModificar.Visible = True
+            End If
         End If
         BtnIngresar.Visible = False
     End Sub

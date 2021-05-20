@@ -74,13 +74,17 @@
             Dim Funcion As New fComunicacion_Cliente
             TablaDatos = Funcion.Mostrar
             Dgv_Listado.Columns.Item("eliminar").Visible = False
+
             If TablaDatos.Rows.Count <> 0 Then
+                'If Dgv_Listado.Columns(2).Equals(IniciarSesion.IDEMP) Then
                 Dgv_Listado.DataSource = TablaDatos
-                Dgv_Listado.ColumnHeadersVisible = True
+                    Dgv_Listado.ColumnHeadersVisible = True
+                'End If
             Else
-                Dgv_Listado.DataSource = Nothing
-                Dgv_Listado.ColumnHeadersVisible = False
-            End If
+                    Dgv_Listado.DataSource = Nothing
+                    Dgv_Listado.ColumnHeadersVisible = False
+                End If
+
         Catch Evento As Exception
             MsgBox(Evento.Message)
         End Try

@@ -47,6 +47,7 @@ Partial Class Empleado
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -294,11 +295,22 @@ Partial Class Empleado
         Me.BtnCerrar.Text = "Cerrar"
         Me.BtnCerrar.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(757, 83)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(123, 31)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Limpiar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(878, 500)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnCerrar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox3)
@@ -311,7 +323,7 @@ Partial Class Empleado
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnIngresar)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Empleado"
         Me.Text = "Empleado"
         Me.GroupBox3.ResumeLayout(False)
@@ -347,4 +359,5 @@ Partial Class Empleado
     Friend WithEvents TxtCargo As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnCerrar As Button
+    Friend WithEvents Button1 As Button
 End Class

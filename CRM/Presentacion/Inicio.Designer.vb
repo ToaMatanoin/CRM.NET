@@ -45,15 +45,14 @@ Partial Class Inicio
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1048, 43)
+        Me.Label1.Size = New System.Drawing.Size(919, 43)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "HËKIN CRM"
+        Me.Label1.Text = "ASOFARMA CRM"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.BtnEmpleados)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.BtnUsuarios)
         Me.GroupBox1.Controls.Add(Me.BtnVentas)
         Me.GroupBox1.Controls.Add(Me.BtnMarketing)
@@ -63,7 +62,7 @@ Partial Class Inicio
         Me.GroupBox1.Controls.Add(Me.BtnClientes)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1048, 139)
+        Me.GroupBox1.Size = New System.Drawing.Size(919, 139)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -81,7 +80,7 @@ Partial Class Inicio
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BtnCerrarSesion)
-        Me.GroupBox2.Location = New System.Drawing.Point(910, 0)
+        Me.GroupBox2.Location = New System.Drawing.Point(793, 59)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
         Me.GroupBox2.TabIndex = 2
@@ -172,7 +171,7 @@ Partial Class Inicio
         '
         Me.GroupBox3.Location = New System.Drawing.Point(12, 204)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(1048, 234)
+        Me.GroupBox3.Size = New System.Drawing.Size(919, 234)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         '
@@ -180,8 +179,9 @@ Partial Class Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1072, 450)
+        Me.ClientSize = New System.Drawing.Size(942, 450)
         Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "Inicio"

@@ -67,7 +67,7 @@
         TxtEmailEmp.Text = ""
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
-
+        Bandera = False
         BtnIngresar.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
@@ -75,11 +75,18 @@
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
+
         If Bandera Then
             BtnModificar.Visible = False
         Else
-            BtnModificar.Visible = True
+            If Chk_Eliminar.Checked Then
+                'no mostrar modificar con el chek eliminar activo'
+            Else
+                BtnModificar.Visible = True
+            End If
+
         End If
+
         BtnIngresar.Visible = False
     End Sub
 
@@ -178,6 +185,7 @@
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
+            BtnModificar.Visible = False
             BtnIngresar.Visible = False
         End If
     End Sub
@@ -233,6 +241,18 @@
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Limpiar()
+        If Bandera Then
+            BtnCerrar.Visible = True
+            BtnRegresar.Visible = False
+        Else
+            BtnCerrar.Visible = False
+            BtnRegresar.Visible = True
+        End If
     End Sub
 End Class

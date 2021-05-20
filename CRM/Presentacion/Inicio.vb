@@ -8,6 +8,9 @@
     Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
         IniciarSesion.Visible = True
         Me.Close()
+        IniciarSesion.IDUSU = ""
+        IniciarSesion.IDEMP = ""
+        IniciarSesion.ROLUSU = ""
     End Sub
 
     Private Sub BtnOportunidades_Click(sender As Object, e As EventArgs) Handles BtnOportunidades.Click
@@ -46,7 +49,7 @@
     End Sub
 
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If (IniciarSesion.ROLUSU.Equals("Admin")) Then
+        If (IniciarSesion.ROLUSU.Equals("Admin") Or IniciarSesion.ROLUSU.Equals("admin") Or IniciarSesion.ROLUSU.Equals("ADMIN")) Then
             BtnUsuarios.Visible = True
             BtnEmpleados.Visible = True
         End If

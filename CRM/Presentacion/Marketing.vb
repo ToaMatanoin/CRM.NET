@@ -4,7 +4,7 @@
 Public Class Marketing
 
     Public nuevo As New Conexion
-    Private TablaDatos As New DataTable
+    Private TablaDatos, tablaproy, tablatar As New DataTable
     Public Bandera, prueba As New Boolean
     Public marca As String
 
@@ -52,6 +52,75 @@ Public Class Marketing
 
     End Sub
 
+    Private Sub Mostrarproy()
+        Try
+            Dim Funcion As New fProyectos_Marketing
+            tablaproy = Funcion.Mostrar
+            If tablaproy.Rows.Count <> 0 Then
+                Dgvtp.DataSource = tablaproy
+                Dgvtp.ColumnHeadersVisible = True
+            Else
+                Dgvtp.DataSource = Nothing
+                Dgvtp.ColumnHeadersVisible = False
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+        Buscarproy()
+
+    End Sub
+
+    Private Sub Mostrartar()
+        Try
+            Dim Funcion As New fTareas_Marketing
+            tablatar = Funcion.Mostrar
+            If tablatar.Rows.Count <> 0 Then
+                Dgvtp.DataSource = tablatar
+                Dgvtp.ColumnHeadersVisible = True
+            Else
+                Dgvtp.DataSource = Nothing
+                Dgvtp.ColumnHeadersVisible = False
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+        Buscartar()
+
+    End Sub
+
+    Private Sub Buscartar()
+        Try
+            Dim ConjuntoDatos As New DataSet
+            ConjuntoDatos.Tables.Add(tablatar.Copy)
+            Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            If VistaDatos.Count <> 0 Then
+                Dgvtp.DataSource = VistaDatos
+                OcultarColumnatar()
+            Else
+                Dgvtp.DataSource = Nothing
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+    End Sub
+
+    Private Sub Buscarproy()
+        Try
+            Dim ConjuntoDatos As New DataSet
+            ConjuntoDatos.Tables.Add(tablaproy.Copy)
+            Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            If VistaDatos.Count <> 0 Then
+                Dgvtp.DataSource = VistaDatos
+                OcultarColumnapr()
+            Else
+                Dgvtp.DataSource = Nothing
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+    End Sub
+
+
     Private Sub Buscar()
         Try
             Dim ConjuntoDatos As New DataSet
@@ -70,6 +139,19 @@ Public Class Marketing
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
+        Dgv_Listado.Columns(2).Visible = False
+        Dgv_Listado.Columns(4).Visible = False
+        Dgv_Listado.Columns(6).Visible = False
+    End Sub
+
+    Private Sub OcultarColumnapr()
+        Dgvtp.Columns(1).Visible = False
+        Dgvtp.Columns(2).Visible = False
+    End Sub
+
+    Private Sub OcultarColumnatar()
+        Dgvtp.Columns(1).Visible = False
+        Dgvtp.Columns(2).Visible = False
     End Sub
 
 
@@ -91,6 +173,7 @@ Public Class Marketing
         BtnIngresar.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
+        Btn_Guardar_proy.Enabled = False
 
     End Sub
 
@@ -305,10 +388,18 @@ Public Class Marketing
 
     Private Sub Rb_Proyecto_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_Proyecto.CheckedChanged
         marca = "Proyecto"
+        Btn_Guardar_proy.Enabled = True
+        Mostrarproy()
     End Sub
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
+        Btn_Guardar_proy.Enabled = True
         marca = "Tarea"
+        Mostrartar()
+    End Sub
+
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
+        Limpiar()
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click

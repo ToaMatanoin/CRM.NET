@@ -53,6 +53,7 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Btn_nuevo = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -211,7 +212,7 @@ Partial Class Ventas
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.Chk_Eliminar)
+        Me.GroupBox5.Controls.Add(Me.Btn_nuevo)
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.Txt_ID_Venta)
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
@@ -227,9 +228,9 @@ Partial Class Ventas
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(36, 137)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(248, 229)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(100, 23)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(86, 21)
         Me.Chk_Eliminar.TabIndex = 12
         Me.Chk_Eliminar.Text = "Devolver"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
@@ -247,6 +248,7 @@ Partial Class Ventas
         '
         'Txt_ID_Venta
         '
+        Me.Txt_ID_Venta.Enabled = False
         Me.Txt_ID_Venta.Location = New System.Drawing.Point(21, 208)
         Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
         Me.Txt_ID_Venta.Size = New System.Drawing.Size(140, 26)
@@ -258,7 +260,7 @@ Partial Class Ventas
         Me.BtnIngresar.Location = New System.Drawing.Point(10, 27)
         Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(164, 63)
+        Me.BtnIngresar.Size = New System.Drawing.Size(164, 59)
         Me.BtnIngresar.TabIndex = 3
         Me.BtnIngresar.Text = "Ingresar Venta"
         Me.BtnIngresar.UseVisualStyleBackColor = True
@@ -417,11 +419,21 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
+        'Btn_nuevo
+        '
+        Me.Btn_nuevo.Location = New System.Drawing.Point(10, 107)
+        Me.Btn_nuevo.Name = "Btn_nuevo"
+        Me.Btn_nuevo.Size = New System.Drawing.Size(164, 47)
+        Me.Btn_nuevo.TabIndex = 5
+        Me.Btn_nuevo.Text = "Nuevo"
+        Me.Btn_nuevo.UseVisualStyleBackColor = True
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1264, 655)
+        Me.ClientSize = New System.Drawing.Size(1011, 524)
+        Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox6)
@@ -447,6 +459,7 @@ Partial Class Ventas
         Me.GroupBox8.PerformLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -481,4 +494,5 @@ Partial Class Ventas
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_ID_Venta As TextBox
     Friend WithEvents Chk_Eliminar As CheckBox
+    Friend WithEvents Btn_nuevo As Button
 End Class

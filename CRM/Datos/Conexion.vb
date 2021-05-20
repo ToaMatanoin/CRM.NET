@@ -118,10 +118,6 @@ Public Class Conexion
                 If comparar2 = Ejecucion.Item(nombrep2) Then
                     If comparar1 <= Convert.ToInt32(Ejecucion.Item(nombrep)) Then
                         resultado = True
-                    Else
-                        MessageBox.Show("falta perro",
-                          "Guardando Registro", MessageBoxButtons.OK,
-                           MessageBoxIcon.Information)
                     End If
                 End If
             End While

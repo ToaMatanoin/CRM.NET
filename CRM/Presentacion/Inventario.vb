@@ -53,6 +53,7 @@
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
+        Dgv_Listado.Columns(7).Visible = False
     End Sub
 
 

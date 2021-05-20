@@ -59,12 +59,14 @@ Partial Class Marketing
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Dgvtp = New System.Windows.Forms.DataGridView()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox3
@@ -272,7 +274,7 @@ Partial Class Marketing
         Me.BtnBuscar.Name = "BtnBuscar"
         Me.BtnBuscar.Size = New System.Drawing.Size(164, 63)
         Me.BtnBuscar.TabIndex = 2
-        Me.BtnBuscar.Text = "Buscar Marketing"
+        Me.BtnBuscar.Text = "Nuevo Marketing"
         Me.BtnBuscar.UseVisualStyleBackColor = True
         '
         'BtnEliminar
@@ -322,11 +324,11 @@ Partial Class Marketing
         Me.GroupBox5.Controls.Add(Me.TxtNom_proyec)
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(337, 193)
+        Me.GroupBox5.Location = New System.Drawing.Point(337, 197)
         Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox5.Size = New System.Drawing.Size(560, 309)
+        Me.GroupBox5.Size = New System.Drawing.Size(560, 278)
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         '
@@ -334,7 +336,7 @@ Partial Class Marketing
         '
         Me.GroupBox4.Controls.Add(Me.Rb_tarea)
         Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
-        Me.GroupBox4.Location = New System.Drawing.Point(164, 26)
+        Me.GroupBox4.Location = New System.Drawing.Point(169, 10)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(263, 48)
         Me.GroupBox4.TabIndex = 11
@@ -364,7 +366,8 @@ Partial Class Marketing
         '
         'Btn_Guardar_proy
         '
-        Me.Btn_Guardar_proy.Location = New System.Drawing.Point(18, 236)
+        Me.Btn_Guardar_proy.Enabled = False
+        Me.Btn_Guardar_proy.Location = New System.Drawing.Point(29, 216)
         Me.Btn_Guardar_proy.Name = "Btn_Guardar_proy"
         Me.Btn_Guardar_proy.Size = New System.Drawing.Size(96, 41)
         Me.Btn_Guardar_proy.TabIndex = 10
@@ -373,7 +376,7 @@ Partial Class Marketing
         '
         'DTPFechaFinalProyecto
         '
-        Me.DTPFechaFinalProyecto.Location = New System.Drawing.Point(145, 155)
+        Me.DTPFechaFinalProyecto.Location = New System.Drawing.Point(156, 135)
         Me.DTPFechaFinalProyecto.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPFechaFinalProyecto.Name = "DTPFechaFinalProyecto"
         Me.DTPFechaFinalProyecto.Size = New System.Drawing.Size(392, 26)
@@ -381,7 +384,7 @@ Partial Class Marketing
         '
         'DTPFechaInicioProyecto
         '
-        Me.DTPFechaInicioProyecto.Location = New System.Drawing.Point(145, 121)
+        Me.DTPFechaInicioProyecto.Location = New System.Drawing.Point(156, 101)
         Me.DTPFechaInicioProyecto.Margin = New System.Windows.Forms.Padding(4)
         Me.DTPFechaInicioProyecto.Name = "DTPFechaInicioProyecto"
         Me.DTPFechaInicioProyecto.Size = New System.Drawing.Size(392, 26)
@@ -389,7 +392,7 @@ Partial Class Marketing
         '
         'TxtDescripProyecto
         '
-        Me.TxtDescripProyecto.Location = New System.Drawing.Point(129, 194)
+        Me.TxtDescripProyecto.Location = New System.Drawing.Point(140, 174)
         Me.TxtDescripProyecto.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescripProyecto.Multiline = True
         Me.TxtDescripProyecto.Name = "TxtDescripProyecto"
@@ -400,7 +403,7 @@ Partial Class Marketing
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(14, 193)
+        Me.Label11.Location = New System.Drawing.Point(25, 173)
         Me.Label11.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(102, 19)
@@ -411,7 +414,7 @@ Partial Class Marketing
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(14, 161)
+        Me.Label12.Location = New System.Drawing.Point(25, 141)
         Me.Label12.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(100, 19)
@@ -422,7 +425,7 @@ Partial Class Marketing
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(14, 127)
+        Me.Label13.Location = New System.Drawing.Point(25, 107)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(105, 19)
@@ -431,7 +434,7 @@ Partial Class Marketing
         '
         'TxtNom_proyec
         '
-        Me.TxtNom_proyec.Location = New System.Drawing.Point(145, 86)
+        Me.TxtNom_proyec.Location = New System.Drawing.Point(156, 66)
         Me.TxtNom_proyec.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNom_proyec.Name = "TxtNom_proyec"
         Me.TxtNom_proyec.Size = New System.Drawing.Size(392, 26)
@@ -441,10 +444,10 @@ Partial Class Marketing
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(14, 90)
+        Me.Label14.Location = New System.Drawing.Point(25, 70)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(95, 24)
+        Me.Label14.Size = New System.Drawing.Size(76, 19)
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "Nombre :"
         '
@@ -471,11 +474,26 @@ Partial Class Marketing
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
+        'Dgvtp
+        '
+        Me.Dgvtp.AllowUserToAddRows = False
+        Me.Dgvtp.AllowUserToDeleteRows = False
+        Me.Dgvtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgvtp.Location = New System.Drawing.Point(337, 497)
+        Me.Dgvtp.Margin = New System.Windows.Forms.Padding(4)
+        Me.Dgvtp.Name = "Dgvtp"
+        Me.Dgvtp.ReadOnly = True
+        Me.Dgvtp.RowHeadersWidth = 51
+        Me.Dgvtp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgvtp.Size = New System.Drawing.Size(560, 137)
+        Me.Dgvtp.TabIndex = 14
+        '
         'Marketing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1589, 657)
+        Me.Controls.Add(Me.Dgvtp)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox3)
@@ -493,6 +511,7 @@ Partial Class Marketing
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -533,4 +552,5 @@ Partial Class Marketing
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Rb_tarea As RadioButton
     Friend WithEvents Rb_Proyecto As RadioButton
+    Friend WithEvents Dgvtp As DataGridView
 End Class

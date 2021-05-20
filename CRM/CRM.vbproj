@@ -77,6 +77,7 @@
     <Compile Include="Datos\fDevoluciones.vb" />
     <Compile Include="Datos\fEmpleados.vb" />
     <Compile Include="Datos\fEncargo.vb" />
+    <Compile Include="Datos\fFactura.vb" />
     <Compile Include="Datos\fInventario.vb" />
     <Compile Include="Datos\fMarketing.vb" />
     <Compile Include="Datos\fOportunides.vb" />
@@ -86,6 +87,7 @@
     <Compile Include="Datos\fVentas.vb" />
     <Compile Include="Entidad\eDevoluciones.vb" />
     <Compile Include="Entidad\eEncargo.vb" />
+    <Compile Include="Entidad\eFactura.vb" />
     <Compile Include="Entidad\eInventario.vb" />
     <Compile Include="Entidad\eComunicacion_Cliente.vb" />
     <Compile Include="Entidad\eEmpleados.vb" />

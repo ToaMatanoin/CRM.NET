@@ -36,12 +36,13 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.BtnDevolucion = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Rd_contado = New System.Windows.Forms.RadioButton()
@@ -52,7 +53,6 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -198,7 +198,7 @@ Partial Class Ventas
         '
         Me.GroupBox1.Controls.Add(Me.GroupBox5)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.BtnBuscar)
+        Me.GroupBox1.Controls.Add(Me.BtnDevolucion)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(16, 188)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
@@ -223,6 +223,16 @@ Partial Class Ventas
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
+        '
+        'Chk_Eliminar
+        '
+        Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(36, 137)
+        Me.Chk_Eliminar.Name = "Chk_Eliminar"
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(100, 23)
+        Me.Chk_Eliminar.TabIndex = 12
+        Me.Chk_Eliminar.Text = "Devolver"
+        Me.Chk_Eliminar.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -275,16 +285,16 @@ Partial Class Ventas
         Me.BtnRegresar.Text = "Regresar"
         Me.BtnRegresar.UseVisualStyleBackColor = True
         '
-        'BtnBuscar
+        'BtnDevolucion
         '
-        Me.BtnBuscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Location = New System.Drawing.Point(19, 272)
-        Me.BtnBuscar.Margin = New System.Windows.Forms.Padding(4)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(164, 63)
-        Me.BtnBuscar.TabIndex = 2
-        Me.BtnBuscar.Text = "Devolución"
-        Me.BtnBuscar.UseVisualStyleBackColor = True
+        Me.BtnDevolucion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDevolucion.Location = New System.Drawing.Point(19, 272)
+        Me.BtnDevolucion.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnDevolucion.Name = "BtnDevolucion"
+        Me.BtnDevolucion.Size = New System.Drawing.Size(164, 63)
+        Me.BtnDevolucion.TabIndex = 2
+        Me.BtnDevolucion.Text = "Devolución"
+        Me.BtnDevolucion.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -407,16 +417,6 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
-        'Chk_Eliminar
-        '
-        Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(36, 137)
-        Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(100, 23)
-        Me.Chk_Eliminar.TabIndex = 12
-        Me.Chk_Eliminar.Text = "Devolver"
-        Me.Chk_Eliminar.UseVisualStyleBackColor = True
-        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -463,7 +463,7 @@ Partial Class Ventas
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BtnRegresar As Button
-    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents BtnDevolucion As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Cb_producto As ComboBox
     Friend WithEvents Dtp_fecha As DateTimePicker

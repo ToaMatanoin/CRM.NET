@@ -12,10 +12,10 @@ Public Class Conexion
             'Connect = New SqlConnection("data source=.\sqlexpress;initial catalog=ASOFARMA;integrated security=true") '
 
             'Conexion Julio'
-            Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
+            'Connect = New SqlConnection("data source=localhost\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true")
 
             'Conexion Josue'
-            'Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true") '
+            Connect = New SqlConnection("data source=LAPTOP-J5B9UU98\SQLEXPRESS;initial catalog=ASOFARMA;integrated security=true") '
 
 
             Connect.Open()
@@ -79,7 +79,6 @@ Public Class Conexion
             Sentencia = New SqlCommand("Select " & nombrep & " from " & nombret & " ", Connect)
             Ejecucion = Sentencia.ExecuteReader
             While Ejecucion.Read
-
                 cb.Items.Add(Ejecucion.Item(nombrep))
             End While
             Ejecucion.Close()
@@ -105,6 +104,33 @@ Public Class Conexion
             MsgBox(ex.ToString)
         End Try
         Return info
+    End Function
+
+    'poner condicion de que el proveedor sea el mismo
+    Function comparar_enteros(comparar1 As Integer, comparar2 As String, nombrep As String,
+                              nombrep2 As String, nombret As String) As Boolean
+
+        Dim resultado As Boolean = False
+        Try
+            Sentencia = New SqlCommand("Select " & nombrep & "," & nombrep2 & " from " & nombret & " ", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+            While Ejecucion.Read
+                If comparar2 = Ejecucion.Item(nombrep2) Then
+                    If comparar1 <= Convert.ToInt32(Ejecucion.Item(nombrep)) Then
+                        resultado = True
+                    Else
+                        MessageBox.Show("falta perro",
+                          "Guardando Registro", MessageBoxButtons.OK,
+                           MessageBoxIcon.Information)
+                    End If
+                End If
+            End While
+            Ejecucion.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
     End Function
 
 End Class

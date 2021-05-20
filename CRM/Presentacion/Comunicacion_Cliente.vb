@@ -106,6 +106,8 @@
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
+        Dgv_Listado.Columns(2).Visible = False
+        Dgv_Listado.Columns(5).Visible = False
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
@@ -173,6 +175,7 @@
                     MessageBox.Show("Mensaje enviado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
              MessageBoxIcon.Information)
+
                 Else
                     MessageBox.Show("Mensaje no pudo ser enviado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
@@ -180,6 +183,9 @@
                 End If
                 Mostrar()
                 Limpiar()
+                TxtCorreoCli.Enabled = False
+                TxtMensaje.Enabled = False
+                TxtAsunto.Enabled = False
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try

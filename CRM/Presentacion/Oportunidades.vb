@@ -56,6 +56,7 @@
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
+        Dgv_Listado.Columns(2).Visible = False
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
@@ -67,7 +68,6 @@
         TxtNomCli.Text = ""
         TxtTelCli.Text = ""
         TxtEmailCli.Text = ""
-        TxtIDUsuario.Text = ""
         TxtDescripcion.Text = ""
         TxtPosibilidad.Text = ""
 
@@ -106,7 +106,6 @@
 
     Private Sub TrasladoInformacion()
         TxtIDClientePot.Text = Dgv_Listado.SelectedCells.Item(1).Value
-        TxtIDUsuario.Text = Dgv_Listado.SelectedCells.Item(2).Value
         TxtNomCli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         TxtTelCli.Text = Dgv_Listado.SelectedCells.Item(7).Value
         TxtEmailCli.Text = Dgv_Listado.SelectedCells.Item(8).Value
@@ -121,12 +120,12 @@
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And
-            TxtIDUsuario.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
+             TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
 
             Try
                 Dim TablaDatos As New eOportunidades
                 Dim Funcion As New fOportunides
-                TablaDatos.pID_Usuario = TxtIDUsuario.Text
+                TablaDatos.pID_Usuario = IniciarSesion.IDUSU
                 TablaDatos.pCliPot_Nombre = TxtNomCli.Text
                 TablaDatos.pDescrip = TxtDescripcion.Text
                 TablaDatos.pPosibilidad = TxtPosibilidad.Text
@@ -150,7 +149,7 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
         If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And
-            TxtIDUsuario.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
+             TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -159,7 +158,7 @@
                     Dim TablaDatos As New eOportunidades
                     Dim Funcion As New fOportunides
                     TablaDatos.pID_ClientePot = TxtIDClientePot.Text
-                    TablaDatos.pID_Usuario = TxtIDUsuario.Text
+                    TablaDatos.pID_Usuario = IniciarSesion.IDUSU
                     TablaDatos.pCliPot_Nombre = TxtNomCli.Text
                     TablaDatos.pDescrip = TxtDescripcion.Text
                     TablaDatos.pPosibilidad = TxtPosibilidad.Text

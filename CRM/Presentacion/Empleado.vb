@@ -117,6 +117,7 @@
                     MessageBox.Show("Empleado fue registrado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
              MessageBoxIcon.Information)
+                    BtnIngresar.Visible = False
                 Else
                     MessageBox.Show("Empleado no fue registrado correctamente",
             "Guardando Registro", MessageBoxButtons.OK,
@@ -254,5 +255,6 @@
             BtnCerrar.Visible = False
             BtnRegresar.Visible = True
         End If
+        BtnIngresar.Visible = True
     End Sub
 End Class

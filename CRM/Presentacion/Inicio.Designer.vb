@@ -25,8 +25,6 @@ Partial Class Inicio
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnEmpleados = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.BtnVentas = New System.Windows.Forms.Button()
         Me.BtnMarketing = New System.Windows.Forms.Button()
@@ -34,6 +32,8 @@ Partial Class Inicio
         Me.BtnInventario = New System.Windows.Forms.Button()
         Me.BtnComunicacion = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -45,7 +45,7 @@ Partial Class Inicio
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 13)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(919, 43)
+        Me.Label1.Size = New System.Drawing.Size(877, 43)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "ASOFARMA CRM"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -62,7 +62,7 @@ Partial Class Inicio
         Me.GroupBox1.Controls.Add(Me.BtnClientes)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 59)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(919, 139)
+        Me.GroupBox1.Size = New System.Drawing.Size(877, 139)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
@@ -76,25 +76,6 @@ Partial Class Inicio
         Me.BtnEmpleados.Text = "Empleados"
         Me.BtnEmpleados.UseVisualStyleBackColor = True
         Me.BtnEmpleados.Visible = False
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.BtnCerrarSesion)
-        Me.GroupBox2.Location = New System.Drawing.Point(793, 59)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        '
-        'BtnCerrarSesion
-        '
-        Me.BtnCerrarSesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrarSesion.Location = New System.Drawing.Point(6, 19)
-        Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
-        Me.BtnCerrarSesion.Size = New System.Drawing.Size(123, 51)
-        Me.BtnCerrarSesion.TabIndex = 2
-        Me.BtnCerrarSesion.Text = "Cerrar Sesion"
-        Me.BtnCerrarSesion.UseVisualStyleBackColor = True
         '
         'BtnUsuarios
         '
@@ -167,11 +148,30 @@ Partial Class Inicio
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.BtnCerrarSesion)
+        Me.GroupBox2.Location = New System.Drawing.Point(793, 59)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(96, 139)
+        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabStop = False
+        '
+        'BtnCerrarSesion
+        '
+        Me.BtnCerrarSesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(6, 19)
+        Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
+        Me.BtnCerrarSesion.Size = New System.Drawing.Size(81, 108)
+        Me.BtnCerrarSesion.TabIndex = 2
+        Me.BtnCerrarSesion.Text = "Cerrar Sesion"
+        Me.BtnCerrarSesion.UseVisualStyleBackColor = True
+        '
         'GroupBox3
         '
         Me.GroupBox3.Location = New System.Drawing.Point(12, 204)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(919, 234)
+        Me.GroupBox3.Size = New System.Drawing.Size(877, 234)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         '
@@ -179,7 +179,7 @@ Partial Class Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(942, 450)
+        Me.ClientSize = New System.Drawing.Size(900, 450)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

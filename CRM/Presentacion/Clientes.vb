@@ -263,5 +263,13 @@
             BtnCerrar.Visible = False
             BtnRegresar.Visible = True
         End If
+        TxtNomCli.Enabled = True
+        TxtTelCli.Enabled = True
+        TxtEmailCli.Enabled = True
+        TxtNomEmpresa.Enabled = True
+        TxtTelEmpresa.Enabled = True
+        TxtEmailEmpresa.Enabled = True
+        TxtRTN.Enabled = True
+        BtnIngresar.Visible = True
     End Sub
 End Class

@@ -56,6 +56,7 @@ Partial Class Clientes
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,22 +64,22 @@ Partial Class Clientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox1.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox1.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 55)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(662, 86)
+        Me.GroupBox1.Size = New System.Drawing.Size(765, 86)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         '
         'Txt_Buscar
         '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(413, 34)
+        Me.Txt_Buscar.Location = New System.Drawing.Point(551, 35)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
         Me.Txt_Buscar.Size = New System.Drawing.Size(191, 43)
@@ -87,7 +88,7 @@ Partial Class Clientes
         'Cmb_Buscar
         '
         Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(456, 13)
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(594, 14)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
         Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 21)
         Me.Cmb_Buscar.TabIndex = 11
@@ -95,7 +96,7 @@ Partial Class Clientes
         'Lb_Buscar
         '
         Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(411, 15)
+        Me.Lb_Buscar.Location = New System.Drawing.Point(549, 16)
         Me.Lb_Buscar.Name = "Lb_Buscar"
         Me.Lb_Buscar.Size = New System.Drawing.Size(40, 13)
         Me.Lb_Buscar.TabIndex = 10
@@ -104,7 +105,7 @@ Partial Class Clientes
         'BtnEliminar
         '
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(265, 19)
+        Me.BtnEliminar.Location = New System.Drawing.Point(403, 20)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(129, 51)
         Me.BtnEliminar.TabIndex = 1
@@ -113,7 +114,9 @@ Partial Class Clientes
         '
         'GroupBox2
         '
-        Me.GroupBox2.Location = New System.Drawing.Point(627, 0)
+        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
+        Me.GroupBox2.Controls.Add(Me.BtnCerrar)
+        Me.GroupBox2.Location = New System.Drawing.Point(777, 55)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
         Me.GroupBox2.TabIndex = 2
@@ -122,7 +125,7 @@ Partial Class Clientes
         'BtnModificar
         '
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Location = New System.Drawing.Point(136, 19)
+        Me.BtnModificar.Location = New System.Drawing.Point(274, 20)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(123, 51)
         Me.BtnModificar.TabIndex = 2
@@ -132,7 +135,7 @@ Partial Class Clientes
         'BtnIngresar
         '
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Location = New System.Drawing.Point(7, 19)
+        Me.BtnIngresar.Location = New System.Drawing.Point(145, 20)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(123, 51)
         Me.BtnIngresar.TabIndex = 0
@@ -142,7 +145,7 @@ Partial Class Clientes
         'BtnRegresar
         '
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(648, 74)
+        Me.BtnRegresar.Location = New System.Drawing.Point(6, 13)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(123, 32)
         Me.BtnRegresar.TabIndex = 2
@@ -155,7 +158,7 @@ Partial Class Clientes
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(10, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(767, 43)
+        Me.Label1.Size = New System.Drawing.Size(905, 43)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Gestionar Cliente"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -171,7 +174,7 @@ Partial Class Clientes
         Me.GroupBox3.Controls.Add(Me.TxtNomCli)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 170)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 147)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(235, 154)
         Me.GroupBox3.TabIndex = 4
@@ -257,7 +260,7 @@ Partial Class Clientes
         Me.GroupBox4.Controls.Add(Me.TxtNomEmpresa)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(12, 332)
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 307)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(235, 140)
         Me.GroupBox4.TabIndex = 6
@@ -338,12 +341,12 @@ Partial Class Clientes
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(267, 193)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(267, 170)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(512, 297)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(648, 277)
         Me.Dgv_Listado.TabIndex = 7
         '
         'eliminar
@@ -357,7 +360,7 @@ Partial Class Clientes
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(267, 170)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(267, 147)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
         Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
         Me.Chk_Eliminar.TabIndex = 11
@@ -367,7 +370,7 @@ Partial Class Clientes
         'BtnCerrar
         '
         Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrar.Location = New System.Drawing.Point(648, 113)
+        Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
         Me.BtnCerrar.TabIndex = 26
@@ -377,22 +380,20 @@ Partial Class Clientes
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(648, 147)
+        Me.Button1.Location = New System.Drawing.Point(14, 19)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 32)
+        Me.Button1.Size = New System.Drawing.Size(123, 51)
         Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Limpiar"
+        Me.Button1.Text = "Nuevo Cliente"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(808, 501)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.BtnCerrar)
-        Me.Controls.Add(Me.BtnRegresar)
+        Me.ClientSize = New System.Drawing.Size(924, 455)
         Me.Controls.Add(Me.Chk_Eliminar)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
@@ -402,6 +403,7 @@ Partial Class Clientes
         Me.Text = "Clientes"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)

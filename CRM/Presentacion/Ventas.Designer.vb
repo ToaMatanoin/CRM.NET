@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Ventas
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Ventas
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Cb_producto = New System.Windows.Forms.ComboBox()
@@ -36,6 +36,7 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Btn_NuevaVenta = New System.Windows.Forms.Button()
         Me.Btn_Limpiar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
@@ -54,7 +55,9 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Btn_NuevaVenta = New System.Windows.Forms.Button()
+        Me.Txt_Cantmaxima = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Lb_IDFactura = New System.Windows.Forms.Label()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -68,16 +71,20 @@ Partial Class Ventas
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.Txt_Cantmaxima)
         Me.GroupBox4.Controls.Add(Me.Cb_producto)
+        Me.GroupBox4.Controls.Add(Me.Label8)
         Me.GroupBox4.Controls.Add(Me.Txtcantidad)
         Me.GroupBox4.Controls.Add(Me.Label5)
         Me.GroupBox4.Controls.Add(Me.Txtpreciounidad)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(704, 55)
+        Me.GroupBox4.Location = New System.Drawing.Point(843, 68)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(239, 108)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Size = New System.Drawing.Size(415, 133)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Información Compra"
@@ -85,42 +92,48 @@ Partial Class Ventas
         'Cb_producto
         '
         Me.Cb_producto.FormattingEnabled = True
-        Me.Cb_producto.Location = New System.Drawing.Point(104, 25)
+        Me.Cb_producto.Location = New System.Drawing.Point(139, 31)
+        Me.Cb_producto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Cb_producto.Name = "Cb_producto"
-        Me.Cb_producto.Size = New System.Drawing.Size(121, 24)
+        Me.Cb_producto.Size = New System.Drawing.Size(265, 27)
         Me.Cb_producto.TabIndex = 6
         '
         'Txtcantidad
         '
-        Me.Txtcantidad.Location = New System.Drawing.Point(125, 81)
+        Me.Txtcantidad.Location = New System.Drawing.Point(167, 100)
+        Me.Txtcantidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txtcantidad.Name = "Txtcantidad"
-        Me.Txtcantidad.Size = New System.Drawing.Size(100, 22)
+        Me.Txtcantidad.Size = New System.Drawing.Size(133, 26)
         Me.Txtcantidad.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 82)
+        Me.Label5.Location = New System.Drawing.Point(8, 101)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(63, 16)
+        Me.Label5.Size = New System.Drawing.Size(199, 24)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Cantidad:"
+        Me.Label5.Text = "Cantidad a comprar:"
         '
         'Txtpreciounidad
         '
-        Me.Txtpreciounidad.Location = New System.Drawing.Point(125, 55)
+        Me.Txtpreciounidad.Enabled = False
+        Me.Txtpreciounidad.Location = New System.Drawing.Point(132, 66)
+        Me.Txtpreciounidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Txtpreciounidad.Name = "Txtpreciounidad"
-        Me.Txtpreciounidad.Size = New System.Drawing.Size(100, 22)
+        Me.Txtpreciounidad.Size = New System.Drawing.Size(94, 26)
         Me.Txtpreciounidad.TabIndex = 3
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 56)
+        Me.Label6.Location = New System.Drawing.Point(8, 69)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 16)
+        Me.Label6.Size = New System.Drawing.Size(116, 19)
         Me.Label6.TabIndex = 2
         Me.Label6.Text = "Precio unidad:"
         '
@@ -128,57 +141,65 @@ Partial Class Ventas
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(6, 30)
+        Me.Label7.Location = New System.Drawing.Point(8, 37)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(64, 16)
+        Me.Label7.Size = New System.Drawing.Size(80, 19)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Producto:"
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Lb_IDFactura)
         Me.GroupBox3.Controls.Add(Me.Dtp_fecha)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Controls.Add(Me.TxtIdclli)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 55)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 68)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(274, 92)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Size = New System.Drawing.Size(365, 113)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información Cliente"
         '
         'Dtp_fecha
         '
-        Me.Dtp_fecha.Location = New System.Drawing.Point(56, 57)
+        Me.Dtp_fecha.Location = New System.Drawing.Point(75, 70)
+        Me.Dtp_fecha.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Dtp_fecha.Name = "Dtp_fecha"
-        Me.Dtp_fecha.Size = New System.Drawing.Size(200, 22)
+        Me.Dtp_fecha.Size = New System.Drawing.Size(265, 26)
         Me.Dtp_fecha.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 56)
+        Me.Label3.Location = New System.Drawing.Point(8, 69)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 16)
+        Me.Label3.Size = New System.Drawing.Size(55, 19)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Fecha"
         '
         'TxtIdclli
         '
-        Me.TxtIdclli.Location = New System.Drawing.Point(80, 29)
+        Me.TxtIdclli.Location = New System.Drawing.Point(107, 36)
+        Me.TxtIdclli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.TxtIdclli.Name = "TxtIdclli"
-        Me.TxtIdclli.Size = New System.Drawing.Size(176, 22)
+        Me.TxtIdclli.Size = New System.Drawing.Size(233, 26)
         Me.TxtIdclli.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 30)
+        Me.Label2.Location = New System.Drawing.Point(8, 37)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 16)
+        Me.Label2.Size = New System.Drawing.Size(86, 19)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "ID Cliente:"
         '
@@ -188,9 +209,11 @@ Partial Class Ventas
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.BtnDevolucion)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 153)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 188)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(162, 390)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Size = New System.Drawing.Size(216, 480)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Opciones"
@@ -202,19 +225,31 @@ Partial Class Ventas
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.Txt_ID_Venta)
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 19)
+        Me.GroupBox5.Location = New System.Drawing.Point(9, 23)
+        Me.GroupBox5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(139, 216)
+        Me.GroupBox5.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox5.Size = New System.Drawing.Size(185, 266)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
         '
+        'Btn_NuevaVenta
+        '
+        Me.Btn_NuevaVenta.Location = New System.Drawing.Point(9, 144)
+        Me.Btn_NuevaVenta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Btn_NuevaVenta.Name = "Btn_NuevaVenta"
+        Me.Btn_NuevaVenta.Size = New System.Drawing.Size(164, 47)
+        Me.Btn_NuevaVenta.TabIndex = 6
+        Me.Btn_NuevaVenta.Text = "Nueva Venta"
+        Me.Btn_NuevaVenta.UseVisualStyleBackColor = True
+        '
         'Btn_Limpiar
         '
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(8, 75)
-        Me.Btn_Limpiar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(11, 92)
+        Me.Btn_Limpiar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
-        Me.Btn_Limpiar.Size = New System.Drawing.Size(123, 38)
+        Me.Btn_Limpiar.Size = New System.Drawing.Size(164, 47)
         Me.Btn_Limpiar.TabIndex = 5
         Me.Btn_Limpiar.Text = "Limpiar"
         Me.Btn_Limpiar.UseVisualStyleBackColor = True
@@ -223,27 +258,29 @@ Partial Class Ventas
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(35, 169)
+        Me.Label4.Location = New System.Drawing.Point(47, 208)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.Size = New System.Drawing.Size(72, 19)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "ID Venta"
         '
         'Txt_ID_Venta
         '
         Me.Txt_ID_Venta.Enabled = False
-        Me.Txt_ID_Venta.Location = New System.Drawing.Point(14, 187)
-        Me.Txt_ID_Venta.Margin = New System.Windows.Forms.Padding(2)
+        Me.Txt_ID_Venta.Location = New System.Drawing.Point(19, 230)
+        Me.Txt_ID_Venta.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
-        Me.Txt_ID_Venta.Size = New System.Drawing.Size(106, 22)
+        Me.Txt_ID_Venta.Size = New System.Drawing.Size(140, 26)
         Me.Txt_ID_Venta.TabIndex = 4
         '
         'BtnIngresar
         '
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Location = New System.Drawing.Point(8, 22)
+        Me.BtnIngresar.Location = New System.Drawing.Point(11, 27)
+        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(123, 48)
+        Me.BtnIngresar.Size = New System.Drawing.Size(164, 59)
         Me.BtnIngresar.TabIndex = 3
         Me.BtnIngresar.Text = "Ingresar Venta"
         Me.BtnIngresar.UseVisualStyleBackColor = True
@@ -251,18 +288,21 @@ Partial Class Ventas
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Location = New System.Drawing.Point(9, 298)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 367)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Size = New System.Drawing.Size(184, 106)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
         'BtnRegresar
         '
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(6, 19)
+        Me.BtnRegresar.Location = New System.Drawing.Point(8, 23)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
+        Me.BtnRegresar.Size = New System.Drawing.Size(164, 63)
         Me.BtnRegresar.TabIndex = 2
         Me.BtnRegresar.Text = "Regresar"
         Me.BtnRegresar.UseVisualStyleBackColor = True
@@ -270,9 +310,10 @@ Partial Class Ventas
         'BtnDevolucion
         '
         Me.BtnDevolucion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDevolucion.Location = New System.Drawing.Point(14, 241)
+        Me.BtnDevolucion.Location = New System.Drawing.Point(19, 297)
+        Me.BtnDevolucion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnDevolucion.Name = "BtnDevolucion"
-        Me.BtnDevolucion.Size = New System.Drawing.Size(123, 51)
+        Me.BtnDevolucion.Size = New System.Drawing.Size(164, 63)
         Me.BtnDevolucion.TabIndex = 2
         Me.BtnDevolucion.Text = "Devolución"
         Me.BtnDevolucion.UseVisualStyleBackColor = True
@@ -280,10 +321,10 @@ Partial Class Ventas
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(186, 153)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(248, 188)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(69, 17)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(86, 21)
         Me.Chk_Eliminar.TabIndex = 12
         Me.Chk_Eliminar.Text = "Devolver"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
@@ -292,9 +333,10 @@ Partial Class Ventas
         '
         Me.Label1.BackColor = System.Drawing.Color.Aquamarine
         Me.Label1.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(16, 11)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(931, 43)
+        Me.Label1.Size = New System.Drawing.Size(1241, 53)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Gestion de Ventas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -303,9 +345,11 @@ Partial Class Ventas
         '
         Me.GroupBox6.Controls.Add(Me.Rd_contado)
         Me.GroupBox6.Controls.Add(Me.Rd_credito)
-        Me.GroupBox6.Location = New System.Drawing.Point(292, 55)
+        Me.GroupBox6.Location = New System.Drawing.Point(389, 68)
+        Me.GroupBox6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(200, 108)
+        Me.GroupBox6.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox6.Size = New System.Drawing.Size(171, 133)
         Me.GroupBox6.TabIndex = 11
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Tipo de Venta"
@@ -313,9 +357,10 @@ Partial Class Ventas
         'Rd_contado
         '
         Me.Rd_contado.AutoSize = True
-        Me.Rd_contado.Location = New System.Drawing.Point(21, 62)
+        Me.Rd_contado.Location = New System.Drawing.Point(28, 76)
+        Me.Rd_contado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Rd_contado.Name = "Rd_contado"
-        Me.Rd_contado.Size = New System.Drawing.Size(65, 17)
+        Me.Rd_contado.Size = New System.Drawing.Size(82, 21)
         Me.Rd_contado.TabIndex = 1
         Me.Rd_contado.TabStop = True
         Me.Rd_contado.Text = "Contado"
@@ -324,9 +369,10 @@ Partial Class Ventas
         'Rd_credito
         '
         Me.Rd_credito.AutoSize = True
-        Me.Rd_credito.Location = New System.Drawing.Point(21, 30)
+        Me.Rd_credito.Location = New System.Drawing.Point(28, 37)
+        Me.Rd_credito.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Rd_credito.Name = "Rd_credito"
-        Me.Rd_credito.Size = New System.Drawing.Size(58, 17)
+        Me.Rd_credito.Size = New System.Drawing.Size(74, 21)
         Me.Rd_credito.TabIndex = 0
         Me.Rd_credito.TabStop = True
         Me.Rd_credito.Text = "Credito"
@@ -335,9 +381,11 @@ Partial Class Ventas
         'GroupBox7
         '
         Me.GroupBox7.Controls.Add(Me.GroupBox8)
-        Me.GroupBox7.Location = New System.Drawing.Point(498, 55)
+        Me.GroupBox7.Location = New System.Drawing.Point(568, 68)
+        Me.GroupBox7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(200, 108)
+        Me.GroupBox7.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox7.Size = New System.Drawing.Size(267, 133)
         Me.GroupBox7.TabIndex = 12
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Descuento"
@@ -346,19 +394,21 @@ Partial Class Ventas
         '
         Me.GroupBox8.Controls.Add(Me.Rd_tercera_no)
         Me.GroupBox8.Controls.Add(Me.Rd_tercera_si)
-        Me.GroupBox8.Location = New System.Drawing.Point(15, 25)
+        Me.GroupBox8.Location = New System.Drawing.Point(20, 31)
+        Me.GroupBox8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(161, 73)
+        Me.GroupBox8.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox8.Size = New System.Drawing.Size(215, 90)
         Me.GroupBox8.TabIndex = 0
         Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Tercera Edad"
         '
         'Rd_tercera_no
         '
         Me.Rd_tercera_no.AutoSize = True
-        Me.Rd_tercera_no.Location = New System.Drawing.Point(69, 30)
+        Me.Rd_tercera_no.Location = New System.Drawing.Point(92, 37)
+        Me.Rd_tercera_no.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Rd_tercera_no.Name = "Rd_tercera_no"
-        Me.Rd_tercera_no.Size = New System.Drawing.Size(41, 17)
+        Me.Rd_tercera_no.Size = New System.Drawing.Size(50, 21)
         Me.Rd_tercera_no.TabIndex = 1
         Me.Rd_tercera_no.TabStop = True
         Me.Rd_tercera_no.Text = "NO"
@@ -367,9 +417,10 @@ Partial Class Ventas
         'Rd_tercera_si
         '
         Me.Rd_tercera_si.AutoSize = True
-        Me.Rd_tercera_si.Location = New System.Drawing.Point(16, 30)
+        Me.Rd_tercera_si.Location = New System.Drawing.Point(21, 37)
+        Me.Rd_tercera_si.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Rd_tercera_si.Name = "Rd_tercera_si"
-        Me.Rd_tercera_si.Size = New System.Drawing.Size(35, 17)
+        Me.Rd_tercera_si.Size = New System.Drawing.Size(41, 21)
         Me.Rd_tercera_si.TabIndex = 0
         Me.Rd_tercera_si.TabStop = True
         Me.Rd_tercera_si.Text = "SI"
@@ -381,12 +432,13 @@ Partial Class Ventas
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(186, 175)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(248, 215)
+        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(757, 351)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(1009, 432)
         Me.Dgv_Listado.TabIndex = 13
         '
         'eliminar
@@ -397,21 +449,39 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
-        'Btn_NuevaVenta
+        'Txt_Cantmaxima
         '
-        Me.Btn_NuevaVenta.Location = New System.Drawing.Point(7, 117)
-        Me.Btn_NuevaVenta.Margin = New System.Windows.Forms.Padding(2)
-        Me.Btn_NuevaVenta.Name = "Btn_NuevaVenta"
-        Me.Btn_NuevaVenta.Size = New System.Drawing.Size(123, 38)
-        Me.Btn_NuevaVenta.TabIndex = 6
-        Me.Btn_NuevaVenta.Text = "Nueva Venta"
-        Me.Btn_NuevaVenta.UseVisualStyleBackColor = True
+        Me.Txt_Cantmaxima.Enabled = False
+        Me.Txt_Cantmaxima.Location = New System.Drawing.Point(346, 66)
+        Me.Txt_Cantmaxima.Margin = New System.Windows.Forms.Padding(4)
+        Me.Txt_Cantmaxima.Name = "Txt_Cantmaxima"
+        Me.Txt_Cantmaxima.Size = New System.Drawing.Size(58, 26)
+        Me.Txt_Cantmaxima.TabIndex = 8
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(234, 68)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(104, 19)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "En inventario"
+        '
+        'Lb_IDFactura
+        '
+        Me.Lb_IDFactura.AutoSize = True
+        Me.Lb_IDFactura.Location = New System.Drawing.Point(168, 13)
+        Me.Lb_IDFactura.Name = "Lb_IDFactura"
+        Me.Lb_IDFactura.Size = New System.Drawing.Size(0, 19)
+        Me.Lb_IDFactura.TabIndex = 4
         '
         'Ventas
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 542)
+        Me.ClientSize = New System.Drawing.Size(1275, 667)
         Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox7)
@@ -420,6 +490,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Ventas"
         Me.Text = "Ventas"
         Me.GroupBox4.ResumeLayout(False)
@@ -474,4 +545,7 @@ Partial Class Ventas
     Friend WithEvents Chk_Eliminar As CheckBox
     Friend WithEvents Btn_Limpiar As Button
     Friend WithEvents Btn_NuevaVenta As Button
+    Friend WithEvents Txt_Cantmaxima As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Lb_IDFactura As Label
 End Class

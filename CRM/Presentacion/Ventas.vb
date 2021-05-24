@@ -5,7 +5,11 @@
     Public Bandera As New Boolean
     Public Tventa, Desc, IDProd As String
 
-    Public ProdCant, preventa, precompra, proveed As String
+    Public random As Integer
+
+    Public ProdCant, preventa, precompra, proveed, rtncli As String
+
+    Public subtotal, total As Double
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -23,6 +27,17 @@
         nuevo.llenado_cb(Cb_producto, "Pro_Nombre", "Inventario")
 
         Limpiar()
+
+        random = CInt((100000 - 1) * Rnd() + 1)
+        Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Factura", "Factura")
+
+        Do While comprobar = True
+            random = CInt((100000 - 1) * Rnd() + 1)
+            comprobar = nuevo.Existencia(Convert.ToString(random), "ID_Factura", "Factura")
+        Loop
+
+        Lb_IDFactura.Text = " Factura # " + Convert.ToString(random)
+
 
     End Sub
 
@@ -70,10 +85,9 @@
     End Sub
 
     Private Sub Limpiar()
-        TxtIdclli.Text = ""
         Txtcantidad.Text = ""
         Txtpreciounidad.Text = ""
-        Txt_ID_Venta.Text = ""
+
 
         Cb_producto.Text = ""
 
@@ -98,7 +112,7 @@
         Rd_tercera_si.Enabled = True
         Cb_producto.Enabled = True
         Txtcantidad.Enabled = True
-        Txtpreciounidad.Enabled = True
+
     End Sub
 
     Private Sub desactivar()
@@ -110,7 +124,7 @@
         Rd_tercera_si.Enabled = False
         Cb_producto.Enabled = False
         Txtcantidad.Enabled = False
-        Txtpreciounidad.Enabled = False
+
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -132,6 +146,50 @@
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
+
+        nuevo.ConexionDB()
+        rtncli = nuevo.Buscar_info(TxtIdclli.Text, "ID_Cliente", "RTN", "Cliente")
+
+        Try
+            Dim TablaDatos As New eFactura
+            Dim Funcion As New fFactura
+
+            Dim descuentos, impuestos As Double
+
+            TablaDatos.pID_Factura = random
+            TablaDatos.pID_Venta = Convert.ToInt32(Txt_ID_Venta.Text)
+
+            If Desc = "Si" Then
+                descuentos = (subtotal * 0.085)
+                TablaDatos.pFac_Descuento = descuentos
+                total = total + descuentos
+            Else
+                descuentos = (subtotal * 0)
+                TablaDatos.pFac_Descuento = descuentos
+                total = total - descuentos
+            End If
+
+            impuestos = (subtotal * 0.15)
+            TablaDatos.pFac_Impuesto = impuestos
+            total = total + impuestos
+
+            TablaDatos.pFac_RTN = rtncli
+
+            TablaDatos.pFac_Total = total + subtotal
+
+
+            If Funcion.Insertar(TablaDatos) Then
+            Else
+                MessageBox.Show("factura no fue registrado correctamente",
+                    "Guardado Venta", MessageBoxButtons.OK,
+                     MessageBoxIcon.Error)
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+
+
+
         Inicio.Visible = True
         Me.Close()
     End Sub
@@ -144,6 +202,8 @@
         proveed = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Nombre_Proveedor", "Inventario")
 
         IDProd = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "ID_Producto", "Inventario")
+
+        Txt_Cantmaxima.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_Cantidad", "Inventario")
         Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
     End Sub
 
@@ -265,6 +325,7 @@
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
 
+
         Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text),
                                                            Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
         If probarcant = True Then
@@ -326,8 +387,6 @@
                     "Guardado Venta", MessageBoxButtons.OK,
                      MessageBoxIcon.Error)
                         End If
-                        Mostrar()
-                        Limpiar()
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -340,12 +399,15 @@
 
 
         ElseIf probarcant = False Then
-                MessageBox.Show("No tenemos esa cantidad de unidades de producto",
+            MessageBox.Show("No tenemos esa cantidad de unidades de producto",
                     "Inventario", MessageBoxButtons.OK,
                      MessageBoxIcon.Error)
 
-            End If
+        End If
 
+        subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))
+        Call Limpiar()
+        Mostrar()
 
 
     End Sub

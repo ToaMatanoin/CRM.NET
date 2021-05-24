@@ -88,6 +88,8 @@ Public Class Conexion
 
     End Function
 
+
+    'busca y recupera un dato con dos puntos de referencia
     Function Buscar_info(comparar As String, nombrep As String, nombrepre As String, nombret As String) As String
         Dim info As String
         Try
@@ -127,6 +129,29 @@ Public Class Conexion
             MsgBox(ex.ToString)
         End Try
         Return resultado
+    End Function
+
+
+    'verifica si un dato existe
+    Function Existencia(comparar As String, nombrep As String, nombret As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            Sentencia = New SqlCommand("Select " & nombrep & " from " & nombret & " ", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+
+            While Ejecucion.Read
+
+                If Convert.ToInt32(comparar) = Ejecucion.Item(nombrep) Then
+                    Resultado = True
+                End If
+
+            End While
+
+            Ejecucion.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return Resultado
     End Function
 
 End Class

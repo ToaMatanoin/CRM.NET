@@ -361,15 +361,7 @@
             BtnIngresar.Visible = False
             Btn_NuevaVenta.Visible = False
 
-            TxtIdclli.Enabled = True
-            Dtp_fecha.Enabled = True
-            Rd_contado.Enabled = True
-            Rd_credito.Enabled = True
-            Rd_tercera_no.Enabled = True
-            Rd_tercera_si.Enabled = True
-            Cb_producto.Enabled = True
-            Txtcantidad.Enabled = True
-            Txtpreciounidad.Enabled = True
+            Activar()
         End If
     End Sub
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick

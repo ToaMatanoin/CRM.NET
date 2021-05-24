@@ -36,7 +36,7 @@ Partial Class Ventas
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Btn_nuevo = New System.Windows.Forms.Button()
+        Me.Btn_Limpiar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Txt_ID_Venta = New System.Windows.Forms.TextBox()
         Me.BtnIngresar = New System.Windows.Forms.Button()
@@ -54,6 +54,7 @@ Partial Class Ventas
         Me.Rd_tercera_si = New System.Windows.Forms.RadioButton()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Btn_NuevaVenta = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -189,39 +190,40 @@ Partial Class Ventas
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(12, 153)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(162, 374)
+        Me.GroupBox1.Size = New System.Drawing.Size(162, 390)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Opciones"
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.Btn_nuevo)
+        Me.GroupBox5.Controls.Add(Me.Btn_NuevaVenta)
+        Me.GroupBox5.Controls.Add(Me.Btn_Limpiar)
         Me.GroupBox5.Controls.Add(Me.Label4)
         Me.GroupBox5.Controls.Add(Me.Txt_ID_Venta)
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
         Me.GroupBox5.Location = New System.Drawing.Point(7, 19)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(139, 196)
+        Me.GroupBox5.Size = New System.Drawing.Size(139, 216)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
         '
-        'Btn_nuevo
+        'Btn_Limpiar
         '
-        Me.Btn_nuevo.Location = New System.Drawing.Point(8, 87)
-        Me.Btn_nuevo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Btn_nuevo.Name = "Btn_nuevo"
-        Me.Btn_nuevo.Size = New System.Drawing.Size(123, 38)
-        Me.Btn_nuevo.TabIndex = 5
-        Me.Btn_nuevo.Text = "Nuevo"
-        Me.Btn_nuevo.UseVisualStyleBackColor = True
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(8, 75)
+        Me.Btn_Limpiar.Margin = New System.Windows.Forms.Padding(2)
+        Me.Btn_Limpiar.Name = "Btn_Limpiar"
+        Me.Btn_Limpiar.Size = New System.Drawing.Size(123, 38)
+        Me.Btn_Limpiar.TabIndex = 5
+        Me.Btn_Limpiar.Text = "Limpiar"
+        Me.Btn_Limpiar.UseVisualStyleBackColor = True
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(37, 151)
+        Me.Label4.Location = New System.Drawing.Point(35, 169)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(57, 16)
         Me.Label4.TabIndex = 4
@@ -230,8 +232,8 @@ Partial Class Ventas
         'Txt_ID_Venta
         '
         Me.Txt_ID_Venta.Enabled = False
-        Me.Txt_ID_Venta.Location = New System.Drawing.Point(16, 169)
-        Me.Txt_ID_Venta.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Txt_ID_Venta.Location = New System.Drawing.Point(14, 187)
+        Me.Txt_ID_Venta.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
         Me.Txt_ID_Venta.Size = New System.Drawing.Size(106, 22)
         Me.Txt_ID_Venta.TabIndex = 4
@@ -249,7 +251,7 @@ Partial Class Ventas
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Location = New System.Drawing.Point(8, 278)
+        Me.GroupBox2.Location = New System.Drawing.Point(9, 298)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
         Me.GroupBox2.TabIndex = 2
@@ -268,7 +270,7 @@ Partial Class Ventas
         'BtnDevolucion
         '
         Me.BtnDevolucion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnDevolucion.Location = New System.Drawing.Point(14, 221)
+        Me.BtnDevolucion.Location = New System.Drawing.Point(14, 241)
         Me.BtnDevolucion.Name = "BtnDevolucion"
         Me.BtnDevolucion.Size = New System.Drawing.Size(123, 51)
         Me.BtnDevolucion.TabIndex = 2
@@ -278,8 +280,8 @@ Partial Class Ventas
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(186, 186)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(186, 153)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
         Me.Chk_Eliminar.Size = New System.Drawing.Size(69, 17)
         Me.Chk_Eliminar.TabIndex = 12
@@ -379,12 +381,12 @@ Partial Class Ventas
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(186, 210)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(186, 175)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(757, 316)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(757, 351)
         Me.Dgv_Listado.TabIndex = 13
         '
         'eliminar
@@ -395,11 +397,21 @@ Partial Class Ventas
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
+        'Btn_NuevaVenta
+        '
+        Me.Btn_NuevaVenta.Location = New System.Drawing.Point(7, 117)
+        Me.Btn_NuevaVenta.Margin = New System.Windows.Forms.Padding(2)
+        Me.Btn_NuevaVenta.Name = "Btn_NuevaVenta"
+        Me.Btn_NuevaVenta.Size = New System.Drawing.Size(123, 38)
+        Me.Btn_NuevaVenta.TabIndex = 6
+        Me.Btn_NuevaVenta.Text = "Nueva Venta"
+        Me.Btn_NuevaVenta.UseVisualStyleBackColor = True
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 536)
+        Me.ClientSize = New System.Drawing.Size(956, 542)
         Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox7)
@@ -460,5 +472,6 @@ Partial Class Ventas
     Friend WithEvents Label4 As Label
     Friend WithEvents Txt_ID_Venta As TextBox
     Friend WithEvents Chk_Eliminar As CheckBox
-    Friend WithEvents Btn_nuevo As Button
+    Friend WithEvents Btn_Limpiar As Button
+    Friend WithEvents Btn_NuevaVenta As Button
 End Class

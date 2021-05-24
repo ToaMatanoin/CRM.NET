@@ -14,6 +14,8 @@
         Else
             BtnRegresar.Visible = True
         End If
+        'bloqueo al iniciar la ventana
+        desactivar()
 
         Mostrar()
 
@@ -82,13 +84,34 @@
 
         Chk_Eliminar.Checked = False
 
-
-        BtnIngresar.Visible = True
+        Btn_NuevaVenta.Visible = True
+        BtnIngresar.Visible = False
         BtnDevolucion.Visible = False
-
-
     End Sub
 
+    Private Sub Activar()
+        TxtIdclli.Enabled = True
+        Dtp_fecha.Enabled = True
+        Rd_contado.Enabled = True
+        Rd_credito.Enabled = True
+        Rd_tercera_no.Enabled = True
+        Rd_tercera_si.Enabled = True
+        Cb_producto.Enabled = True
+        Txtcantidad.Enabled = True
+        Txtpreciounidad.Enabled = True
+    End Sub
+
+    Private Sub desactivar()
+        TxtIdclli.Enabled = False
+        Dtp_fecha.Enabled = False
+        Rd_contado.Enabled = False
+        Rd_credito.Enabled = False
+        Rd_tercera_no.Enabled = False
+        Rd_tercera_si.Enabled = False
+        Cb_producto.Enabled = False
+        Txtcantidad.Enabled = False
+        Txtpreciounidad.Enabled = False
+    End Sub
 
     Private Sub TrasladoInformacion()
         Txt_ID_Venta.Text = Dgv_Listado.SelectedCells.Item(1).Value
@@ -108,8 +131,6 @@
         BtnIngresar.Visible = False
     End Sub
 
-
-
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         Inicio.Visible = True
         Me.Close()
@@ -121,7 +142,6 @@
         preventa = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreVenta", "Inventario")
         precompra = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
         proveed = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Nombre_Proveedor", "Inventario")
-
 
         IDProd = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "ID_Producto", "Inventario")
         Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
@@ -139,8 +159,13 @@
         Desc = "Si"
     End Sub
 
-    Private Sub Btn_nuevo_Click(sender As Object, e As EventArgs) Handles Btn_nuevo.Click
+    Private Sub Btn_nuevo_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
         Call Limpiar()
+    End Sub
+
+    Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click
+        Activar()
+        BtnIngresar.Visible = True
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click
@@ -227,9 +252,10 @@
                      MessageBoxIcon.Information)
         End If
 
-
+        desactivar()
         Call Mostrar()
         Call Limpiar()
+
 
     End Sub
 
@@ -333,12 +359,24 @@
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnDevolucion.Visible = True
             BtnIngresar.Visible = False
+            Btn_NuevaVenta.Visible = False
+
+            TxtIdclli.Enabled = True
+            Dtp_fecha.Enabled = True
+            Rd_contado.Enabled = True
+            Rd_credito.Enabled = True
+            Rd_tercera_no.Enabled = True
+            Rd_tercera_si.Enabled = True
+            Cb_producto.Enabled = True
+            Txtcantidad.Enabled = True
+            Txtpreciounidad.Enabled = True
         End If
     End Sub
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
         If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
             Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
             ChkCell.Value = Not ChkCell.Value
+            Activar()
         End If
     End Sub
 

@@ -29,13 +29,11 @@ Partial Class Marketing
         Me.Txt_Estrategia = New System.Windows.Forms.TextBox()
         Me.Cb_ID_prod = New System.Windows.Forms.ComboBox()
         Me.Cb_ID_Cli = New System.Windows.Forms.ComboBox()
-        Me.Cb_ID_Usu = New System.Windows.Forms.ComboBox()
         Me.TxtDescripMarke = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
@@ -60,6 +58,8 @@ Partial Class Marketing
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Dgvtp = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TxtIDUsuario = New System.Windows.Forms.TextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -71,13 +71,13 @@ Partial Class Marketing
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.TxtIDUsuario)
         Me.GroupBox3.Controls.Add(Me.Chk_Eliminar)
         Me.GroupBox3.Controls.Add(Me.TxtID_Mark)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Txt_Estrategia)
         Me.GroupBox3.Controls.Add(Me.Cb_ID_prod)
         Me.GroupBox3.Controls.Add(Me.Cb_ID_Cli)
-        Me.GroupBox3.Controls.Add(Me.Cb_ID_Usu)
         Me.GroupBox3.Controls.Add(Me.TxtDescripMarke)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.Label10)
@@ -96,7 +96,7 @@ Partial Class Marketing
         '
         Me.Chk_Eliminar.AutoSize = True
         Me.Chk_Eliminar.Location = New System.Drawing.Point(152, 21)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
         Me.Chk_Eliminar.Size = New System.Drawing.Size(80, 20)
         Me.Chk_Eliminar.TabIndex = 14
@@ -107,7 +107,7 @@ Partial Class Marketing
         '
         Me.TxtID_Mark.Enabled = False
         Me.TxtID_Mark.Location = New System.Drawing.Point(90, 21)
-        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtID_Mark.Name = "TxtID_Mark"
         Me.TxtID_Mark.Size = New System.Drawing.Size(41, 22)
         Me.TxtID_Mark.TabIndex = 17
@@ -125,7 +125,7 @@ Partial Class Marketing
         'Txt_Estrategia
         '
         Me.Txt_Estrategia.Location = New System.Drawing.Point(76, 154)
-        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_Estrategia.Name = "Txt_Estrategia"
         Me.Txt_Estrategia.Size = New System.Drawing.Size(147, 22)
         Me.Txt_Estrategia.TabIndex = 15
@@ -134,7 +134,7 @@ Partial Class Marketing
         '
         Me.Cb_ID_prod.FormattingEnabled = True
         Me.Cb_ID_prod.Location = New System.Drawing.Point(80, 119)
-        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_prod.Name = "Cb_ID_prod"
         Me.Cb_ID_prod.Size = New System.Drawing.Size(144, 24)
         Me.Cb_ID_prod.TabIndex = 14
@@ -143,19 +143,10 @@ Partial Class Marketing
         '
         Me.Cb_ID_Cli.FormattingEnabled = True
         Me.Cb_ID_Cli.Location = New System.Drawing.Point(80, 83)
-        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_Cli.Name = "Cb_ID_Cli"
         Me.Cb_ID_Cli.Size = New System.Drawing.Size(144, 24)
         Me.Cb_ID_Cli.TabIndex = 13
-        '
-        'Cb_ID_Usu
-        '
-        Me.Cb_ID_Usu.FormattingEnabled = True
-        Me.Cb_ID_Usu.Location = New System.Drawing.Point(80, 53)
-        Me.Cb_ID_Usu.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Cb_ID_Usu.Name = "Cb_ID_Usu"
-        Me.Cb_ID_Usu.Size = New System.Drawing.Size(144, 24)
-        Me.Cb_ID_Usu.TabIndex = 12
         '
         'TxtDescripMarke
         '
@@ -204,16 +195,6 @@ Partial Class Marketing
         Me.Label3.Size = New System.Drawing.Size(68, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "ID Cliente:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 55)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 16)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "ID Usuario:"
         '
         'GroupBox1
         '
@@ -311,7 +292,7 @@ Partial Class Marketing
         Me.GroupBox5.Controls.Add(Me.TxtNom_proyec)
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(253, 160)
+        Me.GroupBox5.Location = New System.Drawing.Point(254, 147)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(420, 226)
         Me.GroupBox5.TabIndex = 11
@@ -322,9 +303,9 @@ Partial Class Marketing
         Me.GroupBox4.Controls.Add(Me.Rb_tarea)
         Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
         Me.GroupBox4.Location = New System.Drawing.Point(127, 8)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(197, 39)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
@@ -333,7 +314,7 @@ Partial Class Marketing
         '
         Me.Rb_tarea.AutoSize = True
         Me.Rb_tarea.Location = New System.Drawing.Point(127, 15)
-        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2)
         Me.Rb_tarea.Name = "Rb_tarea"
         Me.Rb_tarea.Size = New System.Drawing.Size(62, 20)
         Me.Rb_tarea.TabIndex = 1
@@ -345,7 +326,7 @@ Partial Class Marketing
         '
         Me.Rb_Proyecto.AutoSize = True
         Me.Rb_Proyecto.Location = New System.Drawing.Point(17, 15)
-        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2)
         Me.Rb_Proyecto.Name = "Rb_Proyecto"
         Me.Rb_Proyecto.Size = New System.Drawing.Size(82, 20)
         Me.Rb_Proyecto.TabIndex = 0
@@ -357,7 +338,7 @@ Partial Class Marketing
         '
         Me.Btn_Guardar_proy.Enabled = False
         Me.Btn_Guardar_proy.Location = New System.Drawing.Point(22, 176)
-        Me.Btn_Guardar_proy.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Btn_Guardar_proy.Margin = New System.Windows.Forms.Padding(2)
         Me.Btn_Guardar_proy.Name = "Btn_Guardar_proy"
         Me.Btn_Guardar_proy.Size = New System.Drawing.Size(72, 33)
         Me.Btn_Guardar_proy.TabIndex = 10
@@ -460,13 +441,33 @@ Partial Class Marketing
         Me.Dgvtp.AllowUserToAddRows = False
         Me.Dgvtp.AllowUserToDeleteRows = False
         Me.Dgvtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgvtp.Location = New System.Drawing.Point(253, 404)
+        Me.Dgvtp.Location = New System.Drawing.Point(253, 379)
         Me.Dgvtp.Name = "Dgvtp"
         Me.Dgvtp.ReadOnly = True
         Me.Dgvtp.RowHeadersWidth = 51
         Me.Dgvtp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgvtp.Size = New System.Drawing.Size(420, 118)
+        Me.Dgvtp.Size = New System.Drawing.Size(420, 143)
         Me.Dgvtp.TabIndex = 14
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 55)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 16)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "ID Usuario:"
+        '
+        'TxtIDUsuario
+        '
+        Me.TxtIDUsuario.Enabled = False
+        Me.TxtIDUsuario.Location = New System.Drawing.Point(83, 54)
+        Me.TxtIDUsuario.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtIDUsuario.Name = "TxtIDUsuario"
+        Me.TxtIDUsuario.Size = New System.Drawing.Size(69, 22)
+        Me.TxtIDUsuario.TabIndex = 18
+        Me.TxtIDUsuario.UseSystemPasswordChar = True
         '
         'Marketing
         '
@@ -497,7 +498,6 @@ Partial Class Marketing
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BtnRegresar As Button
@@ -523,7 +523,6 @@ Partial Class Marketing
     Friend WithEvents Txt_Estrategia As TextBox
     Friend WithEvents Cb_ID_prod As ComboBox
     Friend WithEvents Cb_ID_Cli As ComboBox
-    Friend WithEvents Cb_ID_Usu As ComboBox
     Friend WithEvents Chk_Eliminar As CheckBox
     Friend WithEvents TxtID_Mark As TextBox
     Friend WithEvents Label15 As Label
@@ -532,4 +531,6 @@ Partial Class Marketing
     Friend WithEvents Rb_tarea As RadioButton
     Friend WithEvents Rb_Proyecto As RadioButton
     Friend WithEvents Dgvtp As DataGridView
+    Friend WithEvents TxtIDUsuario As TextBox
+    Friend WithEvents Label2 As Label
 End Class

@@ -25,8 +25,8 @@ Public Class Marketing
 
         nuevo.llenado_cb(Cb_ID_Cli, "ID_Cliente", "Cliente")
         nuevo.llenado_cb(Cb_ID_prod, "ID_Producto", "Inventario")
-        nuevo.llenado_cb(Cb_ID_Usu, "ID_Usuario", "Usuarios")
 
+        TxtIDUsuario.Text = IniciarSesion.IDUSU
         Mostrar()
         Limpiar()
 
@@ -164,7 +164,6 @@ Public Class Marketing
         TxtNom_proyec.Text = ""
         Cb_ID_Cli.Text = ""
         Cb_ID_prod.Text = ""
-        Cb_ID_Usu.Text = ""
 
         Rb_Proyecto.Checked = False
         Rb_tarea.Checked = False
@@ -179,7 +178,7 @@ Public Class Marketing
 
     Private Sub TrasladoInformacion()
         TxtID_Mark.Text = Dgv_Listado.SelectedCells.Item(1).Value
-        Cb_ID_Usu.Text = Dgv_Listado.SelectedCells.Item(2).Value
+        TxtIDUsuario.Text = Dgv_Listado.SelectedCells.Item(2).Value
         Cb_ID_prod.Text = Dgv_Listado.SelectedCells.Item(6).Value
         Cb_ID_Cli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         Txt_Estrategia.Text = Dgv_Listado.SelectedCells.Item(8).Value
@@ -226,11 +225,11 @@ Public Class Marketing
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And Cb_ID_Usu.SelectedIndex >= 0 Then
+        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
             Try
                 Dim TablaDatos As New eMarketing
                 Dim Funcion As New fMarketing
-                TablaDatos.pID_Usuario = Cb_ID_Usu.Text
+                TablaDatos.pID_Usuario = TxtIDUsuario.Text
                 TablaDatos.pID_Producto = Cb_ID_prod.Text
                 TablaDatos.pID_Cliente = Cb_ID_Cli.Text
                 TablaDatos.pEstrategia = Txt_Estrategia.Text
@@ -261,7 +260,7 @@ Public Class Marketing
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
-        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And Cb_ID_Usu.SelectedIndex >= 0 Then
+        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos",
@@ -273,7 +272,7 @@ Public Class Marketing
                     Dim TablaDatos As New eMarketing
                     Dim Funcion As New fMarketing
                     TablaDatos.pID_Marketing = TxtID_Mark.Text
-                    TablaDatos.pID_Usuario = Cb_ID_Usu.Text
+                    TablaDatos.pID_Usuario = TxtIDUsuario.Text
                     TablaDatos.pID_Producto = Cb_ID_prod.Text
                     TablaDatos.pID_Cliente = Cb_ID_Cli.Text
                     TablaDatos.pEstrategia = Txt_Estrategia.Text
@@ -312,7 +311,7 @@ Public Class Marketing
 
             If marca = "Proyecto" Then
 
-                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And Cb_ID_Usu.SelectedIndex >= 0 Then
+                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
                     Try
                         Dim TablaDatos As New eProyectos_Marketing
                         Dim Funcion As New fProyectos_Marketing
@@ -347,7 +346,7 @@ Public Class Marketing
 
             ElseIf marca = "Tarea" Then
 
-                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And Cb_ID_Usu.SelectedIndex >= 0 Then
+                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
                     Try
                         Dim TablaDatos As New eTareas_Marketing
                         Dim Funcion As New fTareas_Marketing

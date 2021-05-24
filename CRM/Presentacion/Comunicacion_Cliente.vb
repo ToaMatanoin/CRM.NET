@@ -4,14 +4,11 @@
     Public nuevo As New Conexion
     Public Bandera As New Boolean
     Private Sub Comunicacion_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Cmb_Buscar.Items.Add("Emp_Email")
         Cmb_Buscar.Items.Add("Cli_Email")
-        Cmb_Buscar.Items.Add("Emp_Nombre")
         Cmb_Buscar.Items.Add("Cli_Nombre")
-        Cmb_Buscar.Text = "Emp_Email"
+        Cmb_Buscar.Text = "Cli_Email"
 
         TxtCliCod.Enabled = False
-
 
         Mostrar()
         Limpiar()
@@ -76,14 +73,13 @@
             Dgv_Listado.Columns.Item("eliminar").Visible = False
 
             If TablaDatos.Rows.Count <> 0 Then
-                'If Dgv_Listado.Columns(2).Equals(IniciarSesion.IDEMP) Then
                 Dgv_Listado.DataSource = TablaDatos
-                    Dgv_Listado.ColumnHeadersVisible = True
-                'End If
+                Dgv_Listado.ColumnHeadersVisible = True
+
             Else
-                    Dgv_Listado.DataSource = Nothing
-                    Dgv_Listado.ColumnHeadersVisible = False
-                End If
+                Dgv_Listado.DataSource = Nothing
+                Dgv_Listado.ColumnHeadersVisible = False
+            End If
 
         Catch Evento As Exception
             MsgBox(Evento.Message)
@@ -96,7 +92,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = Cmb_Buscar.Text & " like '" & Txt_Buscar.Text & "%'"
+            VistaDatos.RowFilter = "ID_Empleado = '" & IniciarSesion.IDEMP & "' and " & Cmb_Buscar.Text & " like '" & Txt_Buscar.Text & "%'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -115,6 +111,7 @@
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
+
         Buscar()
     End Sub
 

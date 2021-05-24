@@ -32,6 +32,7 @@ Public Class fFactura
             ComandoSQL = New SqlCommand("InsertarFactura")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
+            ComandoSQL.Parameters.AddWithValue("@ID_Factura", TablaDatos.pID_Factura)
             ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Venta)
             ComandoSQL.Parameters.AddWithValue("@Fac_Descuento", TablaDatos.pFac_Descuento)
             ComandoSQL.Parameters.AddWithValue("@Fac_Impuesto", TablaDatos.pFac_Impuesto)

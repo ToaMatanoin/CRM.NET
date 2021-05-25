@@ -34,6 +34,7 @@ Partial Class Marketing
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
@@ -58,7 +59,6 @@ Partial Class Marketing
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Dgvtp = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtIDUsuario = New System.Windows.Forms.TextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -124,28 +124,28 @@ Partial Class Marketing
         '
         'Txt_Estrategia
         '
-        Me.Txt_Estrategia.Location = New System.Drawing.Point(76, 154)
+        Me.Txt_Estrategia.Location = New System.Drawing.Point(90, 154)
         Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_Estrategia.Name = "Txt_Estrategia"
-        Me.Txt_Estrategia.Size = New System.Drawing.Size(147, 22)
+        Me.Txt_Estrategia.Size = New System.Drawing.Size(133, 22)
         Me.Txt_Estrategia.TabIndex = 15
         '
         'Cb_ID_prod
         '
         Me.Cb_ID_prod.FormattingEnabled = True
-        Me.Cb_ID_prod.Location = New System.Drawing.Point(80, 119)
+        Me.Cb_ID_prod.Location = New System.Drawing.Point(90, 119)
         Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_prod.Name = "Cb_ID_prod"
-        Me.Cb_ID_prod.Size = New System.Drawing.Size(144, 24)
+        Me.Cb_ID_prod.Size = New System.Drawing.Size(134, 24)
         Me.Cb_ID_prod.TabIndex = 14
         '
         'Cb_ID_Cli
         '
         Me.Cb_ID_Cli.FormattingEnabled = True
-        Me.Cb_ID_Cli.Location = New System.Drawing.Point(80, 83)
+        Me.Cb_ID_Cli.Location = New System.Drawing.Point(90, 83)
         Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_Cli.Name = "Cb_ID_Cli"
-        Me.Cb_ID_Cli.Size = New System.Drawing.Size(144, 24)
+        Me.Cb_ID_Cli.Size = New System.Drawing.Size(134, 24)
         Me.Cb_ID_Cli.TabIndex = 13
         '
         'TxtDescripMarke
@@ -195,6 +195,16 @@ Partial Class Marketing
         Me.Label3.Size = New System.Drawing.Size(68, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "ID Cliente:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 55)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 16)
+        Me.Label2.TabIndex = 0
+        Me.Label2.Text = "ID Usuario:"
         '
         'GroupBox1
         '
@@ -420,12 +430,12 @@ Partial Class Marketing
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(680, 63)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(680, 67)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(500, 459)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(500, 455)
         Me.Dgv_Listado.TabIndex = 13
         '
         'eliminar
@@ -449,25 +459,13 @@ Partial Class Marketing
         Me.Dgvtp.Size = New System.Drawing.Size(420, 143)
         Me.Dgvtp.TabIndex = 14
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 55)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 16)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "ID Usuario:"
-        '
         'TxtIDUsuario
         '
         Me.TxtIDUsuario.Enabled = False
-        Me.TxtIDUsuario.Location = New System.Drawing.Point(83, 54)
-        Me.TxtIDUsuario.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtIDUsuario.Location = New System.Drawing.Point(90, 52)
         Me.TxtIDUsuario.Name = "TxtIDUsuario"
-        Me.TxtIDUsuario.Size = New System.Drawing.Size(69, 22)
-        Me.TxtIDUsuario.TabIndex = 18
-        Me.TxtIDUsuario.UseSystemPasswordChar = True
+        Me.TxtIDUsuario.Size = New System.Drawing.Size(100, 22)
+        Me.TxtIDUsuario.TabIndex = 12
         '
         'Marketing
         '
@@ -531,6 +529,6 @@ Partial Class Marketing
     Friend WithEvents Rb_tarea As RadioButton
     Friend WithEvents Rb_Proyecto As RadioButton
     Friend WithEvents Dgvtp As DataGridView
-    Friend WithEvents TxtIDUsuario As TextBox
     Friend WithEvents Label2 As Label
+    Friend WithEvents TxtIDUsuario As TextBox
 End Class

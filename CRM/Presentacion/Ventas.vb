@@ -88,7 +88,6 @@
         Txtcantidad.Text = ""
         Txtpreciounidad.Text = ""
 
-
         Cb_producto.Text = ""
 
         Rd_contado.Checked = False
@@ -112,7 +111,6 @@
         Rd_tercera_si.Enabled = True
         Cb_producto.Enabled = True
         Txtcantidad.Enabled = True
-
     End Sub
 
     Private Sub desactivar()
@@ -124,7 +122,6 @@
         Rd_tercera_si.Enabled = False
         Cb_producto.Enabled = False
         Txtcantidad.Enabled = False
-
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -132,7 +129,6 @@
         TxtIdclli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         Txtcantidad.Text = Dgv_Listado.SelectedCells.Item(9).Value
         Cb_producto.Text = Dgv_Listado.SelectedCells.Item(7).Value
-
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -180,9 +176,7 @@
 
             If Funcion.Insertar(TablaDatos) Then
             Else
-                MessageBox.Show("factura no fue registrado correctamente",
-                    "Guardado Venta", MessageBoxButtons.OK,
-                     MessageBoxIcon.Error)
+                MessageBox.Show("factura no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch Evento As Exception
             MsgBox(Evento.Message)
@@ -235,16 +229,13 @@
             Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
 
             Dim Resultad As DialogResult
-            Resultad = MessageBox.Show("Desea Devolver una compra",
-            "Devolucion", MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question)
+            Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
             If Resultad = Windows.Forms.DialogResult.OK Then
                 Try
 
                     Dim TablaDatos As New eInventario
                     Dim Funcion As New fInventario
                     Dim suma As Integer = Convert.ToInt32(ProdCant) + Convert.ToInt32(Txtcantidad.Text)
-
 
                     TablaDatos.pID_Producto = IDProd
                     TablaDatos.pPro_Nombre = Cb_producto.Text
@@ -255,34 +246,24 @@
                     TablaDatos.pPro_disponible = 1
 
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("prueba de devolver producto a inventario exito",
-                     "Inventario", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("prueba de devolver producto a inventario exito", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("prueba de devolver producto a inventario fallo",
-                     "Inventario", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("prueba de devolver producto a inventario fallo", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
 
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
             Else
-                MessageBox.Show("Cancelado por el usuario",
-                      "Inventario", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+                MessageBox.Show("Cancelado por el usuario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         'eliminar venta
         Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea hacer una devolucion",
-        "Eliminando Registro", MessageBoxButtons.OKCancel,
-        MessageBoxIcon.Question)
+        Resultado = MessageBox.Show("Desea hacer una devolucion", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If Resultado = Windows.Forms.DialogResult.OK Then
             Try
                 For Each row As DataGridViewRow In Dgv_Listado.Rows
@@ -293,13 +274,9 @@
                         Dim Funcion As New fVentas
                         TablaDatos.pID_Ventas = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Devolucion  fue Realizada correctamente",
-                    "Devolucion", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Devolucion  fue Realizada correctamente", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Cancelado por el Usuario",
-                    "Devolucion", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
                 Next
@@ -307,16 +284,12 @@
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Cancelado por el Usuario",
-                    "Devolucion", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
         desactivar()
         Call Mostrar()
         Call Limpiar()
-
-
     End Sub
 
     Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_tercera_no.CheckedChanged
@@ -326,8 +299,7 @@
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
 
 
-        Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text),
-                                                           Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
+        Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text), Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
         If probarcant = True Then
 
             If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
@@ -336,9 +308,7 @@
                 'restar inventario
 
                 Dim Resultado1 As DialogResult
-                Resultado1 = MessageBox.Show("Desea Continuar con la venta",
-                "Venta de producto", MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question)
+                Resultado1 = MessageBox.Show("Desea Continuar con la venta", "Venta de producto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                 If Resultado1 = Windows.Forms.DialogResult.OK Then
                     Try
 
@@ -355,13 +325,9 @@
                         TablaDatos.pPro_disponible = 1
 
                         If Funcion.Actualizar(TablaDatos) Then
-                            MessageBox.Show("Producto Restado del inventario",
-                         "Actualizando Registro", MessageBoxButtons.OK,
-                          MessageBoxIcon.Information)
+                            MessageBox.Show("Producto Restado del inventario", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Fallo La resta de inventario",
-                         "Inventario", MessageBoxButtons.OK,
-                          MessageBoxIcon.Information)
+                            MessageBox.Show("Fallo La resta de inventario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
@@ -379,50 +345,37 @@
 
 
                         If Funcion.Insertar(TablaDatos) Then
-                            MessageBox.Show("Venta registrada",
-                    "Guardado Venta", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Venta registrada", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Venta no fue registrado correctamente",
-                    "Guardado Venta", MessageBoxButtons.OK,
-                     MessageBoxIcon.Error)
+                            MessageBox.Show("Venta no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
                 End If
             Else
-                MessageBox.Show("Falta Informacion para almacenar",
-                "Guardando Venta", MessageBoxButtons.OK,
-                 MessageBoxIcon.Information)
+                MessageBox.Show("Falta Informacion para almacenar", "Guardando Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
 
         ElseIf probarcant = False Then
-            MessageBox.Show("No tenemos esa cantidad de unidades de producto",
-                    "Inventario", MessageBoxButtons.OK,
-                     MessageBoxIcon.Error)
-
+            MessageBox.Show("No tenemos esa cantidad de unidades de producto", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
         subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))
         Call Limpiar()
         Mostrar()
-
-
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
-
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnDevolucion.Visible = True
             BtnIngresar.Visible = False
             Btn_NuevaVenta.Visible = False
-
             Activar()
         End If
     End Sub
@@ -433,6 +386,5 @@
             Activar()
         End If
     End Sub
-
 
 End Class

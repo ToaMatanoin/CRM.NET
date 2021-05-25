@@ -111,12 +111,10 @@
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
-
         Buscar()
     End Sub
 
     Private Sub Limpiar()
-
         TxtCorreoCli.Text = ""
         TxtAsunto.Text = ""
         TxtMensaje.Text = ""
@@ -131,7 +129,6 @@
     End Sub
 
     Private Sub TrasladoInformacion()
-
         TxtCorreoCli.Text = Dgv_Listado.SelectedCells.Item(6).Value
         TxtAsunto.Text = Dgv_Listado.SelectedCells.Item(8).Value
         TxtMensaje.Text = Dgv_Listado.SelectedCells.Item(9).Value
@@ -173,14 +170,10 @@
 
 
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Mensaje enviado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+                    MessageBox.Show("Mensaje enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                 Else
-                    MessageBox.Show("Mensaje no pudo ser enviado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Error)
+                    MessageBox.Show("Mensaje no pudo ser enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 Mostrar()
                 Limpiar()
@@ -191,9 +184,7 @@
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 

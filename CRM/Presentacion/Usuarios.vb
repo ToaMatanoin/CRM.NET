@@ -6,8 +6,6 @@
         Cmb_Buscar.Items.Add("Usu_Nombre")
         Cmb_Buscar.Items.Add("Emp_Nombre")
         Cmb_Buscar.Text = "Usu_Nombre"
-        TxtIDEmp.Enabled = False
-        TxtIDUsu.Enabled = False
         If Bandera Then
             BtnRegresar.Visible = False
         Else
@@ -15,6 +13,7 @@
         End If
         Mostrar()
         Limpiar()
+        BtnIngresar.Visible = False
     End Sub
 
     Private Sub Mostrar()
@@ -68,10 +67,21 @@
         TxtCargoEmp.Text = ""
         TxtNomEmpl.Text = ""
 
-        BtnIngresar.Visible = True
+        BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
     End Sub
+
+    Private Sub Activar()
+        TxtNomUsu.Enabled = True
+        TxtPassUsu.Enabled = True
+    End Sub
+
+    Private Sub Desactivar()
+        TxtNomUsu.Enabled = False
+        TxtPassUsu.Enabled = False
+    End Sub
+
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
         If Bandera Then
@@ -81,6 +91,8 @@
                 'no mostrar modificar con el chek eliminar activo'
             Else
                 BtnModificar.Visible = True
+                Activar()
+                BtnEmpleado.Enabled = True
             End If
         End If
         BtnIngresar.Visible = False
@@ -108,23 +120,20 @@
                 TablaDatos.pID_Empleado = TxtIDEmp.Text
 
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Usuario fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+                    MessageBox.Show("Usuario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Usuario no fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Error)
+                    MessageBox.Show("Usuario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 Mostrar()
                 Limpiar()
+                BtnIngresar.Visible = False
+                Desactivar()
+                BtnNuevo.Text = "Nuevo Usuario"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -147,36 +156,27 @@
                     TablaDatos.pID_Empleado = TxtIDEmp.Text
 
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("Usuario fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Usuario fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("Usuario no fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Usuario no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                     Mostrar()
                     Limpiar()
+                    Desactivar()
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
             Else
-                MessageBox.Show("Cancelado por el Usuario",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea Eliminar los datos",
-        "Eliminando Registro", MessageBoxButtons.OKCancel,
-        MessageBoxIcon.Question)
+        Resultado = MessageBox.Show("Desea Eliminar los datos", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If Resultado = Windows.Forms.DialogResult.OK Then
             Try
                 For Each row As DataGridViewRow In Dgv_Listado.Rows
@@ -187,13 +187,10 @@
                         Dim Funcion As New fUsuarios
                         TablaDatos.pID_Usuario = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Usuario fue eliminado correctamente",
-                    "Eliminando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Eliminar.Checked = False
                         Else
-                            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
                 Next
@@ -203,23 +200,22 @@
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Call Mostrar()
             Call Limpiar()
         End If
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        Desactivar()
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
-
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
-            BtnIngresar.Visible = False
+            BtnNuevo.Visible = False
+            BtnModificar.Visible = False
         End If
     End Sub
 
@@ -236,7 +232,6 @@
         TxtIDEmp.Text = Empleado.TxtIDEmp.Text
         TxtNomEmpl.Text = Empleado.TxtNomEmp.Text
         TxtCargoEmp.Text = Empleado.TxtCargo.Text
-
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
@@ -244,5 +239,19 @@
         Me.Close()
     End Sub
 
-
+    Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        If BtnNuevo.Text = "Nuevo Usuario" Then
+            Activar()
+            BtnIngresar.Visible = True
+            BtnEmpleado.Enabled = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            Desactivar()
+            BtnIngresar.Visible = False
+            BtnEmpleado.Enabled = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo Usuario"
+        End If
+    End Sub
 End Class

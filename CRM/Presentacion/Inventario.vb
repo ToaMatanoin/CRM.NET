@@ -9,9 +9,10 @@
         Else
             BtnRegresar.Visible = True
         End If
-        TxtIDProd.Enabled = False
+
         Mostrar()
         Limpiar()
+        BtnIngresar.Visible = False
     End Sub
 
     Private Sub Mostrar()
@@ -49,14 +50,26 @@
         End Try
     End Sub
 
-
-
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
         Dgv_Listado.Columns(7).Visible = False
     End Sub
 
+    Private Sub Activar()
+        TxtCantPro.Enabled = True
+        TxtNomPro.Enabled = True
+        TxtNomProveedor.Enabled = True
+        TxtPrecioComp.Enabled = True
+        TxtPrecioVent.Enabled = True
+    End Sub
 
+    Private Sub Desactivar()
+        TxtCantPro.Enabled = False
+        TxtNomPro.Enabled = False
+        TxtNomProveedor.Enabled = False
+        TxtPrecioComp.Enabled = False
+        TxtPrecioVent.Enabled = False
+    End Sub
 
     Private Sub Limpiar()
         TxtIDProd.Text = ""
@@ -66,10 +79,9 @@
         TxtPrecioComp.Text = ""
         TxtPrecioVent.Text = ""
 
-        BtnIngresar.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
-
+        BtnNuevo.Visible = True
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -81,6 +93,7 @@
                 'no mostrar modificar con el chek eliminar activo'
             Else
                 BtnModificar.Visible = True
+                Activar()
             End If
 
         End If
@@ -116,28 +129,22 @@
 
                 TablaDatos.pPro_disponible = 1
 
-
                 'El uno es para el entero de disponibilidad (1/si  0/no) '
 
-
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Inventario fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+                    MessageBox.Show("Inventario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Inventario no fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Error)
+                    MessageBox.Show("Inventario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 Mostrar()
                 Limpiar()
+                BtnIngresar.Visible = False
+                BtnNuevo.Text = "Nuevo Producto"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -151,9 +158,7 @@
             TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
 
             Dim Resultado As DialogResult
-            Resultado = MessageBox.Show("Desea Modificar los datos",
-            "Actualizando Registro", MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question)
+            Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
             If Resultado = Windows.Forms.DialogResult.OK Then
                 Try
 
@@ -169,36 +174,27 @@
                     TablaDatos.pPro_disponible = 1
 
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("Producto fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Producto fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("Producto no fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Producto no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                     Mostrar()
                     Limpiar()
+                    Desactivar()
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
             Else
-                MessageBox.Show("Cancelado por el Producto",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+                MessageBox.Show("Cancelado por el Producto", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea Eliminar el producto",
-        "Eliminando Registro", MessageBoxButtons.OKCancel,
-        MessageBoxIcon.Question)
+        Resultado = MessageBox.Show("Desea Eliminar el producto", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If Resultado = Windows.Forms.DialogResult.OK Then
             Try
                 For Each row As DataGridViewRow In Dgv_Listado.Rows
@@ -209,13 +205,10 @@
                         Dim Funcion As New fInventario
                         TablaDatos.pID_Producto = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Producto fue eliminado correctamente",
-                    "Eliminando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Producto fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Eliminar.Checked = False
                         Else
-                            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
                 Next
@@ -225,23 +218,23 @@
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Call Mostrar()
             Call Limpiar()
         End If
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        Desactivar()
+
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
-
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
-            BtnIngresar.Visible = False
+            BtnNuevo.Visible = False
+            BtnModificar.Visible = False
         End If
     End Sub
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
@@ -251,4 +244,17 @@
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        If BtnNuevo.Text = "Nuevo Producto" Then
+            Activar()
+            BtnIngresar.Visible = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            Desactivar()
+            BtnIngresar.Visible = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo Producto"
+        End If
+    End Sub
 End Class

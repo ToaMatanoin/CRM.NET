@@ -1,17 +1,11 @@
-﻿
-
-
-Public Class Marketing
+﻿Public Class Marketing
 
     Public nuevo As New Conexion
     Private TablaDatos, tablaproy, tablatar As New DataTable
     Public Bandera, prueba As New Boolean
     Public marca As String
 
-
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
         marca = "nada"
 
         If Bandera Then
@@ -19,7 +13,6 @@ Public Class Marketing
         Else
             BtnRegresar.Visible = True
         End If
-
 
         nuevo.ConexionDB()
 
@@ -93,6 +86,7 @@ Public Class Marketing
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablatar.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            VistaDatos.RowFilter = "ID_Marketing = '" & Dgv_Listado.SelectedCells.Item(1).Value & "'"
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnatar()
@@ -109,6 +103,7 @@ Public Class Marketing
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablaproy.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            VistaDatos.RowFilter = "ID_Marketing = '" & Dgv_Listado.SelectedCells.Item(1).Value & "'"
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnapr()
@@ -120,12 +115,12 @@ Public Class Marketing
         End Try
     End Sub
 
-
     Private Sub Buscar()
         Try
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            VistaDatos.RowFilter = "ID_Usuario = '" & TxtIDUsuario.Text & "'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -154,8 +149,6 @@ Public Class Marketing
         Dgvtp.Columns(2).Visible = False
     End Sub
 
-
-
     Private Sub Limpiar()
         TxtID_Mark.Text = ""
         TxtDescripMarke.Text = ""
@@ -167,7 +160,6 @@ Public Class Marketing
 
         Rb_Proyecto.Checked = False
         Rb_tarea.Checked = False
-
 
         BtnIngresar.Visible = True
         BtnModificar.Visible = False
@@ -183,7 +175,6 @@ Public Class Marketing
         Cb_ID_Cli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         Txt_Estrategia.Text = Dgv_Listado.SelectedCells.Item(8).Value
         TxtDescripMarke.Text = Dgv_Listado.SelectedCells.Item(9).Value
-
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
@@ -235,16 +226,10 @@ Public Class Marketing
                 TablaDatos.pEstrategia = Txt_Estrategia.Text
                 TablaDatos.pDescripcion = TxtDescripMarke.Text
 
-
-
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Estrategia fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+                    MessageBox.Show("Estrategia fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Estrategia no fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Error)
+                    MessageBox.Show("Estrategia no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 Mostrar()
                 Limpiar()
@@ -252,9 +237,7 @@ Public Class Marketing
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -263,9 +246,7 @@ Public Class Marketing
         If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
 
             Dim Resultado As DialogResult
-            Resultado = MessageBox.Show("Desea Modificar los datos",
-            "Actualizando Registro", MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question)
+            Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
             If Resultado = Windows.Forms.DialogResult.OK Then
                 Try
 
@@ -279,13 +260,9 @@ Public Class Marketing
                     TablaDatos.pDescripcion = TxtDescripMarke.Text
 
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("Estrategia fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Estrategia fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("Estrategia no fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Estrategia no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                     Mostrar()
                     Limpiar()
@@ -293,21 +270,15 @@ Public Class Marketing
                     MsgBox(Evento.Message)
                 End Try
             Else
-                MessageBox.Show("Cancelado por el usuario",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+                MessageBox.Show("Cancelado por el usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub Btn_Guardar_proy_Click(sender As Object, e As EventArgs) Handles Btn_Guardar_proy.Click
-
         If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
-
 
             If marca = "Proyecto" Then
 
@@ -322,16 +293,10 @@ Public Class Marketing
                         TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
                         TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
 
-
-
                         If Funcion.Insertar(TablaDatos) Then
-                            MessageBox.Show("Proyecto fue registrado correctamente",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Proyecto fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Proyecto no fue registrado correctamente",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Error)
+                            MessageBox.Show("Proyecto no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                         Mostrar()
                         Limpiar()
@@ -339,9 +304,7 @@ Public Class Marketing
                         MsgBox(Evento.Message)
                     End Try
                 Else
-                    MessageBox.Show("Falta Informacion para almacenar",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                    MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
 
             ElseIf marca = "Tarea" Then
@@ -357,16 +320,10 @@ Public Class Marketing
                         TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
                         TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
 
-
-
                         If Funcion.Insertar(TablaDatos) Then
-                            MessageBox.Show("Tarea  fue registrado correctamente",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Tarea  fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Tarea no fue registrado correctamente",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Error)
+                            MessageBox.Show("Tarea no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
                         Mostrar()
                         Limpiar()
@@ -374,20 +331,12 @@ Public Class Marketing
                         MsgBox(Evento.Message)
                     End Try
                 Else
-                    MessageBox.Show("Falta Informacion para almacenar",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                    MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
-
-
             Else
                 MessageBox.Show("No seleciono categoria", "Falta llenar campo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
-
         End If
-
-
-
     End Sub
 
     Private Sub Rb_Proyecto_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_Proyecto.CheckedChanged
@@ -407,7 +356,6 @@ Public Class Marketing
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
-
         Dim Resultado As DialogResult
         Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
         "Eliminando Registro", MessageBoxButtons.OKCancel,
@@ -422,13 +370,9 @@ Public Class Marketing
                         Dim Funcion As New fMarketing
                         TablaDatos.pID_Marketing = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Estrategia fue eliminado correctamente",
-                    "Eliminando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
                 Next
@@ -438,12 +382,9 @@ Public Class Marketing
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Call Mostrar()
             Call Limpiar()
         End If
-
     End Sub
 End Class

@@ -47,7 +47,7 @@ Partial Class Empleado
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3.SuspendLayout()
@@ -79,6 +79,7 @@ Partial Class Empleado
         '
         'TxtCargo
         '
+        Me.TxtCargo.Enabled = False
         Me.TxtCargo.Location = New System.Drawing.Point(123, 255)
         Me.TxtCargo.Name = "TxtCargo"
         Me.TxtCargo.Size = New System.Drawing.Size(175, 22)
@@ -96,6 +97,7 @@ Partial Class Empleado
         '
         'TxtDireccion
         '
+        Me.TxtDireccion.Enabled = False
         Me.TxtDireccion.Location = New System.Drawing.Point(110, 134)
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
@@ -114,6 +116,7 @@ Partial Class Empleado
         '
         'TxtIDEmp
         '
+        Me.TxtIDEmp.Enabled = False
         Me.TxtIDEmp.Location = New System.Drawing.Point(70, 26)
         Me.TxtIDEmp.Name = "TxtIDEmp"
         Me.TxtIDEmp.Size = New System.Drawing.Size(34, 22)
@@ -131,6 +134,7 @@ Partial Class Empleado
         '
         'TxtEmailEmp
         '
+        Me.TxtEmailEmp.Enabled = False
         Me.TxtEmailEmp.Location = New System.Drawing.Point(129, 106)
         Me.TxtEmailEmp.Name = "TxtEmailEmp"
         Me.TxtEmailEmp.Size = New System.Drawing.Size(175, 22)
@@ -148,6 +152,7 @@ Partial Class Empleado
         '
         'TxtTelEmp
         '
+        Me.TxtTelEmp.Enabled = False
         Me.TxtTelEmp.Location = New System.Drawing.Point(129, 80)
         Me.TxtTelEmp.Name = "TxtTelEmp"
         Me.TxtTelEmp.Size = New System.Drawing.Size(175, 22)
@@ -165,6 +170,7 @@ Partial Class Empleado
         '
         'TxtNomEmp
         '
+        Me.TxtNomEmp.Enabled = False
         Me.TxtNomEmp.Location = New System.Drawing.Point(129, 54)
         Me.TxtNomEmp.Name = "TxtNomEmp"
         Me.TxtNomEmp.Size = New System.Drawing.Size(175, 22)
@@ -295,22 +301,22 @@ Partial Class Empleado
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
         Me.BtnCerrar.TabIndex = 25
-        Me.BtnCerrar.Text = "Cerrar"
+        Me.BtnCerrar.Text = "Cancelar"
         Me.BtnCerrar.UseVisualStyleBackColor = True
         '
-        'Button1
+        'BtnNuevo
         '
-        Me.Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(6, 24)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 51)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Nuevo Empleado"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Location = New System.Drawing.Point(6, 24)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(123, 51)
+        Me.BtnNuevo.TabIndex = 26
+        Me.BtnNuevo.Text = "Nuevo Empleado"
+        Me.BtnNuevo.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button1)
+        Me.GroupBox2.Controls.Add(Me.BtnNuevo)
         Me.GroupBox2.Controls.Add(Me.BtnIngresar)
         Me.GroupBox2.Controls.Add(Me.BtnModificar)
         Me.GroupBox2.Controls.Add(Me.BtnEliminar)
@@ -383,7 +389,7 @@ Partial Class Empleado
     Friend WithEvents TxtCargo As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents BtnCerrar As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnNuevo As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
 End Class

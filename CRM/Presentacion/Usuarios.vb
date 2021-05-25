@@ -142,9 +142,7 @@
             TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
 
             Dim Resultado As DialogResult
-            Resultado = MessageBox.Show("Desea Modificar los datos",
-            "Actualizando Registro", MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question)
+            Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
             If Resultado = Windows.Forms.DialogResult.OK Then
                 Try
                     Dim TablaDatos As New eUsuarios
@@ -226,7 +224,9 @@
         End If
     End Sub
     Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
-        Empleado.Bandera = True
+        'Empleado.Bandera = True
+        Empleado.BtnRegresar.Text = "Cargar"
+        Empleado.regrecargar = 1
         Empleado.ShowDialog()
 
         TxtIDEmp.Text = Empleado.TxtIDEmp.Text

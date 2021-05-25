@@ -1,21 +1,28 @@
 ﻿Public Class Empleado
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
+    Public regrecargar As Integer = 0
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
         Cmb_Buscar.Items.Add("Emp_Email")
         Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False
 
-        If Bandera Then
-            BtnCerrar.Visible = True
-            BtnRegresar.Visible = False
-        Else
+        If regrecargar = 0 Then
             BtnCerrar.Visible = False
-            BtnRegresar.Visible = True
+        ElseIf regrecargar = 1 Then
+            BtnCerrar.Visible = True
         End If
+        'If Bandera Then
+        '    BtnCerrar.Visible = True
+        '    BtnRegresar.Visible = False
+        'Else
+        '    BtnCerrar.Visible = False
+        '    BtnRegresar.Visible = True
+        'End If
         Mostrar()
         Limpiar()
+        BtnIngresar.Visible = False
     End Sub
     Private Sub Mostrar()
         Try
@@ -67,10 +74,27 @@
         TxtEmailEmp.Text = ""
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
-        Bandera = False
-        BtnIngresar.Visible = True
+        'Bandera = False
+
+        BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
+    End Sub
+
+    Private Sub Activar()
+        TxtNomEmp.Enabled = True
+        TxtTelEmp.Enabled = True
+        TxtEmailEmp.Enabled = True
+        TxtDireccion.Enabled = True
+        TxtCargo.Enabled = True
+    End Sub
+
+    Private Sub Desactivar()
+        TxtNomEmp.Enabled = False
+        TxtTelEmp.Enabled = False
+        TxtEmailEmp.Enabled = False
+        TxtDireccion.Enabled = False
+        TxtCargo.Enabled = False
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -83,8 +107,8 @@
                 'no mostrar modificar con el chek eliminar activo'
             Else
                 BtnModificar.Visible = True
+                Activar()
             End If
-
         End If
 
         BtnIngresar.Visible = False
@@ -100,8 +124,7 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And
-            TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Try
                 Dim TablaDatos As New eEmpleados
@@ -112,26 +135,22 @@
                 TablaDatos.pEmp_Direccion = TxtDireccion.Text
                 TablaDatos.pEmp_Cargo = TxtCargo.Text
 
-
                 If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Empleado fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+                    MessageBox.Show("Empleado fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     BtnIngresar.Visible = False
                 Else
-                    MessageBox.Show("Empleado no fue registrado correctamente",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Error)
+                    MessageBox.Show("Empleado no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
                 Mostrar()
                 Limpiar()
+                BtnIngresar.Visible = False
+                Desactivar()
+                BtnNuevo.Text = "Nuevo Empleado"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-            "Guardando Registro", MessageBoxButtons.OK,
-             MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
@@ -140,9 +159,7 @@
             TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Dim Resultado As DialogResult
-            Resultado = MessageBox.Show("Desea Modificar los datos",
-            "Actualizando Registro", MessageBoxButtons.OKCancel,
-            MessageBoxIcon.Question)
+            Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
             If Resultado = Windows.Forms.DialogResult.OK Then
                 Try
                     Dim TablaDatos As New eEmpleados
@@ -154,32 +171,26 @@
                     TablaDatos.pEmp_Direccion = TxtDireccion.Text
                     TablaDatos.pEmp_Cargo = TxtCargo.Text
                     If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("Empleado fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Empleado fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
-                        MessageBox.Show("Empleado no fue actualizado correctamente",
-                     "Actualizando Registro", MessageBoxButtons.OK,
-                      MessageBoxIcon.Information)
+                        MessageBox.Show("Empleado no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     End If
                     Mostrar()
                     Limpiar()
+                    Desactivar()
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
             Else
-                MessageBox.Show("Cancelado por el Usuario",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Else
-            MessageBox.Show("Falta Informacion para almacenar",
-                      "Guardando Registro", MessageBoxButtons.OK,
-                       MessageBoxIcon.Information)
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        Desactivar()
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
@@ -187,7 +198,7 @@
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
             BtnModificar.Visible = False
-            BtnIngresar.Visible = False
+            BtnNuevo.Visible = False
         End If
     End Sub
 
@@ -213,13 +224,10 @@
                         Dim Funcion As New fEmpleados
                         TablaDatos.pID_Empleado = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Empleado fue eliminado correctamente",
-                    "Eliminando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Empleado fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Eliminar.Checked = False
                         Else
-                            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
                 Next
@@ -229,32 +237,55 @@
                 MsgBox(Evento.Message)
             End Try
         Else
-            MessageBox.Show("Cancelado por el Usuario",
-                    "Guardando Registro", MessageBoxButtons.OK,
-                     MessageBoxIcon.Information)
+            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Call Mostrar()
             Call Limpiar()
         End If
     End Sub
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        Inicio.Visible = True
-        Me.Close()
+        If BtnRegresar.Text = "Regresar" Then
+            Inicio.Visible = True
+            Me.Close()
+        ElseIf BtnRegresar.Text = "Cargar" Then
+            If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+                BtnCerrar.Visible = False
+                regrecargar = 0
+                BtnRegresar.Text = "Regresar"
+                Me.Close()
+            Else
+                MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
     End Sub
 
     Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
-
+        BtnRegresar.Text = "Regresar"
+        BtnCerrar.Visible = False
+        regrecargar = 0
+        Limpiar()
         Me.Close()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Limpiar()
-        If Bandera Then
-            BtnCerrar.Visible = True
-            BtnRegresar.Visible = False
-        Else
-            BtnCerrar.Visible = False
-            BtnRegresar.Visible = True
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        'Limpiar()
+        'If Bandera Then
+        '    BtnCerrar.Visible = True
+        '    BtnRegresar.Visible = False
+        'Else
+        '    BtnCerrar.Visible = False
+        '    BtnRegresar.Visible = True
+        'End If
+        'BtnIngresar.Visible = True
+        If BtnNuevo.Text = "Nuevo Empleado" Then
+            Activar()
+            BtnIngresar.Visible = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            Desactivar()
+            BtnIngresar.Visible = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo Empleado"
         End If
-        BtnIngresar.Visible = True
     End Sub
 End Class

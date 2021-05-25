@@ -23,14 +23,16 @@ Partial Class Clientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtIDCliente = New System.Windows.Forms.TextBox()
@@ -53,8 +55,6 @@ Partial Class Clientes
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class Clientes
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.BtnNuevo)
         Me.GroupBox1.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox1.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox1.Controls.Add(Me.Lb_Buscar)
@@ -76,6 +76,16 @@ Partial Class Clientes
         Me.GroupBox1.Size = New System.Drawing.Size(765, 86)
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
+        '
+        'BtnNuevo
+        '
+        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Location = New System.Drawing.Point(14, 19)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(123, 51)
+        Me.BtnNuevo.TabIndex = 27
+        Me.BtnNuevo.Text = "Nuevo Cliente"
+        Me.BtnNuevo.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '
@@ -112,16 +122,6 @@ Partial Class Clientes
         Me.BtnEliminar.Text = "Eliminar Cliente"
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Controls.Add(Me.BtnCerrar)
-        Me.GroupBox2.Location = New System.Drawing.Point(777, 55)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        '
         'BtnModificar
         '
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -142,6 +142,16 @@ Partial Class Clientes
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.UseVisualStyleBackColor = True
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
+        Me.GroupBox2.Controls.Add(Me.BtnCerrar)
+        Me.GroupBox2.Location = New System.Drawing.Point(777, 55)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
+        Me.GroupBox2.TabIndex = 2
+        Me.GroupBox2.TabStop = False
+        '
         'BtnRegresar
         '
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -151,6 +161,16 @@ Partial Class Clientes
         Me.BtnRegresar.TabIndex = 2
         Me.BtnRegresar.Text = "Regresar"
         Me.BtnRegresar.UseVisualStyleBackColor = True
+        '
+        'BtnCerrar
+        '
+        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
+        Me.BtnCerrar.Name = "BtnCerrar"
+        Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
+        Me.BtnCerrar.TabIndex = 26
+        Me.BtnCerrar.Text = "Cancelar"
+        Me.BtnCerrar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -183,6 +203,7 @@ Partial Class Clientes
         '
         'TxtIDCliente
         '
+        Me.TxtIDCliente.Enabled = False
         Me.TxtIDCliente.Location = New System.Drawing.Point(70, 26)
         Me.TxtIDCliente.Name = "TxtIDCliente"
         Me.TxtIDCliente.Size = New System.Drawing.Size(45, 22)
@@ -200,6 +221,7 @@ Partial Class Clientes
         '
         'TxtEmailCli
         '
+        Me.TxtEmailCli.Enabled = False
         Me.TxtEmailCli.Location = New System.Drawing.Point(118, 106)
         Me.TxtEmailCli.Name = "TxtEmailCli"
         Me.TxtEmailCli.Size = New System.Drawing.Size(110, 22)
@@ -217,6 +239,7 @@ Partial Class Clientes
         '
         'TxtTelCli
         '
+        Me.TxtTelCli.Enabled = False
         Me.TxtTelCli.Location = New System.Drawing.Point(118, 80)
         Me.TxtTelCli.Name = "TxtTelCli"
         Me.TxtTelCli.Size = New System.Drawing.Size(110, 22)
@@ -234,6 +257,7 @@ Partial Class Clientes
         '
         'TxtNomCli
         '
+        Me.TxtNomCli.Enabled = False
         Me.TxtNomCli.Location = New System.Drawing.Point(118, 54)
         Me.TxtNomCli.Name = "TxtNomCli"
         Me.TxtNomCli.Size = New System.Drawing.Size(110, 22)
@@ -269,6 +293,7 @@ Partial Class Clientes
         '
         'TxtRTN
         '
+        Me.TxtRTN.Enabled = False
         Me.TxtRTN.Location = New System.Drawing.Point(49, 109)
         Me.TxtRTN.Name = "TxtRTN"
         Me.TxtRTN.Size = New System.Drawing.Size(176, 22)
@@ -286,6 +311,7 @@ Partial Class Clientes
         '
         'TxtEmailEmpresa
         '
+        Me.TxtEmailEmpresa.Enabled = False
         Me.TxtEmailEmpresa.Location = New System.Drawing.Point(125, 81)
         Me.TxtEmailEmpresa.Name = "TxtEmailEmpresa"
         Me.TxtEmailEmpresa.Size = New System.Drawing.Size(100, 22)
@@ -303,6 +329,7 @@ Partial Class Clientes
         '
         'TxtTelEmpresa
         '
+        Me.TxtTelEmpresa.Enabled = False
         Me.TxtTelEmpresa.Location = New System.Drawing.Point(125, 55)
         Me.TxtTelEmpresa.Name = "TxtTelEmpresa"
         Me.TxtTelEmpresa.Size = New System.Drawing.Size(100, 22)
@@ -320,6 +347,7 @@ Partial Class Clientes
         '
         'TxtNomEmpresa
         '
+        Me.TxtNomEmpresa.Enabled = False
         Me.TxtNomEmpresa.Location = New System.Drawing.Point(125, 27)
         Me.TxtNomEmpresa.Name = "TxtNomEmpresa"
         Me.TxtNomEmpresa.Size = New System.Drawing.Size(100, 22)
@@ -366,26 +394,6 @@ Partial Class Clientes
         Me.Chk_Eliminar.TabIndex = 11
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
-        '
-        'BtnCerrar
-        '
-        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
-        Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
-        Me.BtnCerrar.TabIndex = 26
-        Me.BtnCerrar.Text = "Cerrar"
-        Me.BtnCerrar.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(14, 19)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 51)
-        Me.Button1.TabIndex = 27
-        Me.Button1.Text = "Nuevo Cliente"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Clientes
         '
@@ -446,5 +454,5 @@ Partial Class Clientes
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents Chk_Eliminar As CheckBox
     Friend WithEvents BtnCerrar As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnNuevo As Button
 End Class

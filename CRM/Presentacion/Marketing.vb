@@ -86,7 +86,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablatar.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = "ID_Marketing = '" & Dgv_Listado.SelectedCells.Item(1).Value & "'"
+            'VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnatar()
@@ -103,7 +103,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablaproy.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = "ID_Marketing = '" & Dgv_Listado.SelectedCells.Item(1).Value & "'"
+            'VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnapr()

@@ -50,8 +50,7 @@
 
     Private Sub Inicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If (IniciarSesion.ROLUSU.Equals("Admin") Or IniciarSesion.ROLUSU.Equals("admin") Or IniciarSesion.ROLUSU.Equals("ADMIN")) Then
-            BtnUsuarios.Visible = True
-            BtnEmpleados.Visible = True
+            GroupBox4.Visible = True
         End If
     End Sub
 

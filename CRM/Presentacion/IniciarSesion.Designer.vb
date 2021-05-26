@@ -24,13 +24,13 @@ Partial Class IniciarSesion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(IniciarSesion))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Txt_UsuPass = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Txt_UsuNom = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Inicio_Sesion = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -50,59 +50,6 @@ Partial Class IniciarSesion
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Txt_UsuPass
-        '
-        Me.Txt_UsuPass.Location = New System.Drawing.Point(102, 272)
-        Me.Txt_UsuPass.Name = "Txt_UsuPass"
-        Me.Txt_UsuPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_UsuPass.Size = New System.Drawing.Size(100, 20)
-        Me.Txt_UsuPass.TabIndex = 5
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(19, 273)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(66, 16)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Contraseña:"
-        '
-        'Txt_UsuNom
-        '
-        Me.Txt_UsuNom.Location = New System.Drawing.Point(102, 246)
-        Me.Txt_UsuNom.Name = "Txt_UsuNom"
-        Me.Txt_UsuNom.Size = New System.Drawing.Size(100, 20)
-        Me.Txt_UsuNom.TabIndex = 3
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial Narrow", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(19, 247)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(48, 16)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Usuario:"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(143, 310)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Salir"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Inicio_Sesion
-        '
-        Me.Inicio_Sesion.Location = New System.Drawing.Point(8, 310)
-        Me.Inicio_Sesion.Name = "Inicio_Sesion"
-        Me.Inicio_Sesion.Size = New System.Drawing.Size(99, 23)
-        Me.Inicio_Sesion.TabIndex = 0
-        Me.Inicio_Sesion.Text = "Iniciar Sesion"
-        Me.Inicio_Sesion.UseVisualStyleBackColor = True
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
@@ -113,12 +60,71 @@ Partial Class IniciarSesion
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
+        'Txt_UsuPass
+        '
+        Me.Txt_UsuPass.Location = New System.Drawing.Point(105, 273)
+        Me.Txt_UsuPass.Name = "Txt_UsuPass"
+        Me.Txt_UsuPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txt_UsuPass.Size = New System.Drawing.Size(113, 20)
+        Me.Txt_UsuPass.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(6, 272)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(93, 18)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Contraseña:"
+        '
+        'Txt_UsuNom
+        '
+        Me.Txt_UsuNom.Location = New System.Drawing.Point(105, 246)
+        Me.Txt_UsuNom.Name = "Txt_UsuNom"
+        Me.Txt_UsuNom.Size = New System.Drawing.Size(113, 20)
+        Me.Txt_UsuNom.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 245)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(66, 18)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Usuario:"
+        '
+        'Button2
+        '
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Button2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(120, 310)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(98, 23)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Salir"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Inicio_Sesion
+        '
+        Me.Inicio_Sesion.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Inicio_Sesion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Inicio_Sesion.Location = New System.Drawing.Point(8, 310)
+        Me.Inicio_Sesion.Name = "Inicio_Sesion"
+        Me.Inicio_Sesion.Size = New System.Drawing.Size(99, 23)
+        Me.Inicio_Sesion.TabIndex = 0
+        Me.Inicio_Sesion.Text = "Iniciar Sesion"
+        Me.Inicio_Sesion.UseVisualStyleBackColor = True
+        '
         'IniciarSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(250, 372)
         Me.Controls.Add(Me.GroupBox1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IniciarSesion"
         Me.Text = "Iniciar Sesion"
         Me.GroupBox1.ResumeLayout(False)

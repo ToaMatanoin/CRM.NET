@@ -182,8 +182,6 @@
             MsgBox(Evento.Message)
         End Try
 
-
-
         Inicio.Visible = True
         Me.Close()
     End Sub

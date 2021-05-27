@@ -44,9 +44,10 @@ Partial Class IniciarSesion
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Button2)
         Me.GroupBox1.Controls.Add(Me.Inicio_Sesion)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(14, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(224, 348)
+        Me.GroupBox1.Size = New System.Drawing.Size(224, 374)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
@@ -65,14 +66,14 @@ Partial Class IniciarSesion
         Me.Txt_UsuPass.Location = New System.Drawing.Point(105, 273)
         Me.Txt_UsuPass.Name = "Txt_UsuPass"
         Me.Txt_UsuPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txt_UsuPass.Size = New System.Drawing.Size(113, 20)
+        Me.Txt_UsuPass.Size = New System.Drawing.Size(113, 26)
         Me.Txt_UsuPass.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 272)
+        Me.Label2.Location = New System.Drawing.Point(6, 277)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(93, 18)
         Me.Label2.TabIndex = 4
@@ -80,9 +81,9 @@ Partial Class IniciarSesion
         '
         'Txt_UsuNom
         '
-        Me.Txt_UsuNom.Location = New System.Drawing.Point(105, 246)
+        Me.Txt_UsuNom.Location = New System.Drawing.Point(105, 241)
         Me.Txt_UsuNom.Name = "Txt_UsuNom"
-        Me.Txt_UsuNom.Size = New System.Drawing.Size(113, 20)
+        Me.Txt_UsuNom.Size = New System.Drawing.Size(113, 26)
         Me.Txt_UsuNom.TabIndex = 3
         '
         'Label1
@@ -97,22 +98,24 @@ Partial Class IniciarSesion
         '
         'Button2
         '
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Button2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(120, 310)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(98, 23)
+        Me.Button2.Size = New System.Drawing.Size(98, 53)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Salir"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Inicio_Sesion
         '
+        Me.Inicio_Sesion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Inicio_Sesion.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.Inicio_Sesion.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Inicio_Sesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Inicio_Sesion.Location = New System.Drawing.Point(8, 310)
         Me.Inicio_Sesion.Name = "Inicio_Sesion"
-        Me.Inicio_Sesion.Size = New System.Drawing.Size(99, 23)
+        Me.Inicio_Sesion.Size = New System.Drawing.Size(99, 53)
         Me.Inicio_Sesion.TabIndex = 0
         Me.Inicio_Sesion.Text = "Iniciar Sesion"
         Me.Inicio_Sesion.UseVisualStyleBackColor = True
@@ -122,7 +125,7 @@ Partial Class IniciarSesion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(250, 372)
+        Me.ClientSize = New System.Drawing.Size(250, 394)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "IniciarSesion"

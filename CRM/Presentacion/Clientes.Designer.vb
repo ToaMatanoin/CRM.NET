@@ -25,12 +25,12 @@ Partial Class Clientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnNuevo = New System.Windows.Forms.Button()
-        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
-        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
-        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
+        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
+        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.BtnCerrar = New System.Windows.Forms.Button()
@@ -68,6 +68,7 @@ Partial Class Clientes
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.BtnNuevo)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
@@ -80,6 +81,8 @@ Partial Class Clientes
         '
         'BtnNuevo
         '
+        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Location = New System.Drawing.Point(14, 15)
         Me.BtnNuevo.Name = "BtnNuevo"
@@ -87,6 +90,42 @@ Partial Class Clientes
         Me.BtnNuevo.TabIndex = 27
         Me.BtnNuevo.Text = "Nuevo Cliente"
         Me.BtnNuevo.UseVisualStyleBackColor = True
+        '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminar.Location = New System.Drawing.Point(403, 16)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(129, 59)
+        Me.BtnEliminar.TabIndex = 1
+        Me.BtnEliminar.Text = "Eliminar Cliente"
+        Me.BtnEliminar.UseVisualStyleBackColor = True
+        '
+        'BtnModificar
+        '
+        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnModificar.Location = New System.Drawing.Point(274, 16)
+        Me.BtnModificar.Name = "BtnModificar"
+        Me.BtnModificar.Size = New System.Drawing.Size(123, 59)
+        Me.BtnModificar.TabIndex = 2
+        Me.BtnModificar.Text = "Modificar Cliente"
+        Me.BtnModificar.UseVisualStyleBackColor = True
+        '
+        'BtnIngresar
+        '
+        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIngresar.Location = New System.Drawing.Point(145, 16)
+        Me.BtnIngresar.Name = "BtnIngresar"
+        Me.BtnIngresar.Size = New System.Drawing.Size(123, 59)
+        Me.BtnIngresar.TabIndex = 0
+        Me.BtnIngresar.Text = "Ingresar Cliente"
+        Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '
@@ -114,38 +153,9 @@ Partial Class Clientes
         Me.Lb_Buscar.TabIndex = 10
         Me.Lb_Buscar.Text = "Buscar"
         '
-        'BtnEliminar
-        '
-        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(403, 16)
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(129, 59)
-        Me.BtnEliminar.TabIndex = 1
-        Me.BtnEliminar.Text = "Eliminar Cliente"
-        Me.BtnEliminar.UseVisualStyleBackColor = True
-        '
-        'BtnModificar
-        '
-        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Location = New System.Drawing.Point(274, 16)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(123, 59)
-        Me.BtnModificar.TabIndex = 2
-        Me.BtnModificar.Text = "Modificar Cliente"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
-        'BtnIngresar
-        '
-        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Location = New System.Drawing.Point(145, 16)
-        Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(123, 59)
-        Me.BtnIngresar.TabIndex = 0
-        Me.BtnIngresar.Text = "Ingresar Cliente"
-        Me.BtnIngresar.UseVisualStyleBackColor = True
-        '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.BtnRegresar)
         Me.GroupBox2.Controls.Add(Me.BtnCerrar)
         Me.GroupBox2.Location = New System.Drawing.Point(1188, 107)
@@ -156,7 +166,9 @@ Partial Class Clientes
         '
         'BtnRegresar
         '
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Location = New System.Drawing.Point(6, 13)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(123, 32)
@@ -166,7 +178,9 @@ Partial Class Clientes
         '
         'BtnCerrar
         '
-        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
@@ -405,6 +419,7 @@ Partial Class Clientes
         '
         'GroupBox5
         '
+        Me.GroupBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox5.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox5.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox5.Controls.Add(Me.Txt_Buscar)

@@ -57,6 +57,8 @@ Partial Class Inicio
         '
         'BtnVentas
         '
+        Me.BtnVentas.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnVentas.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnVentas.Location = New System.Drawing.Point(6, 82)
         Me.BtnVentas.Name = "BtnVentas"
@@ -67,6 +69,8 @@ Partial Class Inicio
         '
         'BtnMarketing
         '
+        Me.BtnMarketing.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnMarketing.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnMarketing.Location = New System.Drawing.Point(6, 141)
         Me.BtnMarketing.Name = "BtnMarketing"
@@ -77,6 +81,8 @@ Partial Class Inicio
         '
         'BtnInventario
         '
+        Me.BtnInventario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnInventario.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnInventario.Location = New System.Drawing.Point(6, 25)
         Me.BtnInventario.Name = "BtnInventario"
@@ -87,6 +93,8 @@ Partial Class Inicio
         '
         'BtnEmpleados
         '
+        Me.BtnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEmpleados.Location = New System.Drawing.Point(6, 82)
         Me.BtnEmpleados.Name = "BtnEmpleados"
@@ -97,6 +105,8 @@ Partial Class Inicio
         '
         'BtnUsuarios
         '
+        Me.BtnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnUsuarios.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUsuarios.Location = New System.Drawing.Point(6, 25)
         Me.BtnUsuarios.Name = "BtnUsuarios"
@@ -107,6 +117,8 @@ Partial Class Inicio
         '
         'BtnOportunidades
         '
+        Me.BtnOportunidades.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnOportunidades.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnOportunidades.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnOportunidades.Location = New System.Drawing.Point(6, 82)
         Me.BtnOportunidades.Name = "BtnOportunidades"
@@ -117,6 +129,8 @@ Partial Class Inicio
         '
         'BtnComunicacion
         '
+        Me.BtnComunicacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnComunicacion.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnComunicacion.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnComunicacion.Location = New System.Drawing.Point(6, 139)
         Me.BtnComunicacion.Name = "BtnComunicacion"
@@ -127,6 +141,8 @@ Partial Class Inicio
         '
         'BtnClientes
         '
+        Me.BtnClientes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnClientes.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClientes.Location = New System.Drawing.Point(6, 25)
         Me.BtnClientes.Name = "BtnClientes"
@@ -138,11 +154,12 @@ Partial Class Inicio
         'BtnCerrarSesion
         '
         Me.BtnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BtnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCerrarSesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrarSesion.Location = New System.Drawing.Point(1285, -9)
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(1285, 12)
         Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
-        Me.BtnCerrarSesion.Size = New System.Drawing.Size(88, 100)
+        Me.BtnCerrarSesion.Size = New System.Drawing.Size(73, 69)
         Me.BtnCerrarSesion.TabIndex = 2
         Me.BtnCerrarSesion.Text = "Cerrar Sesion"
         Me.BtnCerrarSesion.UseVisualStyleBackColor = False

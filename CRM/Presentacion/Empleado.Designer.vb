@@ -193,7 +193,9 @@ Partial Class Empleado
         '
         'BtnRegresar
         '
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Location = New System.Drawing.Point(6, 12)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(123, 31)
@@ -262,6 +264,8 @@ Partial Class Empleado
         '
         'BtnEliminar
         '
+        Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Location = New System.Drawing.Point(401, 17)
         Me.BtnEliminar.Name = "BtnEliminar"
@@ -272,6 +276,8 @@ Partial Class Empleado
         '
         'BtnModificar
         '
+        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.Location = New System.Drawing.Point(271, 17)
         Me.BtnModificar.Name = "BtnModificar"
@@ -282,6 +288,8 @@ Partial Class Empleado
         '
         'BtnIngresar
         '
+        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Location = New System.Drawing.Point(143, 17)
         Me.BtnIngresar.Name = "BtnIngresar"
@@ -292,7 +300,9 @@ Partial Class Empleado
         '
         'BtnCerrar
         '
-        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCerrar.Location = New System.Drawing.Point(6, 51)
         Me.BtnCerrar.Name = "BtnCerrar"
         Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
@@ -302,6 +312,8 @@ Partial Class Empleado
         '
         'BtnNuevo
         '
+        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Location = New System.Drawing.Point(14, 17)
         Me.BtnNuevo.Name = "BtnNuevo"
@@ -312,6 +324,7 @@ Partial Class Empleado
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.BtnNuevo)
         Me.GroupBox2.Controls.Add(Me.BtnIngresar)
         Me.GroupBox2.Controls.Add(Me.BtnModificar)
@@ -324,6 +337,7 @@ Partial Class Empleado
         '
         'GroupBox4
         '
+        Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox4.Controls.Add(Me.BtnRegresar)
         Me.GroupBox4.Controls.Add(Me.BtnCerrar)
         Me.GroupBox4.Location = New System.Drawing.Point(1177, 91)
@@ -344,6 +358,7 @@ Partial Class Empleado
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox1.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox1.Controls.Add(Me.Txt_Buscar)

@@ -24,21 +24,19 @@ Partial Class Inicio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BtnEmpleados = New System.Windows.Forms.Button()
-        Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.BtnVentas = New System.Windows.Forms.Button()
         Me.BtnMarketing = New System.Windows.Forms.Button()
-        Me.BtnOportunidades = New System.Windows.Forms.Button()
         Me.BtnInventario = New System.Windows.Forms.Button()
+        Me.BtnEmpleados = New System.Windows.Forms.Button()
+        Me.BtnUsuarios = New System.Windows.Forms.Button()
+        Me.BtnOportunidades = New System.Windows.Forms.Button()
         Me.BtnComunicacion = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCerrarSesion = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -49,120 +47,114 @@ Partial Class Inicio
         Me.GroupBox1.Controls.Add(Me.BtnVentas)
         Me.GroupBox1.Controls.Add(Me.BtnMarketing)
         Me.GroupBox1.Controls.Add(Me.BtnInventario)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(158, 97)
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 301)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(137, 198)
+        Me.GroupBox1.Size = New System.Drawing.Size(252, 198)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "PRODUCTOS"
         '
-        'BtnEmpleados
-        '
-        Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEmpleados.Location = New System.Drawing.Point(6, 82)
-        Me.BtnEmpleados.Name = "BtnEmpleados"
-        Me.BtnEmpleados.Size = New System.Drawing.Size(123, 51)
-        Me.BtnEmpleados.TabIndex = 4
-        Me.BtnEmpleados.Text = "Empleados"
-        Me.BtnEmpleados.UseVisualStyleBackColor = True
-        '
-        'BtnUsuarios
-        '
-        Me.BtnUsuarios.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnUsuarios.Location = New System.Drawing.Point(6, 25)
-        Me.BtnUsuarios.Name = "BtnUsuarios"
-        Me.BtnUsuarios.Size = New System.Drawing.Size(123, 51)
-        Me.BtnUsuarios.TabIndex = 2
-        Me.BtnUsuarios.Text = "Usuarios"
-        Me.BtnUsuarios.UseVisualStyleBackColor = True
-        '
         'BtnVentas
         '
-        Me.BtnVentas.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnVentas.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnVentas.Location = New System.Drawing.Point(6, 82)
         Me.BtnVentas.Name = "BtnVentas"
-        Me.BtnVentas.Size = New System.Drawing.Size(123, 51)
+        Me.BtnVentas.Size = New System.Drawing.Size(240, 51)
         Me.BtnVentas.TabIndex = 3
         Me.BtnVentas.Text = "Ventas"
         Me.BtnVentas.UseVisualStyleBackColor = True
         '
         'BtnMarketing
         '
-        Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnMarketing.Location = New System.Drawing.Point(6, 141)
         Me.BtnMarketing.Name = "BtnMarketing"
-        Me.BtnMarketing.Size = New System.Drawing.Size(123, 51)
+        Me.BtnMarketing.Size = New System.Drawing.Size(240, 51)
         Me.BtnMarketing.TabIndex = 2
         Me.BtnMarketing.Text = "Marketing"
         Me.BtnMarketing.UseVisualStyleBackColor = True
         '
-        'BtnOportunidades
-        '
-        Me.BtnOportunidades.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnOportunidades.Location = New System.Drawing.Point(6, 82)
-        Me.BtnOportunidades.Name = "BtnOportunidades"
-        Me.BtnOportunidades.Size = New System.Drawing.Size(123, 51)
-        Me.BtnOportunidades.TabIndex = 2
-        Me.BtnOportunidades.Text = "Oportunidades"
-        Me.BtnOportunidades.UseVisualStyleBackColor = True
-        '
         'BtnInventario
         '
-        Me.BtnInventario.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnInventario.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnInventario.Location = New System.Drawing.Point(6, 25)
         Me.BtnInventario.Name = "BtnInventario"
-        Me.BtnInventario.Size = New System.Drawing.Size(123, 51)
+        Me.BtnInventario.Size = New System.Drawing.Size(240, 51)
         Me.BtnInventario.TabIndex = 2
         Me.BtnInventario.Text = "Inventario"
         Me.BtnInventario.UseVisualStyleBackColor = True
         '
+        'BtnEmpleados
+        '
+        Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEmpleados.Location = New System.Drawing.Point(6, 82)
+        Me.BtnEmpleados.Name = "BtnEmpleados"
+        Me.BtnEmpleados.Size = New System.Drawing.Size(240, 51)
+        Me.BtnEmpleados.TabIndex = 4
+        Me.BtnEmpleados.Text = "Empleados"
+        Me.BtnEmpleados.UseVisualStyleBackColor = True
+        '
+        'BtnUsuarios
+        '
+        Me.BtnUsuarios.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnUsuarios.Location = New System.Drawing.Point(6, 25)
+        Me.BtnUsuarios.Name = "BtnUsuarios"
+        Me.BtnUsuarios.Size = New System.Drawing.Size(240, 51)
+        Me.BtnUsuarios.TabIndex = 2
+        Me.BtnUsuarios.Text = "Usuarios"
+        Me.BtnUsuarios.UseVisualStyleBackColor = True
+        '
+        'BtnOportunidades
+        '
+        Me.BtnOportunidades.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnOportunidades.Location = New System.Drawing.Point(6, 82)
+        Me.BtnOportunidades.Name = "BtnOportunidades"
+        Me.BtnOportunidades.Size = New System.Drawing.Size(240, 51)
+        Me.BtnOportunidades.TabIndex = 2
+        Me.BtnOportunidades.Text = "Oportunidades"
+        Me.BtnOportunidades.UseVisualStyleBackColor = True
+        '
         'BtnComunicacion
         '
-        Me.BtnComunicacion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnComunicacion.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnComunicacion.Location = New System.Drawing.Point(6, 139)
         Me.BtnComunicacion.Name = "BtnComunicacion"
-        Me.BtnComunicacion.Size = New System.Drawing.Size(123, 51)
+        Me.BtnComunicacion.Size = New System.Drawing.Size(240, 51)
         Me.BtnComunicacion.TabIndex = 1
         Me.BtnComunicacion.Text = "Comunicacion Clientes"
         Me.BtnComunicacion.UseVisualStyleBackColor = True
         '
         'BtnClientes
         '
-        Me.BtnClientes.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnClientes.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnClientes.Location = New System.Drawing.Point(6, 25)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(123, 51)
+        Me.BtnClientes.Size = New System.Drawing.Size(240, 51)
         Me.BtnClientes.TabIndex = 0
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.UseVisualStyleBackColor = True
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.BtnCerrarSesion)
-        Me.GroupBox2.Location = New System.Drawing.Point(625, 97)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(96, 139)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        '
         'BtnCerrarSesion
         '
+        Me.BtnCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.BtnCerrarSesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrarSesion.Location = New System.Drawing.Point(6, 13)
+        Me.BtnCerrarSesion.Location = New System.Drawing.Point(1285, -9)
         Me.BtnCerrarSesion.Name = "BtnCerrarSesion"
-        Me.BtnCerrarSesion.Size = New System.Drawing.Size(84, 120)
+        Me.BtnCerrarSesion.Size = New System.Drawing.Size(88, 100)
         Me.BtnCerrarSesion.TabIndex = 2
         Me.BtnCerrarSesion.Text = "Cerrar Sesion"
-        Me.BtnCerrarSesion.UseVisualStyleBackColor = True
+        Me.BtnCerrarSesion.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Red
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 1)
+        Me.PictureBox1.Location = New System.Drawing.Point(-3, -9)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(720, 90)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.Size = New System.Drawing.Size(1385, 100)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
@@ -172,10 +164,10 @@ Partial Class Inicio
         Me.GroupBox3.Controls.Add(Me.BtnOportunidades)
         Me.GroupBox3.Controls.Add(Me.BtnComunicacion)
         Me.GroupBox3.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.GroupBox3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(12, 97)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(140, 198)
+        Me.GroupBox3.Size = New System.Drawing.Size(252, 198)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "CLIENTES"
@@ -184,10 +176,10 @@ Partial Class Inicio
         '
         Me.GroupBox4.Controls.Add(Me.BtnUsuarios)
         Me.GroupBox4.Controls.Add(Me.BtnEmpleados)
-        Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(301, 97)
+        Me.GroupBox4.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 505)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(136, 139)
+        Me.GroupBox4.Size = New System.Drawing.Size(252, 139)
         Me.GroupBox4.TabIndex = 5
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "USUARIOS"
@@ -198,26 +190,25 @@ Partial Class Inicio
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(724, 306)
+        Me.ClientSize = New System.Drawing.Size(1370, 667)
+        Me.Controls.Add(Me.BtnCerrarSesion)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Inicio"
         Me.Text = "Inicio"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents BtnCerrarSesion As Button
     Friend WithEvents BtnUsuarios As Button
     Friend WithEvents BtnVentas As Button

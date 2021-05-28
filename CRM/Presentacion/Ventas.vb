@@ -207,7 +207,7 @@
         Tventa = "Contado"
     End Sub
 
-    Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_tercera_si.CheckedChanged
+    Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs)
         Desc = "Si"
     End Sub
 
@@ -290,7 +290,7 @@
         Call Limpiar()
     End Sub
 
-    Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_tercera_no.CheckedChanged
+    Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs)
         Desc = "No"
     End Sub
 

@@ -38,18 +38,18 @@ Partial Class Oportunidades
         Me.TxtNomCli = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
-        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
+        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
+        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3.SuspendLayout()
@@ -72,6 +72,7 @@ Partial Class Oportunidades
         '
         'TxtPosibilidad
         '
+        Me.TxtPosibilidad.Enabled = False
         Me.TxtPosibilidad.Location = New System.Drawing.Point(214, 300)
         Me.TxtPosibilidad.Name = "TxtPosibilidad"
         Me.TxtPosibilidad.Size = New System.Drawing.Size(82, 26)
@@ -113,6 +114,7 @@ Partial Class Oportunidades
         '
         'TxtIDClientePot
         '
+        Me.TxtIDClientePot.Enabled = False
         Me.TxtIDClientePot.Location = New System.Drawing.Point(239, 25)
         Me.TxtIDClientePot.Name = "TxtIDClientePot"
         Me.TxtIDClientePot.Size = New System.Drawing.Size(90, 26)
@@ -130,6 +132,7 @@ Partial Class Oportunidades
         '
         'TxtDescripcion
         '
+        Me.TxtDescripcion.Enabled = False
         Me.TxtDescripcion.Location = New System.Drawing.Point(114, 153)
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
@@ -148,6 +151,7 @@ Partial Class Oportunidades
         '
         'TxtEmailCli
         '
+        Me.TxtEmailCli.Enabled = False
         Me.TxtEmailCli.Location = New System.Drawing.Point(159, 121)
         Me.TxtEmailCli.Name = "TxtEmailCli"
         Me.TxtEmailCli.Size = New System.Drawing.Size(170, 26)
@@ -165,6 +169,7 @@ Partial Class Oportunidades
         '
         'TxtTelCli
         '
+        Me.TxtTelCli.Enabled = False
         Me.TxtTelCli.Location = New System.Drawing.Point(159, 89)
         Me.TxtTelCli.Name = "TxtTelCli"
         Me.TxtTelCli.Size = New System.Drawing.Size(170, 26)
@@ -182,6 +187,7 @@ Partial Class Oportunidades
         '
         'TxtNomCli
         '
+        Me.TxtNomCli.Enabled = False
         Me.TxtNomCli.Location = New System.Drawing.Point(159, 57)
         Me.TxtNomCli.Name = "TxtNomCli"
         Me.TxtNomCli.Size = New System.Drawing.Size(170, 26)
@@ -210,13 +216,18 @@ Partial Class Oportunidades
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         '
-        'Txt_Buscar
+        'BtnNuevo
         '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(291, 31)
-        Me.Txt_Buscar.Multiline = True
-        Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(225, 26)
-        Me.Txt_Buscar.TabIndex = 23
+        Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
+        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Location = New System.Drawing.Point(14, 16)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(123, 61)
+        Me.BtnNuevo.TabIndex = 3
+        Me.BtnNuevo.Text = "Nuevo Cliente"
+        Me.BtnNuevo.UseVisualStyleBackColor = True
         '
         'BtnModificar
         '
@@ -230,23 +241,6 @@ Partial Class Oportunidades
         Me.BtnModificar.TabIndex = 2
         Me.BtnModificar.Text = "Modificar Cliente"
         Me.BtnModificar.UseVisualStyleBackColor = True
-        '
-        'Cmb_Buscar
-        '
-        Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(125, 31)
-        Me.Cmb_Buscar.Name = "Cmb_Buscar"
-        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
-        Me.Cmb_Buscar.TabIndex = 22
-        '
-        'Lb_Buscar
-        '
-        Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(62, 34)
-        Me.Lb_Buscar.Name = "Lb_Buscar"
-        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
-        Me.Lb_Buscar.TabIndex = 21
-        Me.Lb_Buscar.Text = "Buscar"
         '
         'BtnEliminar
         '
@@ -273,6 +267,31 @@ Partial Class Oportunidades
         Me.BtnIngresar.TabIndex = 0
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.UseVisualStyleBackColor = True
+        '
+        'Txt_Buscar
+        '
+        Me.Txt_Buscar.Location = New System.Drawing.Point(291, 31)
+        Me.Txt_Buscar.Multiline = True
+        Me.Txt_Buscar.Name = "Txt_Buscar"
+        Me.Txt_Buscar.Size = New System.Drawing.Size(225, 26)
+        Me.Txt_Buscar.TabIndex = 23
+        '
+        'Cmb_Buscar
+        '
+        Me.Cmb_Buscar.FormattingEnabled = True
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(125, 31)
+        Me.Cmb_Buscar.Name = "Cmb_Buscar"
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
+        Me.Cmb_Buscar.TabIndex = 22
+        '
+        'Lb_Buscar
+        '
+        Me.Lb_Buscar.AutoSize = True
+        Me.Lb_Buscar.Location = New System.Drawing.Point(62, 34)
+        Me.Lb_Buscar.Name = "Lb_Buscar"
+        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
+        Me.Lb_Buscar.TabIndex = 21
+        Me.Lb_Buscar.Text = "Buscar"
         '
         'GroupBox2
         '
@@ -329,19 +348,6 @@ Partial Class Oportunidades
         Me.eliminar.Name = "eliminar"
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
-        '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
-        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNuevo.Location = New System.Drawing.Point(14, 16)
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(123, 61)
-        Me.BtnNuevo.TabIndex = 3
-        Me.BtnNuevo.Text = "Nuevo Cliente"
-        Me.BtnNuevo.UseVisualStyleBackColor = True
         '
         'PictureBox1
         '

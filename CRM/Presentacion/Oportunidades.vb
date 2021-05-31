@@ -4,11 +4,9 @@
 
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Nombre_CliPoten")
-        Cmb_Buscar.Items.Add("Tel_CliPoten")
         Cmb_Buscar.Items.Add("Posibi_Nego")
         Cmb_Buscar.Items.Add("Email_CliPoten")
         Cmb_Buscar.Text = "Nombre_CliPoten"
-        TxtIDClientePot.Enabled = False
 
         If Bandera Then
             BtnRegresar.Visible = False
@@ -17,6 +15,7 @@
         End If
         Mostrar()
         Limpiar()
+        BtnIngresar.Visible = False
     End Sub
 
     Private Sub Mostrar()
@@ -71,9 +70,25 @@
         TxtDescripcion.Text = ""
         TxtPosibilidad.Text = ""
 
-        BtnIngresar.Visible = True
+        BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
+    End Sub
+
+    Private Sub Activar()
+        TxtNomCli.Enabled = True
+        TxtTelCli.Enabled = True
+        TxtEmailCli.Enabled = True
+        TxtDescripcion.Enabled = True
+        TxtPosibilidad.Enabled = True
+    End Sub
+
+    Private Sub Desactivar()
+        TxtNomCli.Enabled = False
+        TxtTelCli.Enabled = False
+        TxtEmailCli.Enabled = False
+        TxtDescripcion.Enabled = False
+        TxtPosibilidad.Enabled = False
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -85,19 +100,22 @@
                 'no mostrar modificar con el chek eliminar activo'
             Else
                 BtnModificar.Visible = True
+                Activar()
             End If
         End If
         BtnIngresar.Visible = False
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        Desactivar()
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
-            BtnIngresar.Visible = False
+            BtnNuevo.Visible = False
+            BtnModificar.Visible = False
         End If
     End Sub
 
@@ -123,8 +141,7 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And
-             TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
+        If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
 
             Try
                 Dim TablaDatos As New eOportunidades
@@ -143,6 +160,8 @@
                 End If
                 Mostrar()
                 Limpiar()
+                BtnIngresar.Visible = False
+                BtnNuevo.Text = "Nuevo Cliente"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
@@ -175,6 +194,7 @@
                     End If
                     Mostrar()
                     Limpiar()
+                    Desactivar()
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
@@ -200,6 +220,7 @@
                         TablaDatos.pID_ClientePot = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
                             MessageBox.Show("Cliente fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Eliminar.Checked = False
                         Else
                             MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
@@ -218,6 +239,16 @@
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
-
+        If BtnNuevo.Text = "Nuevo Cliente" Then
+            Activar()
+            BtnIngresar.Visible = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            Desactivar()
+            BtnIngresar.Visible = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo Cliente"
+        End If
     End Sub
 End Class

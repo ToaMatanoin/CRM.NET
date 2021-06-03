@@ -3,13 +3,14 @@
     Public nuevo As New Conexion
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
-    Public Tventa, Desc, IDProd As String
+
 
     Public random As Integer
 
     Public ProdCant, preventa, precompra, proveed, rtncli As String
 
     Public subtotal, total As Double
+    Public Tventa, Desc, IDProd As String
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -28,15 +29,7 @@
 
         Limpiar()
 
-        random = CInt((100000 - 1) * Rnd() + 1)
-        Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Factura", "Factura")
-
-        Do While comprobar = True
-            random = CInt((100000 - 1) * Rnd() + 1)
-            comprobar = nuevo.Existencia(Convert.ToString(random), "ID_Factura", "Factura")
-        Loop
-
-        Lb_IDFactura.Text = " Factura # " + Convert.ToString(random)
+        Lb_IDFactura.Text = "ID Venta # " + Convert.ToString(random)
 
 
     End Sub
@@ -65,6 +58,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            VistaDatos.RowFilter = "ID_Venta = '" & random & "'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -100,6 +94,35 @@
         Btn_NuevaVenta.Visible = True
         BtnIngresar.Visible = False
         BtnDevolucion.Visible = False
+
+        random = CInt((100000 - 1) * Rnd() + 1)
+        Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
+
+        Do While comprobar = True
+            random = CInt((100000 - 1) * Rnd() + 1)
+            comprobar = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
+        Loop
+
+    End Sub
+
+    Private Sub Limpiar2()
+        Txtcantidad.Text = ""
+        Txtpreciounidad.Text = ""
+
+        Cb_producto.Text = ""
+
+        Rd_contado.Checked = False
+        Rd_credito.Checked = False
+        Rd_tercera_no.Checked = False
+        Rd_tercera_si.Checked = False
+
+        Chk_Eliminar.Checked = False
+
+        Btn_NuevaVenta.Visible = True
+        BtnIngresar.Visible = False
+        BtnDevolucion.Visible = False
+
+
     End Sub
 
     Private Sub Activar()
@@ -143,45 +166,6 @@
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
 
-        nuevo.ConexionDB()
-        rtncli = nuevo.Buscar_info(TxtIdclli.Text, "ID_Cliente", "RTN", "Cliente")
-
-        Try
-            Dim TablaDatos As New eFactura
-            Dim Funcion As New fFactura
-
-            Dim descuentos, impuestos As Double
-
-            TablaDatos.pID_Factura = random
-            TablaDatos.pID_Venta = Convert.ToInt32(Txt_ID_Venta.Text)
-
-            If Desc = "Si" Then
-                descuentos = (subtotal * 0.085)
-                TablaDatos.pFac_Descuento = descuentos
-                total = total + descuentos
-            Else
-                descuentos = (subtotal * 0)
-                TablaDatos.pFac_Descuento = descuentos
-                total = total - descuentos
-            End If
-
-            impuestos = (subtotal * 0.15)
-            TablaDatos.pFac_Impuesto = impuestos
-            total = total + impuestos
-
-            TablaDatos.pFac_RTN = rtncli
-
-            TablaDatos.pFac_Total = total + subtotal
-
-
-            If Funcion.Insertar(TablaDatos) Then
-            Else
-                MessageBox.Show("factura no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Catch Evento As Exception
-            MsgBox(Evento.Message)
-        End Try
-
         Inicio.Visible = True
         Me.Close()
     End Sub
@@ -212,11 +196,54 @@
     End Sub
 
     Private Sub Btn_nuevo_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
+        nuevo.ConexionDB()
+        rtncli = nuevo.Buscar_info(TxtIdclli.Text, "ID_Cliente", "RTN", "Cliente")
+
+        Try
+            Dim TablaDatos As New eFactura
+            Dim Funcion As New fFactura
+            Dim descuentos, impuestos As Double
+            TablaDatos.pID_Venta = random
+
+            TablaDatos.pT_venta = Tventa
+
+            If Desc = "Si" Then
+                descuentos = (subtotal * 0.085)
+                TablaDatos.pFac_Descuento = descuentos
+                total = total + descuentos
+            Else
+                descuentos = (subtotal * 0)
+                TablaDatos.pFac_Descuento = descuentos
+                total = total - descuentos
+            End If
+
+            impuestos = (subtotal * 0.15)
+            TablaDatos.pFac_Impuesto = impuestos
+            total = total + impuestos
+
+            TablaDatos.pFac_RTN = rtncli
+
+            TablaDatos.pFac_Total = total + subtotal
+
+
+            If Funcion.Insertar(TablaDatos) Then
+            Else
+                MessageBox.Show("factura no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch Evento As Exception
+            MsgBox(Evento.Message)
+        End Try
+
+
+
+
+
         Call Limpiar()
     End Sub
 
     Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click
         Activar()
+        Call Limpiar()
         BtnIngresar.Visible = True
     End Sub
 
@@ -331,9 +358,12 @@
                         MsgBox(Evento.Message)
                     End Try
 
+                    'Registra la venta
+
                     Try
                         Dim TablaDatos As New eVentas
                         Dim Funcion As New fVentas
+                        TablaDatos.pID_Ventas = random
                         TablaDatos.pID_Usuario = IniciarSesion.IDUSU
                         TablaDatos.pID_Cliente = TxtIdclli.Text
                         TablaDatos.pID_Producto = IDProd
@@ -361,14 +391,14 @@
         End If
 
         subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))
-        Call Limpiar()
+        Call Limpiar2()
         Mostrar()
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
-            Limpiar()
+            Limpiar2()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnDevolucion.Visible = True

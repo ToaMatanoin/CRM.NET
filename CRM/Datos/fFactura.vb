@@ -32,8 +32,8 @@ Public Class fFactura
             ComandoSQL = New SqlCommand("InsertarFactura")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
-            ComandoSQL.Parameters.AddWithValue("@ID_Factura", TablaDatos.pID_Factura)
             ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Venta)
+            ComandoSQL.Parameters.AddWithValue("@Tp_Venta", TablaDatos.pTp_Venta)
             ComandoSQL.Parameters.AddWithValue("@Fac_Descuento", TablaDatos.pFac_Descuento)
             ComandoSQL.Parameters.AddWithValue("@Fac_Impuesto", TablaDatos.pFac_Impuesto)
             ComandoSQL.Parameters.AddWithValue("@Fac_RTN", TablaDatos.pFac_RTN)
@@ -52,30 +52,30 @@ Public Class fFactura
         End Try
     End Function
 
-    Public Function Actualizar(TablaDatos As eFactura) As Boolean 'Funcion Actualizar
-        Try
-            ConexionDB()
-            ComandoSQL = New SqlCommand("ActualizarFactura")
-            ComandoSQL.CommandType = CommandType.StoredProcedure
-            ComandoSQL.Connection = Connect
-            ComandoSQL.Parameters.AddWithValue("@ID_Factura", TablaDatos.pID_Factura)
-            ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Venta)
-            ComandoSQL.Parameters.AddWithValue("@Fac_Descuento", TablaDatos.pFac_Descuento)
-            ComandoSQL.Parameters.AddWithValue("@Fac_Impuesto", TablaDatos.pFac_Impuesto)
-            ComandoSQL.Parameters.AddWithValue("@Fac_RTN", TablaDatos.pFac_RTN)
-            ComandoSQL.Parameters.AddWithValue("@Fac_Total", TablaDatos.pFac_Total)
-            If ComandoSQL.ExecuteNonQuery Then
-                Return True
-            Else
-                Return False
-            End If
-        Catch Evento As Exception
-            MsgBox(Evento.Message)
-            Return False
-        Finally
-            DesconexionDB()
-        End Try
-    End Function
+    'Public Function Actualizar(TablaDatos As eFactura) As Boolean 'Funcion Actualizar
+    '    Try
+    '        ConexionDB()
+    '        ComandoSQL = New SqlCommand("ActualizarFactura")
+    '        ComandoSQL.CommandType = CommandType.StoredProcedure
+    '        ComandoSQL.Connection = Connect
+    '        ComandoSQL.Parameters.AddWithValue("@ID_Factura", TablaDatos.pID_Factura)
+    '        ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Venta)
+    '        ComandoSQL.Parameters.AddWithValue("@Fac_Descuento", TablaDatos.pFac_Descuento)
+    '        ComandoSQL.Parameters.AddWithValue("@Fac_Impuesto", TablaDatos.pFac_Impuesto)
+    '        ComandoSQL.Parameters.AddWithValue("@Fac_RTN", TablaDatos.pFac_RTN)
+    '        ComandoSQL.Parameters.AddWithValue("@Fac_Total", TablaDatos.pFac_Total)
+    '        If ComandoSQL.ExecuteNonQuery Then
+    '            Return True
+    '        Else
+    '            Return False
+    '        End If
+    '    Catch Evento As Exception
+    '        MsgBox(Evento.Message)
+    '        Return False
+    '    Finally
+    '        DesconexionDB()
+    '    End Try
+    'End Function
 
     Public Function Eliminar(TablaDatos As eFactura) As Boolean 'Funcion Eliminar
         Try

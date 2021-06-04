@@ -54,4 +54,7 @@
         End If
     End Sub
 
+    Private Sub Cerrar_Form(sender As Object, e As EventArgs) Handles Me.Closing
+        'Salir.Show()
+    End Sub
 End Class

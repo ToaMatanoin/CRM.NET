@@ -22,7 +22,8 @@
         Try
             Dim Funcion As New fOportunides
             TablaDatos = Funcion.Mostrar
-            Dgv_Listado.Columns.Item("eliminar").Visible = False
+            Dgv_Listado.Columns.Item("Eliminar").Visible = False
+            Dgv_Listado.Columns.Item("Convertir").Visible = False
             If TablaDatos.Rows.Count <> 0 Then
                 Dgv_Listado.DataSource = TablaDatos
                 Dgv_Listado.ColumnHeadersVisible = True
@@ -73,6 +74,7 @@
         BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
+        btnConvertir.Visible = False
     End Sub
 
     Private Sub Activar()
@@ -116,6 +118,7 @@
             BtnEliminar.Visible = True
             BtnNuevo.Visible = False
             BtnModificar.Visible = False
+            btnConvertir.Visible = False
         End If
     End Sub
 
@@ -249,6 +252,87 @@
             BtnIngresar.Visible = False
             Limpiar()
             BtnNuevo.Text = "Nuevo Cliente"
+        End If
+    End Sub
+
+    Private Sub btnConvertir_Click(sender As Object, e As EventArgs) Handles btnConvertir.Click
+        If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
+
+            Dim Resultad As DialogResult
+            Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+            If Resultad = Windows.Forms.DialogResult.OK Then
+                Try
+
+                    Dim TablaDatos As New eClientes
+                    Dim Funcion As New fClientes
+
+                    TablaDatos.pCli_Nombre = TxtNomCli.Text
+                    TablaDatos.pCli_Telefono = TxtTelCli.Text
+                    TablaDatos.pCli_Email = TxtEmailCli.Text
+                    TablaDatos.pCli_NombreEmpresa = "-"
+                    TablaDatos.pCli_TelEmpresa = "0"
+                    TablaDatos.pCli_EmailEmpresa = "-"
+                    TablaDatos.pRTN = "0"
+
+                    If Funcion.Actualizar(TablaDatos) Then
+                        MessageBox.Show("Converción de cliente potencial a cliente, realizada correctamente", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Converción de cliente potencial a cliente, FALLO intento de nuevo", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    End If
+
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+            Else
+                MessageBox.Show("Cancelado por el usuario", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Else
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+        'eliminar cliente potencial
+        Dim Resultado As DialogResult
+        Resultado = MessageBox.Show("Desea Eliminar los datos", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If Resultado = Windows.Forms.DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In Dgv_Listado.Rows
+                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Convertir").Value)
+                    If LineaMarca Then
+                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Oport").Value)
+                        Dim TablaDatos As New eVentas
+                        Dim Funcion As New fVentas
+                        TablaDatos.pID_Ventas = LlavePrimaria
+                        If Funcion.Eliminar(TablaDatos) Then
+                            MessageBox.Show("Cliente fue eliminado correctamente", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Convertir.Checked = False
+                        Else
+                            MessageBox.Show("Cancelado por el Usuario", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+            Catch Evento As Exception
+                MsgBox(Evento.Message)
+            End Try
+        Else
+            MessageBox.Show("Cancelado por el Usuario", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+        Desactivar()
+        Call Mostrar()
+        Call Limpiar()
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Convertir.CheckedChanged
+        Desactivar()
+        If Chk_Convertir.CheckState = CheckState.Unchecked Then
+            Dgv_Listado.Columns.Item("Convertir").Visible = False
+            Limpiar()
+        Else
+            Dgv_Listado.Columns.Item("Convertir").Visible = True
+            btnConvertir.Visible = True
+            BtnEliminar.Visible = False
+            BtnNuevo.Visible = False
+            BtnModificar.Visible = False
         End If
     End Sub
 End Class

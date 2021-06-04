@@ -205,7 +205,7 @@
             Dim descuentos, impuestos As Double
             TablaDatos.pID_Venta = random
 
-            TablaDatos.pT_venta = Tventa
+            TablaDatos.pTP_Venta = Tventa
 
             If Desc = "Si" Then
                 descuentos = (subtotal * 0.085)
@@ -233,11 +233,6 @@
         Catch Evento As Exception
             MsgBox(Evento.Message)
         End Try
-
-
-
-
-
         Call Limpiar()
     End Sub
 
@@ -250,8 +245,7 @@
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click
 
         'devolver inventario
-        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txt_ID_Venta.Text <> "" And
-            Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
+        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txt_ID_Venta.Text <> "" And Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
 
             Dim Resultad As DialogResult
             Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -322,8 +316,6 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-
-
         Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text), Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
         If probarcant = True Then
 
@@ -370,7 +362,6 @@
                         TablaDatos.pVen_Fecha = Dtp_fecha.Text
                         TablaDatos.pVen_CantVendida = Txtcantidad.Text
                         TablaDatos.pVen_subtotal = Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text)
-
 
                         If Funcion.Insertar(TablaDatos) Then
                             MessageBox.Show("Venta registrada", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)

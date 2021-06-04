@@ -112,6 +112,12 @@
     <Compile Include="Datos\Conexion.vb" />
     <Compile Include="Datos\fClientes.vb" />
     <Compile Include="Entidad\eClientes.vb" />
+    <Compile Include="Presentacion\Debolucion.Designer.vb">
+      <DependentUpon>Debolucion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Debolucion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Empleado.Designer.vb">
       <DependentUpon>Empleado.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,12 @@
     <Compile Include="Presentacion\Oportunidades.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Salir.Designer.vb">
+      <DependentUpon>Salir.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Salir.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Usuarios.Designer.vb">
       <DependentUpon>Usuarios.vb</DependentUpon>
     </Compile>
@@ -184,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Comunicacion_Cliente.resx">
       <DependentUpon>Comunicacion_Cliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Debolucion.resx">
+      <DependentUpon>Debolucion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleado.resx">
       <DependentUpon>Empleado.vb</DependentUpon>
@@ -208,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Oportunidades.resx">
       <DependentUpon>Oportunidades.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Salir.resx">
+      <DependentUpon>Salir.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>

@@ -38,6 +38,7 @@ Partial Class Oportunidades
         Me.TxtNomCli = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnConvertir = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -49,9 +50,11 @@ Partial Class Oportunidades
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
-        Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Chk_Convertir = New System.Windows.Forms.CheckBox()
+        Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Convertir = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -206,15 +209,29 @@ Partial Class Oportunidades
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.btnConvertir)
         Me.GroupBox1.Controls.Add(Me.BtnNuevo)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Location = New System.Drawing.Point(50, 93)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(538, 86)
+        Me.GroupBox1.Size = New System.Drawing.Size(670, 86)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
+        '
+        'btnConvertir
+        '
+        Me.btnConvertir.BackColor = System.Drawing.Color.Silver
+        Me.btnConvertir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnConvertir.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnConvertir.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConvertir.Location = New System.Drawing.Point(530, 16)
+        Me.btnConvertir.Name = "btnConvertir"
+        Me.btnConvertir.Size = New System.Drawing.Size(123, 61)
+        Me.btnConvertir.TabIndex = 4
+        Me.btnConvertir.Text = "Convertir Cliente"
+        Me.btnConvertir.UseVisualStyleBackColor = True
         '
         'BtnNuevo
         '
@@ -270,16 +287,16 @@ Partial Class Oportunidades
         '
         'Txt_Buscar
         '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(291, 31)
+        Me.Txt_Buscar.Location = New System.Drawing.Point(229, 32)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(225, 26)
+        Me.Txt_Buscar.Size = New System.Drawing.Size(187, 26)
         Me.Txt_Buscar.TabIndex = 23
         '
         'Cmb_Buscar
         '
         Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(125, 31)
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(75, 32)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
         Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
         Me.Cmb_Buscar.TabIndex = 22
@@ -287,7 +304,7 @@ Partial Class Oportunidades
         'Lb_Buscar
         '
         Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(62, 34)
+        Me.Lb_Buscar.Location = New System.Drawing.Point(12, 36)
         Me.Lb_Buscar.Name = "Lb_Buscar"
         Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
         Me.Lb_Buscar.TabIndex = 21
@@ -332,7 +349,7 @@ Partial Class Oportunidades
         Me.Dgv_Listado.AllowUserToDeleteRows = False
         Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar, Me.Convertir})
         Me.Dgv_Listado.Location = New System.Drawing.Point(451, 208)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
@@ -340,14 +357,6 @@ Partial Class Oportunidades
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Dgv_Listado.Size = New System.Drawing.Size(852, 342)
         Me.Dgv_Listado.TabIndex = 21
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.ReadOnly = True
-        Me.eliminar.Width = 125
         '
         'PictureBox1
         '
@@ -366,11 +375,37 @@ Partial Class Oportunidades
         Me.GroupBox4.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox4.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(594, 93)
+        Me.GroupBox4.Location = New System.Drawing.Point(726, 93)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(574, 86)
+        Me.GroupBox4.Size = New System.Drawing.Size(442, 86)
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
+        '
+        'Chk_Convertir
+        '
+        Me.Chk_Convertir.AutoSize = True
+        Me.Chk_Convertir.Location = New System.Drawing.Point(519, 185)
+        Me.Chk_Convertir.Name = "Chk_Convertir"
+        Me.Chk_Convertir.Size = New System.Drawing.Size(112, 17)
+        Me.Chk_Convertir.TabIndex = 26
+        Me.Chk_Convertir.Text = "Convertir a Cliente"
+        Me.Chk_Convertir.UseVisualStyleBackColor = True
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.MinimumWidth = 6
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Width = 125
+        '
+        'Convertir
+        '
+        Me.Convertir.HeaderText = "Convertir"
+        Me.Convertir.MinimumWidth = 6
+        Me.Convertir.Name = "Convertir"
+        Me.Convertir.ReadOnly = True
+        Me.Convertir.Width = 125
         '
         'Oportunidades
         '
@@ -378,6 +413,7 @@ Partial Class Oportunidades
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1370, 574)
+        Me.Controls.Add(Me.Chk_Convertir)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Dgv_Listado)
@@ -427,8 +463,11 @@ Partial Class Oportunidades
     Friend WithEvents Cmb_Buscar As ComboBox
     Friend WithEvents Lb_Buscar As Label
     Friend WithEvents Dgv_Listado As DataGridView
-    Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents btnConvertir As Button
+    Friend WithEvents Chk_Convertir As CheckBox
+    Friend WithEvents eliminar As DataGridViewCheckBoxColumn
+    Friend WithEvents Convertir As DataGridViewCheckBoxColumn
 End Class

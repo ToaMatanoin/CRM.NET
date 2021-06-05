@@ -1,6 +1,7 @@
 ﻿Public Class Oportunidades
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
+    Public Restriccion As New Conexion
 
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Nombre_CliPoten")
@@ -333,6 +334,21 @@
             BtnEliminar.Visible = False
             BtnNuevo.Visible = False
             BtnModificar.Visible = False
+        End If
+    End Sub
+
+    Private Sub TxtNomCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomCli.KeyPress
+        Restriccion.RestringirLetras(e)
+    End Sub
+
+    Private Sub TxtTelCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelCli.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+
+    Private Sub TxtPosibilidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPosibilidad.KeyPress
+        Restriccion.RestringirNumero(e)
+        If Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
         End If
     End Sub
 End Class

@@ -1,6 +1,8 @@
 ﻿Public Class Inventario
+
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
+    Public Restriccion As New Conexion
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -256,5 +258,27 @@
             Limpiar()
             BtnNuevo.Text = "Nuevo Producto"
         End If
+    End Sub
+
+    Private Sub TxtNomPro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomPro.KeyPress
+        Restriccion.RestringirLetras(e)
+    End Sub
+    Private Sub TxtCantPro_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCantPro.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+    Private Sub TxtPrecioComp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPrecioComp.KeyPress
+        Restriccion.RestringirNumero(e)
+        If Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+    Private Sub TxtPrecioVent_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPrecioVent.KeyPress
+        Restriccion.RestringirNumero(e)
+        If Char.IsPunctuation(e.KeyChar) Then
+            e.Handled = False
+        End If
+    End Sub
+    Private Sub TxtNomProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomProveedor.KeyPress
+        Restriccion.RestringirLetras(e)
     End Sub
 End Class

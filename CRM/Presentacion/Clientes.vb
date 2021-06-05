@@ -1,6 +1,7 @@
 ﻿Public Class Clientes
 
     Private TablaDatos As New DataTable
+    Private Restriccion As New Conexion
     Public Bandera As New Boolean
     Public regrecargar As Integer = 0
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -307,4 +308,22 @@
             BtnNuevo.Text = "Nuevo Cliente"
         End If
     End Sub
+    Private Sub TxtNomCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomCli.KeyPress
+        Restriccion.RestringirLetras(e)
+    End Sub
+    Private Sub TxtTelCli_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelCli.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+
+    Private Sub TxtNomEmpresa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomEmpresa.KeyPress
+        Restriccion.RestringirLetras(e)
+    End Sub
+    Private Sub TxtTelEmpresa_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelEmpresa.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+    Private Sub TxtRTN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtRTN.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+
+
 End Class

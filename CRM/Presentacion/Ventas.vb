@@ -314,7 +314,8 @@
             MessageBox.Show("No tenemos esa cantidad de unidades de producto", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
 
-        subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))
+        'subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))'
+        subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
         Call Limpiar2()
         Mostrar()
     End Sub
@@ -337,6 +338,10 @@
             ChkCell.Value = Not ChkCell.Value
             Activar()
         End If
+    End Sub
+
+    Private Sub Txtcantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Txtcantidad.KeyPress
+        nuevo.RestringirNumero(e)
     End Sub
 
 End Class

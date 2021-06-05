@@ -1,5 +1,6 @@
 ﻿Public Class Empleado
     Private TablaDatos As New DataTable
+    Public Restriccion As New Conexion
     Public Bandera As New Boolean
     Public regrecargar As Integer = 0
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -287,5 +288,15 @@
             Limpiar()
             BtnNuevo.Text = "Nuevo Empleado"
         End If
+    End Sub
+
+    Private Sub TxtNomEmp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomEmp.KeyPress
+        Restriccion.RestringirLetras(e)
+    End Sub
+    Private Sub TxtTelEmp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelEmp.KeyPress
+        Restriccion.RestringirNumero(e)
+    End Sub
+    Private Sub TxtCargo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCargo.KeyPress
+        Restriccion.RestringirLetras(e)
     End Sub
 End Class

@@ -30,8 +30,6 @@
         Limpiar()
 
         Lb_IDFactura.Text = "ID Venta # " + Convert.ToString(random)
-
-
     End Sub
 
     Private Sub Mostrar()
@@ -121,8 +119,6 @@
         Btn_NuevaVenta.Visible = True
         BtnIngresar.Visible = False
         BtnDevolucion.Visible = False
-
-
     End Sub
 
     Private Sub Activar()
@@ -243,72 +239,9 @@
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click
-
-        'devolver inventario
-        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txt_ID_Venta.Text <> "" And Txt_ID_Venta.Text <> "" And Cb_producto.SelectedIndex >= 0 Then
-
-            Dim Resultad As DialogResult
-            Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-            If Resultad = Windows.Forms.DialogResult.OK Then
-                Try
-
-                    Dim TablaDatos As New eInventario
-                    Dim Funcion As New fInventario
-                    Dim suma As Integer = Convert.ToInt32(ProdCant) + Convert.ToInt32(Txtcantidad.Text)
-
-                    TablaDatos.pID_Producto = IDProd
-                    TablaDatos.pPro_Nombre = Cb_producto.Text
-                    TablaDatos.pPro_Cantidad = suma
-                    TablaDatos.pPro_preventa = Convert.ToDouble(preventa)
-                    TablaDatos.pPro_precompra = Convert.ToDouble(precompra)
-                    TablaDatos.pNombre_Proveedor = proveed
-                    TablaDatos.pPro_disponible = 1
-
-                    If Funcion.Actualizar(TablaDatos) Then
-                        MessageBox.Show("prueba de devolver producto a inventario exito", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        MessageBox.Show("prueba de devolver producto a inventario fallo", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    End If
-
-                Catch Evento As Exception
-                    MsgBox(Evento.Message)
-                End Try
-            Else
-                MessageBox.Show("Cancelado por el usuario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
-        Else
-            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-
-        'eliminar venta
-        Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea hacer una devolucion", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If Resultado = Windows.Forms.DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In Dgv_Listado.Rows
-                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If LineaMarca Then
-                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Venta").Value)
-                        Dim TablaDatos As New eVentas
-                        Dim Funcion As New fVentas
-                        TablaDatos.pID_Ventas = LlavePrimaria
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Devolucion  fue Realizada correctamente", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
-        Else
-            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-
-        desactivar()
-        Call Mostrar()
-        Call Limpiar()
+        Debolucion.idventa = Txt_ID_Venta.Text
+        Me.Hide()
+        Debolucion.Show()
     End Sub
 
     Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs)

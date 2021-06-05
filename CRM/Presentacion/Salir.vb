@@ -1,4 +1,5 @@
 ﻿Public Class Salir
+    Public mostrar As New Integer
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
     End Sub
@@ -14,8 +15,8 @@
         Oportunidades.Close()
         Usuarios.Close()
         Ventas.Close()
-        IniciarSesion.Close()
         Inicio.Close()
+        IniciarSesion.Show()
     End Sub
 
 End Class

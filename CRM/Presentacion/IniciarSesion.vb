@@ -9,6 +9,16 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
+        Clientes.Close()
+        Comunicacion_Cliente.Close()
+        Debolucion.Close()
+        Empleado.Close()
+        Inventario.Close()
+        Marketing.Close()
+        Oportunidades.Close()
+        Usuarios.Close()
+        Ventas.Close()
+        Inicio.Close()
     End Sub
 
     Private Sub Inicio_Sesion_Click(sender As Object, e As EventArgs) Handles Inicio_Sesion.Click

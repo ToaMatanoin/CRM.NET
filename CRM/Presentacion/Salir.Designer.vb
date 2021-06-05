@@ -32,11 +32,11 @@ Partial Class Salir
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 9)
+        Me.Label1.Location = New System.Drawing.Point(36, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(220, 18)
+        Me.Label1.Size = New System.Drawing.Size(169, 18)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "¿Desea salir de la aplicación?"
+        Me.Label1.Text = "¿Desea cerrar sesion?"
         '
         'Button1
         '
@@ -46,7 +46,7 @@ Partial Class Salir
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 31)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Salir"
+        Me.Button1.Text = "SI"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
@@ -57,7 +57,7 @@ Partial Class Salir
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(107, 31)
         Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Cancelar"
+        Me.Button2.Text = "NO"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Salir

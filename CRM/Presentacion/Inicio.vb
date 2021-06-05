@@ -1,5 +1,5 @@
 ﻿Public Class Inicio
-
+    Public mostrar As New Integer
     Private Sub BtnClientes_Click(sender As Object, e As EventArgs) Handles BtnClientes.Click
         Me.Hide()
         Clientes.Show()
@@ -54,7 +54,16 @@
         End If
     End Sub
 
-    Private Sub Cerrar_Form(sender As Object, e As EventArgs) Handles Me.Closing
-        'Salir.Show()
-    End Sub
+    'Private Sub Cerrar_Form(sender As Object, e As EventArgs) Handles Me.Closed
+    '    UserForm_QueryClose()
+    'End Sub
+
+    'Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
+    '    If (MsgBox("¿Desea cerrar sesion?", vbCritical + vbYesNo) = vbYes) Then
+    '        Cancel = False
+    '    Else
+    '        Cancel = True
+    '        IniciarSesion.Show()
+    '    End If
+    'End Sub
 End Class

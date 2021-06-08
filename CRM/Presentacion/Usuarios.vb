@@ -128,7 +128,7 @@
                 Limpiar()
                 BtnIngresar.Visible = False
                 Desactivar()
-                BtnNuevo.Text = "Nuevo Usuario"
+                BtnNuevo.Text = "   Nuevo Usuario"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
@@ -240,7 +240,7 @@
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
-        If BtnNuevo.Text = "Nuevo Usuario" Then
+        If BtnNuevo.Text = "   Nuevo Usuario" Then
             Activar()
             BtnIngresar.Visible = True
             BtnEmpleado.Enabled = True
@@ -251,7 +251,7 @@
             BtnIngresar.Visible = False
             BtnEmpleado.Enabled = False
             Limpiar()
-            BtnNuevo.Text = "Nuevo Usuario"
+            BtnNuevo.Text = "   Nuevo Usuario"
         End If
     End Sub
 End Class

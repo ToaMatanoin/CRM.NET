@@ -101,7 +101,7 @@ Partial Class IniciarSesion
         Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Button2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(120, 310)
+        Me.Button2.Location = New System.Drawing.Point(120, 315)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(98, 53)
         Me.Button2.TabIndex = 1
@@ -111,11 +111,10 @@ Partial Class IniciarSesion
         'Inicio_Sesion
         '
         Me.Inicio_Sesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Inicio_Sesion.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.Inicio_Sesion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Inicio_Sesion.Location = New System.Drawing.Point(8, 310)
+        Me.Inicio_Sesion.Location = New System.Drawing.Point(9, 315)
         Me.Inicio_Sesion.Name = "Inicio_Sesion"
-        Me.Inicio_Sesion.Size = New System.Drawing.Size(99, 53)
+        Me.Inicio_Sesion.Size = New System.Drawing.Size(98, 53)
         Me.Inicio_Sesion.TabIndex = 0
         Me.Inicio_Sesion.Text = "Iniciar Sesion"
         Me.Inicio_Sesion.UseVisualStyleBackColor = True

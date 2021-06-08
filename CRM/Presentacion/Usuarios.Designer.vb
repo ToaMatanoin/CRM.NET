@@ -40,26 +40,26 @@ Partial Class Usuarios
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnRegresar = New System.Windows.Forms.Button()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
-        Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox4
@@ -228,37 +228,24 @@ Partial Class Usuarios
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Location = New System.Drawing.Point(43, 95)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(531, 86)
+        Me.GroupBox1.Size = New System.Drawing.Size(611, 86)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
         'BtnRegresar
         '
         Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
         Me.BtnRegresar.Location = New System.Drawing.Point(9, 21)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
         Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
         Me.BtnRegresar.UseVisualStyleBackColor = True
-        '
-        'BtnNuevo
-        '
-        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnNuevo.Location = New System.Drawing.Point(9, 18)
-        Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(123, 52)
-        Me.BtnNuevo.TabIndex = 27
-        Me.BtnNuevo.Text = "Nuevo Usuario"
-        Me.BtnNuevo.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(280, 33)
+        Me.Txt_Buscar.Location = New System.Drawing.Point(234, 33)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
         Me.Txt_Buscar.Size = New System.Drawing.Size(247, 26)
@@ -267,7 +254,7 @@ Partial Class Usuarios
         'Cmb_Buscar
         '
         Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(110, 33)
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(80, 33)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
         Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
         Me.Cmb_Buscar.TabIndex = 25
@@ -275,47 +262,11 @@ Partial Class Usuarios
         'Lb_Buscar
         '
         Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(47, 35)
+        Me.Lb_Buscar.Location = New System.Drawing.Point(17, 36)
         Me.Lb_Buscar.Name = "Lb_Buscar"
         Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
         Me.Lb_Buscar.TabIndex = 24
         Me.Lb_Buscar.Text = "Buscar"
-        '
-        'BtnModificar
-        '
-        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Location = New System.Drawing.Point(267, 18)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(123, 52)
-        Me.BtnModificar.TabIndex = 2
-        Me.BtnModificar.Text = "Modificar Usuario"
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
-        'BtnEliminar
-        '
-        Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(396, 18)
-        Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(123, 52)
-        Me.BtnEliminar.TabIndex = 1
-        Me.BtnEliminar.Text = "Eliminar Usuario"
-        Me.BtnEliminar.UseVisualStyleBackColor = True
-        '
-        'BtnIngresar
-        '
-        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Location = New System.Drawing.Point(138, 18)
-        Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(123, 52)
-        Me.BtnIngresar.TabIndex = 0
-        Me.BtnIngresar.Text = "Ingresar Usuario"
-        Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'Chk_Eliminar
         '
@@ -350,16 +301,6 @@ Partial Class Usuarios
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 125
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Red
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-1, -1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1380, 90)
-        Me.PictureBox1.TabIndex = 27
-        Me.PictureBox1.TabStop = False
-        '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -367,9 +308,9 @@ Partial Class Usuarios
         Me.GroupBox2.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox2.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(580, 94)
+        Me.GroupBox2.Location = New System.Drawing.Point(660, 94)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(582, 87)
+        Me.GroupBox2.Size = New System.Drawing.Size(502, 87)
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         '
@@ -382,6 +323,73 @@ Partial Class Usuarios
         Me.GroupBox5.Size = New System.Drawing.Size(140, 87)
         Me.GroupBox5.TabIndex = 29
         Me.GroupBox5.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(-1, -1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1380, 90)
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
+        '
+        'BtnNuevo
+        '
+        Me.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
+        Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnNuevo.Location = New System.Drawing.Point(15, 17)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(141, 52)
+        Me.BtnNuevo.TabIndex = 27
+        Me.BtnNuevo.Text = "   Nuevo Usuario"
+        Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnNuevo.UseVisualStyleBackColor = False
+        '
+        'BtnModificar
+        '
+        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
+        Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnModificar.Location = New System.Drawing.Point(309, 18)
+        Me.BtnModificar.Name = "BtnModificar"
+        Me.BtnModificar.Size = New System.Drawing.Size(141, 52)
+        Me.BtnModificar.TabIndex = 2
+        Me.BtnModificar.Text = "Modificar Usuario"
+        Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnModificar.UseVisualStyleBackColor = True
+        '
+        'BtnEliminar
+        '
+        Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
+        Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminar.Location = New System.Drawing.Point(456, 20)
+        Me.BtnEliminar.Name = "BtnEliminar"
+        Me.BtnEliminar.Size = New System.Drawing.Size(141, 51)
+        Me.BtnEliminar.TabIndex = 1
+        Me.BtnEliminar.Text = "Eliminar Usuario"
+        Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnEliminar.UseVisualStyleBackColor = True
+        '
+        'BtnIngresar
+        '
+        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
+        Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnIngresar.Location = New System.Drawing.Point(162, 17)
+        Me.BtnIngresar.Name = "BtnIngresar"
+        Me.BtnIngresar.Size = New System.Drawing.Size(141, 52)
+        Me.BtnIngresar.TabIndex = 0
+        Me.BtnIngresar.Text = "Ingresar Usuario"
+        Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'Usuarios
         '
@@ -408,10 +416,10 @@ Partial Class Usuarios
         Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

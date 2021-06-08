@@ -79,6 +79,10 @@
     Private Sub Limpiar()
         Txtcantidad.Text = ""
         Txtpreciounidad.Text = ""
+        TxtImpuesto.Text = ""
+        TxtDescuento.Text = ""
+        TxtSubTotal.Text = ""
+        TxtTotal.Text = ""
 
         Cb_producto.Text = ""
 
@@ -106,6 +110,10 @@
     Private Sub Limpiar2()
         Txtcantidad.Text = ""
         Txtpreciounidad.Text = ""
+        TxtImpuesto.Text = ""
+        TxtDescuento.Text = ""
+        TxtSubTotal.Text = ""
+        TxtTotal.Text = ""
 
         Cb_producto.Text = ""
 
@@ -148,6 +156,11 @@
         TxtIdclli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         Txtcantidad.Text = Dgv_Listado.SelectedCells.Item(9).Value
         Cb_producto.Text = Dgv_Listado.SelectedCells.Item(7).Value
+        TxtSubTotal.Text = Dgv_Listado.SelectedCells.Item(10).Value
+        nuevo.ConexionDB()
+        TxtImpuesto.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Impuesto", "Factura")
+        TxtDescuento.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Descuento", "Factura")
+        TxtTotal.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Total", "Factura")
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick

@@ -5,7 +5,7 @@
         Clientes.Show()
     End Sub
 
-    Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs) Handles BtnCerrarSesion.Click
+    Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs)
         IniciarSesion.Visible = True
         Me.Close()
         IniciarSesion.IDUSU = ""
@@ -54,16 +54,14 @@
         End If
     End Sub
 
-    'Private Sub Cerrar_Form(sender As Object, e As EventArgs) Handles Me.Closed
-    '    UserForm_QueryClose()
-    'End Sub
-
-    'Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
-    '    If (MsgBox("¿Desea cerrar sesion?", vbCritical + vbYesNo) = vbYes) Then
-    '        Cancel = False
-    '    Else
-    '        Cancel = True
-    '        IniciarSesion.Show()
-    '    End If
-    'End Sub
+    Private Sub Cerrar_Form(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If MessageBox.Show("¿Desea Cerrar Sesion?", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            IniciarSesion.Show()
+            IniciarSesion.IDUSU = ""
+            IniciarSesion.IDEMP = ""
+            IniciarSesion.ROLUSU = ""
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 End Class

@@ -3,7 +3,7 @@
     Public nuevo As New Conexion
     Private TablaDatos As New DataTable
     Public idventa As New Integer
-    Dim productos(DGVVentas.Rows.Count) As String
+    Dim productos(DGVVentas.Rows.Count), ventacant(DGVVentas.Rows.Count) As String
 
     Private Sub Debolucion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarV()
@@ -107,7 +107,8 @@
 
     Private Sub recoger_id()
         For i = 0 To DGVVentas.Rows.Count Step 1
-            productos(i) = DGVVentas.Item(4, (i + 1)).Value.ToString
+            productos(i) = DGVVentas.Item(6, (i + 1)).Value.ToString
+            ventacant(i) = DGVVentas.Item(9, (i + 1)).Value.ToString
         Next i
     End Sub
 
@@ -123,15 +124,19 @@
                 Dim TablaDatos As New eInventario
                 Dim Funcion As New fInventario
                 For i = 1 To dgvproductos.Rows.Count Step 1
-                    Dim suma As Integer = Convert.ToInt32(Ventas.ProdCant) + Convert.ToInt32(Ventas.Txtcantidad.Text)
+                    For j = 1 To DGVVentas.Rows.Count Step 1
+                        If productos(j).Equals(dgvproductos(1, i).Value) Then
+                            Dim suma As Integer = Convert.ToInt32(ventacant(j)) + Convert.ToInt32(dgvproductos(3, i).Value)
 
-                    TablaDatos.pID_Producto = Ventas.IDProd
-                    TablaDatos.pPro_Nombre = Ventas.Cb_producto.Text
-                    TablaDatos.pPro_Cantidad = suma
-                    TablaDatos.pPro_preventa = Convert.ToDouble(Ventas.preventa)
-                    TablaDatos.pPro_precompra = Convert.ToDouble(Ventas.precompra)
-                    TablaDatos.pNombre_Proveedor = Ventas.proveed
-                    TablaDatos.pPro_disponible = 1
+                            TablaDatos.pID_Producto = dgvproductos(1, i).Value
+                            TablaDatos.pPro_Nombre = dgvproductos(2, i).Value
+                            TablaDatos.pPro_Cantidad = suma
+                            TablaDatos.pPro_preventa = Convert.ToDouble(dgvproductos(4, i).Value)
+                            TablaDatos.pPro_precompra = Convert.ToDouble(dgvproductos(5, i).Value)
+                            TablaDatos.pNombre_Proveedor = dgvproductos(6, i).Value
+                            TablaDatos.pPro_disponible = dgvproductos(7, i).Value
+                        End If
+                    Next j
                 Next i
 
                 If Funcion.Actualizar(TablaDatos) Then

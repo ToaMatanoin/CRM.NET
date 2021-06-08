@@ -165,7 +165,7 @@
                 Mostrar()
                 Limpiar()
                 BtnIngresar.Visible = False
-                BtnNuevo.Text = "Nuevo Cliente"
+                BtnNuevo.Text = "   Nuevo Cliente"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
@@ -243,7 +243,7 @@
     End Sub
 
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
-        If BtnNuevo.Text = "Nuevo Cliente" Then
+        If BtnNuevo.Text = "   Nuevo Cliente" Then
             Activar()
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
@@ -252,7 +252,7 @@
             Desactivar()
             BtnIngresar.Visible = False
             Limpiar()
-            BtnNuevo.Text = "Nuevo Cliente"
+            BtnNuevo.Text = "   Nuevo Cliente"
         End If
     End Sub
 

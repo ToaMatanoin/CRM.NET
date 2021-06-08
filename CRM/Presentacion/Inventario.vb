@@ -140,6 +140,7 @@
                 End If
                 Mostrar()
                 Limpiar()
+                Desactivar()
                 BtnIngresar.Visible = False
                 BtnNuevo.Text = "Nuevo Producto"
             Catch Evento As Exception

@@ -66,11 +66,9 @@ Partial Class Comunicacion_Cliente
         Me.GroupBox3.Controls.Add(Me.TxtCorreoCli)
         Me.GroupBox3.Controls.Add(Me.Label3)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(63, 258)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Location = New System.Drawing.Point(47, 210)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox3.Size = New System.Drawing.Size(704, 490)
+        Me.GroupBox3.Size = New System.Drawing.Size(528, 398)
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         '
@@ -80,10 +78,10 @@ Partial Class Comunicacion_Cliente
         Me.BtnCliente.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCliente.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCliente.Location = New System.Drawing.Point(595, 37)
-        Me.BtnCliente.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnCliente.Location = New System.Drawing.Point(446, 30)
+        Me.BtnCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnCliente.Name = "BtnCliente"
-        Me.BtnCliente.Size = New System.Drawing.Size(103, 33)
+        Me.BtnCliente.Size = New System.Drawing.Size(77, 27)
         Me.BtnCliente.TabIndex = 17
         Me.BtnCliente.Text = "Cliente"
         Me.BtnCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -92,73 +90,66 @@ Partial Class Comunicacion_Cliente
         'TxtCliCod
         '
         Me.TxtCliCod.Enabled = False
-        Me.TxtCliCod.Location = New System.Drawing.Point(595, 38)
-        Me.TxtCliCod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCliCod.Location = New System.Drawing.Point(446, 31)
         Me.TxtCliCod.Name = "TxtCliCod"
-        Me.TxtCliCod.Size = New System.Drawing.Size(45, 30)
+        Me.TxtCliCod.Size = New System.Drawing.Size(35, 26)
         Me.TxtCliCod.TabIndex = 9
         Me.TxtCliCod.Visible = False
         '
         'TxtMensaje
         '
         Me.TxtMensaje.Enabled = False
-        Me.TxtMensaje.Location = New System.Drawing.Point(19, 146)
-        Me.TxtMensaje.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtMensaje.Location = New System.Drawing.Point(14, 119)
         Me.TxtMensaje.MaxLength = 250
         Me.TxtMensaje.Multiline = True
         Me.TxtMensaje.Name = "TxtMensaje"
-        Me.TxtMensaje.Size = New System.Drawing.Size(663, 319)
+        Me.TxtMensaje.Size = New System.Drawing.Size(498, 260)
         Me.TxtMensaje.TabIndex = 7
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(15, 121)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(11, 98)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(84, 23)
+        Me.Label9.Size = New System.Drawing.Size(67, 18)
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Mensaje"
         '
         'TxtAsunto
         '
         Me.TxtAsunto.Enabled = False
-        Me.TxtAsunto.Location = New System.Drawing.Point(181, 78)
-        Me.TxtAsunto.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtAsunto.Location = New System.Drawing.Point(136, 63)
         Me.TxtAsunto.MaxLength = 40
         Me.TxtAsunto.Name = "TxtAsunto"
-        Me.TxtAsunto.Size = New System.Drawing.Size(513, 30)
+        Me.TxtAsunto.Size = New System.Drawing.Size(386, 26)
         Me.TxtAsunto.TabIndex = 5
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(15, 81)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(11, 66)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(76, 23)
+        Me.Label4.Size = New System.Drawing.Size(60, 18)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "Asunto:"
         '
         'TxtCorreoCli
         '
         Me.TxtCorreoCli.Enabled = False
-        Me.TxtCorreoCli.Location = New System.Drawing.Point(181, 38)
-        Me.TxtCorreoCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtCorreoCli.Location = New System.Drawing.Point(136, 31)
         Me.TxtCorreoCli.Name = "TxtCorreoCli"
-        Me.TxtCorreoCli.Size = New System.Drawing.Size(404, 30)
+        Me.TxtCorreoCli.Size = New System.Drawing.Size(304, 26)
         Me.TxtCorreoCli.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(15, 38)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(11, 31)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(143, 23)
+        Me.Label3.Size = New System.Drawing.Size(114, 18)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Correo Cliente:"
         '
@@ -168,78 +159,75 @@ Partial Class Comunicacion_Cliente
         Me.GroupBox1.Controls.Add(Me.BtnEnviar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Controls.Add(Me.BtnEscribir)
-        Me.GroupBox1.Location = New System.Drawing.Point(63, 116)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Location = New System.Drawing.Point(47, 94)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(525, 106)
+        Me.GroupBox1.Size = New System.Drawing.Size(548, 86)
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
         'BtnEnviar
         '
         Me.BtnEnviar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnEnviar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEnviar.Location = New System.Drawing.Point(181, 16)
-        Me.BtnEnviar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEnviar.Image = CType(resources.GetObject("BtnEnviar.Image"), System.Drawing.Image)
+        Me.BtnEnviar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEnviar.Location = New System.Drawing.Point(186, 14)
         Me.BtnEnviar.Name = "BtnEnviar"
-        Me.BtnEnviar.Size = New System.Drawing.Size(164, 75)
+        Me.BtnEnviar.Size = New System.Drawing.Size(173, 61)
         Me.BtnEnviar.TabIndex = 3
-        Me.BtnEnviar.Text = "Enviar Mensaje"
+        Me.BtnEnviar.Text = "      Enviar Mensaje"
+        Me.BtnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEnviar.UseVisualStyleBackColor = True
         Me.BtnEnviar.Visible = False
         '
         'BtnEliminar
         '
         Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEliminar.Location = New System.Drawing.Point(353, 16)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
+        Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEliminar.Location = New System.Drawing.Point(365, 14)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(164, 75)
+        Me.BtnEliminar.Size = New System.Drawing.Size(173, 61)
         Me.BtnEliminar.TabIndex = 2
-        Me.BtnEliminar.Text = "Eliminar Mensaje"
+        Me.BtnEliminar.Text = "    Eliminar Mensaje"
+        Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminar.UseVisualStyleBackColor = True
         Me.BtnEliminar.Visible = False
         '
         'BtnEscribir
         '
         Me.BtnEscribir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEscribir.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnEscribir.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnEscribir.Location = New System.Drawing.Point(9, 16)
-        Me.BtnEscribir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEscribir.Image = CType(resources.GetObject("BtnEscribir.Image"), System.Drawing.Image)
+        Me.BtnEscribir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnEscribir.Location = New System.Drawing.Point(7, 13)
         Me.BtnEscribir.Name = "BtnEscribir"
-        Me.BtnEscribir.Size = New System.Drawing.Size(164, 75)
+        Me.BtnEscribir.Size = New System.Drawing.Size(173, 61)
         Me.BtnEscribir.TabIndex = 0
-        Me.BtnEscribir.Text = "Escribir Mensaje"
+        Me.BtnEscribir.Text = "     Escribir Mensaje"
+        Me.BtnEscribir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEscribir.UseVisualStyleBackColor = True
         '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Location = New System.Drawing.Point(596, 116)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox2.Location = New System.Drawing.Point(1187, 95)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox2.Size = New System.Drawing.Size(183, 106)
+        Me.GroupBox2.Size = New System.Drawing.Size(137, 86)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
         'BtnRegresar
         '
         Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(8, 23)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
+        Me.BtnRegresar.Location = New System.Drawing.Point(22, 19)
         Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(164, 63)
+        Me.BtnRegresar.Size = New System.Drawing.Size(93, 51)
         Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
         Me.BtnRegresar.UseVisualStyleBackColor = True
         '
         'Dgv_Listado
@@ -249,13 +237,12 @@ Partial Class Comunicacion_Cliente
         Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(819, 258)
-        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(614, 210)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(917, 490)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(688, 398)
         Me.Dgv_Listado.TabIndex = 10
         '
         'eliminar
@@ -269,39 +256,35 @@ Partial Class Comunicacion_Cliente
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(819, 230)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(614, 187)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(80, 21)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
         Me.Chk_Eliminar.TabIndex = 12
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(363, 39)
-        Me.Txt_Buscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Buscar.Location = New System.Drawing.Point(238, 32)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(575, 31)
+        Me.Txt_Buscar.Size = New System.Drawing.Size(314, 26)
         Me.Txt_Buscar.TabIndex = 15
         '
         'Cmb_Buscar
         '
         Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(139, 39)
-        Me.Cmb_Buscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(84, 32)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
-        Me.Cmb_Buscar.Size = New System.Drawing.Size(196, 31)
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
         Me.Cmb_Buscar.TabIndex = 14
         '
         'Lb_Buscar
         '
         Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(55, 43)
-        Me.Lb_Buscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Lb_Buscar.Location = New System.Drawing.Point(21, 35)
         Me.Lb_Buscar.Name = "Lb_Buscar"
-        Me.Lb_Buscar.Size = New System.Drawing.Size(71, 23)
+        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
         Me.Lb_Buscar.TabIndex = 13
         Me.Lb_Buscar.Text = "Buscar"
         '
@@ -309,10 +292,9 @@ Partial Class Comunicacion_Cliente
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Red
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-7, -2)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Location = New System.Drawing.Point(-5, -2)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1840, 111)
+        Me.PictureBox1.Size = New System.Drawing.Size(1380, 90)
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
@@ -323,20 +305,18 @@ Partial Class Comunicacion_Cliente
         Me.GroupBox4.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox4.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(787, 116)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Location = New System.Drawing.Point(614, 94)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.GroupBox4.Size = New System.Drawing.Size(981, 107)
+        Me.GroupBox4.Size = New System.Drawing.Size(567, 87)
         Me.GroupBox4.TabIndex = 17
         Me.GroupBox4.TabStop = False
         '
         'Comunicacion_Cliente
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1827, 763)
+        Me.ClientSize = New System.Drawing.Size(1370, 609)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox2)
@@ -346,7 +326,6 @@ Partial Class Comunicacion_Cliente
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "Comunicacion_Cliente"
         Me.Text = "Comunicacion_Cliente"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

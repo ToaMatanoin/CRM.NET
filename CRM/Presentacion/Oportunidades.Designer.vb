@@ -40,9 +40,9 @@ Partial Class Oportunidades
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnConvertir = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
@@ -253,6 +253,21 @@ Partial Class Oportunidades
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnNuevo.UseVisualStyleBackColor = True
         '
+        'BtnIngresar
+        '
+        Me.BtnIngresar.BackColor = System.Drawing.Color.Silver
+        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
+        Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnIngresar.Location = New System.Drawing.Point(159, 16)
+        Me.BtnIngresar.Name = "BtnIngresar"
+        Me.BtnIngresar.Size = New System.Drawing.Size(138, 61)
+        Me.BtnIngresar.TabIndex = 0
+        Me.BtnIngresar.Text = "Ingresar Cliente"
+        Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnIngresar.UseVisualStyleBackColor = True
+        '
         'BtnModificar
         '
         Me.BtnModificar.BackColor = System.Drawing.Color.Silver
@@ -282,21 +297,6 @@ Partial Class Oportunidades
         Me.BtnEliminar.Text = "Eliminar Cliente"
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminar.UseVisualStyleBackColor = True
-        '
-        'BtnIngresar
-        '
-        Me.BtnIngresar.BackColor = System.Drawing.Color.Silver
-        Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
-        Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnIngresar.Location = New System.Drawing.Point(159, 16)
-        Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(138, 61)
-        Me.BtnIngresar.TabIndex = 0
-        Me.BtnIngresar.Text = "Ingresar Cliente"
-        Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnIngresar.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '

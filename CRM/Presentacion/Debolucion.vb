@@ -3,12 +3,12 @@
     Public nuevo As New Conexion
     Private TablaDatos As New DataTable
     Public idventa As New Integer
-    Dim productos(DGVVentas.Rows.Count), ventacant(DGVVentas.Rows.Count) As String
+    Dim productos(1), ventacant(1) As String
 
     Private Sub Debolucion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MostrarV()
-        recoger_id()
         Mostrar()
+        recoger_id()
     End Sub
 
     Private Sub MostrarV()
@@ -106,6 +106,8 @@
     End Sub
 
     Private Sub recoger_id()
+        ReDim productos(DGVVentas.Rows.Count)
+        ReDim ventacant(DGVVentas.Rows.Count)
         For i = 0 To DGVVentas.Rows.Count Step 1
             productos(i) = DGVVentas.Item(6, (i + 1)).Value.ToString
             ventacant(i) = DGVVentas.Item(9, (i + 1)).Value.ToString

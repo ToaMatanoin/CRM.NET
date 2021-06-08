@@ -5,6 +5,9 @@
     Public Restriccion As New Conexion
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Cmb_Buscar.Items.Add("Pro_Nombre")
+        Cmb_Buscar.Items.Add("Nombre_Proveedor")
+        Cmb_Buscar.Text = "Pro_Nombre"
 
         If Bandera Then
             BtnRegresar.Visible = False

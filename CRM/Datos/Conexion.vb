@@ -153,6 +153,29 @@ Public Class Conexion
         End Try
         Return Resultado
     End Function
+
+    Function ExistenciaTxt(comparar As String, nombrep As String, nombret As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            Sentencia = New SqlCommand("Select " & nombrep & " from " & nombret & " ", Connect)
+            Ejecucion = Sentencia.ExecuteReader
+
+            While Ejecucion.Read
+
+                If comparar = Ejecucion.Item(nombrep) Then
+                    resultado = True
+                End If
+
+            End While
+
+            Ejecucion.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Return resultado
+    End Function
+
+
     Public Sub RestringirNumero(e As KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False

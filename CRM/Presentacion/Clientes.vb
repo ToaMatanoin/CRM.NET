@@ -183,6 +183,7 @@
                     TablaDatos.pCli_TelEmpresa = TxtTelEmpresa.Text
                     TablaDatos.pCli_EmailEmpresa = TxtEmailEmpresa.Text
                     TablaDatos.pRTN = TxtRTN.Text
+
                     If Funcion.Actualizar(TablaDatos) Then
                         MessageBox.Show("Cliente fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Else
@@ -324,6 +325,4 @@
     Private Sub TxtRTN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtRTN.KeyPress
         Restriccion.RestringirNumero(e)
     End Sub
-
-
 End Class

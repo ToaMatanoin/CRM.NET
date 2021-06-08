@@ -191,11 +191,12 @@ Partial Class Ventas
         'Lb_IDFactura
         '
         Me.Lb_IDFactura.AutoSize = True
-        Me.Lb_IDFactura.Location = New System.Drawing.Point(126, 11)
+        Me.Lb_IDFactura.Location = New System.Drawing.Point(144, 0)
         Me.Lb_IDFactura.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Lb_IDFactura.Name = "Lb_IDFactura"
-        Me.Lb_IDFactura.Size = New System.Drawing.Size(0, 20)
+        Me.Lb_IDFactura.Size = New System.Drawing.Size(16, 20)
         Me.Lb_IDFactura.TabIndex = 4
+        Me.Lb_IDFactura.Text = "0"
         '
         'Dtp_fecha
         '

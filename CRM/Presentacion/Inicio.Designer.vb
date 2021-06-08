@@ -58,6 +58,8 @@ Partial Class Inicio
         '
         Me.BtnVentas.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnVentas.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnVentas.Image = CType(resources.GetObject("BtnVentas.Image"), System.Drawing.Image)
+        Me.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnVentas.Location = New System.Drawing.Point(6, 82)
         Me.BtnVentas.Name = "BtnVentas"
         Me.BtnVentas.Size = New System.Drawing.Size(240, 51)
@@ -69,6 +71,8 @@ Partial Class Inicio
         '
         Me.BtnMarketing.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMarketing.Image = CType(resources.GetObject("BtnMarketing.Image"), System.Drawing.Image)
+        Me.BtnMarketing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnMarketing.Location = New System.Drawing.Point(6, 141)
         Me.BtnMarketing.Name = "BtnMarketing"
         Me.BtnMarketing.Size = New System.Drawing.Size(240, 51)
@@ -80,6 +84,8 @@ Partial Class Inicio
         '
         Me.BtnInventario.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnInventario.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnInventario.Image = CType(resources.GetObject("BtnInventario.Image"), System.Drawing.Image)
+        Me.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnInventario.Location = New System.Drawing.Point(6, 25)
         Me.BtnInventario.Name = "BtnInventario"
         Me.BtnInventario.Size = New System.Drawing.Size(240, 51)

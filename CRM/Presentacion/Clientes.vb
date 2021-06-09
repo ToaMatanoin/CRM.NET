@@ -253,6 +253,8 @@
             Call Mostrar()
             Call Limpiar()
         End If
+        'eliminar marketing, ventas
+
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click

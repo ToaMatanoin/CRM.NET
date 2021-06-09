@@ -228,6 +228,9 @@
             Call Mostrar()
             Call Limpiar()
         End If
+
+        'eliminar de marketing, ventas,
+
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged

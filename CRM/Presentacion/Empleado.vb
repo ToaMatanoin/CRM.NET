@@ -248,6 +248,9 @@
             Call Mostrar()
             Call Limpiar()
         End If
+
+        'eliminar usuario
+
     End Sub
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
         If BtnRegresar.Text = "Regresar" Then

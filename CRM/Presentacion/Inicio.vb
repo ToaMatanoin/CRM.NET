@@ -5,14 +5,6 @@
         Clientes.Show()
     End Sub
 
-    Private Sub BtnCerrarSesion_Click(sender As Object, e As EventArgs)
-        IniciarSesion.Visible = True
-        Me.Close()
-        IniciarSesion.IDUSU = ""
-        IniciarSesion.IDEMP = ""
-        IniciarSesion.ROLUSU = ""
-    End Sub
-
     Private Sub BtnOportunidades_Click(sender As Object, e As EventArgs) Handles BtnOportunidades.Click
         Me.Hide()
         Oportunidades.Show()

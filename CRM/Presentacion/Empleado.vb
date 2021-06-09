@@ -299,4 +299,5 @@
     Private Sub TxtCargo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCargo.KeyPress
         Restriccion.RestringirLetras(e)
     End Sub
+
 End Class

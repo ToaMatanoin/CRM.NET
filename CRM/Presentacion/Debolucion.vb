@@ -186,4 +186,5 @@
         Me.Close()
         Ventas.Show()
     End Sub
+
 End Class

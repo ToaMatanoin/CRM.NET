@@ -254,4 +254,5 @@
             BtnNuevo.Text = "   Nuevo Usuario"
         End If
     End Sub
+
 End Class

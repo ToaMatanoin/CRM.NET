@@ -325,4 +325,5 @@
     Private Sub TxtRTN_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtRTN.KeyPress
         Restriccion.RestringirNumero(e)
     End Sub
+
 End Class

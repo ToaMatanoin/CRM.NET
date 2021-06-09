@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\Correo.vb" />
     <Compile Include="Datos\fComunicacion_Cliente.vb" />
     <Compile Include="Datos\fDevoluciones.vb" />
     <Compile Include="Datos\fEmpleados.vb" />

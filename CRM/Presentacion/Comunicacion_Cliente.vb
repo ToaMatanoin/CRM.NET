@@ -154,38 +154,39 @@
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
-        Dim fechaActual As Date = Date.Now
 
-        If TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And
-            TxtMensaje.Text <> "" Then
+        'Dim fechaActual As Date = Date.Now
 
-            Try
-                Dim TablaDatos As New eComunicacion_Cliente
-                Dim Funcion As New fComunicacion_Cliente
-                TablaDatos.pID_Empleado = IniciarSesion.IDEMP
-                TablaDatos.pID_Cliente = TxtCliCod.Text
-                TablaDatos.pEmail_Asunto = TxtAsunto.Text
-                TablaDatos.pEmail_Fecha = Convert.ToString(fechaActual)
-                TablaDatos.pEmail_Mensaje = TxtMensaje.Text
+        'If TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And
+        '    TxtMensaje.Text <> "" Then
+
+        '    Try
+        '        Dim TablaDatos As New eComunicacion_Cliente
+        '        Dim Funcion As New fComunicacion_Cliente
+        '        TablaDatos.pID_Empleado = IniciarSesion.IDEMP
+        '        TablaDatos.pID_Cliente = TxtCliCod.Text
+        '        TablaDatos.pEmail_Asunto = TxtAsunto.Text
+        '        TablaDatos.pEmail_Fecha = Convert.ToString(fechaActual)
+        '        TablaDatos.pEmail_Mensaje = TxtMensaje.Text
 
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Mensaje enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '        If Funcion.Insertar(TablaDatos) Then
+        '            MessageBox.Show("Mensaje enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                Else
-                    MessageBox.Show("Mensaje no pudo ser enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                TxtCorreoCli.Enabled = False
-                TxtMensaje.Enabled = False
-                TxtAsunto.Enabled = False
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
-        Else
-            MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
+        '        Else
+        '            MessageBox.Show("Mensaje no pudo ser enviado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '        End If
+        '        Mostrar()
+        '        Limpiar()
+        '        TxtCorreoCli.Enabled = False
+        '        TxtMensaje.Enabled = False
+        '        TxtAsunto.Enabled = False
+        '    Catch Evento As Exception
+        '        MsgBox(Evento.Message)
+        '    End Try
+        'Else
+        '    MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'End If
     End Sub
 
     Private Sub BtnCliente_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click

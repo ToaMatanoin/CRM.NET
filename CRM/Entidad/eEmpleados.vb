@@ -1,6 +1,6 @@
 ﻿Public Class eEmpleados
     Dim ID_Empleado, Emp_Telefono As Integer
-    Dim Emp_Nombre, Emp_Email, Emp_Direccion, Emp_Cargo As String
+    Dim Emp_Nombre, Emp_Email, Emp_Direccion, Emp_Cargo, Emp_Email_Pass As String
 
     Public Property pID_Empleado
         Get
@@ -26,6 +26,15 @@
         End Get
         Set(value)
             Emp_Telefono = value
+        End Set
+    End Property
+
+    Public Property pEmp_Email_Pass
+        Get
+            Return Emp_Email_Pass
+        End Get
+        Set(value)
+            Emp_Email_Pass = value
         End Set
     End Property
 
@@ -60,13 +69,14 @@
     End Sub
 
     Public Sub New(ID_Empleado As Integer, Emp_Nombre As String,
-                   Emp_Email As String, Emp_Direccion As String,
+                   Emp_Email As String, Emp_Email_Pass As String, Emp_Direccion As String,
                    Emp_Cargo As String, Emp_Telefono As Integer) 'Constructor Full
 
         pID_Empleado = ID_Empleado
         pEmp_Nombre = Emp_Nombre
         pEmp_Telefono = Emp_Telefono
         pEmp_Email = Emp_Email
+        pEmp_Email_Pass = Emp_Email_Pass
         pEmp_Direccion = Emp_Direccion
         pEmp_Cargo = Emp_Cargo
     End Sub

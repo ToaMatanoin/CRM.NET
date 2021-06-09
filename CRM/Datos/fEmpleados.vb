@@ -35,6 +35,7 @@ Public Class fEmpleados
             ComandoSQL.Parameters.AddWithValue("@Emp_Nombre", TablaDatos.pEmp_Nombre)
             ComandoSQL.Parameters.AddWithValue("@Emp_Telefono", TablaDatos.pEmp_Telefono)
             ComandoSQL.Parameters.AddWithValue("@Emp_Email", TablaDatos.pEmp_Email)
+            ComandoSQL.Parameters.AddWithValue("@Emp_Email_Pass", TablaDatos.pEmp_Email_Pass)
             ComandoSQL.Parameters.AddWithValue("@Emp_Direccion", TablaDatos.pEmp_Direccion)
             ComandoSQL.Parameters.AddWithValue("@Emp_Cargo", TablaDatos.pEmp_Cargo)
 
@@ -61,6 +62,7 @@ Public Class fEmpleados
             ComandoSQL.Parameters.AddWithValue("@Emp_Nombre", TablaDatos.pEmp_Nombre)
             ComandoSQL.Parameters.AddWithValue("@Emp_Telefono", TablaDatos.pEmp_Telefono)
             ComandoSQL.Parameters.AddWithValue("@Emp_Email", TablaDatos.pEmp_Email)
+            ComandoSQL.Parameters.AddWithValue("@Emp_Email_Pass", TablaDatos.pEmp_Email_Pass)
             ComandoSQL.Parameters.AddWithValue("@Emp_Direccion", TablaDatos.pEmp_Direccion)
             ComandoSQL.Parameters.AddWithValue("@Emp_Cargo", TablaDatos.pEmp_Cargo)
             If ComandoSQL.ExecuteNonQuery Then

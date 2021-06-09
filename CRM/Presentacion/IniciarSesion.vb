@@ -1,7 +1,8 @@
 ﻿Public Class IniciarSesion
     Public nuevo As New Conexion
     Public Bandera As New Boolean
-    Public IDUSU, IDEMP, ROLUSU As String
+    Public IDUSU, IDEMP, ROLUSU, PassEMP, EmailEMP As String
+
 
     Private Sub IniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         nuevo.ConexionDB()
@@ -27,6 +28,8 @@
                             IDUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Usuario", "Usuarios")
                             IDEMP = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Empleado", "Usuarios")
                             ROLUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "Usu_Cargo", "Usuarios")
+                            EmailEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email", "Empleado")
+                            PassEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email_Pass", "Empleado")
                             Me.Hide()
                             Txt_UsuNom.Text = ""
                             Txt_UsuPass.Text = ""

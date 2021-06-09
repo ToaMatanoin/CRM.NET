@@ -154,7 +154,7 @@
     End Sub
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
-
+        enviarCorreo(IniciarSesion.EmailEMP, IniciarSesion.PassEMP, TxtMensaje.Text, TxtAsunto.Text, TxtCorreoCli.Text)
         'Dim fechaActual As Date = Date.Now
 
         'If TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And

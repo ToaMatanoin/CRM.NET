@@ -52,6 +52,8 @@ Partial Class Empleado
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TxtPasswordEmail = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -63,6 +65,8 @@ Partial Class Empleado
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox3.Controls.Add(Me.TxtPasswordEmail)
+        Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.TxtCargo)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.TxtDireccion)
@@ -78,14 +82,14 @@ Partial Class Empleado
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(46, 199)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(394, 297)
+        Me.GroupBox3.Size = New System.Drawing.Size(394, 337)
         Me.GroupBox3.TabIndex = 17
         Me.GroupBox3.TabStop = False
         '
         'TxtCargo
         '
         Me.TxtCargo.Enabled = False
-        Me.TxtCargo.Location = New System.Drawing.Point(175, 254)
+        Me.TxtCargo.Location = New System.Drawing.Point(175, 286)
         Me.TxtCargo.MaxLength = 20
         Me.TxtCargo.Name = "TxtCargo"
         Me.TxtCargo.Size = New System.Drawing.Size(213, 26)
@@ -95,7 +99,7 @@ Partial Class Empleado
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(11, 258)
+        Me.Label6.Location = New System.Drawing.Point(11, 290)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(132, 18)
         Me.Label6.TabIndex = 10
@@ -104,7 +108,7 @@ Partial Class Empleado
         'TxtDireccion
         '
         Me.TxtDireccion.Enabled = False
-        Me.TxtDireccion.Location = New System.Drawing.Point(100, 149)
+        Me.TxtDireccion.Location = New System.Drawing.Point(100, 181)
         Me.TxtDireccion.MaxLength = 100
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
@@ -115,7 +119,7 @@ Partial Class Empleado
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(11, 149)
+        Me.Label5.Location = New System.Drawing.Point(11, 181)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(83, 18)
         Me.Label5.TabIndex = 8
@@ -230,7 +234,7 @@ Partial Class Empleado
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(827, 274)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(827, 316)
         Me.Dgv_Listado.TabIndex = 19
         '
         'eliminar
@@ -382,6 +386,26 @@ Partial Class Empleado
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         '
+        'TxtPasswordEmail
+        '
+        Me.TxtPasswordEmail.Enabled = False
+        Me.TxtPasswordEmail.Location = New System.Drawing.Point(175, 149)
+        Me.TxtPasswordEmail.MaxLength = 45
+        Me.TxtPasswordEmail.Name = "TxtPasswordEmail"
+        Me.TxtPasswordEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 26)
+        Me.TxtPasswordEmail.TabIndex = 13
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(11, 153)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 18)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Contraseña Email:"
+        '
         'Empleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -397,7 +421,7 @@ Partial Class Empleado
         Me.Controls.Add(Me.Dgv_Listado)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Empleado"
         Me.Text = "Empleado"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -443,4 +467,6 @@ Partial Class Empleado
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents TxtPasswordEmail As TextBox
+    Friend WithEvents Label1 As Label
 End Class

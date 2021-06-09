@@ -73,6 +73,7 @@
         TxtNomEmp.Text = ""
         TxtTelEmp.Text = ""
         TxtEmailEmp.Text = ""
+        TxtPasswordEmail.Text = ""
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
         'Bandera = False
@@ -86,6 +87,7 @@
         TxtNomEmp.Enabled = True
         TxtTelEmp.Enabled = True
         TxtEmailEmp.Enabled = True
+        TxtPasswordEmail.Enabled = True
         TxtDireccion.Enabled = True
         TxtCargo.Enabled = True
     End Sub
@@ -94,6 +96,7 @@
         TxtNomEmp.Enabled = False
         TxtTelEmp.Enabled = False
         TxtEmailEmp.Enabled = False
+        TxtPasswordEmail.Enabled = False
         TxtDireccion.Enabled = False
         TxtCargo.Enabled = False
     End Sub
@@ -120,12 +123,13 @@
         TxtNomEmp.Text = Dgv_Listado.SelectedCells.Item(2).Value
         TxtTelEmp.Text = Dgv_Listado.SelectedCells.Item(3).Value
         TxtEmailEmp.Text = Dgv_Listado.SelectedCells.Item(4).Value
-        TxtDireccion.Text = Dgv_Listado.SelectedCells.Item(5).Value
-        TxtCargo.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        TxtPasswordEmail.Text = Dgv_Listado.SelectedCells.Item(5).Value
+        TxtDireccion.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        TxtCargo.Text = Dgv_Listado.SelectedCells.Item(7).Value
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Try
                 Dim TablaDatos As New eEmpleados
@@ -133,6 +137,7 @@
                 TablaDatos.pEmp_Nombre = TxtNomEmp.Text
                 TablaDatos.pEmp_Telefono = TxtTelEmp.Text
                 TablaDatos.pEmp_Email = TxtEmailEmp.Text
+                TablaDatos.pEmp_Email_Pass = TxtPasswordEmail.Text
                 TablaDatos.pEmp_Direccion = TxtDireccion.Text
                 TablaDatos.pEmp_Cargo = TxtCargo.Text
 
@@ -156,7 +161,7 @@
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And
             TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Dim Resultado As DialogResult
@@ -169,6 +174,7 @@
                     TablaDatos.pEmp_Nombre = TxtNomEmp.Text
                     TablaDatos.pEmp_Telefono = TxtTelEmp.Text
                     TablaDatos.pEmp_Email = TxtEmailEmp.Text
+                    TablaDatos.pEmp_Email_Pass = TxtPasswordEmail.Text
                     TablaDatos.pEmp_Direccion = TxtDireccion.Text
                     TablaDatos.pEmp_Cargo = TxtCargo.Text
                     If Funcion.Actualizar(TablaDatos) Then
@@ -248,7 +254,7 @@
             Inicio.Visible = True
             Me.Close()
         ElseIf BtnRegresar.Text = "Cargar" Then
-            If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+            If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
                 BtnCerrar.Visible = False
                 regrecargar = 0
                 BtnRegresar.Text = "Regresar"

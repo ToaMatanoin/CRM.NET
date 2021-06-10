@@ -126,6 +126,7 @@ Partial Class IniciarSesion
         '
         'Label2
         '
+        Me.Label2.Enabled = False
         Me.Label2.Location = New System.Drawing.Point(298, 118)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(442, 23)
@@ -136,6 +137,7 @@ Partial Class IniciarSesion
         '
         'Label3
         '
+        Me.Label3.Enabled = False
         Me.Label3.Location = New System.Drawing.Point(298, 180)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(442, 23)

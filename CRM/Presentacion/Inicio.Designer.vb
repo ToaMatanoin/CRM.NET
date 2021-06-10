@@ -31,10 +31,12 @@ Partial Class Inicio
         Me.BtnComunicacion = New System.Windows.Forms.Button()
         Me.BtnClientes = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.BtnMinimizate = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnVentas
@@ -48,9 +50,10 @@ Partial Class Inicio
         Me.BtnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnVentas.Location = New System.Drawing.Point(12, 340)
         Me.BtnVentas.Name = "BtnVentas"
-        Me.BtnVentas.Size = New System.Drawing.Size(286, 51)
+        Me.BtnVentas.Size = New System.Drawing.Size(228, 51)
         Me.BtnVentas.TabIndex = 3
         Me.BtnVentas.Text = "Ventas"
+        Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnVentas.UseVisualStyleBackColor = True
         '
         'BtnMarketing
@@ -64,9 +67,10 @@ Partial Class Inicio
         Me.BtnMarketing.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnMarketing.Location = New System.Drawing.Point(12, 397)
         Me.BtnMarketing.Name = "BtnMarketing"
-        Me.BtnMarketing.Size = New System.Drawing.Size(286, 51)
+        Me.BtnMarketing.Size = New System.Drawing.Size(228, 51)
         Me.BtnMarketing.TabIndex = 2
         Me.BtnMarketing.Text = "Marketing"
+        Me.BtnMarketing.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnMarketing.UseVisualStyleBackColor = True
         '
         'BtnInventario
@@ -80,9 +84,10 @@ Partial Class Inicio
         Me.BtnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnInventario.Location = New System.Drawing.Point(12, 283)
         Me.BtnInventario.Name = "BtnInventario"
-        Me.BtnInventario.Size = New System.Drawing.Size(286, 51)
+        Me.BtnInventario.Size = New System.Drawing.Size(228, 51)
         Me.BtnInventario.TabIndex = 2
         Me.BtnInventario.Text = "Inventario"
+        Me.BtnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnInventario.UseVisualStyleBackColor = True
         '
         'BtnEmpleados
@@ -96,9 +101,10 @@ Partial Class Inicio
         Me.BtnEmpleados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnEmpleados.Location = New System.Drawing.Point(12, 511)
         Me.BtnEmpleados.Name = "BtnEmpleados"
-        Me.BtnEmpleados.Size = New System.Drawing.Size(286, 51)
+        Me.BtnEmpleados.Size = New System.Drawing.Size(228, 51)
         Me.BtnEmpleados.TabIndex = 4
         Me.BtnEmpleados.Text = "Empleados"
+        Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEmpleados.UseVisualStyleBackColor = True
         '
         'BtnOportunidades
@@ -112,9 +118,10 @@ Partial Class Inicio
         Me.BtnOportunidades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnOportunidades.Location = New System.Drawing.Point(12, 169)
         Me.BtnOportunidades.Name = "BtnOportunidades"
-        Me.BtnOportunidades.Size = New System.Drawing.Size(286, 51)
+        Me.BtnOportunidades.Size = New System.Drawing.Size(228, 51)
         Me.BtnOportunidades.TabIndex = 2
         Me.BtnOportunidades.Text = "Oportunidades"
+        Me.BtnOportunidades.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnOportunidades.UseVisualStyleBackColor = True
         '
         'BtnComunicacion
@@ -128,9 +135,10 @@ Partial Class Inicio
         Me.BtnComunicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnComunicacion.Location = New System.Drawing.Point(12, 226)
         Me.BtnComunicacion.Name = "BtnComunicacion"
-        Me.BtnComunicacion.Size = New System.Drawing.Size(286, 51)
+        Me.BtnComunicacion.Size = New System.Drawing.Size(228, 51)
         Me.BtnComunicacion.TabIndex = 1
         Me.BtnComunicacion.Text = "Comunicaciones"
+        Me.BtnComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnComunicacion.UseVisualStyleBackColor = True
         '
         'BtnClientes
@@ -144,9 +152,10 @@ Partial Class Inicio
         Me.BtnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnClientes.Location = New System.Drawing.Point(12, 112)
         Me.BtnClientes.Name = "BtnClientes"
-        Me.BtnClientes.Size = New System.Drawing.Size(286, 51)
+        Me.BtnClientes.Size = New System.Drawing.Size(228, 51)
         Me.BtnClientes.TabIndex = 0
         Me.BtnClientes.Text = "Clientes"
+        Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnClientes.UseVisualStyleBackColor = True
         '
         'BtnUsuarios
@@ -160,25 +169,16 @@ Partial Class Inicio
         Me.BtnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnUsuarios.Location = New System.Drawing.Point(12, 454)
         Me.BtnUsuarios.Name = "BtnUsuarios"
-        Me.BtnUsuarios.Size = New System.Drawing.Size(286, 51)
+        Me.BtnUsuarios.Size = New System.Drawing.Size(228, 51)
         Me.BtnUsuarios.TabIndex = 2
         Me.BtnUsuarios.Text = "Usuarios"
+        Me.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnUsuarios.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Red
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-3, -9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1385, 100)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox1.TabIndex = 3
-        Me.PictureBox1.TabStop = False
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Red
+        Me.Panel1.Controls.Add(Me.BtnCerrar)
         Me.Panel1.Controls.Add(Me.BtnEmpleados)
         Me.Panel1.Controls.Add(Me.BtnUsuarios)
         Me.Panel1.Controls.Add(Me.BtnMarketing)
@@ -192,24 +192,69 @@ Partial Class Inicio
         Me.Panel1.ForeColor = System.Drawing.Color.White
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(314, 667)
+        Me.Panel1.Size = New System.Drawing.Size(266, 667)
         Me.Panel1.TabIndex = 6
+        '
+        'BtnCerrar
+        '
+        Me.BtnCerrar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnCerrar.FlatAppearance.BorderSize = 0
+        Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCerrar.Font = New System.Drawing.Font("Arial Narrow", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCerrar.Image = CType(resources.GetObject("BtnCerrar.Image"), System.Drawing.Image)
+        Me.BtnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnCerrar.Location = New System.Drawing.Point(12, 24)
+        Me.BtnCerrar.Name = "BtnCerrar"
+        Me.BtnCerrar.Size = New System.Drawing.Size(237, 53)
+        Me.BtnCerrar.TabIndex = 5
+        Me.BtnCerrar.Text = "CERRAR SESIÓN"
+        Me.BtnCerrar.UseVisualStyleBackColor = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Red
+        Me.Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), System.Drawing.Image)
+        Me.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel2.Controls.Add(Me.BtnMinimizate)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(266, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1104, 100)
+        Me.Panel2.TabIndex = 7
+        '
+        'BtnMinimizate
+        '
+        Me.BtnMinimizate.AutoSize = True
+        Me.BtnMinimizate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnMinimizate.FlatAppearance.BorderSize = 0
+        Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1033, 12)
+        Me.BtnMinimizate.Name = "BtnMinimizate"
+        Me.BtnMinimizate.Size = New System.Drawing.Size(59, 42)
+        Me.BtnMinimizate.TabIndex = 0
+        Me.BtnMinimizate.UseVisualStyleBackColor = False
         '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1370, 667)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Inicio"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Inicio"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -221,6 +266,8 @@ Partial Class Inicio
     Friend WithEvents BtnComunicacion As Button
     Friend WithEvents BtnClientes As Button
     Friend WithEvents BtnEmpleados As Button
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents BtnCerrar As Button
+    Friend WithEvents BtnMinimizate As Button
 End Class

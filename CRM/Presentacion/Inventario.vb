@@ -209,7 +209,22 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Producto").Value)
                         Dim TablaDatos As New eInventario
                         Dim Funcion As New fInventario
+                        Restriccion.ConexionDB()
+                        Dim IDM As String = ""
+                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Producto", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Producto = LlavePrimaria
+
+                        If IDM <> "" Then
+                            Dim TablaDatos2 As New eMarketing
+                            Dim Funcion2 As New fMarketing
+                            TablaDatos2.pID_Marketing = IDM
+                            If Funcion2.Eliminar(TablaDatos2) Then
+                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        End If
+
                         If Funcion.Eliminar(TablaDatos) Then
                             MessageBox.Show("Producto fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Chk_Eliminar.Checked = False
@@ -229,7 +244,7 @@
             Call Limpiar()
         End If
 
-        'eliminar de marketing, ventas,
+        'eliminar de marketing
 
     End Sub
 

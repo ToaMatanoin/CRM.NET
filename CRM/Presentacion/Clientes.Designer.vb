@@ -23,11 +23,14 @@ Partial Class Clientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
@@ -82,6 +85,9 @@ Partial Class Clientes
         'BtnNuevo
         '
         Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatAppearance.BorderSize = 0
+        Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
         Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -96,6 +102,9 @@ Partial Class Clientes
         'BtnEliminar
         '
         Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.FlatAppearance.BorderSize = 0
+        Me.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -107,23 +116,12 @@ Partial Class Clientes
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminar.UseVisualStyleBackColor = True
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
-        Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnModificar.Location = New System.Drawing.Point(297, 15)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(133, 59)
-        Me.BtnModificar.TabIndex = 2
-        Me.BtnModificar.Text = "Modificar Cliente"
-        Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnModificar.UseVisualStyleBackColor = True
-        '
         'BtnIngresar
         '
         Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.FlatAppearance.BorderSize = 0
+        Me.BtnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
         Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -134,6 +132,23 @@ Partial Class Clientes
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnIngresar.UseVisualStyleBackColor = True
+        '
+        'BtnModificar
+        '
+        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.FlatAppearance.BorderSize = 0
+        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
+        Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnModificar.Location = New System.Drawing.Point(297, 15)
+        Me.BtnModificar.Name = "BtnModificar"
+        Me.BtnModificar.Size = New System.Drawing.Size(133, 59)
+        Me.BtnModificar.TabIndex = 2
+        Me.BtnModificar.Text = "Modificar Cliente"
+        Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnModificar.UseVisualStyleBackColor = True
         '
         'Txt_Buscar
         '
@@ -175,7 +190,9 @@ Partial Class Clientes
         'BtnRegresar
         '
         Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnRegresar.FlatAppearance.BorderSize = 0
+        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Location = New System.Drawing.Point(6, 13)
         Me.BtnRegresar.Name = "BtnRegresar"
@@ -187,7 +204,9 @@ Partial Class Clientes
         'BtnCerrar
         '
         Me.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnCerrar.FlatAppearance.BorderSize = 0
+        Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
         Me.BtnCerrar.Name = "BtnCerrar"
@@ -391,13 +410,45 @@ Partial Class Clientes
         '
         Me.Dgv_Listado.AllowUserToAddRows = False
         Me.Dgv_Listado.AllowUserToDeleteRows = False
+        Me.Dgv_Listado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Dgv_Listado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Listado.EnableHeadersVisualStyles = False
+        Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(447, 231)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
+        Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Dgv_Listado.Size = New System.Drawing.Size(879, 321)
@@ -409,7 +460,7 @@ Partial Class Clientes
         Me.eliminar.MinimumWidth = 6
         Me.eliminar.Name = "eliminar"
         Me.eliminar.ReadOnly = True
-        Me.eliminar.Width = 125
+        Me.eliminar.Width = 59
         '
         'Chk_Eliminar
         '

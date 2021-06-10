@@ -23,6 +23,9 @@ Partial Class Usuarios
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Usuarios))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.BtnEmpleado = New System.Windows.Forms.Button()
         Me.TxtCargoEmp = New System.Windows.Forms.TextBox()
@@ -39,6 +42,10 @@ Partial Class Usuarios
         Me.TxtIDUsu = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
+        Me.BtnEliminar = New System.Windows.Forms.Button()
+        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
@@ -49,10 +56,6 @@ Partial Class Usuarios
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BtnNuevo = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -232,108 +235,6 @@ Partial Class Usuarios
         Me.GroupBox1.TabIndex = 8
         Me.GroupBox1.TabStop = False
         '
-        'BtnRegresar
-        '
-        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
-        Me.BtnRegresar.Location = New System.Drawing.Point(9, 21)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
-        Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.UseVisualStyleBackColor = True
-        '
-        'Txt_Buscar
-        '
-        Me.Txt_Buscar.Location = New System.Drawing.Point(234, 33)
-        Me.Txt_Buscar.Multiline = True
-        Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(247, 26)
-        Me.Txt_Buscar.TabIndex = 26
-        '
-        'Cmb_Buscar
-        '
-        Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(80, 33)
-        Me.Cmb_Buscar.Name = "Cmb_Buscar"
-        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
-        Me.Cmb_Buscar.TabIndex = 25
-        '
-        'Lb_Buscar
-        '
-        Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(17, 36)
-        Me.Lb_Buscar.Name = "Lb_Buscar"
-        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
-        Me.Lb_Buscar.TabIndex = 24
-        Me.Lb_Buscar.Text = "Buscar"
-        '
-        'Chk_Eliminar
-        '
-        Me.Chk_Eliminar.AutoSize = True
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(439, 187)
-        Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
-        Me.Chk_Eliminar.TabIndex = 23
-        Me.Chk_Eliminar.Text = "Eliminar"
-        Me.Chk_Eliminar.UseVisualStyleBackColor = True
-        '
-        'Dgv_Listado
-        '
-        Me.Dgv_Listado.AllowUserToAddRows = False
-        Me.Dgv_Listado.AllowUserToDeleteRows = False
-        Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        Me.Dgv_Listado.Location = New System.Drawing.Point(439, 211)
-        Me.Dgv_Listado.Name = "Dgv_Listado"
-        Me.Dgv_Listado.ReadOnly = True
-        Me.Dgv_Listado.RowHeadersWidth = 51
-        Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(861, 289)
-        Me.Dgv_Listado.TabIndex = 22
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.MinimumWidth = 6
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.ReadOnly = True
-        Me.eliminar.Width = 125
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox2.Controls.Add(Me.Cmb_Buscar)
-        Me.GroupBox2.Controls.Add(Me.Lb_Buscar)
-        Me.GroupBox2.Controls.Add(Me.Txt_Buscar)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(660, 94)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(502, 87)
-        Me.GroupBox2.TabIndex = 28
-        Me.GroupBox2.TabStop = False
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox5.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox5.Location = New System.Drawing.Point(1168, 94)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(140, 87)
-        Me.GroupBox5.TabIndex = 29
-        Me.GroupBox5.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Red
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-1, -1)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1380, 90)
-        Me.PictureBox1.TabIndex = 27
-        Me.PictureBox1.TabStop = False
-        '
         'BtnNuevo
         '
         Me.BtnNuevo.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -390,6 +291,141 @@ Partial Class Usuarios
         Me.BtnIngresar.Text = "Ingresar Usuario"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnIngresar.UseVisualStyleBackColor = True
+        '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
+        Me.BtnRegresar.Location = New System.Drawing.Point(9, 21)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
+        Me.BtnRegresar.TabIndex = 2
+        Me.BtnRegresar.UseVisualStyleBackColor = True
+        '
+        'Txt_Buscar
+        '
+        Me.Txt_Buscar.Location = New System.Drawing.Point(234, 33)
+        Me.Txt_Buscar.Multiline = True
+        Me.Txt_Buscar.Name = "Txt_Buscar"
+        Me.Txt_Buscar.Size = New System.Drawing.Size(247, 26)
+        Me.Txt_Buscar.TabIndex = 26
+        '
+        'Cmb_Buscar
+        '
+        Me.Cmb_Buscar.FormattingEnabled = True
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(80, 33)
+        Me.Cmb_Buscar.Name = "Cmb_Buscar"
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 26)
+        Me.Cmb_Buscar.TabIndex = 25
+        '
+        'Lb_Buscar
+        '
+        Me.Lb_Buscar.AutoSize = True
+        Me.Lb_Buscar.Location = New System.Drawing.Point(17, 36)
+        Me.Lb_Buscar.Name = "Lb_Buscar"
+        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
+        Me.Lb_Buscar.TabIndex = 24
+        Me.Lb_Buscar.Text = "Buscar"
+        '
+        'Chk_Eliminar
+        '
+        Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(439, 187)
+        Me.Chk_Eliminar.Name = "Chk_Eliminar"
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
+        Me.Chk_Eliminar.TabIndex = 23
+        Me.Chk_Eliminar.Text = "Eliminar"
+        Me.Chk_Eliminar.UseVisualStyleBackColor = True
+        '
+        'Dgv_Listado
+        '
+        Me.Dgv_Listado.AllowUserToAddRows = False
+        Me.Dgv_Listado.AllowUserToDeleteRows = False
+        Me.Dgv_Listado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Dgv_Listado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Listado.EnableHeadersVisualStyles = False
+        Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
+        Me.Dgv_Listado.Location = New System.Drawing.Point(439, 211)
+        Me.Dgv_Listado.Name = "Dgv_Listado"
+        Me.Dgv_Listado.ReadOnly = True
+        Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.Dgv_Listado.RowHeadersVisible = False
+        Me.Dgv_Listado.RowHeadersWidth = 51
+        Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgv_Listado.Size = New System.Drawing.Size(869, 289)
+        Me.Dgv_Listado.TabIndex = 22
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.MinimumWidth = 6
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Width = 59
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox2.Controls.Add(Me.Cmb_Buscar)
+        Me.GroupBox2.Controls.Add(Me.Lb_Buscar)
+        Me.GroupBox2.Controls.Add(Me.Txt_Buscar)
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(660, 94)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(502, 87)
+        Me.GroupBox2.TabIndex = 28
+        Me.GroupBox2.TabStop = False
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.GroupBox5.Controls.Add(Me.BtnRegresar)
+        Me.GroupBox5.Location = New System.Drawing.Point(1168, 94)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(140, 87)
+        Me.GroupBox5.TabIndex = 29
+        Me.GroupBox5.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(-1, -1)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(1380, 90)
+        Me.PictureBox1.TabIndex = 27
+        Me.PictureBox1.TabStop = False
         '
         'Usuarios
         '

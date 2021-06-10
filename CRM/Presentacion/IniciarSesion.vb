@@ -8,6 +8,36 @@
         nuevo.ConexionDB()
     End Sub
 
+    Private Sub Txt_UsuNom_Enter(sender As Object, e As EventArgs) Handles Txt_UsuNom.Enter
+        If Txt_UsuNom.Text = "USUARIO" Then
+            Txt_UsuNom.Text = ""
+            Txt_UsuNom.ForeColor = Color.DimGray
+        End If
+    End Sub
+
+    Private Sub Txt_UsuNom_Leave(sender As Object, e As EventArgs) Handles Txt_UsuNom.Leave
+        If Txt_UsuNom.Text = "" Then
+            Txt_UsuNom.Text = "USUARIO"
+            Txt_UsuNom.ForeColor = Color.DarkGray
+        End If
+    End Sub
+
+    Private Sub Txt_UsuPass_Enter(sender As Object, e As EventArgs) Handles Txt_UsuPass.Enter
+        If Txt_UsuPass.Text = "CONTRASEÑA" Then
+            Txt_UsuPass.Text = ""
+            Txt_UsuPass.ForeColor = Color.DimGray
+            Txt_UsuPass.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub Txt_UsuPass_Leave(sender As Object, e As EventArgs) Handles Txt_UsuPass.Leave
+        If Txt_UsuPass.Text = "" Then
+            Txt_UsuPass.Text = "CONTRASEÑA"
+            Txt_UsuPass.ForeColor = Color.DarkGray
+            Txt_UsuPass.UseSystemPasswordChar = False
+        End If
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
     End Sub

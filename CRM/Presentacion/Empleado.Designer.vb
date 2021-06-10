@@ -22,8 +22,13 @@ Partial Class Empleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleado))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TxtPasswordEmail = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtCargo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtDireccion = New System.Windows.Forms.TextBox()
@@ -52,8 +57,6 @@ Partial Class Empleado
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TxtPasswordEmail = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -85,6 +88,26 @@ Partial Class Empleado
         Me.GroupBox3.Size = New System.Drawing.Size(394, 337)
         Me.GroupBox3.TabIndex = 17
         Me.GroupBox3.TabStop = False
+        '
+        'TxtPasswordEmail
+        '
+        Me.TxtPasswordEmail.Enabled = False
+        Me.TxtPasswordEmail.Location = New System.Drawing.Point(175, 149)
+        Me.TxtPasswordEmail.MaxLength = 45
+        Me.TxtPasswordEmail.Name = "TxtPasswordEmail"
+        Me.TxtPasswordEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 26)
+        Me.TxtPasswordEmail.TabIndex = 13
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(11, 153)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(137, 18)
+        Me.Label1.TabIndex = 12
+        Me.Label1.Text = "Contraseña Email:"
         '
         'TxtCargo
         '
@@ -226,12 +249,45 @@ Partial Class Empleado
         '
         Me.Dgv_Listado.AllowUserToAddRows = False
         Me.Dgv_Listado.AllowUserToDeleteRows = False
+        Me.Dgv_Listado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Dgv_Listado.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.Dgv_Listado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Dgv_Listado.EnableHeadersVisualStyles = False
+        Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(488, 220)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
+        Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Dgv_Listado.Size = New System.Drawing.Size(827, 316)
@@ -243,7 +299,7 @@ Partial Class Empleado
         Me.eliminar.MinimumWidth = 6
         Me.eliminar.Name = "eliminar"
         Me.eliminar.ReadOnly = True
-        Me.eliminar.Width = 125
+        Me.eliminar.Width = 59
         '
         'Txt_Buscar
         '
@@ -385,26 +441,6 @@ Partial Class Empleado
         Me.GroupBox1.Size = New System.Drawing.Size(471, 91)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
-        '
-        'TxtPasswordEmail
-        '
-        Me.TxtPasswordEmail.Enabled = False
-        Me.TxtPasswordEmail.Location = New System.Drawing.Point(175, 149)
-        Me.TxtPasswordEmail.MaxLength = 45
-        Me.TxtPasswordEmail.Name = "TxtPasswordEmail"
-        Me.TxtPasswordEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 26)
-        Me.TxtPasswordEmail.TabIndex = 13
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(11, 153)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(137, 18)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Contraseña Email:"
         '
         'Empleado
         '

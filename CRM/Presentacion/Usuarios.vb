@@ -2,6 +2,8 @@
 
     Private TablaDatos As New DataTable
     Public Bandera As New Boolean
+    Public Restriccion As New Conexion
+
     Private Sub Usuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Usu_Nombre")
         Cmb_Buscar.Items.Add("Emp_Nombre")
@@ -183,7 +185,22 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Usuario").Value)
                         Dim TablaDatos As New eUsuarios
                         Dim Funcion As New fUsuarios
+                        Restriccion.ConexionDB()
+                        Dim IDM As String = ""
+                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Usuario", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Usuario = LlavePrimaria
+
+                        If IDM <> "" Then
+                            Dim TablaDatos2 As New eMarketing
+                            Dim Funcion2 As New fMarketing
+                            TablaDatos2.pID_Marketing = IDM
+                            If Funcion2.Eliminar(TablaDatos2) Then
+                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        End If
+
                         If Funcion.Eliminar(TablaDatos) Then
                             MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Chk_Eliminar.Checked = False
@@ -203,7 +220,7 @@
             Call Limpiar()
         End If
 
-        'eliminar venta, oportunidades, marketing
+        'eliminar oportunidades
 
     End Sub
 

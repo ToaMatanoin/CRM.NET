@@ -218,9 +218,7 @@
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
         Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea Eliminar los datos",
-        "Eliminando Registro", MessageBoxButtons.OKCancel,
-        MessageBoxIcon.Question)
+        Resultado = MessageBox.Show("Desea Eliminar los datos", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If Resultado = Windows.Forms.DialogResult.OK Then
             Try
                 For Each row As DataGridViewRow In Dgv_Listado.Rows
@@ -229,7 +227,35 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Empleado").Value)
                         Dim TablaDatos As New eEmpleados
                         Dim Funcion As New fEmpleados
+                        Restriccion.ConexionDB()
+                        Dim IDU As String = ""
+                        IDU = Restriccion.Buscar_info(LlavePrimaria, "ID_Empleado", "ID_Usuario", "Usuarios")
+                        Dim IDM As String = ""
+                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Empleado", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Empleado = LlavePrimaria
+
+                        If IDU <> "" Then
+                            Dim TablaDatos2 As New eUsuarios
+                            Dim Funcion2 As New fUsuarios
+                            TablaDatos2.pID_Usuario = IDU
+                            If Funcion2.Eliminar(TablaDatos2) Then
+                                MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("ERROR en Eliminar Usuario", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        End If
+
+                        If IDM <> "" Then
+                            Dim TablaDatos2 As New eMarketing
+                            Dim Funcion2 As New fMarketing
+                            TablaDatos2.pID_Marketing = IDM
+                            If Funcion2.Eliminar(TablaDatos2) Then
+                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        End If
+
                         If Funcion.Eliminar(TablaDatos) Then
                             MessageBox.Show("Empleado fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Chk_Eliminar.Checked = False
@@ -237,6 +263,7 @@
                             MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     End If
+
                 Next
                 Call Mostrar()
                 Call Limpiar()
@@ -250,6 +277,7 @@
         End If
 
         'eliminar usuario
+
 
     End Sub
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click

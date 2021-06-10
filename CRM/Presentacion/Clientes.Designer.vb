@@ -23,9 +23,9 @@ Partial Class Clientes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Clientes))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -152,6 +152,7 @@ Partial Class Clientes
         '
         'Txt_Buscar
         '
+        Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Buscar.Location = New System.Drawing.Point(241, 33)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
@@ -160,6 +161,7 @@ Partial Class Clientes
         '
         'Cmb_Buscar
         '
+        Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cmb_Buscar.FormattingEnabled = True
         Me.Cmb_Buscar.Location = New System.Drawing.Point(87, 33)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
@@ -237,10 +239,11 @@ Partial Class Clientes
         '
         'TxtIDCliente
         '
+        Me.TxtIDCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDCliente.Enabled = False
         Me.TxtIDCliente.Location = New System.Drawing.Point(267, 25)
         Me.TxtIDCliente.Name = "TxtIDCliente"
-        Me.TxtIDCliente.Size = New System.Drawing.Size(85, 26)
+        Me.TxtIDCliente.Size = New System.Drawing.Size(85, 19)
         Me.TxtIDCliente.TabIndex = 7
         '
         'Label9
@@ -255,11 +258,12 @@ Partial Class Clientes
         '
         'TxtEmailCli
         '
+        Me.TxtEmailCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtEmailCli.Enabled = False
         Me.TxtEmailCli.Location = New System.Drawing.Point(145, 121)
         Me.TxtEmailCli.MaxLength = 45
         Me.TxtEmailCli.Name = "TxtEmailCli"
-        Me.TxtEmailCli.Size = New System.Drawing.Size(207, 26)
+        Me.TxtEmailCli.Size = New System.Drawing.Size(207, 19)
         Me.TxtEmailCli.TabIndex = 5
         '
         'Label4
@@ -274,11 +278,12 @@ Partial Class Clientes
         '
         'TxtTelCli
         '
+        Me.TxtTelCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelCli.Enabled = False
         Me.TxtTelCli.Location = New System.Drawing.Point(145, 89)
         Me.TxtTelCli.MaxLength = 8
         Me.TxtTelCli.Name = "TxtTelCli"
-        Me.TxtTelCli.Size = New System.Drawing.Size(207, 26)
+        Me.TxtTelCli.Size = New System.Drawing.Size(207, 19)
         Me.TxtTelCli.TabIndex = 3
         '
         'Label3
@@ -293,11 +298,12 @@ Partial Class Clientes
         '
         'TxtNomCli
         '
+        Me.TxtNomCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNomCli.Enabled = False
         Me.TxtNomCli.Location = New System.Drawing.Point(145, 57)
         Me.TxtNomCli.MaxLength = 45
         Me.TxtNomCli.Name = "TxtNomCli"
-        Me.TxtNomCli.Size = New System.Drawing.Size(207, 26)
+        Me.TxtNomCli.Size = New System.Drawing.Size(207, 19)
         Me.TxtNomCli.TabIndex = 1
         '
         'Label2
@@ -332,11 +338,12 @@ Partial Class Clientes
         '
         'TxtRTN
         '
+        Me.TxtRTN.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtRTN.Enabled = False
         Me.TxtRTN.Location = New System.Drawing.Point(152, 121)
         Me.TxtRTN.MaxLength = 14
         Me.TxtRTN.Name = "TxtRTN"
-        Me.TxtRTN.Size = New System.Drawing.Size(200, 26)
+        Me.TxtRTN.Size = New System.Drawing.Size(200, 19)
         Me.TxtRTN.TabIndex = 7
         '
         'Label8
@@ -351,11 +358,12 @@ Partial Class Clientes
         '
         'TxtEmailEmpresa
         '
+        Me.TxtEmailEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtEmailEmpresa.Enabled = False
         Me.TxtEmailEmpresa.Location = New System.Drawing.Point(152, 89)
         Me.TxtEmailEmpresa.MaxLength = 45
         Me.TxtEmailEmpresa.Name = "TxtEmailEmpresa"
-        Me.TxtEmailEmpresa.Size = New System.Drawing.Size(200, 26)
+        Me.TxtEmailEmpresa.Size = New System.Drawing.Size(200, 19)
         Me.TxtEmailEmpresa.TabIndex = 5
         '
         'Label5
@@ -370,11 +378,12 @@ Partial Class Clientes
         '
         'TxtTelEmpresa
         '
+        Me.TxtTelEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelEmpresa.Enabled = False
         Me.TxtTelEmpresa.Location = New System.Drawing.Point(152, 57)
         Me.TxtTelEmpresa.MaxLength = 8
         Me.TxtTelEmpresa.Name = "TxtTelEmpresa"
-        Me.TxtTelEmpresa.Size = New System.Drawing.Size(200, 26)
+        Me.TxtTelEmpresa.Size = New System.Drawing.Size(200, 19)
         Me.TxtTelEmpresa.TabIndex = 3
         '
         'Label6
@@ -389,11 +398,12 @@ Partial Class Clientes
         '
         'TxtNomEmpresa
         '
+        Me.TxtNomEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNomEmpresa.Enabled = False
         Me.TxtNomEmpresa.Location = New System.Drawing.Point(152, 25)
         Me.TxtNomEmpresa.MaxLength = 45
         Me.TxtNomEmpresa.Name = "TxtNomEmpresa"
-        Me.TxtNomEmpresa.Size = New System.Drawing.Size(200, 26)
+        Me.TxtNomEmpresa.Size = New System.Drawing.Size(200, 19)
         Me.TxtNomEmpresa.TabIndex = 1
         '
         'Label7
@@ -416,38 +426,38 @@ Partial Class Clientes
         Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle5
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(447, 231)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -465,9 +475,10 @@ Partial Class Clientes
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Eliminar.Location = New System.Drawing.Point(447, 208)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(59, 17)
         Me.Chk_Eliminar.TabIndex = 11
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True

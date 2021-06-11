@@ -1,7 +1,7 @@
 ﻿Public Class IniciarSesion
     Public nuevo As New Conexion
     Public Bandera As New Boolean
-    Public IDUSU, IDEMP, ROLUSU, PassEMP, EmailEMP As String
+    Public IDUSU, IDEMP, ROLUSU, PassEMP, EmailEMP, USUNOM As String
 
 
     Private Sub IniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -44,13 +44,13 @@
 
     Private Sub Inicio_Sesion_Click(sender As Object, e As EventArgs) Handles Inicio_Sesion.Click
         Try
-            If (Txt_UsuNom.Text.Equals("")) Then
+            If (Txt_UsuNom.Text.Equals("") Or Txt_UsuNom.Text.Equals("USUARIO")) Then
                 MsgBox("Ingresa un usuario")
             Else
 
                 If nuevo.Usuario(Txt_UsuNom.Text) = True Then
                     Dim contra As String = nuevo.Contrasenha(Txt_UsuNom.Text)
-                    If (Txt_UsuPass.Text.Equals("")) Then
+                    If (Txt_UsuPass.Text.Equals("") Or Txt_UsuPass.Text.Equals("CONTRASEÑA")) Then
                         MsgBox("Ingresa contrasea")
                     Else
                         If contra.Equals(Txt_UsuPass.Text) Then
@@ -60,9 +60,13 @@
                             ROLUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "Usu_Cargo", "Usuarios")
                             EmailEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email", "Empleado")
                             PassEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email_Pass", "Empleado")
+                            USUNOM = Txt_UsuNom.Text
+                            Txt_UsuNom.Text = "USUARIO"
+                            Txt_UsuNom.ForeColor = Color.DarkGray
+                            Txt_UsuPass.Text = "CONTRASEÑA"
+                            Txt_UsuPass.ForeColor = Color.DarkGray
+                            Txt_UsuPass.UseSystemPasswordChar = False
                             Me.Hide()
-                            Txt_UsuNom.Text = ""
-                            Txt_UsuPass.Text = ""
                             Inicio.Show()
                         Else
                             MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
@@ -81,13 +85,13 @@
         Select Case e.KeyData
             Case Keys.Enter
                 Try
-                    If (Txt_UsuNom.Text.Equals("")) Then
+                    If (Txt_UsuNom.Text.Equals("") Or Txt_UsuNom.Text.Equals("USUARIO")) Then
                         MsgBox("Ingresa un usuario")
                     Else
 
                         If nuevo.Usuario(Txt_UsuNom.Text) = True Then
                             Dim contra As String = nuevo.Contrasenha(Txt_UsuNom.Text)
-                            If (Txt_UsuPass.Text.Equals("")) Then
+                            If (Txt_UsuPass.Text.Equals("") Or Txt_UsuPass.Text.Equals("CONTRASEÑA")) Then
                                 MsgBox("Ingresa contrasea")
                             Else
                                 If contra.Equals(Txt_UsuPass.Text) Then
@@ -95,9 +99,15 @@
                                     IDUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Usuario", "Usuarios")
                                     IDEMP = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Empleado", "Usuarios")
                                     ROLUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "Usu_Cargo", "Usuarios")
+                                    EmailEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email", "Empleado")
+                                    PassEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email_Pass", "Empleado")
+                                    USUNOM = Txt_UsuNom.Text
+                                    Txt_UsuNom.Text = "USUARIO"
+                                    Txt_UsuNom.ForeColor = Color.DarkGray
+                                    Txt_UsuPass.Text = "CONTRASEÑA"
+                                    Txt_UsuPass.ForeColor = Color.DarkGray
+                                    Txt_UsuPass.UseSystemPasswordChar = False
                                     Me.Hide()
-                                    Txt_UsuNom.Text = ""
-                                    Txt_UsuPass.Text = ""
                                     Inicio.Show()
                                 Else
                                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)
@@ -117,13 +127,13 @@
         Select Case e.KeyData
             Case Keys.Enter
                 Try
-                    If (Txt_UsuNom.Text.Equals("")) Then
+                    If (Txt_UsuNom.Text.Equals("") Or Txt_UsuNom.Text.Equals("USUARIO")) Then
                         MsgBox("Ingresa un usuario")
                     Else
 
                         If nuevo.Usuario(Txt_UsuNom.Text) = True Then
                             Dim contra As String = nuevo.Contrasenha(Txt_UsuNom.Text)
-                            If (Txt_UsuPass.Text.Equals("")) Then
+                            If (Txt_UsuPass.Text.Equals("") Or Txt_UsuPass.Text.Equals("CONTRASEÑA")) Then
                                 MsgBox("Ingresa contrasea")
                             Else
                                 If contra.Equals(Txt_UsuPass.Text) Then
@@ -131,9 +141,15 @@
                                     IDUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Usuario", "Usuarios")
                                     IDEMP = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "ID_Empleado", "Usuarios")
                                     ROLUSU = nuevo.Buscar_info(Txt_UsuNom.Text, "Usu_Nombre", "Usu_Cargo", "Usuarios")
+                                    EmailEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email", "Empleado")
+                                    PassEMP = nuevo.Buscar_info(IDEMP, "ID_Empleado", "Emp_Email_Pass", "Empleado")
+                                    USUNOM = Txt_UsuNom.Text
+                                    Txt_UsuNom.Text = "USUARIO"
+                                    Txt_UsuNom.ForeColor = Color.DarkGray
+                                    Txt_UsuPass.Text = "CONTRASEÑA"
+                                    Txt_UsuPass.ForeColor = Color.DarkGray
+                                    Txt_UsuPass.UseSystemPasswordChar = False
                                     Me.Hide()
-                                    Txt_UsuNom.Text = ""
-                                    Txt_UsuPass.Text = ""
                                     Inicio.Show()
                                 Else
                                     MsgBox("Contraseña Invalida", MsgBoxStyle.Critical)

@@ -62,6 +62,7 @@
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
+        Dgv_Listado.Columns(4).Visible = False
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
@@ -340,4 +341,6 @@
     Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+
 End Class

@@ -22,9 +22,9 @@ Partial Class Empleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleado))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtPasswordEmail = New System.Windows.Forms.TextBox()
@@ -57,6 +57,7 @@ Partial Class Empleado
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BtnMinimizate = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -91,12 +92,13 @@ Partial Class Empleado
         '
         'TxtPasswordEmail
         '
+        Me.TxtPasswordEmail.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtPasswordEmail.Enabled = False
         Me.TxtPasswordEmail.Location = New System.Drawing.Point(175, 149)
         Me.TxtPasswordEmail.MaxLength = 45
         Me.TxtPasswordEmail.Name = "TxtPasswordEmail"
         Me.TxtPasswordEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 26)
+        Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 19)
         Me.TxtPasswordEmail.TabIndex = 13
         '
         'Label1
@@ -111,11 +113,12 @@ Partial Class Empleado
         '
         'TxtCargo
         '
+        Me.TxtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtCargo.Enabled = False
         Me.TxtCargo.Location = New System.Drawing.Point(175, 286)
         Me.TxtCargo.MaxLength = 20
         Me.TxtCargo.Name = "TxtCargo"
-        Me.TxtCargo.Size = New System.Drawing.Size(213, 26)
+        Me.TxtCargo.Size = New System.Drawing.Size(213, 19)
         Me.TxtCargo.TabIndex = 11
         '
         'Label6
@@ -130,6 +133,7 @@ Partial Class Empleado
         '
         'TxtDireccion
         '
+        Me.TxtDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtDireccion.Enabled = False
         Me.TxtDireccion.Location = New System.Drawing.Point(100, 181)
         Me.TxtDireccion.MaxLength = 100
@@ -150,10 +154,11 @@ Partial Class Empleado
         '
         'TxtIDEmp
         '
+        Me.TxtIDEmp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDEmp.Enabled = False
         Me.TxtIDEmp.Location = New System.Drawing.Point(300, 21)
         Me.TxtIDEmp.Name = "TxtIDEmp"
-        Me.TxtIDEmp.Size = New System.Drawing.Size(88, 26)
+        Me.TxtIDEmp.Size = New System.Drawing.Size(88, 19)
         Me.TxtIDEmp.TabIndex = 7
         '
         'Label9
@@ -168,11 +173,12 @@ Partial Class Empleado
         '
         'TxtEmailEmp
         '
+        Me.TxtEmailEmp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtEmailEmp.Enabled = False
         Me.TxtEmailEmp.Location = New System.Drawing.Point(175, 117)
         Me.TxtEmailEmp.MaxLength = 45
         Me.TxtEmailEmp.Name = "TxtEmailEmp"
-        Me.TxtEmailEmp.Size = New System.Drawing.Size(213, 26)
+        Me.TxtEmailEmp.Size = New System.Drawing.Size(213, 19)
         Me.TxtEmailEmp.TabIndex = 5
         '
         'Label4
@@ -187,11 +193,12 @@ Partial Class Empleado
         '
         'TxtTelEmp
         '
+        Me.TxtTelEmp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelEmp.Enabled = False
         Me.TxtTelEmp.Location = New System.Drawing.Point(175, 85)
         Me.TxtTelEmp.MaxLength = 8
         Me.TxtTelEmp.Name = "TxtTelEmp"
-        Me.TxtTelEmp.Size = New System.Drawing.Size(213, 26)
+        Me.TxtTelEmp.Size = New System.Drawing.Size(213, 19)
         Me.TxtTelEmp.TabIndex = 3
         '
         'Label3
@@ -206,11 +213,12 @@ Partial Class Empleado
         '
         'TxtNomEmp
         '
+        Me.TxtNomEmp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNomEmp.Enabled = False
         Me.TxtNomEmp.Location = New System.Drawing.Point(175, 53)
         Me.TxtNomEmp.MaxLength = 45
         Me.TxtNomEmp.Name = "TxtNomEmp"
-        Me.TxtNomEmp.Size = New System.Drawing.Size(213, 26)
+        Me.TxtNomEmp.Size = New System.Drawing.Size(213, 19)
         Me.TxtNomEmp.TabIndex = 1
         '
         'Label2
@@ -238,9 +246,10 @@ Partial Class Empleado
         'Chk_Eliminar
         '
         Me.Chk_Eliminar.AutoSize = True
+        Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Eliminar.Location = New System.Drawing.Point(488, 197)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(62, 17)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(59, 17)
         Me.Chk_Eliminar.TabIndex = 21
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
@@ -255,38 +264,38 @@ Partial Class Empleado
         Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle8
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(488, 220)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -303,6 +312,7 @@ Partial Class Empleado
         '
         'Txt_Buscar
         '
+        Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Buscar.Location = New System.Drawing.Point(243, 36)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
@@ -311,6 +321,7 @@ Partial Class Empleado
         '
         'Cmb_Buscar
         '
+        Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cmb_Buscar.FormattingEnabled = True
         Me.Cmb_Buscar.Location = New System.Drawing.Point(89, 36)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
@@ -329,7 +340,11 @@ Partial Class Empleado
         '
         'BtnEliminar
         '
+        Me.BtnEliminar.BackColor = System.Drawing.Color.Silver
         Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEliminar.FlatAppearance.BorderSize = 0
+        Me.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -339,11 +354,15 @@ Partial Class Empleado
         Me.BtnEliminar.TabIndex = 14
         Me.BtnEliminar.Text = "Eliminar Empleado"
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminar.UseVisualStyleBackColor = True
+        Me.BtnEliminar.UseVisualStyleBackColor = False
         '
         'BtnModificar
         '
+        Me.BtnModificar.BackColor = System.Drawing.Color.Silver
         Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.FlatAppearance.BorderSize = 0
+        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -353,11 +372,15 @@ Partial Class Empleado
         Me.BtnModificar.TabIndex = 16
         Me.BtnModificar.Text = "Modificar Empleado"
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnModificar.UseVisualStyleBackColor = True
+        Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnIngresar
         '
+        Me.BtnIngresar.BackColor = System.Drawing.Color.Silver
         Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnIngresar.FlatAppearance.BorderSize = 0
+        Me.BtnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
         Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -367,7 +390,7 @@ Partial Class Empleado
         Me.BtnIngresar.TabIndex = 13
         Me.BtnIngresar.Text = "Ingresar Empleado"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnIngresar.UseVisualStyleBackColor = True
+        Me.BtnIngresar.UseVisualStyleBackColor = False
         '
         'BtnCerrar
         '
@@ -383,7 +406,11 @@ Partial Class Empleado
         '
         'BtnNuevo
         '
+        Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
         Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatAppearance.BorderSize = 0
+        Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
         Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -393,7 +420,7 @@ Partial Class Empleado
         Me.BtnNuevo.TabIndex = 26
         Me.BtnNuevo.Text = "Nuevo Empleado"
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnNuevo.UseVisualStyleBackColor = True
+        Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -402,7 +429,7 @@ Partial Class Empleado
         Me.GroupBox2.Controls.Add(Me.BtnEliminar)
         Me.GroupBox2.Controls.Add(Me.BtnIngresar)
         Me.GroupBox2.Controls.Add(Me.BtnModificar)
-        Me.GroupBox2.Location = New System.Drawing.Point(46, 91)
+        Me.GroupBox2.Location = New System.Drawing.Point(46, 96)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(648, 91)
         Me.GroupBox2.TabIndex = 27
@@ -413,7 +440,7 @@ Partial Class Empleado
         Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox4.Controls.Add(Me.BtnRegresar)
         Me.GroupBox4.Controls.Add(Me.BtnCerrar)
-        Me.GroupBox4.Location = New System.Drawing.Point(1177, 91)
+        Me.GroupBox4.Location = New System.Drawing.Point(1177, 96)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(138, 91)
         Me.GroupBox4.TabIndex = 28
@@ -422,10 +449,11 @@ Partial Class Empleado
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-3, -5)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1382, 90)
+        Me.PictureBox1.Size = New System.Drawing.Size(1370, 90)
         Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         '
@@ -436,11 +464,25 @@ Partial Class Empleado
         Me.GroupBox1.Controls.Add(Me.Cmb_Buscar)
         Me.GroupBox1.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(700, 91)
+        Me.GroupBox1.Location = New System.Drawing.Point(700, 96)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(471, 91)
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
+        '
+        'BtnMinimizate
+        '
+        Me.BtnMinimizate.AutoSize = True
+        Me.BtnMinimizate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnMinimizate.FlatAppearance.BorderSize = 0
+        Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1256, 12)
+        Me.BtnMinimizate.Name = "BtnMinimizate"
+        Me.BtnMinimizate.Size = New System.Drawing.Size(59, 51)
+        Me.BtnMinimizate.TabIndex = 32
+        Me.BtnMinimizate.UseVisualStyleBackColor = False
         '
         'Empleado
         '
@@ -448,6 +490,7 @@ Partial Class Empleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1370, 560)
+        Me.Controls.Add(Me.BtnMinimizate)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox4)
@@ -455,7 +498,7 @@ Partial Class Empleado
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.Chk_Eliminar)
         Me.Controls.Add(Me.Dgv_Listado)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "Empleado"
@@ -505,4 +548,5 @@ Partial Class Empleado
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents TxtPasswordEmail As TextBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents BtnMinimizate As Button
 End Class

@@ -11,8 +11,8 @@
     End Sub
 
     Private Sub BtnComunicacion_Click(sender As Object, e As EventArgs) Handles BtnComunicacion.Click
-        Me.Hide()
-        Comunicacion_Cliente.Show()
+        'Me.Hide()
+        Comunicacion_Cliente.ShowDialog()
     End Sub
 
     Private Sub BtnInventario_Click(sender As Object, e As EventArgs) Handles BtnInventario.Click

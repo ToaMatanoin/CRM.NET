@@ -337,4 +337,7 @@
         Restriccion.RestringirLetras(e)
     End Sub
 
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

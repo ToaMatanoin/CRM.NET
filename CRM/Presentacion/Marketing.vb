@@ -345,6 +345,10 @@
         Mostrarproy()
     End Sub
 
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
         Btn_Guardar_proy.Enabled = True
         marca = "Tarea"

@@ -22,10 +22,10 @@ Partial Class Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ventas))
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Txt_Cantmaxima = New System.Windows.Forms.TextBox()
         Me.Cb_producto = New System.Windows.Forms.ComboBox()
@@ -74,6 +74,7 @@ Partial Class Ventas
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TxtSubTotal = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.BtnMinimizate = New System.Windows.Forms.Button()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -106,14 +107,16 @@ Partial Class Ventas
         '
         'Txt_Cantmaxima
         '
+        Me.Txt_Cantmaxima.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Cantmaxima.Enabled = False
         Me.Txt_Cantmaxima.Location = New System.Drawing.Point(314, 59)
         Me.Txt_Cantmaxima.Name = "Txt_Cantmaxima"
-        Me.Txt_Cantmaxima.Size = New System.Drawing.Size(44, 26)
+        Me.Txt_Cantmaxima.Size = New System.Drawing.Size(44, 19)
         Me.Txt_Cantmaxima.TabIndex = 8
         '
         'Cb_producto
         '
+        Me.Cb_producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_producto.FormattingEnabled = True
         Me.Cb_producto.Location = New System.Drawing.Point(132, 25)
         Me.Cb_producto.Name = "Cb_producto"
@@ -132,9 +135,10 @@ Partial Class Ventas
         '
         'Txtcantidad
         '
+        Me.Txtcantidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txtcantidad.Location = New System.Drawing.Point(178, 91)
         Me.Txtcantidad.Name = "Txtcantidad"
-        Me.Txtcantidad.Size = New System.Drawing.Size(101, 26)
+        Me.Txtcantidad.Size = New System.Drawing.Size(101, 19)
         Me.Txtcantidad.TabIndex = 5
         '
         'Label5
@@ -149,10 +153,11 @@ Partial Class Ventas
         '
         'Txtpreciounidad
         '
+        Me.Txtpreciounidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txtpreciounidad.Enabled = False
         Me.Txtpreciounidad.Location = New System.Drawing.Point(132, 59)
         Me.Txtpreciounidad.Name = "Txtpreciounidad"
-        Me.Txtpreciounidad.Size = New System.Drawing.Size(58, 26)
+        Me.Txtpreciounidad.Size = New System.Drawing.Size(58, 19)
         Me.Txtpreciounidad.TabIndex = 3
         '
         'Label6
@@ -220,9 +225,10 @@ Partial Class Ventas
         '
         'TxtIdclli
         '
+        Me.TxtIdclli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIdclli.Location = New System.Drawing.Point(92, 26)
         Me.TxtIdclli.Name = "TxtIdclli"
-        Me.TxtIdclli.Size = New System.Drawing.Size(176, 26)
+        Me.TxtIdclli.Size = New System.Drawing.Size(176, 19)
         Me.TxtIdclli.TabIndex = 1
         '
         'Label2
@@ -257,42 +263,48 @@ Partial Class Ventas
         Me.GroupBox5.Controls.Add(Me.BtnIngresar)
         Me.GroupBox5.Location = New System.Drawing.Point(27, 31)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(168, 254)
+        Me.GroupBox5.Size = New System.Drawing.Size(168, 306)
         Me.GroupBox5.TabIndex = 3
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Transacción"
         '
         'Btn_NuevaVenta
         '
+        Me.Btn_NuevaVenta.BackColor = System.Drawing.Color.Silver
         Me.Btn_NuevaVenta.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_NuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Btn_NuevaVenta.FlatAppearance.BorderSize = 0
+        Me.Btn_NuevaVenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_NuevaVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_NuevaVenta.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_NuevaVenta.Location = New System.Drawing.Point(18, 134)
+        Me.Btn_NuevaVenta.Location = New System.Drawing.Point(18, 143)
         Me.Btn_NuevaVenta.Margin = New System.Windows.Forms.Padding(2)
         Me.Btn_NuevaVenta.Name = "Btn_NuevaVenta"
-        Me.Btn_NuevaVenta.Size = New System.Drawing.Size(123, 50)
+        Me.Btn_NuevaVenta.Size = New System.Drawing.Size(123, 60)
         Me.Btn_NuevaVenta.TabIndex = 6
         Me.Btn_NuevaVenta.Text = "Nueva Venta"
-        Me.Btn_NuevaVenta.UseVisualStyleBackColor = True
+        Me.Btn_NuevaVenta.UseVisualStyleBackColor = False
         '
         'Btn_Limpiar
         '
+        Me.Btn_Limpiar.BackColor = System.Drawing.Color.Silver
         Me.Btn_Limpiar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.Btn_Limpiar.FlatAppearance.BorderSize = 0
+        Me.Btn_Limpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_Limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Btn_Limpiar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_Limpiar.Location = New System.Drawing.Point(18, 82)
+        Me.Btn_Limpiar.Location = New System.Drawing.Point(18, 83)
         Me.Btn_Limpiar.Margin = New System.Windows.Forms.Padding(2)
         Me.Btn_Limpiar.Name = "Btn_Limpiar"
-        Me.Btn_Limpiar.Size = New System.Drawing.Size(123, 48)
+        Me.Btn_Limpiar.Size = New System.Drawing.Size(123, 56)
         Me.Btn_Limpiar.TabIndex = 5
         Me.Btn_Limpiar.Text = "Finalizar Venta"
-        Me.Btn_Limpiar.UseVisualStyleBackColor = True
+        Me.Btn_Limpiar.UseVisualStyleBackColor = False
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(48, 196)
+        Me.Label4.Location = New System.Drawing.Point(44, 236)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(67, 18)
         Me.Label4.TabIndex = 4
@@ -300,24 +312,28 @@ Partial Class Ventas
         '
         'Txt_ID_Venta
         '
+        Me.Txt_ID_Venta.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_ID_Venta.Enabled = False
-        Me.Txt_ID_Venta.Location = New System.Drawing.Point(22, 216)
+        Me.Txt_ID_Venta.Location = New System.Drawing.Point(18, 256)
         Me.Txt_ID_Venta.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_ID_Venta.Name = "Txt_ID_Venta"
-        Me.Txt_ID_Venta.Size = New System.Drawing.Size(123, 26)
+        Me.Txt_ID_Venta.Size = New System.Drawing.Size(123, 19)
         Me.Txt_ID_Venta.TabIndex = 4
         '
         'BtnIngresar
         '
+        Me.BtnIngresar.BackColor = System.Drawing.Color.Silver
         Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnIngresar.FlatAppearance.BorderSize = 0
+        Me.BtnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Location = New System.Drawing.Point(18, 25)
         Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(123, 48)
+        Me.BtnIngresar.Size = New System.Drawing.Size(123, 52)
         Me.BtnIngresar.TabIndex = 3
         Me.BtnIngresar.Text = "Ingresar Venta"
-        Me.BtnIngresar.UseVisualStyleBackColor = True
+        Me.BtnIngresar.UseVisualStyleBackColor = False
         '
         'GroupBox2
         '
@@ -326,11 +342,10 @@ Partial Class Ventas
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.TextBox4)
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
         Me.GroupBox2.Controls.Add(Me.BtnDevolucion)
-        Me.GroupBox2.Location = New System.Drawing.Point(27, 291)
+        Me.GroupBox2.Location = New System.Drawing.Point(27, 343)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(168, 149)
+        Me.GroupBox2.Size = New System.Drawing.Size(168, 97)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
@@ -384,27 +399,33 @@ Partial Class Ventas
         '
         'BtnRegresar
         '
+        Me.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnRegresar.FlatAppearance.BorderSize = 0
+        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(22, 82)
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
+        Me.BtnRegresar.Location = New System.Drawing.Point(1299, 12)
         Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 51)
+        Me.BtnRegresar.Size = New System.Drawing.Size(59, 51)
         Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
-        Me.BtnRegresar.UseVisualStyleBackColor = True
+        Me.BtnRegresar.UseVisualStyleBackColor = False
         '
         'BtnDevolucion
         '
+        Me.BtnDevolucion.BackColor = System.Drawing.Color.Silver
         Me.BtnDevolucion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.BtnDevolucion.FlatAppearance.BorderSize = 0
+        Me.BtnDevolucion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnDevolucion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDevolucion.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDevolucion.Location = New System.Drawing.Point(22, 25)
         Me.BtnDevolucion.Name = "BtnDevolucion"
-        Me.BtnDevolucion.Size = New System.Drawing.Size(123, 51)
+        Me.BtnDevolucion.Size = New System.Drawing.Size(123, 57)
         Me.BtnDevolucion.TabIndex = 2
         Me.BtnDevolucion.Text = "Cancelar Venta"
-        Me.BtnDevolucion.UseVisualStyleBackColor = True
+        Me.BtnDevolucion.UseVisualStyleBackColor = False
         '
         'Chk_Eliminar
         '
@@ -434,10 +455,11 @@ Partial Class Ventas
         'Rd_contado
         '
         Me.Rd_contado.AutoSize = True
+        Me.Rd_contado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rd_contado.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rd_contado.Location = New System.Drawing.Point(21, 62)
         Me.Rd_contado.Name = "Rd_contado"
-        Me.Rd_contado.Size = New System.Drawing.Size(86, 22)
+        Me.Rd_contado.Size = New System.Drawing.Size(85, 22)
         Me.Rd_contado.TabIndex = 1
         Me.Rd_contado.TabStop = True
         Me.Rd_contado.Text = "Contado"
@@ -446,10 +468,11 @@ Partial Class Ventas
         'Rd_credito
         '
         Me.Rd_credito.AutoSize = True
+        Me.Rd_credito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rd_credito.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rd_credito.Location = New System.Drawing.Point(21, 30)
         Me.Rd_credito.Name = "Rd_credito"
-        Me.Rd_credito.Size = New System.Drawing.Size(78, 22)
+        Me.Rd_credito.Size = New System.Drawing.Size(77, 22)
         Me.Rd_credito.TabIndex = 0
         Me.Rd_credito.TabStop = True
         Me.Rd_credito.Text = "Credito"
@@ -471,10 +494,11 @@ Partial Class Ventas
         'Rd_tercera_no
         '
         Me.Rd_tercera_no.AutoSize = True
+        Me.Rd_tercera_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rd_tercera_no.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rd_tercera_no.Location = New System.Drawing.Point(27, 58)
         Me.Rd_tercera_no.Name = "Rd_tercera_no"
-        Me.Rd_tercera_no.Size = New System.Drawing.Size(49, 22)
+        Me.Rd_tercera_no.Size = New System.Drawing.Size(48, 22)
         Me.Rd_tercera_no.TabIndex = 16
         Me.Rd_tercera_no.TabStop = True
         Me.Rd_tercera_no.Text = "NO"
@@ -483,10 +507,11 @@ Partial Class Ventas
         'Rd_tercera_si
         '
         Me.Rd_tercera_si.AutoSize = True
+        Me.Rd_tercera_si.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Rd_tercera_si.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Rd_tercera_si.Location = New System.Drawing.Point(27, 30)
         Me.Rd_tercera_si.Name = "Rd_tercera_si"
-        Me.Rd_tercera_si.Size = New System.Drawing.Size(40, 22)
+        Me.Rd_tercera_si.Size = New System.Drawing.Size(39, 22)
         Me.Rd_tercera_si.TabIndex = 15
         Me.Rd_tercera_si.TabStop = True
         Me.Rd_tercera_si.Text = "SI"
@@ -551,10 +576,11 @@ Partial Class Ventas
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-3, -2)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1376, 90)
+        Me.PictureBox1.Size = New System.Drawing.Size(1370, 90)
         Me.PictureBox1.TabIndex = 14
         Me.PictureBox1.TabStop = False
         '
@@ -630,17 +656,33 @@ Partial Class Ventas
         Me.Label13.TabIndex = 20
         Me.Label13.Text = "Subtotal:"
         '
+        'BtnMinimizate
+        '
+        Me.BtnMinimizate.AutoSize = True
+        Me.BtnMinimizate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnMinimizate.FlatAppearance.BorderSize = 0
+        Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1234, 14)
+        Me.BtnMinimizate.Name = "BtnMinimizate"
+        Me.BtnMinimizate.Size = New System.Drawing.Size(59, 51)
+        Me.BtnMinimizate.TabIndex = 34
+        Me.BtnMinimizate.UseVisualStyleBackColor = False
+        '
         'Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1370, 594)
+        Me.Controls.Add(Me.BtnMinimizate)
         Me.Controls.Add(Me.TxtTotal)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.TxtSubTotal)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.TxtDescuento)
+        Me.Controls.Add(Me.BtnRegresar)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TxtImpuesto)
         Me.Controls.Add(Me.Label1)
@@ -652,7 +694,7 @@ Partial Class Ventas
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Ventas"
         Me.Text = "Ventas"
@@ -725,4 +767,5 @@ Partial Class Ventas
     Friend WithEvents Label12 As Label
     Friend WithEvents TxtSubTotal As TextBox
     Friend WithEvents Label13 As Label
+    Friend WithEvents BtnMinimizate As Button
 End Class

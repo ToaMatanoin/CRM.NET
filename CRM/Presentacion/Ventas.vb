@@ -245,6 +245,10 @@
         Call Limpiar()
     End Sub
 
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
     Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click
         Activar()
         Call Limpiar()

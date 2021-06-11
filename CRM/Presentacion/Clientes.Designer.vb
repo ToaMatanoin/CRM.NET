@@ -84,9 +84,10 @@ Partial Class Clientes
         '
         'BtnNuevo
         '
+        Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
         Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnNuevo.FlatAppearance.BorderSize = 0
-        Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
@@ -97,13 +98,14 @@ Partial Class Clientes
         Me.BtnNuevo.TabIndex = 27
         Me.BtnNuevo.Text = "Nuevo Cliente"
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnNuevo.UseVisualStyleBackColor = True
+        Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'BtnEliminar
         '
+        Me.BtnEliminar.BackColor = System.Drawing.Color.Silver
         Me.BtnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEliminar.FlatAppearance.BorderSize = 0
-        Me.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
@@ -114,13 +116,14 @@ Partial Class Clientes
         Me.BtnEliminar.TabIndex = 1
         Me.BtnEliminar.Text = "Eliminar Cliente"
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnEliminar.UseVisualStyleBackColor = True
+        Me.BtnEliminar.UseVisualStyleBackColor = False
         '
         'BtnIngresar
         '
+        Me.BtnIngresar.BackColor = System.Drawing.Color.Silver
         Me.BtnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnIngresar.FlatAppearance.BorderSize = 0
-        Me.BtnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.BtnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
@@ -131,13 +134,14 @@ Partial Class Clientes
         Me.BtnIngresar.TabIndex = 0
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnIngresar.UseVisualStyleBackColor = True
+        Me.BtnIngresar.UseVisualStyleBackColor = False
         '
         'BtnModificar
         '
+        Me.BtnModificar.BackColor = System.Drawing.Color.Silver
         Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnModificar.FlatAppearance.BorderSize = 0
-        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
+        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
@@ -148,7 +152,7 @@ Partial Class Clientes
         Me.BtnModificar.TabIndex = 2
         Me.BtnModificar.Text = "Modificar Cliente"
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnModificar.UseVisualStyleBackColor = True
+        Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'Txt_Buscar
         '
@@ -486,10 +490,11 @@ Partial Class Clientes
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-7, -1)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1382, 102)
+        Me.PictureBox1.Size = New System.Drawing.Size(1370, 102)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -521,7 +526,7 @@ Partial Class Clientes
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Clientes"
         Me.Text = "Clientes"

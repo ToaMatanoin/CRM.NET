@@ -303,4 +303,8 @@
     Private Sub TxtNomProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomProveedor.KeyPress
         Restriccion.RestringirLetras(e)
     End Sub
+
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
 End Class

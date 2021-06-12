@@ -60,6 +60,7 @@ Partial Class Inicio
         Me.Label10 = New System.Windows.Forms.Label()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.chartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -340,7 +341,7 @@ Partial Class Inicio
         '
         Me.lblventas.AutoSize = True
         Me.lblventas.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblventas.Location = New System.Drawing.Point(350, 602)
+        Me.lblventas.Location = New System.Drawing.Point(377, 602)
         Me.lblventas.Name = "lblventas"
         Me.lblventas.Size = New System.Drawing.Size(17, 18)
         Me.lblventas.TabIndex = 13
@@ -510,6 +511,16 @@ Partial Class Inicio
         Me.PictureBox10.TabIndex = 26
         Me.PictureBox10.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(350, 602)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(21, 18)
+        Me.Label3.TabIndex = 30
+        Me.Label3.Text = "L."
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -517,6 +528,7 @@ Partial Class Inicio
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1370, 667)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.lbloportunidades)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.PictureBox9)
@@ -598,4 +610,5 @@ Partial Class Inicio
     Friend WithEvents Label10 As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents Label3 As Label
 End Class

@@ -29,7 +29,16 @@
 
         Limpiar()
 
-        Lb_IDFactura.Text = "ID Venta # " + Convert.ToString(random)
+        random = CInt((100000 - 1) * Rnd() + 1)
+
+        Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "Num_venta", "Ventas")
+
+        Do While comprobar = True
+            random = CInt((100000 - 1) * Rnd() + 1)
+            comprobar = nuevo.Existencia(Convert.ToString(random), "Num_venta", "Ventas")
+        Loop
+        Lb_IDFactura.Text = "Numero Venta # " + Convert.ToString(random)
+
     End Sub
 
     Private Sub Mostrar()
@@ -56,7 +65,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = "ID_Venta = '" & random & "'"
+            VistaDatos.RowFilter = "Num_venta = '" & random & "'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -97,30 +106,16 @@
         BtnIngresar.Visible = False
         BtnDevolucion.Visible = False
 
-        random = CInt((100000 - 1) * Rnd() + 1)
-        Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
 
-        Do While comprobar = True
-            random = CInt((100000 - 1) * Rnd() + 1)
-            comprobar = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
-        Loop
 
     End Sub
 
     Private Sub Limpiar2()
         Txtcantidad.Text = ""
         Txtpreciounidad.Text = ""
-        TxtImpuesto.Text = ""
-        TxtDescuento.Text = ""
-        TxtSubTotal.Text = ""
-        TxtTotal.Text = ""
 
         Cb_producto.Text = ""
 
-        Rd_contado.Checked = False
-        Rd_credito.Checked = False
-        Rd_tercera_no.Checked = False
-        Rd_tercera_si.Checked = False
 
         Chk_Eliminar.Checked = False
 
@@ -156,11 +151,8 @@
         TxtIdclli.Text = Dgv_Listado.SelectedCells.Item(4).Value
         Txtcantidad.Text = Dgv_Listado.SelectedCells.Item(9).Value
         Cb_producto.Text = Dgv_Listado.SelectedCells.Item(7).Value
-        TxtSubTotal.Text = Dgv_Listado.SelectedCells.Item(10).Value
         nuevo.ConexionDB()
-        TxtImpuesto.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Impuesto", "Factura")
-        TxtDescuento.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Descuento", "Factura")
-        TxtTotal.Text = nuevo.Buscar_info(Txt_ID_Venta.Text, "ID_Venta", "Fac_Total", "Factura")
+
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
@@ -193,55 +185,72 @@
     End Sub
 
     Private Sub Rd_credito_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_credito.CheckedChanged
-        Tventa = "Credito"
+
     End Sub
 
     Private Sub Rd_contado_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_contado.CheckedChanged
-        Tventa = "Contado"
+
     End Sub
 
     Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs)
-        Desc = "Si"
+
     End Sub
 
     Private Sub Btn_nuevo_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
         nuevo.ConexionDB()
+
         rtncli = nuevo.Buscar_info(TxtIdclli.Text, "ID_Cliente", "RTN", "Cliente")
 
         Try
             Dim TablaDatos As New eFactura
             Dim Funcion As New fFactura
             Dim descuentos, impuestos As Double
-            TablaDatos.pID_Venta = random
 
-            TablaDatos.pTP_Venta = Tventa
+            TablaDatos.pID_Venta = Txt_ID_Venta.Text
 
-            If Desc = "Si" Then
-                descuentos = (subtotal * 0.085)
-                TablaDatos.pFac_Descuento = descuentos
-                total = total + descuentos
-            Else
-                descuentos = (subtotal * 0)
-                TablaDatos.pFac_Descuento = descuentos
-                total = total - descuentos
+
+            If Rd_credito.Checked Then
+                TablaDatos.pTP_Venta = "ccredito"
+            ElseIf Rd_contado.Checked Then
+                TablaDatos.pTP_Venta = "ccontado"
             End If
 
-            impuestos = (subtotal * 0.15)
-            TablaDatos.pFac_Impuesto = impuestos
-            total = total + impuestos
+
+
+            TablaDatos.pFac_Descuento = TxtDescuento.Text
+
+            TablaDatos.pFac_Impuesto = TxtImpuesto.Text
+
 
             TablaDatos.pFac_RTN = rtncli
 
-            TablaDatos.pFac_Total = total + subtotal
+            TablaDatos.pFac_Total = TxtTotal.Text
+            TablaDatos.pNum_venta = random
 
+
+
+            random = CInt((100000 - 1) * Rnd() + 1)
+            Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
+
+            Do While comprobar = True
+                random = CInt((100000 - 1) * Rnd() + 1)
+                comprobar = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
+            Loop
+            Lb_IDFactura.Text = "ID Venta # " + Convert.ToString(random)
 
             If Funcion.Insertar(TablaDatos) Then
             Else
                 MessageBox.Show("factura no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+
+
+
         Catch Evento As Exception
             MsgBox(Evento.Message)
         End Try
+
+
+
         Call Limpiar()
     End Sub
 
@@ -251,14 +260,78 @@
 
     Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click
         Activar()
-        Call Limpiar()
+        Call Limpiar2()
         BtnIngresar.Visible = True
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click
-        Debolucion.idventa = Txt_ID_Venta.Text
-        Me.Hide()
-        Debolucion.Show()
+        'devolver inventario
+
+        Dim Resultad As DialogResult
+        Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+        If Resultad = Windows.Forms.DialogResult.OK Then
+            Try
+
+                Dim TablaDatos As New eInventario
+                Dim Funcion As New fInventario
+                Dim Suma As Integer = Convert.ToInt32(ProdCant) + Convert.ToInt32(Txtcantidad.Text)
+
+                TablaDatos.pID_Producto = IDProd
+                TablaDatos.pPro_Nombre = Cb_producto.Text
+                TablaDatos.pPro_Cantidad = Suma
+                TablaDatos.pPro_preventa = Convert.ToDouble(preventa)
+                TablaDatos.pPro_precompra = Convert.ToDouble(precompra)
+                TablaDatos.pNombre_Proveedor = proveed
+                TablaDatos.pPro_disponible = 1
+
+                If Funcion.Actualizar(TablaDatos) Then
+                    MessageBox.Show("Producto Restado del inventario", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Fallo La resta de inventario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+            Catch Evento As Exception
+                MsgBox(Evento.Message)
+            End Try
+        Else
+            MessageBox.Show("Cancelado por el usuario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        End If
+
+
+        'eliminar venta
+        Dim Resultado As DialogResult
+        Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
+        "Eliminando Registro", MessageBoxButtons.OKCancel,
+        MessageBoxIcon.Question)
+        If Resultado = Windows.Forms.DialogResult.OK Then
+            Try
+                For Each row As DataGridViewRow In Dgv_Listado.Rows
+                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                    If LineaMarca Then
+                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Venta").Value)
+                        Dim TablaDatos As New eVentas
+                        Dim Funcion As New fVentas
+                        TablaDatos.pID_Venta = LlavePrimaria
+                        If Funcion.Eliminar(TablaDatos) Then
+                            MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    End If
+                Next
+                Call Mostrar()
+                Call Limpiar()
+            Catch Evento As Exception
+                MsgBox(Evento.Message)
+            End Try
+        Else
+            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Call Mostrar()
+            Call Limpiar()
+        End If
+
+
+
+
     End Sub
 
     Private Sub Rd_tercera_no_CheckedChanged(sender As Object, e As EventArgs)
@@ -266,11 +339,14 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text), Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
-        If probarcant = True Then
 
-            If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
+
+        If Txtcantidad.Text <> "" And TxtIdclli.Text <> "" And Txtpreciounidad.Text <> "" And
             Cb_producto.SelectedIndex >= 0 Then
+
+            Dim probarcant As Boolean = nuevo.comparar_enteros(Convert.ToInt32(Txtcantidad.Text), Cb_producto.Text, "Pro_Cantidad", "Pro_Nombre", "Inventario")
+            If probarcant = True Then
+
 
                 'restar inventario
 
@@ -305,34 +381,64 @@
                     Try
                         Dim TablaDatos As New eVentas
                         Dim Funcion As New fVentas
-                        TablaDatos.pID_Ventas = random
                         TablaDatos.pID_Usuario = IniciarSesion.IDUSU
                         TablaDatos.pID_Cliente = TxtIdclli.Text
                         TablaDatos.pID_Producto = IDProd
                         TablaDatos.pVen_Fecha = Dtp_fecha.Text
                         TablaDatos.pVen_CantVendida = Txtcantidad.Text
                         TablaDatos.pVen_subtotal = Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text)
+                        TablaDatos.pNum_venta = random
 
                         If Funcion.Insertar(TablaDatos) Then
                             MessageBox.Show("Venta registrada", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             MessageBox.Show("Venta no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
+
+
+                        Dim descuentos, impuestos As Double
+
+
+                        subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
+
+                        TxtSubTotal.Text = subtotal
+
+                        impuestos = (subtotal * 0.15)
+                        TxtImpuesto.Text = impuestos
+
+                        If Rd_tercera_si.Checked Then
+
+                            descuentos = (subtotal * 0.085)
+                            TxtDescuento.Text = descuentos
+                        Else
+                            descuentos = 0
+                            TxtDescuento.Text = descuentos
+                        End If
+
+                        total = subtotal + impuestos - descuentos
+                        TxtTotal.Text = total
+
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
                 End If
-            Else
-                MessageBox.Show("Falta Informacion para almacenar", "Guardando Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+
+            ElseIf probarcant = False Then
+                MessageBox.Show("No tenemos esa cantidad de unidades de producto", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
 
-        ElseIf probarcant = False Then
-            MessageBox.Show("No tenemos esa cantidad de unidades de producto", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            MessageBox.Show("Falta Informacion para almacenar", "Guardando Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
 
-        'subtotal = subtotal + (Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text))'
-        subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
+
+
+
+
+
         Call Limpiar2()
         Mostrar()
     End Sub

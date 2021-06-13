@@ -34,13 +34,14 @@ Public Class fVentas
             ComandoSQL = New SqlCommand("InsertarVenta")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
-            ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Ventas)
             ComandoSQL.Parameters.AddWithValue("@ID_Usuario", TablaDatos.pID_Usuario)
             ComandoSQL.Parameters.AddWithValue("@ID_Cliente", TablaDatos.pID_Cliente)
             ComandoSQL.Parameters.AddWithValue("@ID_Producto", TablaDatos.pID_Producto)
             ComandoSQL.Parameters.AddWithValue("@Ven_Fecha", TablaDatos.pVen_Fecha)
             ComandoSQL.Parameters.AddWithValue("@Ven_CantVendida", TablaDatos.pVen_CantVendida)
             ComandoSQL.Parameters.AddWithValue("@Ven_Subtotal", TablaDatos.pVen_subtotal)
+            ComandoSQL.Parameters.AddWithValue("@Num_venta", TablaDatos.pNum_venta)
+
             If ComandoSQL.ExecuteNonQuery Then
                 Return True
             Else
@@ -85,7 +86,7 @@ Public Class fVentas
             ComandoSQL = New SqlCommand("EliminarVentas")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect 'Conecta DB
-            ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Ventas)
+            ComandoSQL.Parameters.AddWithValue("@ID_Venta", TablaDatos.pID_Venta)
             If ComandoSQL.ExecuteNonQuery Then
                 Return True
             Else

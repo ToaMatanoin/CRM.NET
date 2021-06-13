@@ -1,17 +1,27 @@
 ﻿Public Class eVentas
 
-    Dim ID_Ventas, ID_Usuario, ID_Cliente, ID_Producto, Ven_CantVendida As Integer
+    Dim ID_Venta, ID_Usuario, ID_Cliente, ID_Producto, Ven_CantVendida, Num_venta As Integer
     Dim Ven_Fecha As String
     Dim Ven_subtotal As Double
 
-    Public Property pID_Ventas
+    Public Property pID_Venta
         Get
-            Return ID_Ventas
+            Return ID_Venta
         End Get
         Set(value)
-            ID_Ventas = value
+            ID_Venta = value
         End Set
     End Property
+
+    Public Property pNum_venta
+        Get
+            Return Num_venta
+        End Get
+        Set(value)
+            Num_venta = value
+        End Set
+    End Property
+
 
     Public Property pID_Usuario
         Get
@@ -71,19 +81,20 @@
     End Sub
 
 
-    Public Sub New(ID_Ventas As Integer, ID_Usuario As Integer,
+    Public Sub New(ID_Venta As Integer, ID_Usuario As Integer,
                    ID_Cliente As Integer, ID_Producto As Integer,
                    Ven_CantVendida As Integer, Ven_Fecha As String,
-                   Ven_subtotal As Double
+                   Ven_subtotal As Double, Num_venta As Integer
                    ) 'Constructor Full
 
-        pID_Ventas = ID_Ventas
+        pID_Venta = ID_Venta
         pID_Usuario = ID_Usuario
         pID_Cliente = ID_Cliente
         pID_Producto = ID_Producto
         pVen_CantVendida = Ven_CantVendida
         pVen_Fecha = Ven_Fecha
         pVen_subtotal = Ven_subtotal
+        pNum_venta = Num_venta
 
     End Sub
 

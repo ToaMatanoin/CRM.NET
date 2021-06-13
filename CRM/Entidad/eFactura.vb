@@ -1,9 +1,18 @@
 ﻿Public Class eFactura
 
-    Dim ID_Factura, ID_Venta, Cli_TelEmpresa, Tp_Venta As Integer
+    Dim ID_Factura, ID_Venta, Cli_TelEmpresa, Num_venta As Integer
     Dim Fac_Descuento, Fac_Impuesto, Fac_Total As Double
-    Dim Fac_RTN As String
+    Dim Fac_RTN, Tp_Venta As String
 
+
+    Public Property pNum_venta
+        Get
+            Return Num_venta
+        End Get
+        Set(value)
+            Num_venta = value
+        End Set
+    End Property
     Public Property pTP_Venta
         Get
             Return Tp_Venta
@@ -81,18 +90,18 @@
 
 
 
-    Public Sub New(ID_Factura As Integer, ID_Venta As Integer, Cli_TelEmpresa As Integer,
-                   Fac_Descuento As Double, Fac_Impuesto As Double, Fac_Total As Double,
-                   Fac_RTN As String, Tp_Venta As String) 'Constructor Full
+    Public Sub New(ID_Factura As Integer, ID_Venta As Integer, Tp_Venta As String,
+                   Fac_Descuento As Double, Fac_Impuesto As Double,
+                   Fac_RTN As String, Fac_Total As Double, Num_venta As Integer) 'Constructor Full
 
         pID_Factura = ID_Factura
         pID_Venta = ID_Venta
-        pCli_TelEmpresa = Cli_TelEmpresa
+        pTP_Venta = Tp_Venta
         pFac_Descuento = Fac_Descuento
         pFac_Impuesto = Fac_Impuesto
-        pFac_Total = Fac_Total
         pFac_RTN = Fac_RTN
-        pTP_Venta = Tp_Venta
+        pFac_Total = Fac_Total
+        pNum_venta = Num_venta
 
     End Sub
 

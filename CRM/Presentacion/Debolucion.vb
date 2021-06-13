@@ -35,7 +35,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = "ID_Venta = '" & idventa & "'"
+            VistaDatos.RowFilter = "Num_venta = '" & idventa & "'"
             If VistaDatos.Count <> 0 Then
                 DGVVentas.DataSource = VistaDatos
             Else
@@ -116,70 +116,7 @@
 
     Private Sub BtnDevolucion_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click
 
-        'devolver inventario
 
-        Dim Resultad As DialogResult
-        Resultad = MessageBox.Show("Desea Devolver una compra", "Devolucion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If Resultad = Windows.Forms.DialogResult.OK Then
-            Try
-
-                Dim TablaDatos As New eInventario
-                Dim Funcion As New fInventario
-                For i = 1 To dgvproductos.Rows.Count Step 1
-                    For j = 1 To DGVVentas.Rows.Count Step 1
-                        If productos(j).Equals(dgvproductos(1, i).Value) Then
-                            Dim suma As Integer = Convert.ToInt32(ventacant(j)) + Convert.ToInt32(dgvproductos(3, i).Value)
-
-                            TablaDatos.pID_Producto = dgvproductos(1, i).Value
-                            TablaDatos.pPro_Nombre = dgvproductos(2, i).Value
-                            TablaDatos.pPro_Cantidad = suma
-                            TablaDatos.pPro_preventa = Convert.ToDouble(dgvproductos(4, i).Value)
-                            TablaDatos.pPro_precompra = Convert.ToDouble(dgvproductos(5, i).Value)
-                            TablaDatos.pNombre_Proveedor = dgvproductos(6, i).Value
-                            TablaDatos.pPro_disponible = dgvproductos(7, i).Value
-                        End If
-                    Next j
-                Next i
-
-                If Funcion.Actualizar(TablaDatos) Then
-                    MessageBox.Show("prueba de devolver producto a inventario exito", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("prueba de devolver producto a inventario fallo", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                End If
-
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
-        Else
-            MessageBox.Show("Cancelado por el usuario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-
-
-        'eliminar venta
-        Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea hacer una devolucion", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-        If Resultado = Windows.Forms.DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In Dgv_Listado.Rows
-                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If LineaMarca Then
-                        Dim LlavePrimaria As Integer = idventa
-                        Dim TablaDatos As New eVentas
-                        Dim Funcion As New fVentas
-                        TablaDatos.pID_Ventas = LlavePrimaria
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Devolucion  fue Realizada correctamente", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
-        Else
-            MessageBox.Show("Cancelado por el Usuario", "Devolucion", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click

@@ -38,6 +38,7 @@ Public Class fFactura
             ComandoSQL.Parameters.AddWithValue("@Fac_Impuesto", TablaDatos.pFac_Impuesto)
             ComandoSQL.Parameters.AddWithValue("@Fac_RTN", TablaDatos.pFac_RTN)
             ComandoSQL.Parameters.AddWithValue("@Fac_Total", TablaDatos.pFac_Total)
+            ComandoSQL.Parameters.AddWithValue("@Num_venta", TablaDatos.pNum_venta)
 
             If ComandoSQL.ExecuteNonQuery Then
                 Return True

@@ -54,8 +54,8 @@ Partial Class Ventas
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.BtnDevolucion = New System.Windows.Forms.Button()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Rd_contado = New System.Windows.Forms.RadioButton()
@@ -397,21 +397,6 @@ Partial Class Ventas
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "Subtotal:"
         '
-        'BtnRegresar
-        '
-        Me.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatAppearance.BorderSize = 0
-        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
-        Me.BtnRegresar.Location = New System.Drawing.Point(1299, 12)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(59, 51)
-        Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.UseVisualStyleBackColor = False
-        '
         'BtnDevolucion
         '
         Me.BtnDevolucion.BackColor = System.Drawing.Color.Silver
@@ -426,6 +411,21 @@ Partial Class Ventas
         Me.BtnDevolucion.TabIndex = 2
         Me.BtnDevolucion.Text = "Cancelar Venta"
         Me.BtnDevolucion.UseVisualStyleBackColor = False
+        '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRegresar.FlatAppearance.BorderSize = 0
+        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
+        Me.BtnRegresar.Location = New System.Drawing.Point(1299, 12)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(59, 51)
+        Me.BtnRegresar.TabIndex = 2
+        Me.BtnRegresar.UseVisualStyleBackColor = False
         '
         'Chk_Eliminar
         '

@@ -244,8 +244,6 @@
         End If
     End Sub
     Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
-        'Empleado.Bandera = True
-        Empleado.BtnRegresar.Text = "Cargar"
         Empleado.regrecargar = 1
         Empleado.ShowDialog()
 

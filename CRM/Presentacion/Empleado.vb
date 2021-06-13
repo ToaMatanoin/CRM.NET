@@ -10,9 +10,9 @@
         TxtIDEmp.Enabled = False
 
         If regrecargar = 0 Then
-            BtnCerrar.Visible = False
+            BtnCargar.Visible = False
         ElseIf regrecargar = 1 Then
-            BtnCerrar.Visible = True
+            BtnCargar.Visible = True
         End If
         'If Bandera Then
         '    BtnCerrar.Visible = True
@@ -62,7 +62,7 @@
 
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
-        Dgv_Listado.Columns(4).Visible = False
+        Dgv_Listado.Columns(5).Visible = False
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
@@ -277,33 +277,17 @@
             Call Limpiar()
         End If
 
-        'eliminar usuario
-
-
     End Sub
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        If BtnRegresar.Text = "Regresar" Then
-            Inicio.Visible = True
+    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
+        If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+            regrecargar = 0
             Me.Close()
-        ElseIf BtnRegresar.Text = "Cargar" Then
-            If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
-                BtnCerrar.Visible = False
-                regrecargar = 0
-                BtnRegresar.Text = "Regresar"
-                Me.Close()
-            Else
-                MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
+        Else
+            MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
+
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
-        BtnRegresar.Text = "Regresar"
-        BtnCerrar.Visible = False
-        regrecargar = 0
-        Limpiar()
-        Me.Close()
-    End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         'Limpiar()
@@ -342,5 +326,14 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnRegresar.Click
+        If BtnCargar.Visible Then
+            regrecargar = 0
+            Limpiar()
+            Me.Close()
+        Else
+            Inicio.Visible = True
+            Me.Close()
+        End If
+    End Sub
 End Class

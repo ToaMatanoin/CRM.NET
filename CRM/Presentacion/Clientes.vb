@@ -11,9 +11,9 @@
         Cmb_Buscar.Text = "Cli_Nombre"
 
         If regrecargar = 0 Then
-            BtnCerrar.Visible = False
+            BtnCargar.Visible = False
         ElseIf regrecargar = 1 Then
-            BtnCerrar.Visible = True
+            BtnCargar.Visible = True
         End If
         'If Bandera Then
         '    BtnCerrar.Visible = True
@@ -272,30 +272,23 @@
 
     End Sub
 
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        If BtnRegresar.Text = "Regresar" Then
-            Inicio.Visible = True
+    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
+        If TxtIDCliente.Text <> "" And TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtNomEmpresa.Text <> "" And
+            TxtTelEmpresa.Text <> "" And TxtEmailEmpresa.Text <> "" And TxtRTN.Text <> "" Then
+            regrecargar = 0
             Me.Close()
-        ElseIf BtnRegresar.Text = "Cargar" Then
-            If TxtIDCliente.Text <> "" And TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtNomEmpresa.Text <> "" And
-                TxtTelEmpresa.Text <> "" And TxtEmailEmpresa.Text <> "" And TxtRTN.Text <> "" Then
-                BtnCerrar.Visible = False
-                regrecargar = 0
-                BtnRegresar.Text = "Regresar"
-                Me.Close()
-            Else
-                MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            End If
+        Else
+            MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
-    Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
-        BtnRegresar.Text = "Regresar"
-        BtnCerrar.Visible = False
-        regrecargar = 0
-        Limpiar()
-        Me.Close()
-    End Sub
+    'Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
+    '    BtnCargar.Text = "Regresar"
+    '    BtnCerrar.Visible = False
+    '    regrecargar = 0
+    '    Limpiar()
+    '    Me.Close()
+    'End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         'Limpiar()
@@ -343,4 +336,14 @@
         Restriccion.RestringirNumero(e)
     End Sub
 
+    Private Sub Btnregresar_Click_1(sender As Object, e As EventArgs) Handles Btnregresar.Click
+        If BtnCargar.Visible Then
+            regrecargar = 0
+            Limpiar()
+            Me.Close()
+        Else
+            Inicio.Visible = True
+            Me.Close()
+        End If
+    End Sub
 End Class

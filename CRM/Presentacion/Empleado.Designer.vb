@@ -22,10 +22,10 @@ Partial Class Empleado
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleado))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleado))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtPasswordEmail = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,7 +41,7 @@ Partial Class Empleado
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtNomEmp = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
+        Me.BtnCargar = New System.Windows.Forms.Button()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -51,13 +51,13 @@ Partial Class Empleado
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnMinimizate = New System.Windows.Forms.Button()
+        Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.GroupBox3.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -231,17 +231,20 @@ Partial Class Empleado
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre Empleado:"
         '
-        'BtnRegresar
+        'BtnCargar
         '
-        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(6, 12)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 31)
-        Me.BtnRegresar.TabIndex = 15
-        Me.BtnRegresar.Text = "Regresar"
-        Me.BtnRegresar.UseVisualStyleBackColor = True
+        Me.BtnCargar.BackColor = System.Drawing.Color.DarkGray
+        Me.BtnCargar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCargar.FlatAppearance.BorderSize = 0
+        Me.BtnCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.BtnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCargar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCargar.Image = CType(resources.GetObject("BtnCargar.Image"), System.Drawing.Image)
+        Me.BtnCargar.Location = New System.Drawing.Point(20, 12)
+        Me.BtnCargar.Name = "BtnCargar"
+        Me.BtnCargar.Size = New System.Drawing.Size(96, 66)
+        Me.BtnCargar.TabIndex = 15
+        Me.BtnCargar.UseVisualStyleBackColor = False
         '
         'Chk_Eliminar
         '
@@ -392,18 +395,6 @@ Partial Class Empleado
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnIngresar.UseVisualStyleBackColor = False
         '
-        'BtnCerrar
-        '
-        Me.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrar.Location = New System.Drawing.Point(6, 51)
-        Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
-        Me.BtnCerrar.TabIndex = 25
-        Me.BtnCerrar.Text = "Cancelar"
-        Me.BtnCerrar.UseVisualStyleBackColor = True
-        '
         'BtnNuevo
         '
         Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
@@ -438,8 +429,7 @@ Partial Class Empleado
         'GroupBox4
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox4.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox4.Controls.Add(Me.BtnCerrar)
+        Me.GroupBox4.Controls.Add(Me.BtnCargar)
         Me.GroupBox4.Location = New System.Drawing.Point(1177, 96)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(138, 91)
@@ -478,11 +468,26 @@ Partial Class Empleado
         Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
         Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
-        Me.BtnMinimizate.Location = New System.Drawing.Point(1256, 12)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1234, 12)
         Me.BtnMinimizate.Name = "BtnMinimizate"
         Me.BtnMinimizate.Size = New System.Drawing.Size(59, 51)
         Me.BtnMinimizate.TabIndex = 32
         Me.BtnMinimizate.UseVisualStyleBackColor = False
+        '
+        'BtnRegresar
+        '
+        Me.BtnRegresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnRegresar.FlatAppearance.BorderSize = 0
+        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
+        Me.BtnRegresar.Location = New System.Drawing.Point(1299, 12)
+        Me.BtnRegresar.Name = "BtnRegresar"
+        Me.BtnRegresar.Size = New System.Drawing.Size(59, 51)
+        Me.BtnRegresar.TabIndex = 26
+        Me.BtnRegresar.UseVisualStyleBackColor = False
         '
         'Empleado
         '
@@ -490,6 +495,7 @@ Partial Class Empleado
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1370, 560)
+        Me.Controls.Add(Me.BtnRegresar)
         Me.Controls.Add(Me.BtnMinimizate)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.PictureBox1)
@@ -526,7 +532,7 @@ Partial Class Empleado
     Friend WithEvents Label3 As Label
     Friend WithEvents TxtNomEmp As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents BtnRegresar As Button
+    Friend WithEvents BtnCargar As Button
     Friend WithEvents Chk_Eliminar As CheckBox
     Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
@@ -540,7 +546,6 @@ Partial Class Empleado
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtCargo As TextBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents BtnCerrar As Button
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox4 As GroupBox
@@ -549,4 +554,5 @@ Partial Class Empleado
     Friend WithEvents TxtPasswordEmail As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents BtnMinimizate As Button
+    Friend WithEvents BtnRegresar As Button
 End Class

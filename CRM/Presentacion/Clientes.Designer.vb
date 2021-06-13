@@ -35,8 +35,7 @@ Partial Class Clientes
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.BtnRegresar = New System.Windows.Forms.Button()
-        Me.BtnCerrar = New System.Windows.Forms.Button()
+        Me.BtnCargar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtIDCliente = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -60,6 +59,8 @@ Partial Class Clientes
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Btnregresar = New System.Windows.Forms.Button()
+        Me.BtnMinimizate = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -185,41 +186,27 @@ Partial Class Clientes
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox2.Controls.Add(Me.BtnRegresar)
-        Me.GroupBox2.Controls.Add(Me.BtnCerrar)
+        Me.GroupBox2.Controls.Add(Me.BtnCargar)
         Me.GroupBox2.Location = New System.Drawing.Point(1188, 107)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(138, 86)
         Me.GroupBox2.TabIndex = 2
         Me.GroupBox2.TabStop = False
         '
-        'BtnRegresar
+        'BtnCargar
         '
-        Me.BtnRegresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnRegresar.FlatAppearance.BorderSize = 0
-        Me.BtnRegresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRegresar.Location = New System.Drawing.Point(6, 13)
-        Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(123, 32)
-        Me.BtnRegresar.TabIndex = 2
-        Me.BtnRegresar.Text = "Regresar"
-        Me.BtnRegresar.UseVisualStyleBackColor = True
-        '
-        'BtnCerrar
-        '
-        Me.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnCerrar.FlatAppearance.BorderSize = 0
-        Me.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver
-        Me.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnCerrar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnCerrar.Location = New System.Drawing.Point(6, 48)
-        Me.BtnCerrar.Name = "BtnCerrar"
-        Me.BtnCerrar.Size = New System.Drawing.Size(123, 31)
-        Me.BtnCerrar.TabIndex = 26
-        Me.BtnCerrar.Text = "Cancelar"
-        Me.BtnCerrar.UseVisualStyleBackColor = True
+        Me.BtnCargar.BackColor = System.Drawing.Color.DarkGray
+        Me.BtnCargar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCargar.FlatAppearance.BorderSize = 0
+        Me.BtnCargar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gray
+        Me.BtnCargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCargar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCargar.Image = CType(resources.GetObject("BtnCargar.Image"), System.Drawing.Image)
+        Me.BtnCargar.Location = New System.Drawing.Point(18, 13)
+        Me.BtnCargar.Name = "BtnCargar"
+        Me.BtnCargar.Size = New System.Drawing.Size(101, 62)
+        Me.BtnCargar.TabIndex = 2
+        Me.BtnCargar.UseVisualStyleBackColor = False
         '
         'GroupBox3
         '
@@ -512,12 +499,45 @@ Partial Class Clientes
         Me.GroupBox5.TabIndex = 13
         Me.GroupBox5.TabStop = False
         '
+        'Btnregresar
+        '
+        Me.Btnregresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Btnregresar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnregresar.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
+        Me.Btnregresar.FlatAppearance.BorderSize = 0
+        Me.Btnregresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.Btnregresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnregresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btnregresar.Image = CType(resources.GetObject("Btnregresar.Image"), System.Drawing.Image)
+        Me.Btnregresar.Location = New System.Drawing.Point(1299, 11)
+        Me.Btnregresar.Name = "Btnregresar"
+        Me.Btnregresar.Size = New System.Drawing.Size(59, 51)
+        Me.Btnregresar.TabIndex = 27
+        Me.Btnregresar.UseVisualStyleBackColor = False
+        '
+        'BtnMinimizate
+        '
+        Me.BtnMinimizate.AutoSize = True
+        Me.BtnMinimizate.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.BtnMinimizate.FlatAppearance.BorderColor = System.Drawing.Color.Maroon
+        Me.BtnMinimizate.FlatAppearance.BorderSize = 0
+        Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
+        Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1234, 12)
+        Me.BtnMinimizate.Name = "BtnMinimizate"
+        Me.BtnMinimizate.Size = New System.Drawing.Size(59, 51)
+        Me.BtnMinimizate.TabIndex = 34
+        Me.BtnMinimizate.UseVisualStyleBackColor = False
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
         Me.ClientSize = New System.Drawing.Size(1370, 593)
+        Me.Controls.Add(Me.BtnMinimizate)
+        Me.Controls.Add(Me.Btnregresar)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Chk_Eliminar)
@@ -548,7 +568,7 @@ Partial Class Clientes
 
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents BtnRegresar As Button
+    Friend WithEvents BtnCargar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnIngresar As Button
@@ -576,8 +596,9 @@ Partial Class Clientes
     Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents Chk_Eliminar As CheckBox
-    Friend WithEvents BtnCerrar As Button
     Friend WithEvents BtnNuevo As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Btnregresar As Button
+    Friend WithEvents BtnMinimizate As Button
 End Class

@@ -12,7 +12,6 @@
     End Sub
 
     Private Sub BtnComunicacion_Click(sender As Object, e As EventArgs) Handles BtnComunicacion.Click
-        'Me.Hide()
         Comunicacion_Cliente.ShowDialog()
     End Sub
 
@@ -49,7 +48,7 @@
         Label1.Text = IniciarSesion.USUNOM
 
         Dim Dasboard As New Dashboard
-        'ProdPreferidos()
+        'Dasboard.ProdPreferidos()
         Dasboard.dashboard()
     End Sub
 

@@ -190,8 +190,6 @@
     End Sub
 
     Private Sub BtnCliente_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click
-        'Clientes.Bandera = True
-        Clientes.BtnRegresar.Text = "Cargar"
         Clientes.regrecargar = 1
         Clientes.ShowDialog()
 

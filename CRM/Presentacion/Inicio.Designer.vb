@@ -23,9 +23,9 @@ Partial Class Inicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.BtnVentas = New System.Windows.Forms.Button()
         Me.BtnMarketing = New System.Windows.Forms.Button()
         Me.BtnInventario = New System.Windows.Forms.Button()
@@ -61,6 +61,7 @@ Partial Class Inicio
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.chartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,12 +75,13 @@ Partial Class Inicio
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnVentas
         '
         Me.BtnVentas.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnVentas.FlatAppearance.BorderSize = 0
+        Me.BtnVentas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnVentas.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -96,7 +98,7 @@ Partial Class Inicio
         'BtnMarketing
         '
         Me.BtnMarketing.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnMarketing.FlatAppearance.BorderSize = 0
+        Me.BtnMarketing.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnMarketing.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnMarketing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMarketing.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,7 +115,7 @@ Partial Class Inicio
         'BtnInventario
         '
         Me.BtnInventario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnInventario.FlatAppearance.BorderSize = 0
+        Me.BtnInventario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnInventario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnInventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnInventario.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -130,7 +132,7 @@ Partial Class Inicio
         'BtnEmpleados
         '
         Me.BtnEmpleados.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEmpleados.FlatAppearance.BorderSize = 0
+        Me.BtnEmpleados.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnEmpleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEmpleados.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -147,7 +149,7 @@ Partial Class Inicio
         'BtnOportunidades
         '
         Me.BtnOportunidades.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnOportunidades.FlatAppearance.BorderSize = 0
+        Me.BtnOportunidades.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnOportunidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnOportunidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnOportunidades.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -164,7 +166,7 @@ Partial Class Inicio
         'BtnComunicacion
         '
         Me.BtnComunicacion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnComunicacion.FlatAppearance.BorderSize = 0
+        Me.BtnComunicacion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnComunicacion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnComunicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnComunicacion.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -181,7 +183,7 @@ Partial Class Inicio
         'BtnClientes
         '
         Me.BtnClientes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnClientes.FlatAppearance.BorderSize = 0
+        Me.BtnClientes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnClientes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnClientes.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -198,7 +200,7 @@ Partial Class Inicio
         'BtnUsuarios
         '
         Me.BtnUsuarios.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnUsuarios.FlatAppearance.BorderSize = 0
+        Me.BtnUsuarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUsuarios.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -215,6 +217,7 @@ Partial Class Inicio
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.Red
+        Me.Panel1.Controls.Add(Me.PictureBox11)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.BtnEmpleados)
         Me.Panel1.Controls.Add(Me.BtnUsuarios)
@@ -236,7 +239,6 @@ Partial Class Inicio
         '
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label1.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Image = CType(resources.GetObject("Label1.Image"), System.Drawing.Image)
         Me.Label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Label1.Location = New System.Drawing.Point(30, 31)
         Me.Label1.Name = "Label1"
@@ -288,20 +290,20 @@ Partial Class Inicio
         '
         'chartProdPreferidos
         '
-        ChartArea1.Name = "ChartArea1"
-        Me.chartProdPreferidos.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.chartProdPreferidos.Legends.Add(Legend1)
+        ChartArea2.Name = "ChartArea1"
+        Me.chartProdPreferidos.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.chartProdPreferidos.Legends.Add(Legend2)
         Me.chartProdPreferidos.Location = New System.Drawing.Point(663, 130)
         Me.chartProdPreferidos.Name = "chartProdPreferidos"
-        Me.chartProdPreferidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series1.IsValueShownAsLabel = True
-        Series1.LabelFormat = "0"
-        Series1.Legend = "Legend1"
-        Series1.Name = "Series1"
-        Me.chartProdPreferidos.Series.Add(Series1)
+        Me.chartProdPreferidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate
+        Series2.ChartArea = "ChartArea1"
+        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series2.IsValueShownAsLabel = True
+        Series2.LabelFormat = "0"
+        Series2.Legend = "Legend1"
+        Series2.Name = "Series1"
+        Me.chartProdPreferidos.Series.Add(Series2)
         Me.chartProdPreferidos.Size = New System.Drawing.Size(630, 506)
         Me.chartProdPreferidos.TabIndex = 9
         Me.chartProdPreferidos.Text = "Chart2"
@@ -521,6 +523,17 @@ Partial Class Inicio
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "L."
         '
+        'PictureBox11
+        '
+        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(26, 31)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(56, 55)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 6
+        Me.PictureBox11.TabStop = False
+        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -572,6 +585,7 @@ Partial Class Inicio
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -611,4 +625,5 @@ Partial Class Inicio
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox11 As PictureBox
 End Class

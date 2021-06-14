@@ -164,7 +164,7 @@
         BtnIngresar.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
-        Btn_Guardar_proy.Enabled = False
+
 
     End Sub
 
@@ -277,7 +277,21 @@
         End If
     End Sub
 
-    Private Sub Btn_Guardar_proy_Click(sender As Object, e As EventArgs) Handles Btn_Guardar_proy.Click
+    Private Sub Btn_Guardar_proy_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Rb_Proyecto_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_Proyecto.CheckedChanged
+        marca = "Proyecto"
+        'Btn_ingresar.Enabled = True
+        Mostrarproy()
+    End Sub
+
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+
+    Private Sub Btn_ingresar_Click(sender As Object, e As EventArgs) Handles Btn_ingresar.Click
         If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
 
             If marca = "Proyecto" Then
@@ -339,18 +353,167 @@
         End If
     End Sub
 
-    Private Sub Rb_Proyecto_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_Proyecto.CheckedChanged
-        marca = "Proyecto"
-        Btn_Guardar_proy.Enabled = True
-        Mostrarproy()
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Limpiar()
     End Sub
 
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
-        Me.WindowState = FormWindowState.Minimized
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
+
+            If marca = "Proyecto" Then
+
+                Dim Resultado As DialogResult
+                Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+                If Resultado = Windows.Forms.DialogResult.OK Then
+                    Try
+                        Dim TablaDatos As New eProyectos_Marketing
+                        Dim Funcion As New fProyectos_Marketing
+
+                        TablaDatos.pID_Proyecto =
+                        TablaDatos.pID_Marketing = TxtID_Mark.Text
+                        TablaDatos.pNombre_Proyecto = TxtNom_proyec.Text
+                        TablaDatos.pDescripcion = TxtDescripProyecto
+                        TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
+                        TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
+
+                        If Funcion.Actualizar(TablaDatos) Then
+                            MessageBox.Show("Empleado fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Empleado no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                        Mostrar()
+                        Limpiar()
+
+                    Catch Evento As Exception
+                        MsgBox(Evento.Message)
+                    End Try
+                Else
+                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+            ElseIf marca = "Tarea" Then
+
+                Dim Resultado As DialogResult
+                Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
+                If Resultado = Windows.Forms.DialogResult.OK Then
+                    Try
+                        Dim TablaDatos As New eTareas_Marketing
+                        Dim Funcion As New fTareas_Marketing
+
+                        TablaDatos.pID_Tarea =
+                        TablaDatos.pID_Marketing = TxtID_Mark.Text
+                        TablaDatos.pNombre_Tarea = TxtNom_proyec.Text
+                        TablaDatos.pDescripcion = TxtDescripProyecto
+                        TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
+                        TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
+
+                        If Funcion.Actualizar(TablaDatos) Then
+                            MessageBox.Show("Empleado fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Else
+                            MessageBox.Show("Empleado no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                        Mostrar()
+                        Limpiar()
+
+                    Catch Evento As Exception
+                        MsgBox(Evento.Message)
+                    End Try
+                Else
+                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                End If
+
+
+            Else
+                MessageBox.Show("No seleciono categoria", "Falta llenar campo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+        If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
+
+            If marca = "Proyecto" Then
+
+                Dim Resultado As DialogResult
+                Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
+                "Eliminando Registro", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question)
+                If Resultado = Windows.Forms.DialogResult.OK Then
+                    Try
+                        For Each row As DataGridViewRow In Dgv_Listado.Rows
+                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                            If LineaMarca Then
+                                Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Proyecto").Value)
+                                Dim TablaDatos As New eProyectos_Marketing
+                                Dim Funcion As New fProyectos_Marketing
+                                TablaDatos.pID_Proyecto = LlavePrimaria
+                                If Funcion.Eliminar(TablaDatos) Then
+                                    MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                Else
+                                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                End If
+                            End If
+                        Next
+                        Call Mostrar()
+                        Call Limpiar()
+                    Catch Evento As Exception
+                        MsgBox(Evento.Message)
+                    End Try
+                Else
+                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Mostrar()
+                    Call Limpiar()
+                End If
+
+            ElseIf marca = "Tarea" Then
+
+                Dim Resultado As DialogResult
+                Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
+                "Eliminando Registro", MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question)
+                If Resultado = Windows.Forms.DialogResult.OK Then
+                    Try
+                        For Each row As DataGridViewRow In Dgv_Listado.Rows
+                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                            If LineaMarca Then
+                                Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Tarea").Value)
+                                Dim TablaDatos As New eTareas_Marketing
+                                Dim Funcion As New fTareas_Marketing
+                                TablaDatos.pID_Tarea = LlavePrimaria
+                                If Funcion.Eliminar(TablaDatos) Then
+                                    MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                Else
+                                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                End If
+                            End If
+                        Next
+                        Call Mostrar()
+                        Call Limpiar()
+                    Catch Evento As Exception
+                        MsgBox(Evento.Message)
+                    End Try
+                Else
+                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Call Mostrar()
+                    Call Limpiar()
+                End If
+
+
+            Else
+                MessageBox.Show("No seleciono categoria", "Falta llenar campo", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        End If
+
+    End Sub
+
+    Private Sub Dgvtp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvtp.CellContentClick
+
     End Sub
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
-        Btn_Guardar_proy.Enabled = True
+        'Btn_ingresar.Enabled = True
         marca = "Tarea"
         Mostrartar()
     End Sub

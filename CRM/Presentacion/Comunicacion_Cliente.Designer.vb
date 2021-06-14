@@ -64,6 +64,7 @@ Partial Class Comunicacion_Cliente
         '
         Me.BtnCliente.BackColor = System.Drawing.Color.Silver
         Me.BtnCliente.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnCliente.Enabled = False
         Me.BtnCliente.FlatAppearance.BorderSize = 0
         Me.BtnCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
         Me.BtnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat

@@ -3,8 +3,8 @@ Public Class Dashboard
     Inherits Conexion
     Dim ComandoSQL As New SqlCommand
     Public dr As SqlDataReader
-    Public nomprod As String()
-    Public cantprod As Integer()
+    Public nomprod(5) As String
+    Public cantprod(5) As Integer
 
     Public Sub ProdPreferidos()
         Try

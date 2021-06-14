@@ -24,6 +24,7 @@
         TxtMensaje.Enabled = True
         TxtAsunto.Enabled = True
         Limpiar()
+        BtnCliente.Enabled = True
         BtnEnviar.Visible = True
     End Sub
 

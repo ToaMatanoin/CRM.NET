@@ -48,7 +48,7 @@
         Label1.Text = IniciarSesion.USUNOM
 
         Dim Dasboard As New Dashboard
-        'Dasboard.ProdPreferidos()
+        Dasboard.ProdPreferidos()
         Dasboard.dashboard()
     End Sub
 

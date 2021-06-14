@@ -23,9 +23,9 @@ Partial Class Inicio
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Inicio))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.BtnVentas = New System.Windows.Forms.Button()
         Me.BtnMarketing = New System.Windows.Forms.Button()
         Me.BtnInventario = New System.Windows.Forms.Button()
@@ -35,6 +35,7 @@ Partial Class Inicio
         Me.BtnClientes = New System.Windows.Forms.Button()
         Me.BtnUsuarios = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnCerrar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -61,8 +62,8 @@ Partial Class Inicio
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.chartProdPreferidos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +76,6 @@ Partial Class Inicio
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnVentas
@@ -90,7 +90,7 @@ Partial Class Inicio
         Me.BtnVentas.Location = New System.Drawing.Point(12, 340)
         Me.BtnVentas.Name = "BtnVentas"
         Me.BtnVentas.Size = New System.Drawing.Size(228, 51)
-        Me.BtnVentas.TabIndex = 3
+        Me.BtnVentas.TabIndex = 5
         Me.BtnVentas.Text = "Ventas"
         Me.BtnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnVentas.UseVisualStyleBackColor = True
@@ -107,7 +107,7 @@ Partial Class Inicio
         Me.BtnMarketing.Location = New System.Drawing.Point(12, 397)
         Me.BtnMarketing.Name = "BtnMarketing"
         Me.BtnMarketing.Size = New System.Drawing.Size(228, 51)
-        Me.BtnMarketing.TabIndex = 2
+        Me.BtnMarketing.TabIndex = 6
         Me.BtnMarketing.Text = "Marketing"
         Me.BtnMarketing.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnMarketing.UseVisualStyleBackColor = True
@@ -124,7 +124,7 @@ Partial Class Inicio
         Me.BtnInventario.Location = New System.Drawing.Point(12, 283)
         Me.BtnInventario.Name = "BtnInventario"
         Me.BtnInventario.Size = New System.Drawing.Size(228, 51)
-        Me.BtnInventario.TabIndex = 2
+        Me.BtnInventario.TabIndex = 4
         Me.BtnInventario.Text = "Inventario"
         Me.BtnInventario.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnInventario.UseVisualStyleBackColor = True
@@ -141,7 +141,7 @@ Partial Class Inicio
         Me.BtnEmpleados.Location = New System.Drawing.Point(12, 511)
         Me.BtnEmpleados.Name = "BtnEmpleados"
         Me.BtnEmpleados.Size = New System.Drawing.Size(228, 51)
-        Me.BtnEmpleados.TabIndex = 4
+        Me.BtnEmpleados.TabIndex = 8
         Me.BtnEmpleados.Text = "Empleados"
         Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEmpleados.UseVisualStyleBackColor = True
@@ -175,7 +175,7 @@ Partial Class Inicio
         Me.BtnComunicacion.Location = New System.Drawing.Point(12, 226)
         Me.BtnComunicacion.Name = "BtnComunicacion"
         Me.BtnComunicacion.Size = New System.Drawing.Size(228, 51)
-        Me.BtnComunicacion.TabIndex = 1
+        Me.BtnComunicacion.TabIndex = 3
         Me.BtnComunicacion.Text = "Comunicaciones"
         Me.BtnComunicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnComunicacion.UseVisualStyleBackColor = True
@@ -192,7 +192,7 @@ Partial Class Inicio
         Me.BtnClientes.Location = New System.Drawing.Point(12, 112)
         Me.BtnClientes.Name = "BtnClientes"
         Me.BtnClientes.Size = New System.Drawing.Size(228, 51)
-        Me.BtnClientes.TabIndex = 0
+        Me.BtnClientes.TabIndex = 1
         Me.BtnClientes.Text = "Clientes"
         Me.BtnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnClientes.UseVisualStyleBackColor = True
@@ -209,7 +209,7 @@ Partial Class Inicio
         Me.BtnUsuarios.Location = New System.Drawing.Point(12, 454)
         Me.BtnUsuarios.Name = "BtnUsuarios"
         Me.BtnUsuarios.Size = New System.Drawing.Size(228, 51)
-        Me.BtnUsuarios.TabIndex = 2
+        Me.BtnUsuarios.TabIndex = 7
         Me.BtnUsuarios.Text = "Usuarios"
         Me.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnUsuarios.UseVisualStyleBackColor = True
@@ -234,6 +234,17 @@ Partial Class Inicio
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(266, 667)
         Me.Panel1.TabIndex = 6
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
+        Me.PictureBox11.Location = New System.Drawing.Point(26, 31)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(56, 55)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 6
+        Me.PictureBox11.TabStop = False
         '
         'Label1
         '
@@ -290,20 +301,20 @@ Partial Class Inicio
         '
         'chartProdPreferidos
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.chartProdPreferidos.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.chartProdPreferidos.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.chartProdPreferidos.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.chartProdPreferidos.Legends.Add(Legend1)
         Me.chartProdPreferidos.Location = New System.Drawing.Point(663, 130)
         Me.chartProdPreferidos.Name = "chartProdPreferidos"
         Me.chartProdPreferidos.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate
-        Series2.ChartArea = "ChartArea1"
-        Series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
-        Series2.IsValueShownAsLabel = True
-        Series2.LabelFormat = "0"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.chartProdPreferidos.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut
+        Series1.IsValueShownAsLabel = True
+        Series1.LabelFormat = "0"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.chartProdPreferidos.Series.Add(Series1)
         Me.chartProdPreferidos.Size = New System.Drawing.Size(630, 506)
         Me.chartProdPreferidos.TabIndex = 9
         Me.chartProdPreferidos.Text = "Chart2"
@@ -523,17 +534,6 @@ Partial Class Inicio
         Me.Label3.TabIndex = 30
         Me.Label3.Text = "L."
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
-        Me.PictureBox11.Location = New System.Drawing.Point(26, 31)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(56, 55)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 6
-        Me.PictureBox11.TabStop = False
-        '
         'Inicio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -572,6 +572,7 @@ Partial Class Inicio
         Me.Text = "Inicio"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.chartProdPreferidos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -585,7 +586,6 @@ Partial Class Inicio
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

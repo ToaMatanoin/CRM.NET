@@ -57,6 +57,7 @@ Public Class fProyectos_Marketing
             ComandoSQL = New SqlCommand("ActualizarProyecto")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
+            ComandoSQL.Parameters.AddWithValue("@ID_Proyecto", TablaDatos.pID_Proyecto)
             ComandoSQL.Parameters.AddWithValue("@ID_Marketing", TablaDatos.pID_Marketing)
             ComandoSQL.Parameters.AddWithValue("@Nombre_Proyecto", TablaDatos.pNombre_Proyecto)
             ComandoSQL.Parameters.AddWithValue("@Descripcion", TablaDatos.pDescripcion)

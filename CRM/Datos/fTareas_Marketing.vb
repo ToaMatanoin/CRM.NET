@@ -58,6 +58,7 @@ Public Class fTareas_Marketing
             ComandoSQL = New SqlCommand("ActualizarTarea")
             ComandoSQL.CommandType = CommandType.StoredProcedure
             ComandoSQL.Connection = Connect
+            ComandoSQL.Parameters.AddWithValue("@ID_Tarea", TablaDatos.pID_Tarea)
             ComandoSQL.Parameters.AddWithValue("@ID_Marketing", TablaDatos.pID_Marketing)
             ComandoSQL.Parameters.AddWithValue("@Nombre_Tarea", TablaDatos.pNombre_Tarea)
             ComandoSQL.Parameters.AddWithValue("@Descripcion", TablaDatos.pDescripcion)

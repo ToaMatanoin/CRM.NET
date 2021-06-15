@@ -20,14 +20,17 @@
     End Sub
 
     Private Sub BtnEscribir_Click(sender As Object, e As EventArgs) Handles BtnEscribir.Click
-        TxtCorreoCli.Enabled = True
-        TxtMensaje.Enabled = True
-        TxtAsunto.Enabled = True
+        Activar()
         Limpiar()
         BtnCliente.Enabled = True
         BtnEnviar.Visible = True
     End Sub
 
+    Private Sub Activar()
+        TxtCorreoCli.Enabled = True
+        TxtMensaje.Enabled = True
+        TxtAsunto.Enabled = True
+    End Sub
     'Private Sub BtnEliminar_Click(sender As Object, e As EventArgs)
     '    Dim Resultado As DialogResult
     '    Resultado = MessageBox.Show("Desea Eliminar el mensaje",
@@ -121,8 +124,14 @@
         TxtMensaje.Text = ""
 
         BtnEscribir.Visible = True
-        'BtnEliminar.Visible = False
+        BtnCliente.Enabled = False
         BtnEnviar.Visible = False
+    End Sub
+
+    Private Sub desactivar()
+        TxtCorreoCli.Enabled = False
+        TxtAsunto.Enabled = False
+        TxtMensaje.Enabled = False
     End Sub
 
     'Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs)
@@ -156,6 +165,9 @@
 
     Private Sub BtnEnviar_Click(sender As Object, e As EventArgs) Handles BtnEnviar.Click
         enviarCorreo(IniciarSesion.EmailEMP, IniciarSesion.PassEMP, TxtMensaje.Text, TxtAsunto.Text, TxtCorreoCli.Text)
+
+        Limpiar()
+        desactivar()
         'Dim fechaActual As Date = Date.Now
 
         'If TxtCorreoCli.Text <> "" And TxtAsunto.Text <> "" And

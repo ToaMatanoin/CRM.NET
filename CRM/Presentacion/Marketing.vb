@@ -154,6 +154,7 @@
     End Sub
 
     Private Sub Limpiar()
+        txt_idproy.Text = ""
         TxtID_Mark.Text = ""
         TxtDescripMarke.Text = ""
         TxtDescripProyecto.Text = ""
@@ -165,10 +166,12 @@
         Rb_Proyecto.Checked = False
         Rb_tarea.Checked = False
 
+        Dgvtp.Enabled = False
+        Dgvtp.DataSource = Nothing
+
         BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
-
 
     End Sub
 
@@ -219,6 +222,7 @@
     End Sub
 
     Private Sub TrasladoInformacionPT()
+        txt_idproy.Text = Dgvtp.SelectedCells.Item(1).Value
         TxtNom_proyec.Text = Dgvtp.SelectedCells.Item(4).Value
         TxtDescripProyecto.Text = Dgvtp.SelectedCells.Item(5).Value
         DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString)
@@ -242,7 +246,7 @@
         DesactivarPT()
         If Chb_eliminarPT.CheckState = CheckState.Unchecked Then
             Dgvtp.Columns.Item(0).Visible = False
-            Limpiar()
+            LimpiarPT()
         Else
             Dgvtp.Columns.Item(0).Visible = True
             Btn_EliminarPT.Visible = True
@@ -373,6 +377,8 @@
         marca = "Proyecto"
         'Btn_ingresar.Enabled = True
         Btn_NuevoPT.Enabled = True
+        Dgvtp.Enabled = True
+        Chb_eliminarPT.Enabled = True
         Mostrarproy()
     End Sub
 
@@ -406,6 +412,8 @@
                         Btn_ingresarPT.Visible = False
                         DesactivarPT()
                         Btn_NuevoPT.Text = "Nuevo"
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -433,6 +441,11 @@
                         End If
                         Mostrar()
                         Limpiar()
+                        Btn_ingresarPT.Visible = False
+                        DesactivarPT()
+                        Btn_NuevoPT.Text = "Nuevo"
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -445,7 +458,7 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btn_NuevoPT.Click
+    Private Sub Btn_NuevoPT_Click(sender As Object, e As EventArgs) Handles Btn_NuevoPT.Click
         If Btn_NuevoPT.Text = "Nuevo" Then
             ActivarPT()
             Btn_ingresarPT.Visible = True
@@ -471,21 +484,24 @@
                         Dim TablaDatos As New eProyectos_Marketing
                         Dim Funcion As New fProyectos_Marketing
 
-                        TablaDatos.pID_Proyecto =
+                        TablaDatos.pID_Proyecto = txt_idproy.Text
                         TablaDatos.pID_Marketing = TxtID_Mark.Text
                         TablaDatos.pNombre_Proyecto = TxtNom_proyec.Text
-                        TablaDatos.pDescripcion = TxtDescripProyecto
+                        TablaDatos.pDescripcion = TxtDescripProyecto.Text
                         TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
                         TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
 
                         If Funcion.Actualizar(TablaDatos) Then
-                            MessageBox.Show("Empleado fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Proyecto fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Empleado no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Proyecto no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                         Mostrar()
                         Limpiar()
+                        LimpiarPT()
                         DesactivarPT()
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -502,21 +518,24 @@
                         Dim TablaDatos As New eTareas_Marketing
                         Dim Funcion As New fTareas_Marketing
 
-                        TablaDatos.pID_Tarea =
+                        TablaDatos.pID_Tarea = txt_idproy.Text
                         TablaDatos.pID_Marketing = TxtID_Mark.Text
                         TablaDatos.pNombre_Tarea = TxtNom_proyec.Text
-                        TablaDatos.pDescripcion = TxtDescripProyecto
+                        TablaDatos.pDescripcion = TxtDescripProyecto.Text
                         TablaDatos.pFecha_Inicial = DTPFechaInicioProyecto.Text
                         TablaDatos.pFecha_Conclusion = DTPFechaFinalProyecto.Text
 
                         If Funcion.Actualizar(TablaDatos) Then
-                            MessageBox.Show("Empleado fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Tarea fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Empleado no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Tarea no fue actualizado correctamente", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                         Mostrar()
                         Limpiar()
-
+                        LimpiarPT()
+                        DesactivarPT()
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -561,6 +580,10 @@
                         Next
                         Call Mostrar()
                         Call Limpiar()
+                        DesactivarPT()
+                        LimpiarPT()
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -592,6 +615,10 @@
                         Next
                         Call Mostrar()
                         Call Limpiar()
+                        DesactivarPT()
+                        LimpiarPT()
+                        Btn_NuevoPT.Enabled = False
+                        Chb_eliminarPT.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -609,12 +636,12 @@
 
     End Sub
 
-
-
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
         'Btn_ingresar.Enabled = True
         marca = "Tarea"
         Btn_NuevoPT.Enabled = True
+        Dgvtp.Enabled = True
+        Chb_eliminarPT.Enabled = True
         Mostrartar()
     End Sub
 
@@ -624,6 +651,9 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
+            LimpiarPT()
+            Btn_NuevoPT.Enabled = False
+            Chb_eliminarPT.Enabled = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             DesactivarM()
             BtnIngresar.Visible = False

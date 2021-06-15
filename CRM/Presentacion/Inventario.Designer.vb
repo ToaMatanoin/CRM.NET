@@ -162,9 +162,9 @@ Partial Class Inventario
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(9, 186)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(145, 18)
+        Me.Label6.Size = New System.Drawing.Size(153, 18)
         Me.Label6.TabIndex = 6
-        Me.Label6.Text = "Nombre Proveedor:"
+        Me.Label6.Text = "Nombre Compuesto:"
         '
         'TxtPrecioComp
         '

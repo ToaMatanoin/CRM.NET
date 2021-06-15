@@ -23,10 +23,10 @@ Partial Class Marketing
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Marketing))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TxtIDUsuario = New System.Windows.Forms.TextBox()
         Me.TxtID_Mark = New System.Windows.Forms.TextBox()
@@ -44,7 +44,7 @@ Partial Class Marketing
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.BtnBuscar = New System.Windows.Forms.Button()
+        Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -62,27 +62,29 @@ Partial Class Marketing
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Dgv_Listado = New System.Windows.Forms.DataGridView()
         Me.eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.Dgvtp = New System.Windows.Forms.DataGridView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Btn_ingresar = New System.Windows.Forms.Button()
+        Me.Btn_EliminarPT = New System.Windows.Forms.Button()
+        Me.Btn_ingresarPT = New System.Windows.Forms.Button()
+        Me.Btn_ModificarPT = New System.Windows.Forms.Button()
+        Me.Btn_NuevoPT = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
         Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.Txt_Buscar = New System.Windows.Forms.TextBox()
         Me.BtnMinimizate = New System.Windows.Forms.Button()
+        Me.Chb_eliminarPT = New System.Windows.Forms.CheckBox()
+        Me.Dgvtp = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox3
@@ -122,7 +124,7 @@ Partial Class Marketing
         Me.TxtID_Mark.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtID_Mark.Enabled = False
         Me.TxtID_Mark.Location = New System.Drawing.Point(162, 23)
-        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtID_Mark.Name = "TxtID_Mark"
         Me.TxtID_Mark.Size = New System.Drawing.Size(69, 19)
         Me.TxtID_Mark.TabIndex = 17
@@ -140,8 +142,9 @@ Partial Class Marketing
         'Txt_Estrategia
         '
         Me.Txt_Estrategia.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txt_Estrategia.Enabled = False
         Me.Txt_Estrategia.Location = New System.Drawing.Point(95, 151)
-        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_Estrategia.MaxLength = 50
         Me.Txt_Estrategia.Name = "Txt_Estrategia"
         Me.Txt_Estrategia.Size = New System.Drawing.Size(136, 19)
@@ -149,20 +152,22 @@ Partial Class Marketing
         '
         'Cb_ID_prod
         '
+        Me.Cb_ID_prod.Enabled = False
         Me.Cb_ID_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_prod.FormattingEnabled = True
         Me.Cb_ID_prod.Location = New System.Drawing.Point(162, 117)
-        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_prod.Name = "Cb_ID_prod"
         Me.Cb_ID_prod.Size = New System.Drawing.Size(69, 28)
         Me.Cb_ID_prod.TabIndex = 14
         '
         'Cb_ID_Cli
         '
+        Me.Cb_ID_Cli.Enabled = False
         Me.Cb_ID_Cli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_Cli.FormattingEnabled = True
         Me.Cb_ID_Cli.Location = New System.Drawing.Point(162, 85)
-        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_Cli.Name = "Cb_ID_Cli"
         Me.Cb_ID_Cli.Size = New System.Drawing.Size(69, 28)
         Me.Cb_ID_Cli.TabIndex = 13
@@ -170,6 +175,7 @@ Partial Class Marketing
         'TxtDescripMarke
         '
         Me.TxtDescripMarke.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtDescripMarke.Enabled = False
         Me.TxtDescripMarke.Location = New System.Drawing.Point(7, 207)
         Me.TxtDescripMarke.MaxLength = 100
         Me.TxtDescripMarke.Multiline = True
@@ -231,12 +237,13 @@ Partial Class Marketing
         '
         Me.Chk_Eliminar.AutoSize = True
         Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(257, 183)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Chk_Eliminar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(256, 187)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(59, 17)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(132, 20)
         Me.Chk_Eliminar.TabIndex = 14
-        Me.Chk_Eliminar.Text = "Eliminar"
+        Me.Chk_Eliminar.Text = "Eliminar Marketing"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -244,7 +251,7 @@ Partial Class Marketing
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
-        Me.GroupBox1.Controls.Add(Me.BtnBuscar)
+        Me.GroupBox1.Controls.Add(Me.BtnNuevo)
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 96)
         Me.GroupBox1.Name = "GroupBox1"
@@ -288,23 +295,23 @@ Partial Class Marketing
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnModificar.UseVisualStyleBackColor = False
         '
-        'BtnBuscar
+        'BtnNuevo
         '
-        Me.BtnBuscar.BackColor = System.Drawing.Color.Silver
-        Me.BtnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnBuscar.FlatAppearance.BorderSize = 0
-        Me.BtnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnBuscar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnBuscar.Image = CType(resources.GetObject("BtnBuscar.Image"), System.Drawing.Image)
-        Me.BtnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnBuscar.Location = New System.Drawing.Point(9, 15)
-        Me.BtnBuscar.Name = "BtnBuscar"
-        Me.BtnBuscar.Size = New System.Drawing.Size(143, 61)
-        Me.BtnBuscar.TabIndex = 2
-        Me.BtnBuscar.Text = "Nuevo Marketing"
-        Me.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnBuscar.UseVisualStyleBackColor = False
+        Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
+        Me.BtnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnNuevo.FlatAppearance.BorderSize = 0
+        Me.BtnNuevo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
+        Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnNuevo.Location = New System.Drawing.Point(9, 15)
+        Me.BtnNuevo.Name = "BtnNuevo"
+        Me.BtnNuevo.Size = New System.Drawing.Size(143, 61)
+        Me.BtnNuevo.TabIndex = 2
+        Me.BtnNuevo.Text = "Nuevo Marketing"
+        Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnNuevo.UseVisualStyleBackColor = False
         '
         'BtnIngresar
         '
@@ -363,7 +370,7 @@ Partial Class Marketing
         '
         Me.txt_idproy.Enabled = False
         Me.txt_idproy.Location = New System.Drawing.Point(9, 17)
-        Me.txt_idproy.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_idproy.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_idproy.Name = "txt_idproy"
         Me.txt_idproy.Size = New System.Drawing.Size(76, 26)
         Me.txt_idproy.TabIndex = 12
@@ -373,9 +380,9 @@ Partial Class Marketing
         Me.GroupBox4.Controls.Add(Me.Rb_tarea)
         Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
         Me.GroupBox4.Location = New System.Drawing.Point(105, 10)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(197, 34)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
@@ -383,8 +390,9 @@ Partial Class Marketing
         'Rb_tarea
         '
         Me.Rb_tarea.AutoSize = True
+        Me.Rb_tarea.Enabled = False
         Me.Rb_tarea.Location = New System.Drawing.Point(125, 6)
-        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2)
         Me.Rb_tarea.Name = "Rb_tarea"
         Me.Rb_tarea.Size = New System.Drawing.Size(61, 24)
         Me.Rb_tarea.TabIndex = 1
@@ -395,8 +403,9 @@ Partial Class Marketing
         'Rb_Proyecto
         '
         Me.Rb_Proyecto.AutoSize = True
+        Me.Rb_Proyecto.Enabled = False
         Me.Rb_Proyecto.Location = New System.Drawing.Point(15, 6)
-        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2)
         Me.Rb_Proyecto.Name = "Rb_Proyecto"
         Me.Rb_Proyecto.Size = New System.Drawing.Size(82, 24)
         Me.Rb_Proyecto.TabIndex = 0
@@ -406,6 +415,9 @@ Partial Class Marketing
         '
         'DTPFechaFinalProyecto
         '
+        Me.DTPFechaFinalProyecto.CustomFormat = "dd-MM-yyyy"
+        Me.DTPFechaFinalProyecto.Enabled = False
+        Me.DTPFechaFinalProyecto.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPFechaFinalProyecto.Location = New System.Drawing.Point(119, 112)
         Me.DTPFechaFinalProyecto.Name = "DTPFechaFinalProyecto"
         Me.DTPFechaFinalProyecto.Size = New System.Drawing.Size(337, 26)
@@ -413,6 +425,9 @@ Partial Class Marketing
         '
         'DTPFechaInicioProyecto
         '
+        Me.DTPFechaInicioProyecto.CustomFormat = "dd-MM-yyyy"
+        Me.DTPFechaInicioProyecto.Enabled = False
+        Me.DTPFechaInicioProyecto.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPFechaInicioProyecto.Location = New System.Drawing.Point(119, 80)
         Me.DTPFechaInicioProyecto.Name = "DTPFechaInicioProyecto"
         Me.DTPFechaInicioProyecto.Size = New System.Drawing.Size(337, 26)
@@ -421,6 +436,7 @@ Partial Class Marketing
         'TxtDescripProyecto
         '
         Me.TxtDescripProyecto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtDescripProyecto.Enabled = False
         Me.TxtDescripProyecto.Location = New System.Drawing.Point(107, 144)
         Me.TxtDescripProyecto.MaxLength = 100
         Me.TxtDescripProyecto.Multiline = True
@@ -461,6 +477,7 @@ Partial Class Marketing
         'TxtNom_proyec
         '
         Me.TxtNom_proyec.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtNom_proyec.Enabled = False
         Me.TxtNom_proyec.Location = New System.Drawing.Point(119, 48)
         Me.TxtNom_proyec.MaxLength = 30
         Me.TxtNom_proyec.Name = "TxtNom_proyec"
@@ -487,24 +504,24 @@ Partial Class Marketing
         Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle13.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle14
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(257, 208)
@@ -525,44 +542,6 @@ Partial Class Marketing
         Me.eliminar.ReadOnly = True
         Me.eliminar.Width = 59
         '
-        'Dgvtp
-        '
-        Me.Dgvtp.AllowUserToAddRows = False
-        Me.Dgvtp.AllowUserToDeleteRows = False
-        Me.Dgvtp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        Me.Dgvtp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.Dgvtp.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Dgvtp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Dgvtp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.Dgvtp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgvtp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
-        Me.Dgvtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgvtp.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Dgvtp.GridColor = System.Drawing.Color.Red
-        Me.Dgvtp.Location = New System.Drawing.Point(893, 440)
-        Me.Dgvtp.Name = "Dgvtp"
-        Me.Dgvtp.ReadOnly = True
-        Me.Dgvtp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.Dgvtp.RowHeadersVisible = False
-        Me.Dgvtp.RowHeadersWidth = 51
-        Me.Dgvtp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgvtp.Size = New System.Drawing.Size(465, 157)
-        Me.Dgvtp.TabIndex = 14
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Red
@@ -577,87 +556,88 @@ Partial Class Marketing
         'GroupBox6
         '
         Me.GroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox6.Controls.Add(Me.Button3)
-        Me.GroupBox6.Controls.Add(Me.Btn_ingresar)
-        Me.GroupBox6.Controls.Add(Me.Button1)
-        Me.GroupBox6.Controls.Add(Me.Button2)
+        Me.GroupBox6.Controls.Add(Me.Btn_EliminarPT)
+        Me.GroupBox6.Controls.Add(Me.Btn_ingresarPT)
+        Me.GroupBox6.Controls.Add(Me.Btn_ModificarPT)
+        Me.GroupBox6.Controls.Add(Me.Btn_NuevoPT)
         Me.GroupBox6.Location = New System.Drawing.Point(893, 96)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(465, 86)
         Me.GroupBox6.TabIndex = 9
         Me.GroupBox6.TabStop = False
         '
-        'Button1
+        'Btn_EliminarPT
         '
-        Me.Button1.BackColor = System.Drawing.Color.Silver
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(233, 15)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 61)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Modificar Proyecto"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Btn_EliminarPT.BackColor = System.Drawing.Color.Silver
+        Me.Btn_EliminarPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_EliminarPT.FlatAppearance.BorderSize = 0
+        Me.Btn_EliminarPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_EliminarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_EliminarPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_EliminarPT.Image = CType(resources.GetObject("Btn_EliminarPT.Image"), System.Drawing.Image)
+        Me.Btn_EliminarPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_EliminarPT.Location = New System.Drawing.Point(345, 15)
+        Me.Btn_EliminarPT.Name = "Btn_EliminarPT"
+        Me.Btn_EliminarPT.Size = New System.Drawing.Size(106, 61)
+        Me.Btn_EliminarPT.TabIndex = 1
+        Me.Btn_EliminarPT.Text = "Eliminar "
+        Me.Btn_EliminarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Btn_EliminarPT.UseVisualStyleBackColor = False
         '
-        'Button2
+        'Btn_ingresarPT
         '
-        Me.Button2.BackColor = System.Drawing.Color.Silver
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(121, 15)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(106, 61)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Nuevo Proyecto"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Btn_ingresarPT.BackColor = System.Drawing.Color.Silver
+        Me.Btn_ingresarPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_ingresarPT.FlatAppearance.BorderSize = 0
+        Me.Btn_ingresarPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_ingresarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_ingresarPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_ingresarPT.Image = CType(resources.GetObject("Btn_ingresarPT.Image"), System.Drawing.Image)
+        Me.Btn_ingresarPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_ingresarPT.Location = New System.Drawing.Point(121, 15)
+        Me.Btn_ingresarPT.Name = "Btn_ingresarPT"
+        Me.Btn_ingresarPT.Size = New System.Drawing.Size(106, 61)
+        Me.Btn_ingresarPT.TabIndex = 0
+        Me.Btn_ingresarPT.Text = "Ingresar"
+        Me.Btn_ingresarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Btn_ingresarPT.UseVisualStyleBackColor = False
         '
-        'Button3
+        'Btn_ModificarPT
         '
-        Me.Button3.BackColor = System.Drawing.Color.Silver
-        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(345, 15)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(106, 61)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Eliminar Proyecto"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.Btn_ModificarPT.BackColor = System.Drawing.Color.Silver
+        Me.Btn_ModificarPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_ModificarPT.FlatAppearance.BorderSize = 0
+        Me.Btn_ModificarPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_ModificarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_ModificarPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_ModificarPT.Image = CType(resources.GetObject("Btn_ModificarPT.Image"), System.Drawing.Image)
+        Me.Btn_ModificarPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_ModificarPT.Location = New System.Drawing.Point(233, 15)
+        Me.Btn_ModificarPT.Name = "Btn_ModificarPT"
+        Me.Btn_ModificarPT.Size = New System.Drawing.Size(106, 61)
+        Me.Btn_ModificarPT.TabIndex = 2
+        Me.Btn_ModificarPT.Text = "Modificar "
+        Me.Btn_ModificarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Btn_ModificarPT.UseVisualStyleBackColor = False
         '
-        'Btn_ingresar
+        'Btn_NuevoPT
         '
-        Me.Btn_ingresar.BackColor = System.Drawing.Color.Silver
-        Me.Btn_ingresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_ingresar.FlatAppearance.BorderSize = 0
-        Me.Btn_ingresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.Btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_ingresar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_ingresar.Image = CType(resources.GetObject("Btn_ingresar.Image"), System.Drawing.Image)
-        Me.Btn_ingresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_ingresar.Location = New System.Drawing.Point(9, 15)
-        Me.Btn_ingresar.Name = "Btn_ingresar"
-        Me.Btn_ingresar.Size = New System.Drawing.Size(106, 61)
-        Me.Btn_ingresar.TabIndex = 0
-        Me.Btn_ingresar.Text = "Ingresar Proyecto"
-        Me.Btn_ingresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Btn_ingresar.UseVisualStyleBackColor = False
+        Me.Btn_NuevoPT.BackColor = System.Drawing.Color.Silver
+        Me.Btn_NuevoPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_NuevoPT.Enabled = False
+        Me.Btn_NuevoPT.FlatAppearance.BorderSize = 0
+        Me.Btn_NuevoPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_NuevoPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_NuevoPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_NuevoPT.Image = CType(resources.GetObject("Btn_NuevoPT.Image"), System.Drawing.Image)
+        Me.Btn_NuevoPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_NuevoPT.Location = New System.Drawing.Point(9, 15)
+        Me.Btn_NuevoPT.Name = "Btn_NuevoPT"
+        Me.Btn_NuevoPT.Size = New System.Drawing.Size(106, 61)
+        Me.Btn_NuevoPT.TabIndex = 2
+        Me.Btn_NuevoPT.Text = "Nuevo "
+        Me.Btn_NuevoPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Btn_NuevoPT.UseVisualStyleBackColor = False
         '
         'GroupBox7
         '
@@ -713,19 +693,82 @@ Partial Class Marketing
         Me.BtnMinimizate.TabIndex = 35
         Me.BtnMinimizate.UseVisualStyleBackColor = False
         '
+        'Chb_eliminarPT
+        '
+        Me.Chb_eliminarPT.AutoSize = True
+        Me.Chb_eliminarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Chb_eliminarPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Chb_eliminarPT.Location = New System.Drawing.Point(1287, 187)
+        Me.Chb_eliminarPT.Margin = New System.Windows.Forms.Padding(2)
+        Me.Chb_eliminarPT.Name = "Chb_eliminarPT"
+        Me.Chb_eliminarPT.Size = New System.Drawing.Size(71, 20)
+        Me.Chb_eliminarPT.TabIndex = 36
+        Me.Chb_eliminarPT.Text = "Eliminar"
+        Me.Chb_eliminarPT.UseVisualStyleBackColor = True
+        '
+        'Dgvtp
+        '
+        Me.Dgvtp.AllowUserToAddRows = False
+        Me.Dgvtp.AllowUserToDeleteRows = False
+        Me.Dgvtp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Dgvtp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.Dgvtp.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Dgvtp.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Dgvtp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.Dgvtp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgvtp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle15
+        Me.Dgvtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgvtp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn1})
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgvtp.DefaultCellStyle = DataGridViewCellStyle16
+        Me.Dgvtp.EnableHeadersVisualStyles = False
+        Me.Dgvtp.GridColor = System.Drawing.Color.Red
+        Me.Dgvtp.Location = New System.Drawing.Point(893, 440)
+        Me.Dgvtp.Name = "Dgvtp"
+        Me.Dgvtp.ReadOnly = True
+        Me.Dgvtp.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.Dgvtp.RowHeadersVisible = False
+        Me.Dgvtp.RowHeadersWidth = 51
+        Me.Dgvtp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Dgvtp.Size = New System.Drawing.Size(465, 143)
+        Me.Dgvtp.TabIndex = 37
+        '
+        'DataGridViewCheckBoxColumn1
+        '
+        Me.DataGridViewCheckBoxColumn1.HeaderText = "Eliminar"
+        Me.DataGridViewCheckBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
+        Me.DataGridViewCheckBoxColumn1.ReadOnly = True
+        Me.DataGridViewCheckBoxColumn1.Visible = False
+        Me.DataGridViewCheckBoxColumn1.Width = 59
+        '
         'Marketing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1386, 609)
+        Me.ClientSize = New System.Drawing.Size(1386, 661)
+        Me.Controls.Add(Me.Dgvtp)
+        Me.Controls.Add(Me.Chb_eliminarPT)
         Me.Controls.Add(Me.BtnMinimizate)
         Me.Controls.Add(Me.BtnRegresar)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Chk_Eliminar)
-        Me.Controls.Add(Me.Dgvtp)
         Me.Controls.Add(Me.Dgv_Listado)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox3)
@@ -743,11 +786,11 @@ Partial Class Marketing
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.Dgv_Listado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        CType(Me.Dgvtp, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -758,7 +801,7 @@ Partial Class Marketing
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BtnRegresar As Button
     Friend WithEvents BtnModificar As Button
-    Friend WithEvents BtnBuscar As Button
+    Friend WithEvents BtnNuevo As Button
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnIngresar As Button
     Friend WithEvents TxtDescripMarke As TextBox
@@ -784,19 +827,21 @@ Partial Class Marketing
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Rb_tarea As RadioButton
     Friend WithEvents Rb_Proyecto As RadioButton
-    Friend WithEvents Dgvtp As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents TxtIDUsuario As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox6 As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Btn_ingresar As Button
+    Friend WithEvents Btn_ModificarPT As Button
+    Friend WithEvents Btn_NuevoPT As Button
+    Friend WithEvents Btn_EliminarPT As Button
+    Friend WithEvents Btn_ingresarPT As Button
     Friend WithEvents GroupBox7 As GroupBox
     Friend WithEvents Cmb_Buscar As ComboBox
     Friend WithEvents Lb_Buscar As Label
     Friend WithEvents Txt_Buscar As TextBox
     Friend WithEvents BtnMinimizate As Button
     Friend WithEvents txt_idproy As TextBox
+    Friend WithEvents Chb_eliminarPT As CheckBox
+    Friend WithEvents Dgvtp As DataGridView
+    Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
 End Class

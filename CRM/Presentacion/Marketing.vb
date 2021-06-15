@@ -22,7 +22,8 @@
         TxtIDUsuario.Text = IniciarSesion.IDUSU
         Mostrar()
         Limpiar()
-
+        BtnIngresar.Visible = False
+        Btn_ingresarPT.Visible = False
     End Sub
 
 
@@ -49,6 +50,7 @@
         Try
             Dim Funcion As New fProyectos_Marketing
             tablaproy = Funcion.Mostrar
+            'Dgvtp.Columns.Item("eliminar").Visible = False
             If tablaproy.Rows.Count <> 0 Then
                 Dgvtp.DataSource = tablaproy
                 Dgvtp.ColumnHeadersVisible = True
@@ -67,6 +69,7 @@
         Try
             Dim Funcion As New fTareas_Marketing
             tablatar = Funcion.Mostrar
+            'Dgvtp.Columns.Item("eliminar").Visible = False
             If tablatar.Rows.Count <> 0 Then
                 Dgvtp.DataSource = tablatar
                 Dgvtp.ColumnHeadersVisible = True
@@ -161,11 +164,41 @@
         Rb_Proyecto.Checked = False
         Rb_tarea.Checked = False
 
-        BtnIngresar.Visible = True
+        BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
 
+        Btn_NuevoPT.Visible = True
+        Btn_ModificarPT.Visible = False
+        Btn_EliminarPT.Visible = False
+    End Sub
 
+    Private Sub ActivarM()
+        Cb_ID_Cli.Enabled = True
+        Cb_ID_prod.Enabled = True
+        Txt_Estrategia.Enabled = True
+        TxtDescripMarke.Enabled = True
+    End Sub
+
+    Private Sub DesactivarM()
+        Cb_ID_Cli.Enabled = False
+        Cb_ID_prod.Enabled = False
+        Txt_Estrategia.Enabled = False
+        TxtDescripMarke.Enabled = False
+    End Sub
+
+    Private Sub ActivarPT()
+        TxtDescripProyecto.Enabled = True
+        TxtNom_proyec.Enabled = True
+        DTPFechaInicioProyecto.Enabled = True
+        DTPFechaFinalProyecto.Enabled = True
+    End Sub
+
+    Private Sub DesactivarPT()
+        TxtDescripProyecto.Enabled = False
+        TxtNom_proyec.Enabled = False
+        DTPFechaInicioProyecto.Enabled = False
+        DTPFechaFinalProyecto.Enabled = False
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -177,17 +210,46 @@
         TxtDescripMarke.Text = Dgv_Listado.SelectedCells.Item(9).Value
     End Sub
 
+    Private Sub TrasladoInformacionPT()
+        TxtNom_proyec.Text = Dgvtp.SelectedCells.Item(4).Value
+        TxtDescripProyecto.Text = Dgvtp.SelectedCells.Item(5).Value
+        DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString)
+        DTPFechaFinalProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(7).Value.ToString)
+    End Sub
+
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
+        DesactivarM()
         If Chk_Eliminar.CheckState = CheckState.Unchecked Then
             Dgv_Listado.Columns.Item("Eliminar").Visible = False
             Limpiar()
-
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
             BtnEliminar.Visible = True
-            BtnIngresar.Visible = False
+            BtnModificar.Visible = False
+            BtnNuevo.Visible = False
         End If
     End Sub
+
+    Private Sub Chb_eliminarPT_CheckedChanged(sender As Object, e As EventArgs) Handles Chb_eliminarPT.CheckedChanged
+        DesactivarPT()
+        If Chb_eliminarPT.CheckState = CheckState.Unchecked Then
+            Dgvtp.Columns.Item(0).Visible = False
+            Limpiar()
+        Else
+            Dgvtp.Columns.Item(0).Visible = True
+            Btn_EliminarPT.Visible = True
+            Btn_NuevoPT.Visible = False
+            Btn_ModificarPT.Visible = False
+        End If
+    End Sub
+
+    Private Sub Dgvtp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvtp.CellContentClick
+        If e.ColumnIndex = Me.Dgvtp.Columns.Item(0).Index Then
+            Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgvtp.Rows(e.RowIndex).Cells(0)
+            ChkCell.Value = Not ChkCell.Value
+        End If
+    End Sub
+
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
         If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
             Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
@@ -204,10 +266,28 @@
                 'no mostrar modificar con el chek eliminar activo'
             Else
                 BtnModificar.Visible = True
+                ActivarM()
+            End If
+        End If
+        Rb_Proyecto.Enabled = True
+        Rb_tarea.Enabled = True
+        BtnIngresar.Visible = False
+    End Sub
+
+    Private Sub Dgvtp_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvtp.CellClick
+        TrasladoInformacionPT()
+        If Bandera Then
+            Btn_ModificarPT.Visible = False
+        Else
+            If Chb_eliminarPT.Checked Then
+                'no mostrar modificar con el chek eliminar activo'
+            Else
+                Btn_ModificarPT.Visible = True
+                ActivarPT()
             End If
 
         End If
-        BtnIngresar.Visible = False
+        Btn_ingresarPT.Visible = False
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
@@ -233,6 +313,9 @@
                 End If
                 Mostrar()
                 Limpiar()
+                BtnIngresar.Visible = False
+                DesactivarM()
+                BtnNuevo.Text = "Nuevo Marketing"
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
@@ -266,6 +349,7 @@
                     End If
                     Mostrar()
                     Limpiar()
+                    DesactivarM()
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
@@ -277,13 +361,10 @@
         End If
     End Sub
 
-    Private Sub Btn_Guardar_proy_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub Rb_Proyecto_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_Proyecto.CheckedChanged
         marca = "Proyecto"
         'Btn_ingresar.Enabled = True
+        Btn_NuevoPT.Enabled = True
         Mostrarproy()
     End Sub
 
@@ -291,7 +372,7 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
-    Private Sub Btn_ingresar_Click(sender As Object, e As EventArgs) Handles Btn_ingresar.Click
+    Private Sub Btn_ingresar_Click(sender As Object, e As EventArgs) Handles Btn_ingresarPT.Click
         If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
 
             If marca = "Proyecto" Then
@@ -314,6 +395,9 @@
                         End If
                         Mostrar()
                         Limpiar()
+                        Btn_ingresarPT.Visible = False
+                        DesactivarPT()
+                        Btn_NuevoPT.Text = "Nuevo"
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -353,12 +437,21 @@
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
-        Limpiar()
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btn_NuevoPT.Click
+        If BtnNuevo.Text = "Nuevo" Then
+            ActivarPT()
+            BtnIngresar.Visible = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            DesactivarPT()
+            BtnIngresar.Visible = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo"
+        End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Btn_ModificarPT.Click
         If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
 
             If marca = "Proyecto" Then
@@ -384,7 +477,7 @@
                         End If
                         Mostrar()
                         Limpiar()
-
+                        DesactivarPT()
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -424,13 +517,14 @@
                 End If
 
 
+
             Else
                 MessageBox.Show("No seleciono categoria", "Falta llenar campo", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Btn_EliminarPT.Click
 
         If TxtNom_proyec.Text <> "" And TxtDescripProyecto.Text <> "" Then
 
@@ -442,8 +536,8 @@
                 MessageBoxIcon.Question)
                 If Resultado = Windows.Forms.DialogResult.OK Then
                     Try
-                        For Each row As DataGridViewRow In Dgv_Listado.Rows
-                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                        For Each row As DataGridViewRow In Dgvtp.Rows
+                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells(0).Value)
                             If LineaMarca Then
                                 Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Proyecto").Value)
                                 Dim TablaDatos As New eProyectos_Marketing
@@ -451,6 +545,7 @@
                                 TablaDatos.pID_Proyecto = LlavePrimaria
                                 If Funcion.Eliminar(TablaDatos) Then
                                     MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                    Chb_eliminarPT.Checked = False
                                 Else
                                     MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 End If
@@ -470,13 +565,11 @@
             ElseIf marca = "Tarea" Then
 
                 Dim Resultado As DialogResult
-                Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
-                "Eliminando Registro", MessageBoxButtons.OKCancel,
-                MessageBoxIcon.Question)
+                Resultado = MessageBox.Show("Desea Eliminar la Estrategia", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
                 If Resultado = Windows.Forms.DialogResult.OK Then
                     Try
-                        For Each row As DataGridViewRow In Dgv_Listado.Rows
-                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                        For Each row As DataGridViewRow In Dgvtp.Rows
+                            Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells(0).Value)
                             If LineaMarca Then
                                 Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Tarea").Value)
                                 Dim TablaDatos As New eTareas_Marketing
@@ -508,18 +601,27 @@
 
     End Sub
 
-    Private Sub Dgvtp_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgvtp.CellContentClick
 
-    End Sub
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
         'Btn_ingresar.Enabled = True
         marca = "Tarea"
+        Btn_NuevoPT.Enabled = True
         Mostrartar()
     End Sub
 
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnBuscar.Click
-        Limpiar()
+    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
+        If BtnNuevo.Text = "Nuevo Marketing" Then
+            ActivarM()
+            BtnIngresar.Visible = True
+            BtnNuevo.Text = "Cancelar"
+            Limpiar()
+        ElseIf BtnNuevo.Text = "Cancelar" Then
+            DesactivarM()
+            BtnIngresar.Visible = False
+            Limpiar()
+            BtnNuevo.Text = "Nuevo Marketing"
+        End If
     End Sub
 
     Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
@@ -538,6 +640,7 @@
                         TablaDatos.pID_Marketing = LlavePrimaria
                         If Funcion.Eliminar(TablaDatos) Then
                             MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Chk_Eliminar.Checked = False
                         Else
                             MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If

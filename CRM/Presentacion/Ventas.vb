@@ -116,7 +116,6 @@
 
         Cb_producto.Text = ""
 
-
         Chk_Eliminar.Checked = False
 
         Btn_NuevaVenta.Visible = True
@@ -208,14 +207,11 @@
 
             TablaDatos.pID_Venta = Txt_ID_Venta.Text
 
-
             If Rd_credito.Checked Then
-                TablaDatos.pTP_Venta = "ccredito"
+                TablaDatos.pTP_Venta = "credito"
             ElseIf Rd_contado.Checked Then
-                TablaDatos.pTP_Venta = "ccontado"
+                TablaDatos.pTP_Venta = "contado"
             End If
-
-
 
             TablaDatos.pFac_Descuento = TxtDescuento.Text
 
@@ -226,8 +222,6 @@
 
             TablaDatos.pFac_Total = TxtTotal.Text
             TablaDatos.pNum_venta = random
-
-
 
             random = CInt((100000 - 1) * Rnd() + 1)
             Dim comprobar As Boolean = nuevo.Existencia(Convert.ToString(random), "ID_Venta", "Ventas")
@@ -242,26 +236,28 @@
             Else
                 MessageBox.Show("factura no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
-
-
-
         Catch Evento As Exception
             MsgBox(Evento.Message)
         End Try
 
-
-
+        Dgv_Listado.DataSource = Nothing
         Call Limpiar()
+        Btn_Limpiar.Visible = False
     End Sub
 
     Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub Btnfactura_Click(sender As Object, e As EventArgs) Handles Btnfactura.Click
+        Facturas.ShowDialog()
+    End Sub
+
     Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click
         Activar()
         Call Limpiar2()
         BtnIngresar.Visible = True
+        Btn_Limpiar.Visible = True
     End Sub
 
     Private Sub BtnBuscar_Click(sender As Object, e As EventArgs) Handles BtnDevolucion.Click

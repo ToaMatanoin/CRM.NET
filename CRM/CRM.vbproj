@@ -127,6 +127,12 @@
     <Compile Include="Presentacion\Empleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Facturas.Designer.vb">
+      <DependentUpon>Facturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Facturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleado.resx">
       <DependentUpon>Empleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Facturas.resx">
+      <DependentUpon>Facturas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

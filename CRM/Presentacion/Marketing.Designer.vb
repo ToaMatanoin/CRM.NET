@@ -23,12 +23,11 @@ Partial Class Marketing
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Marketing))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TxtIDUsuario = New System.Windows.Forms.TextBox()
         Me.TxtID_Mark = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Txt_Estrategia = New System.Windows.Forms.TextBox()
@@ -39,7 +38,6 @@ Partial Class Marketing
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
@@ -76,6 +74,8 @@ Partial Class Marketing
         Me.Chb_eliminarPT = New System.Windows.Forms.CheckBox()
         Me.Dgvtp = New System.Windows.Forms.DataGridView()
         Me.DataGridViewCheckBoxColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.TxtIDCliente = New System.Windows.Forms.TextBox()
+        Me.TxtIDProducto = New System.Windows.Forms.TextBox()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -90,7 +90,8 @@ Partial Class Marketing
         'GroupBox3
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.GroupBox3.Controls.Add(Me.TxtIDUsuario)
+        Me.GroupBox3.Controls.Add(Me.TxtIDProducto)
+        Me.GroupBox3.Controls.Add(Me.TxtIDCliente)
         Me.GroupBox3.Controls.Add(Me.TxtID_Mark)
         Me.GroupBox3.Controls.Add(Me.Label15)
         Me.GroupBox3.Controls.Add(Me.Txt_Estrategia)
@@ -101,7 +102,6 @@ Partial Class Marketing
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.Label4)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(12, 208)
         Me.GroupBox3.Name = "GroupBox3"
@@ -109,15 +109,6 @@ Partial Class Marketing
         Me.GroupBox3.TabIndex = 9
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Informacion Marketing"
-        '
-        'TxtIDUsuario
-        '
-        Me.TxtIDUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TxtIDUsuario.Enabled = False
-        Me.TxtIDUsuario.Location = New System.Drawing.Point(162, 54)
-        Me.TxtIDUsuario.Name = "TxtIDUsuario"
-        Me.TxtIDUsuario.Size = New System.Drawing.Size(68, 19)
-        Me.TxtIDUsuario.TabIndex = 12
         '
         'TxtID_Mark
         '
@@ -143,11 +134,11 @@ Partial Class Marketing
         '
         Me.Txt_Estrategia.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Estrategia.Enabled = False
-        Me.Txt_Estrategia.Location = New System.Drawing.Point(95, 151)
+        Me.Txt_Estrategia.Location = New System.Drawing.Point(109, 121)
         Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_Estrategia.MaxLength = 50
         Me.Txt_Estrategia.Name = "Txt_Estrategia"
-        Me.Txt_Estrategia.Size = New System.Drawing.Size(136, 19)
+        Me.Txt_Estrategia.Size = New System.Drawing.Size(122, 19)
         Me.Txt_Estrategia.TabIndex = 15
         '
         'Cb_ID_prod
@@ -155,10 +146,10 @@ Partial Class Marketing
         Me.Cb_ID_prod.Enabled = False
         Me.Cb_ID_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_prod.FormattingEnabled = True
-        Me.Cb_ID_prod.Location = New System.Drawing.Point(162, 117)
+        Me.Cb_ID_prod.Location = New System.Drawing.Point(109, 87)
         Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_prod.Name = "Cb_ID_prod"
-        Me.Cb_ID_prod.Size = New System.Drawing.Size(69, 28)
+        Me.Cb_ID_prod.Size = New System.Drawing.Size(122, 28)
         Me.Cb_ID_prod.TabIndex = 14
         '
         'Cb_ID_Cli
@@ -166,28 +157,28 @@ Partial Class Marketing
         Me.Cb_ID_Cli.Enabled = False
         Me.Cb_ID_Cli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_Cli.FormattingEnabled = True
-        Me.Cb_ID_Cli.Location = New System.Drawing.Point(162, 85)
+        Me.Cb_ID_Cli.Location = New System.Drawing.Point(109, 52)
         Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_Cli.Name = "Cb_ID_Cli"
-        Me.Cb_ID_Cli.Size = New System.Drawing.Size(69, 28)
+        Me.Cb_ID_Cli.Size = New System.Drawing.Size(122, 28)
         Me.Cb_ID_Cli.TabIndex = 13
         '
         'TxtDescripMarke
         '
         Me.TxtDescripMarke.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtDescripMarke.Enabled = False
-        Me.TxtDescripMarke.Location = New System.Drawing.Point(7, 207)
+        Me.TxtDescripMarke.Location = New System.Drawing.Point(7, 181)
         Me.TxtDescripMarke.MaxLength = 100
         Me.TxtDescripMarke.Multiline = True
         Me.TxtDescripMarke.Name = "TxtDescripMarke"
-        Me.TxtDescripMarke.Size = New System.Drawing.Size(223, 154)
+        Me.TxtDescripMarke.Size = New System.Drawing.Size(223, 180)
         Me.TxtDescripMarke.TabIndex = 11
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(4, 188)
+        Me.Label9.Location = New System.Drawing.Point(6, 160)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(96, 18)
         Me.Label9.TabIndex = 7
@@ -197,7 +188,7 @@ Partial Class Marketing
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(6, 153)
+        Me.Label10.Location = New System.Drawing.Point(6, 123)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(84, 18)
         Me.Label10.TabIndex = 6
@@ -207,7 +198,7 @@ Partial Class Marketing
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 121)
+        Me.Label4.Location = New System.Drawing.Point(6, 91)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(94, 18)
         Me.Label4.TabIndex = 4
@@ -217,21 +208,11 @@ Partial Class Marketing
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 89)
+        Me.Label3.Location = New System.Drawing.Point(6, 59)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 18)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "ID Cliente:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(6, 58)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 18)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "ID Usuario:"
         '
         'Chk_Eliminar
         '
@@ -505,24 +486,24 @@ Partial Class Marketing
         Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle21
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle22.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle22
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(257, 208)
@@ -718,24 +699,24 @@ Partial Class Marketing
         Me.Dgvtp.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgvtp.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgvtp.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgvtp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgvtp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.Dgvtp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgvtp.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewCheckBoxColumn1})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgvtp.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgvtp.DefaultCellStyle = DataGridViewCellStyle24
         Me.Dgvtp.EnableHeadersVisualStyles = False
         Me.Dgvtp.GridColor = System.Drawing.Color.Red
         Me.Dgvtp.Location = New System.Drawing.Point(893, 440)
@@ -756,6 +737,28 @@ Partial Class Marketing
         Me.DataGridViewCheckBoxColumn1.ReadOnly = True
         Me.DataGridViewCheckBoxColumn1.Visible = False
         Me.DataGridViewCheckBoxColumn1.Width = 59
+        '
+        'TxtIDCliente
+        '
+        Me.TxtIDCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtIDCliente.Enabled = False
+        Me.TxtIDCliente.Location = New System.Drawing.Point(109, 55)
+        Me.TxtIDCliente.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtIDCliente.Name = "TxtIDCliente"
+        Me.TxtIDCliente.Size = New System.Drawing.Size(22, 19)
+        Me.TxtIDCliente.TabIndex = 18
+        Me.TxtIDCliente.Visible = False
+        '
+        'TxtIDProducto
+        '
+        Me.TxtIDProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TxtIDProducto.Enabled = False
+        Me.TxtIDProducto.Location = New System.Drawing.Point(109, 91)
+        Me.TxtIDProducto.Margin = New System.Windows.Forms.Padding(2)
+        Me.TxtIDProducto.Name = "TxtIDProducto"
+        Me.TxtIDProducto.Size = New System.Drawing.Size(22, 19)
+        Me.TxtIDProducto.TabIndex = 19
+        Me.TxtIDProducto.Visible = False
         '
         'Marketing
         '
@@ -829,8 +832,6 @@ Partial Class Marketing
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Rb_tarea As RadioButton
     Friend WithEvents Rb_Proyecto As RadioButton
-    Friend WithEvents Label2 As Label
-    Friend WithEvents TxtIDUsuario As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox6 As GroupBox
     Friend WithEvents Btn_ModificarPT As Button
@@ -846,4 +847,6 @@ Partial Class Marketing
     Friend WithEvents Chb_eliminarPT As CheckBox
     Friend WithEvents Dgvtp As DataGridView
     Friend WithEvents DataGridViewCheckBoxColumn1 As DataGridViewCheckBoxColumn
+    Friend WithEvents TxtIDProducto As TextBox
+    Friend WithEvents TxtIDCliente As TextBox
 End Class

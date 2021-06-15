@@ -121,12 +121,12 @@ Partial Class Debolucion
         Me.dgvproductos.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.dgvproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvproductos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ID_Producto, Me.Pro_Nombre, Me.Pro_Cantidad, Me.Pro_PreVenta, Me.Pro_PreCompra, Me.Nombre_Proveedor, Me.Pro_Disponible})
-        Me.dgvproductos.Location = New System.Drawing.Point(12, 69)
+        Me.dgvproductos.Location = New System.Drawing.Point(12, 219)
         Me.dgvproductos.Name = "dgvproductos"
         Me.dgvproductos.ReadOnly = True
         Me.dgvproductos.RowHeadersWidth = 51
         Me.dgvproductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvproductos.Size = New System.Drawing.Size(978, 369)
+        Me.dgvproductos.Size = New System.Drawing.Size(978, 219)
         Me.dgvproductos.TabIndex = 18
         '
         'ID_Producto

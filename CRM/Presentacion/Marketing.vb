@@ -16,10 +16,9 @@
 
         nuevo.ConexionDB()
 
-        nuevo.llenado_cb(Cb_ID_Cli, "ID_Cliente", "Cliente")
-        nuevo.llenado_cb(Cb_ID_prod, "ID_Producto", "Inventario")
+        nuevo.llenado_cb(Cb_ID_Cli, "Cli_NombreEmpresa", "Cliente")
+        nuevo.llenado_cb(Cb_ID_prod, "Pro_Nombre", "Inventario")
 
-        TxtIDUsuario.Text = IniciarSesion.IDUSU
         Mostrar()
         Limpiar()
         LimpiarPT()
@@ -124,7 +123,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = "ID_Usuario = '" & TxtIDUsuario.Text & "'"
+            VistaDatos.RowFilter = "ID_Usuario = '" & IniciarSesion.IDUSU & "'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -161,7 +160,9 @@
         Txt_Estrategia.Text = ""
         TxtNom_proyec.Text = ""
         Cb_ID_Cli.Text = ""
+        TxtIDCliente.Text = ""
         Cb_ID_prod.Text = ""
+        TxtIDProducto.Text = ""
 
         Rb_Proyecto.Checked = False
         Rb_tarea.Checked = False
@@ -214,9 +215,11 @@
 
     Private Sub TrasladoInformacion()
         TxtID_Mark.Text = Dgv_Listado.SelectedCells.Item(1).Value
-        TxtIDUsuario.Text = Dgv_Listado.SelectedCells.Item(2).Value
-        Cb_ID_prod.Text = Dgv_Listado.SelectedCells.Item(6).Value
-        Cb_ID_Cli.Text = Dgv_Listado.SelectedCells.Item(4).Value
+        TxtIDProducto.Text = Dgv_Listado.SelectedCells.Item(6).Value
+        nuevo.ConexionDB()
+        Cb_ID_prod.Text = nuevo.Buscar_info(TxtIDProducto.Text, "ID_Producto", "Pro_Nombre", "Inventario")
+        TxtIDCliente.Text = Dgv_Listado.SelectedCells.Item(4).Value
+        Cb_ID_Cli.Text = nuevo.Buscar_info(TxtIDCliente.Text, "ID_Cliente", "Cli_NombreEmpresa", "Cliente")
         Txt_Estrategia.Text = Dgv_Listado.SelectedCells.Item(8).Value
         TxtDescripMarke.Text = Dgv_Listado.SelectedCells.Item(9).Value
     End Sub
@@ -308,13 +311,13 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
+        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 Then
             Try
                 Dim TablaDatos As New eMarketing
                 Dim Funcion As New fMarketing
-                TablaDatos.pID_Usuario = TxtIDUsuario.Text
-                TablaDatos.pID_Producto = Cb_ID_prod.Text
-                TablaDatos.pID_Cliente = Cb_ID_Cli.Text
+                TablaDatos.pID_Usuario = IniciarSesion.IDUSU
+                TablaDatos.pID_Producto = TxtIDProducto.Text
+                TablaDatos.pID_Cliente = TxtIDCliente.Text
                 TablaDatos.pEstrategia = Txt_Estrategia.Text
                 TablaDatos.pDescripcion = TxtDescripMarke.Text
 
@@ -338,7 +341,7 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
-        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
+        If Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -348,9 +351,9 @@
                     Dim TablaDatos As New eMarketing
                     Dim Funcion As New fMarketing
                     TablaDatos.pID_Marketing = TxtID_Mark.Text
-                    TablaDatos.pID_Usuario = TxtIDUsuario.Text
-                    TablaDatos.pID_Producto = Cb_ID_prod.Text
-                    TablaDatos.pID_Cliente = Cb_ID_Cli.Text
+                    TablaDatos.pID_Usuario = IniciarSesion.IDUSU
+                    TablaDatos.pID_Producto = TxtIDProducto.Text
+                    TablaDatos.pID_Cliente = TxtIDCliente.Text
                     TablaDatos.pEstrategia = Txt_Estrategia.Text
                     TablaDatos.pDescripcion = TxtDescripMarke.Text
 
@@ -391,7 +394,7 @@
 
             If marca = "Proyecto" Then
 
-                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
+                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 Then
                     Try
                         Dim TablaDatos As New eProyectos_Marketing
                         Dim Funcion As New fProyectos_Marketing
@@ -423,7 +426,7 @@
 
             ElseIf marca = "Tarea" Then
 
-                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 And TxtIDUsuario.Text >= 0 Then
+                If TxtID_Mark.Text <> "" And Txt_Estrategia.Text <> "" And TxtDescripMarke.Text <> "" And Cb_ID_Cli.SelectedIndex >= 0 And Cb_ID_prod.SelectedIndex >= 0 Then
                     Try
                         Dim TablaDatos As New eTareas_Marketing
                         Dim Funcion As New fTareas_Marketing
@@ -634,6 +637,16 @@
             End If
         End If
 
+    End Sub
+
+    Private Sub Cb_ID_Cli_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_ID_Cli.SelectedIndexChanged
+        nuevo.ConexionDB()
+        TxtIDCliente.Text = nuevo.Buscar_info(Cb_ID_Cli.Text, "Cli_NombreEmpresa", "ID_Cliente", "Cliente")
+    End Sub
+
+    Private Sub Cb_ID_prod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cb_ID_prod.SelectedIndexChanged
+        nuevo.ConexionDB()
+        TxtIDProducto.Text = nuevo.Buscar_info(Cb_ID_prod.Text, "Pro_Nombre", "ID_Producto", "Inventario")
     End Sub
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged

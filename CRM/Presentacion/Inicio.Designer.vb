@@ -145,6 +145,7 @@ Partial Class Inicio
         Me.BtnEmpleados.Text = "Empleados"
         Me.BtnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEmpleados.UseVisualStyleBackColor = True
+        Me.BtnEmpleados.Visible = False
         '
         'BtnOportunidades
         '
@@ -213,6 +214,7 @@ Partial Class Inicio
         Me.BtnUsuarios.Text = "Usuarios"
         Me.BtnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnUsuarios.UseVisualStyleBackColor = True
+        Me.BtnUsuarios.Visible = False
         '
         'Panel1
         '

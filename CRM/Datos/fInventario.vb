@@ -35,8 +35,8 @@ Public Class fInventario
             ComandoSQL.Parameters.AddWithValue("@Pro_Nombre", TablaDatos.pPro_Nombre)
             ComandoSQL.Parameters.AddWithValue("@Pro_Cantidad", TablaDatos.pPro_Cantidad)
             ComandoSQL.Parameters.AddWithValue("@Pro_PreVenta", TablaDatos.pPro_preventa)
-            ComandoSQL.Parameters.AddWithValue("@Pro_PreCompra", TablaDatos.pPro_precompra)
-            ComandoSQL.Parameters.AddWithValue("@Nombre_Proveedor", TablaDatos.pNombre_Proveedor)
+            ComandoSQL.Parameters.AddWithValue("@Pro_PreFabricacion", TablaDatos.pPro_precompra)
+            ComandoSQL.Parameters.AddWithValue("@Nombre_Compuesto", TablaDatos.pNombre_Proveedor)
             ComandoSQL.Parameters.AddWithValue("@Pro_Disponible", TablaDatos.pPro_disponible)
             If ComandoSQL.ExecuteNonQuery Then
                 Return True
@@ -61,8 +61,8 @@ Public Class fInventario
             ComandoSQL.Parameters.AddWithValue("@Pro_Nombre", TablaDatos.pPro_Nombre)
             ComandoSQL.Parameters.AddWithValue("@Pro_Cantidad", TablaDatos.pPro_Cantidad)
             ComandoSQL.Parameters.AddWithValue("@Pro_PreVenta", TablaDatos.pPro_preventa)
-            ComandoSQL.Parameters.AddWithValue("@Pro_PreCompra", TablaDatos.pPro_precompra)
-            ComandoSQL.Parameters.AddWithValue("@Nombre_Proveedor", TablaDatos.pNombre_Proveedor)
+            ComandoSQL.Parameters.AddWithValue("@Pro_PreFabricacion", TablaDatos.pPro_precompra)
+            ComandoSQL.Parameters.AddWithValue("@Nombre_Compuesto", TablaDatos.pNombre_Proveedor)
             ComandoSQL.Parameters.AddWithValue("@Pro_Disponible", TablaDatos.pPro_disponible)
             If ComandoSQL.ExecuteNonQuery Then
                 Return True

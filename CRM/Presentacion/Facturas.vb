@@ -41,6 +41,5 @@
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
         Dgv_Listado.Columns(2).Visible = False
-        Dgv_Listado.Columns(3).Visible = False
     End Sub
 End Class

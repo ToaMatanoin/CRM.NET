@@ -26,6 +26,7 @@
 
         nuevo.ConexionDB()
         nuevo.llenado_cb(Cb_producto, "Pro_Nombre", "Inventario")
+        nuevo.llenado_cb(CB_Cliente, "Cli_NombreEmpresa", "Cliente")
 
         Limpiar()
 
@@ -94,6 +95,7 @@
         TxtTotal.Text = ""
 
         Cb_producto.Text = ""
+        CB_Cliente.Text = ""
 
         Rd_contado.Checked = False
         Rd_credito.Checked = False
@@ -124,30 +126,30 @@
     End Sub
 
     Private Sub Activar()
-        TxtIdclli.Enabled = True
-        Dtp_fecha.Enabled = True
         Rd_contado.Enabled = True
         Rd_credito.Enabled = True
         Rd_tercera_no.Enabled = True
         Rd_tercera_si.Enabled = True
         Cb_producto.Enabled = True
+        CB_Cliente.Enabled = True
         Txtcantidad.Enabled = True
     End Sub
 
     Private Sub desactivar()
-        TxtIdclli.Enabled = False
-        Dtp_fecha.Enabled = False
         Rd_contado.Enabled = False
         Rd_credito.Enabled = False
         Rd_tercera_no.Enabled = False
         Rd_tercera_si.Enabled = False
         Cb_producto.Enabled = False
+        CB_Cliente.Enabled = False
         Txtcantidad.Enabled = False
     End Sub
 
     Private Sub TrasladoInformacion()
         Txt_ID_Venta.Text = Dgv_Listado.SelectedCells.Item(1).Value
         TxtIdclli.Text = Dgv_Listado.SelectedCells.Item(4).Value
+        nuevo.ConexionDB()
+        CB_Cliente.Text = nuevo.Buscar_info(TxtIdclli.Text, "ID_Cliente", "Cli_NombreEmpresa", "Cliente")
         Txtcantidad.Text = Dgv_Listado.SelectedCells.Item(9).Value
         Cb_producto.Text = Dgv_Listado.SelectedCells.Item(7).Value
         nuevo.ConexionDB()
@@ -156,11 +158,11 @@
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
-        If Bandera Then
-            BtnDevolucion.Visible = False
-        Else
-            BtnDevolucion.Visible = True
-        End If
+        'If Bandera Then
+        '    BtnDevolucion.Visible = False
+        'Else
+        '    BtnDevolucion.Visible = True
+        'End If
         BtnIngresar.Visible = False
     End Sub
 
@@ -174,26 +176,26 @@
         nuevo.ConexionDB()
         ProdCant = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_Cantidad", "Inventario")
         preventa = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreVenta", "Inventario")
-        precompra = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
-        proveed = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Nombre_Proveedor", "Inventario")
+        precompra = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreFabricacion", "Inventario")
+        proveed = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Nombre_Compuesto", "Inventario")
 
         IDProd = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "ID_Producto", "Inventario")
 
         Txt_Cantmaxima.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_Cantidad", "Inventario")
-        Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreCompra", "Inventario")
+        Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreFabricacion", "Inventario")
     End Sub
 
-    Private Sub Rd_credito_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_credito.CheckedChanged
+    'Private Sub Rd_credito_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_credito.CheckedChanged
 
-    End Sub
+    'End Sub
 
-    Private Sub Rd_contado_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_contado.CheckedChanged
+    'Private Sub Rd_contado_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_contado.CheckedChanged
 
-    End Sub
+    'End Sub
 
-    Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs)
+    'Private Sub Rd_tercera_si_CheckedChanged(sender As Object, e As EventArgs)
 
-    End Sub
+    'End Sub
 
     Private Sub Btn_nuevo_Click(sender As Object, e As EventArgs) Handles Btn_Limpiar.Click
         nuevo.ConexionDB()
@@ -251,6 +253,11 @@
 
     Private Sub Btnfactura_Click(sender As Object, e As EventArgs) Handles Btnfactura.Click
         Facturas.ShowDialog()
+    End Sub
+
+    Private Sub CB_Cliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CB_Cliente.SelectedIndexChanged
+        nuevo.ConexionDB()
+        TxtIdclli.Text = nuevo.Buscar_info(CB_Cliente.Text, "Cli_NombreEmpresa", "ID_Cliente", "Cliente")
     End Sub
 
     Private Sub Btn_NuevaVenta_Click(sender As Object, e As EventArgs) Handles Btn_NuevaVenta.Click

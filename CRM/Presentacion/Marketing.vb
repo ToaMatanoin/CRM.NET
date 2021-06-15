@@ -22,6 +22,7 @@
         TxtIDUsuario.Text = IniciarSesion.IDUSU
         Mostrar()
         Limpiar()
+        LimpiarPT()
         BtnIngresar.Visible = False
         Btn_ingresarPT.Visible = False
     End Sub
@@ -167,6 +168,13 @@
         BtnNuevo.Visible = True
         BtnModificar.Visible = False
         BtnEliminar.Visible = False
+
+
+    End Sub
+
+    Private Sub LimpiarPT()
+        TxtDescripProyecto.Text = ""
+        TxtNom_proyec.Text = ""
 
         Btn_NuevoPT.Visible = True
         Btn_ModificarPT.Visible = False
@@ -438,16 +446,16 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Btn_NuevoPT.Click
-        If BtnNuevo.Text = "Nuevo" Then
+        If Btn_NuevoPT.Text = "Nuevo" Then
             ActivarPT()
-            BtnIngresar.Visible = True
-            BtnNuevo.Text = "Cancelar"
-            Limpiar()
-        ElseIf BtnNuevo.Text = "Cancelar" Then
+            Btn_ingresarPT.Visible = True
+            Btn_NuevoPT.Text = "Cancelar"
+            LimpiarPT()
+        ElseIf Btn_NuevoPT.Text = "Cancelar" Then
             DesactivarPT()
-            BtnIngresar.Visible = False
-            Limpiar()
-            BtnNuevo.Text = "Nuevo"
+            Btn_ingresarPT.Visible = False
+            LimpiarPT()
+            Btn_NuevoPT.Text = "Nuevo"
         End If
     End Sub
 

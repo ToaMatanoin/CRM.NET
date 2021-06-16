@@ -182,7 +182,7 @@
         IDProd = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "ID_Producto", "Inventario")
 
         Txt_Cantmaxima.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_Cantidad", "Inventario")
-        Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreFabricacion", "Inventario")
+        Txtpreciounidad.Text = nuevo.Buscar_info(Cb_producto.Text, "Pro_Nombre", "Pro_PreVenta", "Inventario")
     End Sub
 
     'Private Sub Rd_credito_CheckedChanged(sender As Object, e As EventArgs) Handles Rd_credito.CheckedChanged
@@ -292,6 +292,27 @@
                 Else
                     MessageBox.Show("Fallo La resta de inventario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
+
+                Try
+                    For Each row As DataGridViewRow In Dgv_Listado.Rows
+                        Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
+                        If LineaMarca Then
+                            Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Venta").Value)
+                            Dim TablaDatos2 As New eVentas
+                            Dim Funcion2 As New fVentas
+                            TablaDatos2.pID_Venta = LlavePrimaria
+                            If Funcion2.Eliminar(TablaDatos2) Then
+                                MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        End If
+                    Next
+                    Call Mostrar()
+                    Call Limpiar()
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
             Catch Evento As Exception
                 MsgBox(Evento.Message)
             End Try
@@ -301,36 +322,17 @@
 
 
         'eliminar venta
-        Dim Resultado As DialogResult
-        Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
-        "Eliminando Registro", MessageBoxButtons.OKCancel,
-        MessageBoxIcon.Question)
-        If Resultado = Windows.Forms.DialogResult.OK Then
-            Try
-                For Each row As DataGridViewRow In Dgv_Listado.Rows
-                    Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Eliminar").Value)
-                    If LineaMarca Then
-                        Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Venta").Value)
-                        Dim TablaDatos As New eVentas
-                        Dim Funcion As New fVentas
-                        TablaDatos.pID_Venta = LlavePrimaria
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    End If
-                Next
-                Call Mostrar()
-                Call Limpiar()
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
-        Else
-            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Call Mostrar()
-            Call Limpiar()
-        End If
+        'Dim Resultado As DialogResult
+        'Resultado = MessageBox.Show("Desea Eliminar la Estrategia",
+        '"Eliminando Registro", MessageBoxButtons.OKCancel,
+        'MessageBoxIcon.Question)
+        'If Resultado = Windows.Forms.DialogResult.OK Then
+
+        'Else
+        '    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        '    Call Mostrar()
+        '    Call Limpiar()
+        'End If
 
 
 
@@ -351,37 +353,9 @@
             If probarcant = True Then
 
 
-                'restar inventario
+                'Registra la venta
 
-                Dim Resultado1 As DialogResult
-                Resultado1 = MessageBox.Show("Desea Continuar con la venta", "Venta de producto", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-                If Resultado1 = Windows.Forms.DialogResult.OK Then
-                    Try
-
-                        Dim TablaDatos As New eInventario
-                        Dim Funcion As New fInventario
-                        Dim resta As Integer = Convert.ToInt32(ProdCant) - Convert.ToInt32(Txtcantidad.Text)
-
-                        TablaDatos.pID_Producto = IDProd
-                        TablaDatos.pPro_Nombre = Cb_producto.Text
-                        TablaDatos.pPro_Cantidad = resta
-                        TablaDatos.pPro_preventa = Convert.ToDouble(preventa)
-                        TablaDatos.pPro_precompra = Convert.ToDouble(precompra)
-                        TablaDatos.pNombre_Proveedor = proveed
-                        TablaDatos.pPro_disponible = 1
-
-                        If Funcion.Actualizar(TablaDatos) Then
-                            MessageBox.Show("Producto Restado del inventario", "Actualizando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Fallo La resta de inventario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
-                    Catch Evento As Exception
-                        MsgBox(Evento.Message)
-                    End Try
-
-                    'Registra la venta
-
-                    Try
+                Try
                         Dim TablaDatos As New eVentas
                         Dim Funcion As New fVentas
                         TablaDatos.pID_Usuario = IniciarSesion.IDUSU
@@ -398,8 +372,31 @@
                             MessageBox.Show("Venta no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
                         End If
 
+                    'restar inventario
 
-                        Dim descuentos, impuestos As Double
+                    Try
+
+                        Dim TablaDatos2 As New eInventario
+                        Dim Funcion2 As New fInventario
+                        Dim resta As Integer = Convert.ToInt32(ProdCant) - Convert.ToInt32(Txtcantidad.Text)
+
+                        TablaDatos2.pID_Producto = IDProd
+                        TablaDatos2.pPro_Nombre = Cb_producto.Text
+                        TablaDatos2.pPro_Cantidad = resta
+                        TablaDatos2.pPro_preventa = Convert.ToDouble(preventa)
+                        TablaDatos2.pPro_precompra = Convert.ToDouble(precompra)
+                        TablaDatos2.pNombre_Proveedor = proveed
+                        TablaDatos2.pPro_disponible = 1
+
+                        If Funcion2.Actualizar(TablaDatos2) Then
+                        Else
+                            MessageBox.Show("Fallo La resta de inventario", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        End If
+                    Catch Evento As Exception
+                        MsgBox(Evento.Message)
+                    End Try
+
+                    Dim descuentos, impuestos As Double
 
 
                         subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
@@ -424,7 +421,7 @@
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
-                End If
+
 
 
 

@@ -136,30 +136,39 @@
         If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtNomEmpresa.Text <> "" And TxtTelEmpresa.Text <> "" And TxtEmailEmpresa.Text <> "" And
             TxtRTN.Text <> "" Then
 
-            Try
-                Dim TablaDatos As New eClientes
-                Dim Funcion As New fClientes
-                TablaDatos.pCli_Nombre = TxtNomCli.Text
-                TablaDatos.pCli_Telefono = TxtTelCli.Text
-                TablaDatos.pCli_Email = TxtEmailCli.Text
-                TablaDatos.pCli_NombreEmpresa = TxtNomEmpresa.Text
-                TablaDatos.pCli_TelEmpresa = TxtTelEmpresa.Text
-                TablaDatos.pCli_EmailEmpresa = TxtEmailEmpresa.Text
-                TablaDatos.pRTN = TxtRTN.Text
+            Restriccion.ConexionDB()
+            Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomCli.Text, "Cli_Nombre", "Cliente")
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Cliente fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Cliente no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                BtnIngresar.Visible = False
-                Desactivar()
-                BtnNuevo.Text = "Nuevo Cliente"
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
+            If comprobar = True Then
+                MessageBox.Show("Nombre de Cliente ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Try
+                    Dim TablaDatos As New eClientes
+                    Dim Funcion As New fClientes
+                    TablaDatos.pCli_Nombre = TxtNomCli.Text
+                    TablaDatos.pCli_Telefono = TxtTelCli.Text
+                    TablaDatos.pCli_Email = TxtEmailCli.Text
+                    TablaDatos.pCli_NombreEmpresa = TxtNomEmpresa.Text
+                    TablaDatos.pCli_TelEmpresa = TxtTelEmpresa.Text
+                    TablaDatos.pCli_EmailEmpresa = TxtEmailEmpresa.Text
+                    TablaDatos.pRTN = TxtRTN.Text
+
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Cliente fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Cliente no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                    BtnIngresar.Visible = False
+                    Desactivar()
+                    BtnNuevo.Text = "Nuevo Cliente"
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+            End If
+
+
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -329,5 +338,9 @@
             Inicio.Visible = True
             Me.Close()
         End If
+    End Sub
+
+    Private Sub TxtNomCli_TextChanged(sender As Object, e As EventArgs) Handles TxtNomCli.TextChanged
+
     End Sub
 End Class

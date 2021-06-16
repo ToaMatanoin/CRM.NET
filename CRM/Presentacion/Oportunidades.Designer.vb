@@ -23,9 +23,9 @@ Partial Class Oportunidades
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Oportunidades))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtPosibilidad = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -81,7 +81,7 @@ Partial Class Oportunidades
         Me.TxtPosibilidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtPosibilidad.Enabled = False
         Me.TxtPosibilidad.Location = New System.Drawing.Point(285, 369)
-        Me.TxtPosibilidad.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtPosibilidad.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtPosibilidad.MaxLength = 2
         Me.TxtPosibilidad.Name = "TxtPosibilidad"
         Me.TxtPosibilidad.Size = New System.Drawing.Size(109, 23)
@@ -116,9 +116,9 @@ Partial Class Oportunidades
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(67, 256)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox3.Size = New System.Drawing.Size(457, 425)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
@@ -129,7 +129,7 @@ Partial Class Oportunidades
         Me.TxtIDClientePot.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDClientePot.Enabled = False
         Me.TxtIDClientePot.Location = New System.Drawing.Point(319, 31)
-        Me.TxtIDClientePot.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtIDClientePot.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtIDClientePot.Name = "TxtIDClientePot"
         Me.TxtIDClientePot.Size = New System.Drawing.Size(120, 23)
         Me.TxtIDClientePot.TabIndex = 11
@@ -150,7 +150,7 @@ Partial Class Oportunidades
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtDescripcion.Enabled = False
         Me.TxtDescripcion.Location = New System.Drawing.Point(152, 188)
-        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtDescripcion.MaxLength = 50
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
@@ -173,7 +173,7 @@ Partial Class Oportunidades
         Me.TxtEmailCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtEmailCli.Enabled = False
         Me.TxtEmailCli.Location = New System.Drawing.Point(212, 149)
-        Me.TxtEmailCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtEmailCli.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtEmailCli.MaxLength = 30
         Me.TxtEmailCli.Name = "TxtEmailCli"
         Me.TxtEmailCli.Size = New System.Drawing.Size(227, 23)
@@ -195,7 +195,7 @@ Partial Class Oportunidades
         Me.TxtTelCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelCli.Enabled = False
         Me.TxtTelCli.Location = New System.Drawing.Point(212, 110)
-        Me.TxtTelCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtTelCli.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtTelCli.MaxLength = 8
         Me.TxtTelCli.Name = "TxtTelCli"
         Me.TxtTelCli.Size = New System.Drawing.Size(227, 23)
@@ -217,7 +217,7 @@ Partial Class Oportunidades
         Me.TxtNomCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNomCli.Enabled = False
         Me.TxtNomCli.Location = New System.Drawing.Point(212, 70)
-        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4)
         Me.TxtNomCli.MaxLength = 40
         Me.TxtNomCli.Name = "TxtNomCli"
         Me.TxtNomCli.Size = New System.Drawing.Size(227, 23)
@@ -243,9 +243,9 @@ Partial Class Oportunidades
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
         Me.GroupBox1.Location = New System.Drawing.Point(67, 118)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox1.Size = New System.Drawing.Size(981, 106)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
@@ -261,7 +261,7 @@ Partial Class Oportunidades
         Me.btnConvertir.Image = CType(resources.GetObject("btnConvertir.Image"), System.Drawing.Image)
         Me.btnConvertir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnConvertir.Location = New System.Drawing.Point(788, 20)
-        Me.btnConvertir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnConvertir.Margin = New System.Windows.Forms.Padding(4)
         Me.btnConvertir.Name = "btnConvertir"
         Me.btnConvertir.Size = New System.Drawing.Size(184, 75)
         Me.btnConvertir.TabIndex = 4
@@ -280,7 +280,7 @@ Partial Class Oportunidades
         Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
         Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnNuevo.Location = New System.Drawing.Point(19, 20)
-        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnNuevo.Name = "BtnNuevo"
         Me.BtnNuevo.Size = New System.Drawing.Size(185, 75)
         Me.BtnNuevo.TabIndex = 3
@@ -299,7 +299,7 @@ Partial Class Oportunidades
         Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
         Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnIngresar.Location = New System.Drawing.Point(212, 20)
-        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnIngresar.Name = "BtnIngresar"
         Me.BtnIngresar.Size = New System.Drawing.Size(184, 75)
         Me.BtnIngresar.TabIndex = 0
@@ -318,7 +318,7 @@ Partial Class Oportunidades
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnModificar.Location = New System.Drawing.Point(404, 20)
-        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(184, 75)
         Me.BtnModificar.TabIndex = 2
@@ -337,7 +337,7 @@ Partial Class Oportunidades
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnEliminar.Location = New System.Drawing.Point(596, 20)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnEliminar.Name = "BtnEliminar"
         Me.BtnEliminar.Size = New System.Drawing.Size(184, 75)
         Me.BtnEliminar.TabIndex = 1
@@ -349,7 +349,7 @@ Partial Class Oportunidades
         '
         Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Buscar.Location = New System.Drawing.Point(273, 39)
-        Me.Txt_Buscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Txt_Buscar.Margin = New System.Windows.Forms.Padding(4)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
         Me.Txt_Buscar.Size = New System.Drawing.Size(367, 32)
@@ -360,7 +360,7 @@ Partial Class Oportunidades
         Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cmb_Buscar.FormattingEnabled = True
         Me.Cmb_Buscar.Location = New System.Drawing.Point(100, 39)
-        Me.Cmb_Buscar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Cmb_Buscar.Margin = New System.Windows.Forms.Padding(4)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
         Me.Cmb_Buscar.Size = New System.Drawing.Size(159, 31)
         Me.Cmb_Buscar.TabIndex = 22
@@ -385,7 +385,7 @@ Partial Class Oportunidades
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
         Me.BtnRegresar.Location = New System.Drawing.Point(1724, 15)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnRegresar.Name = "BtnRegresar"
         Me.BtnRegresar.Size = New System.Drawing.Size(79, 63)
         Me.BtnRegresar.TabIndex = 2
@@ -397,7 +397,7 @@ Partial Class Oportunidades
         Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Eliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chk_Eliminar.Location = New System.Drawing.Point(601, 228)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(4)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
         Me.Chk_Eliminar.Size = New System.Drawing.Size(97, 27)
         Me.Chk_Eliminar.TabIndex = 20
@@ -414,39 +414,39 @@ Partial Class Oportunidades
         Me.Dgv_Listado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Dgv_Listado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.Dgv_Listado.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.Dgv_Listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgv_Listado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.eliminar, Me.Convertir})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
         Me.Dgv_Listado.Location = New System.Drawing.Point(601, 256)
-        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Dgv_Listado.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -475,7 +475,7 @@ Partial Class Oportunidades
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(1819, 111)
         Me.PictureBox1.TabIndex = 24
@@ -489,9 +489,9 @@ Partial Class Oportunidades
         Me.GroupBox4.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(1056, 118)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
         Me.GroupBox4.Size = New System.Drawing.Size(681, 106)
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
@@ -502,7 +502,7 @@ Partial Class Oportunidades
         Me.Chk_Convertir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Convertir.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chk_Convertir.Location = New System.Drawing.Point(721, 228)
-        Me.Chk_Convertir.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Chk_Convertir.Margin = New System.Windows.Forms.Padding(4)
         Me.Chk_Convertir.Name = "Chk_Convertir"
         Me.Chk_Convertir.Size = New System.Drawing.Size(190, 27)
         Me.Chk_Convertir.TabIndex = 26
@@ -518,7 +518,7 @@ Partial Class Oportunidades
         Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
         Me.BtnMinimizate.Location = New System.Drawing.Point(1637, 15)
-        Me.BtnMinimizate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnMinimizate.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnMinimizate.Name = "BtnMinimizate"
         Me.BtnMinimizate.Size = New System.Drawing.Size(79, 63)
         Me.BtnMinimizate.TabIndex = 32
@@ -541,7 +541,7 @@ Partial Class Oportunidades
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Oportunidades"
         Me.Text = "Oportunidades"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

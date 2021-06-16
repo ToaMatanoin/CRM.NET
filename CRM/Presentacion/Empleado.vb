@@ -132,30 +132,46 @@
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
-            Try
-                Dim TablaDatos As New eEmpleados
-                Dim Funcion As New fEmpleados
-                TablaDatos.pEmp_Nombre = TxtNomEmp.Text
-                TablaDatos.pEmp_Telefono = TxtTelEmp.Text
-                TablaDatos.pEmp_Email = TxtEmailEmp.Text
-                TablaDatos.pEmp_Email_Pass = TxtPasswordEmail.Text
-                TablaDatos.pEmp_Direccion = TxtDireccion.Text
-                TablaDatos.pEmp_Cargo = TxtCargo.Text
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Empleado fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+
+            Restriccion.ConexionDB()
+            Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomEmp.Text, "Emp_Nombre", "Empleado")
+
+            If comprobar = True Then
+                MessageBox.Show("Nombre de Empleado ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+
+
+
+                Try
+                    Dim TablaDatos As New eEmpleados
+                    Dim Funcion As New fEmpleados
+                    TablaDatos.pEmp_Nombre = TxtNomEmp.Text
+                    TablaDatos.pEmp_Telefono = TxtTelEmp.Text
+                    TablaDatos.pEmp_Email = TxtEmailEmp.Text
+                    TablaDatos.pEmp_Email_Pass = TxtPasswordEmail.Text
+                    TablaDatos.pEmp_Direccion = TxtDireccion.Text
+                    TablaDatos.pEmp_Cargo = TxtCargo.Text
+
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Empleado fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        BtnIngresar.Visible = False
+                    Else
+                        MessageBox.Show("Empleado no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    Mostrar()
+                    Limpiar()
                     BtnIngresar.Visible = False
-                Else
-                    MessageBox.Show("Empleado no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                BtnIngresar.Visible = False
-                Desactivar()
-                BtnNuevo.Text = "Nuevo Empleado"
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
+                    Desactivar()
+                    BtnNuevo.Text = "Nuevo Empleado"
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+
+            End If
+
+
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

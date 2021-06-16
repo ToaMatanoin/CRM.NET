@@ -154,28 +154,42 @@
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
 
-            Try
-                Dim TablaDatos As New eOportunidades
-                Dim Funcion As New fOportunides
-                TablaDatos.pID_Usuario = IniciarSesion.IDUSU
-                TablaDatos.pCliPot_Nombre = TxtNomCli.Text
-                TablaDatos.pDescrip = TxtDescripcion.Text
-                TablaDatos.pPosibilidad = Convert.ToInt32(TxtPosibilidad.Text)
-                TablaDatos.pCliPot_Telefono = TxtTelCli.Text
-                TablaDatos.pCliPot_Email = TxtEmailCli.Text
+            Restriccion.ConexionDB()
+            Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomCli.Text, "Nombre_CliPoten", "Oportunidades")
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Cliente Potencial fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Cliente Potencial no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                BtnIngresar.Visible = False
-                BtnNuevo.Text = "   Nuevo Cliente"
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
+            If comprobar = True Then
+                MessageBox.Show("Nombre de Cliente potencial ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+
+                Try
+                    Dim TablaDatos As New eOportunidades
+                    Dim Funcion As New fOportunides
+                    TablaDatos.pID_Usuario = IniciarSesion.IDUSU
+                    TablaDatos.pCliPot_Nombre = TxtNomCli.Text
+                    TablaDatos.pDescrip = TxtDescripcion.Text
+                    TablaDatos.pPosibilidad = Convert.ToInt32(TxtPosibilidad.Text)
+                    TablaDatos.pCliPot_Telefono = TxtTelCli.Text
+                    TablaDatos.pCliPot_Email = TxtEmailCli.Text
+
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Cliente Potencial fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Cliente Potencial no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                    BtnIngresar.Visible = False
+                    BtnNuevo.Text = "   Nuevo Cliente"
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+
+
+
+            End If
+
+
+
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

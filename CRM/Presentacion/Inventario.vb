@@ -123,32 +123,50 @@
         If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And
             TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
 
-            Try
-                Dim TablaDatos As New eInventario
-                Dim Funcion As New fInventario
-                TablaDatos.pPro_Nombre = TxtNomPro.Text
-                TablaDatos.pPro_Cantidad = TxtCantPro.Text
-                TablaDatos.pPro_preventa = TxtPrecioVent.Text
-                TablaDatos.pPro_precompra = TxtPrecioComp.Text
-                TablaDatos.pNombre_Proveedor = TxtNomProveedor.Text
 
-                TablaDatos.pPro_disponible = 1
+            Restriccion.ConexionDB()
+            Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomPro.Text, "Pro_Nombre", "Inventario")
 
-                'El uno es para el entero de disponibilidad (1/si  0/no) '
+            If comprobar = True Then
+                MessageBox.Show("Nombre de producto ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Inventario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Inventario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                Desactivar()
-                BtnIngresar.Visible = False
-                BtnNuevo.Text = "Nuevo Producto"
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
+
+                Try
+                    Dim TablaDatos As New eInventario
+                    Dim Funcion As New fInventario
+                    TablaDatos.pPro_Nombre = TxtNomPro.Text
+                    TablaDatos.pPro_Cantidad = TxtCantPro.Text
+                    TablaDatos.pPro_preventa = TxtPrecioVent.Text
+                    TablaDatos.pPro_precompra = TxtPrecioComp.Text
+                    TablaDatos.pNombre_Proveedor = TxtNomProveedor.Text
+
+                    TablaDatos.pPro_disponible = 1
+
+                    'El uno es para el entero de disponibilidad (1/si  0/no) '
+
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Inventario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Inventario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                    Desactivar()
+                    BtnIngresar.Visible = False
+                    BtnNuevo.Text = "Nuevo Producto"
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+
+
+
+            End If
+
+
+
+
+
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

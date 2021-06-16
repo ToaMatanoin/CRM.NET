@@ -113,27 +113,44 @@
         If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And
             TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
 
-            Try
-                Dim TablaDatos As New eUsuarios
-                Dim Funcion As New fUsuarios
-                TablaDatos.pUsu_Nombre = TxtNomUsu.Text
-                TablaDatos.pUsu_Contrasenha = TxtPassUsu.Text
-                TablaDatos.pUsu_Cargo = TxtCargoEmp.Text
-                TablaDatos.pID_Empleado = TxtIDEmp.Text
+            Restriccion.ConexionDB()
+            Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomUsu.Text, "Usu_Nombre", "Usuarios")
 
-                If Funcion.Insertar(TablaDatos) Then
-                    MessageBox.Show("Usuario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Else
-                    MessageBox.Show("Usuario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                End If
-                Mostrar()
-                Limpiar()
-                BtnIngresar.Visible = False
-                Desactivar()
-                BtnNuevo.Text = "   Nuevo Usuario"
-            Catch Evento As Exception
-                MsgBox(Evento.Message)
-            End Try
+            If comprobar = True Then
+                MessageBox.Show("Nombre de producto ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+
+
+
+                Try
+                    Dim TablaDatos As New eUsuarios
+                    Dim Funcion As New fUsuarios
+                    TablaDatos.pUsu_Nombre = TxtNomUsu.Text
+                    TablaDatos.pUsu_Contrasenha = TxtPassUsu.Text
+                    TablaDatos.pUsu_Cargo = TxtCargoEmp.Text
+                    TablaDatos.pID_Empleado = TxtIDEmp.Text
+
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Usuario fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Else
+                        MessageBox.Show("Usuario no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
+                    Mostrar()
+                    Limpiar()
+                    BtnIngresar.Visible = False
+                    Desactivar()
+                    BtnNuevo.Text = "   Nuevo Usuario"
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
+                End Try
+
+
+
+            End If
+
+
+
+
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If

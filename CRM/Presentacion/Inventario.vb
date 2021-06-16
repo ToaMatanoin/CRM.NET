@@ -6,7 +6,7 @@
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Pro_Nombre")
-        Cmb_Buscar.Items.Add("Nombre_Proveedor")
+        Cmb_Buscar.Items.Add("Nombre_Compuesto")
         Cmb_Buscar.Text = "Pro_Nombre"
 
         If Bandera Then
@@ -120,18 +120,13 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And
-            TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
-
+        If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
 
             Restriccion.ConexionDB()
             Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomPro.Text, "Pro_Nombre", "Inventario")
-
             If comprobar = True Then
                 MessageBox.Show("Nombre de producto ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-
-
                 Try
                     Dim TablaDatos As New eInventario
                     Dim Funcion As New fInventario
@@ -158,15 +153,7 @@
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
-
-
-
             End If
-
-
-
-
-
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -178,8 +165,7 @@
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
 
-        If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And
-            TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
+        If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -237,7 +223,6 @@
                             Dim Funcion2 As New fMarketing
                             TablaDatos2.pID_Marketing = IDM
                             If Funcion2.Eliminar(TablaDatos2) Then
-                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If

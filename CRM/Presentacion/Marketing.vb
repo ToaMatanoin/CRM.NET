@@ -247,8 +247,8 @@
         txt_idproy.Text = Dgvtp.SelectedCells.Item(1).Value
         TxtNom_proyec.Text = Dgvtp.SelectedCells.Item(4).Value
         TxtDescripProyecto.Text = Dgvtp.SelectedCells.Item(5).Value
-        DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString("dd-MM-yyyy"))
-        DTPFechaFinalProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(7).Value.ToString("dd-MM-yyyy"))
+        DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString)
+        DTPFechaFinalProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(7).Value.ToString)
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged

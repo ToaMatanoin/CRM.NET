@@ -7,7 +7,6 @@
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Nombre_CliPoten")
         Cmb_Buscar.Items.Add("Posibi_Nego")
-        Cmb_Buscar.Items.Add("Email_CliPoten")
         Cmb_Buscar.Text = "Nombre_CliPoten"
 
         If Bandera Then
@@ -125,7 +124,6 @@
     End Sub
 
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
-        Desactivar()
         If e.ColumnIndex = Me.Dgv_Listado.Columns.Item("Eliminar").Index Then
             Dim ChkCell As DataGridViewCheckBoxCell = Me.Dgv_Listado.Rows(e.RowIndex).Cells("Eliminar")
             ChkCell.Value = Not ChkCell.Value

@@ -69,10 +69,9 @@ Partial Class Oportunidades
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(403, 374)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(302, 304)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(28, 23)
+        Me.Label8.Size = New System.Drawing.Size(22, 18)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "%"
         '
@@ -80,21 +79,19 @@ Partial Class Oportunidades
         '
         Me.TxtPosibilidad.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtPosibilidad.Enabled = False
-        Me.TxtPosibilidad.Location = New System.Drawing.Point(285, 369)
-        Me.TxtPosibilidad.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtPosibilidad.Location = New System.Drawing.Point(214, 300)
         Me.TxtPosibilidad.MaxLength = 2
         Me.TxtPosibilidad.Name = "TxtPosibilidad"
-        Me.TxtPosibilidad.Size = New System.Drawing.Size(109, 23)
+        Me.TxtPosibilidad.Size = New System.Drawing.Size(82, 19)
         Me.TxtPosibilidad.TabIndex = 18
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(16, 374)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(12, 304)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(187, 23)
+        Me.Label7.Size = New System.Drawing.Size(152, 18)
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Posibilidad de Exito:"
         '
@@ -115,11 +112,9 @@ Partial Class Oportunidades
         Me.GroupBox3.Controls.Add(Me.TxtNomCli)
         Me.GroupBox3.Controls.Add(Me.Label2)
         Me.GroupBox3.Font = New System.Drawing.Font("Arial Narrow", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox3.Location = New System.Drawing.Point(67, 256)
-        Me.GroupBox3.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox3.Location = New System.Drawing.Point(50, 208)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox3.Size = New System.Drawing.Size(457, 425)
+        Me.GroupBox3.Size = New System.Drawing.Size(343, 345)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Persona a Cargo"
@@ -128,20 +123,18 @@ Partial Class Oportunidades
         '
         Me.TxtIDClientePot.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDClientePot.Enabled = False
-        Me.TxtIDClientePot.Location = New System.Drawing.Point(319, 31)
-        Me.TxtIDClientePot.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtIDClientePot.Location = New System.Drawing.Point(239, 25)
         Me.TxtIDClientePot.Name = "TxtIDClientePot"
-        Me.TxtIDClientePot.Size = New System.Drawing.Size(120, 23)
+        Me.TxtIDClientePot.Size = New System.Drawing.Size(90, 19)
         Me.TxtIDClientePot.TabIndex = 11
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(16, 36)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(12, 29)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(138, 23)
+        Me.Label9.Size = New System.Drawing.Size(108, 18)
         Me.Label9.TabIndex = 10
         Me.Label9.Text = "ID Cliente Pot:"
         '
@@ -149,22 +142,20 @@ Partial Class Oportunidades
         '
         Me.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtDescripcion.Enabled = False
-        Me.TxtDescripcion.Location = New System.Drawing.Point(152, 188)
-        Me.TxtDescripcion.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtDescripcion.Location = New System.Drawing.Point(114, 153)
         Me.TxtDescripcion.MaxLength = 50
         Me.TxtDescripcion.Multiline = True
         Me.TxtDescripcion.Name = "TxtDescripcion"
-        Me.TxtDescripcion.Size = New System.Drawing.Size(287, 174)
+        Me.TxtDescripcion.Size = New System.Drawing.Size(215, 141)
         Me.TxtDescripcion.TabIndex = 9
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(16, 193)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(12, 157)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(118, 23)
+        Me.Label6.Size = New System.Drawing.Size(96, 18)
         Me.Label6.TabIndex = 8
         Me.Label6.Text = "Descripción:"
         '
@@ -172,21 +163,19 @@ Partial Class Oportunidades
         '
         Me.TxtEmailCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtEmailCli.Enabled = False
-        Me.TxtEmailCli.Location = New System.Drawing.Point(212, 149)
-        Me.TxtEmailCli.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtEmailCli.Location = New System.Drawing.Point(159, 121)
         Me.TxtEmailCli.MaxLength = 30
         Me.TxtEmailCli.Name = "TxtEmailCli"
-        Me.TxtEmailCli.Size = New System.Drawing.Size(227, 23)
+        Me.TxtEmailCli.Size = New System.Drawing.Size(170, 19)
         Me.TxtEmailCli.TabIndex = 5
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(16, 154)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(12, 125)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(137, 23)
+        Me.Label4.Size = New System.Drawing.Size(110, 18)
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "E-mail Cliente:"
         '
@@ -194,21 +183,19 @@ Partial Class Oportunidades
         '
         Me.TxtTelCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtTelCli.Enabled = False
-        Me.TxtTelCli.Location = New System.Drawing.Point(212, 110)
-        Me.TxtTelCli.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtTelCli.Location = New System.Drawing.Point(159, 89)
         Me.TxtTelCli.MaxLength = 8
         Me.TxtTelCli.Name = "TxtTelCli"
-        Me.TxtTelCli.Size = New System.Drawing.Size(227, 23)
+        Me.TxtTelCli.Size = New System.Drawing.Size(170, 19)
         Me.TxtTelCli.TabIndex = 3
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 114)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(10, 93)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(156, 23)
+        Me.Label3.Size = New System.Drawing.Size(123, 18)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "Telefono Cliente:"
         '
@@ -216,21 +203,19 @@ Partial Class Oportunidades
         '
         Me.TxtNomCli.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtNomCli.Enabled = False
-        Me.TxtNomCli.Location = New System.Drawing.Point(212, 70)
-        Me.TxtNomCli.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtNomCli.Location = New System.Drawing.Point(159, 57)
         Me.TxtNomCli.MaxLength = 40
         Me.TxtNomCli.Name = "TxtNomCli"
-        Me.TxtNomCli.Size = New System.Drawing.Size(227, 23)
+        Me.TxtNomCli.Size = New System.Drawing.Size(170, 19)
         Me.TxtNomCli.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(16, 75)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(12, 61)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 23)
+        Me.Label2.Size = New System.Drawing.Size(121, 18)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Nombre Cliente:"
         '
@@ -242,11 +227,9 @@ Partial Class Oportunidades
         Me.GroupBox1.Controls.Add(Me.BtnIngresar)
         Me.GroupBox1.Controls.Add(Me.BtnModificar)
         Me.GroupBox1.Controls.Add(Me.BtnEliminar)
-        Me.GroupBox1.Location = New System.Drawing.Point(67, 118)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox1.Location = New System.Drawing.Point(50, 96)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox1.Size = New System.Drawing.Size(981, 106)
+        Me.GroupBox1.Size = New System.Drawing.Size(736, 86)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         '
@@ -260,10 +243,9 @@ Partial Class Oportunidades
         Me.btnConvertir.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConvertir.Image = CType(resources.GetObject("btnConvertir.Image"), System.Drawing.Image)
         Me.btnConvertir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnConvertir.Location = New System.Drawing.Point(788, 20)
-        Me.btnConvertir.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnConvertir.Location = New System.Drawing.Point(591, 16)
         Me.btnConvertir.Name = "btnConvertir"
-        Me.btnConvertir.Size = New System.Drawing.Size(184, 75)
+        Me.btnConvertir.Size = New System.Drawing.Size(138, 61)
         Me.btnConvertir.TabIndex = 4
         Me.btnConvertir.Text = "Convertir Cliente"
         Me.btnConvertir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -279,10 +261,9 @@ Partial Class Oportunidades
         Me.BtnNuevo.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnNuevo.Image = CType(resources.GetObject("BtnNuevo.Image"), System.Drawing.Image)
         Me.BtnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnNuevo.Location = New System.Drawing.Point(19, 20)
-        Me.BtnNuevo.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnNuevo.Location = New System.Drawing.Point(14, 16)
         Me.BtnNuevo.Name = "BtnNuevo"
-        Me.BtnNuevo.Size = New System.Drawing.Size(185, 75)
+        Me.BtnNuevo.Size = New System.Drawing.Size(139, 61)
         Me.BtnNuevo.TabIndex = 3
         Me.BtnNuevo.Text = "   Nuevo Cliente"
         Me.BtnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -298,10 +279,9 @@ Partial Class Oportunidades
         Me.BtnIngresar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnIngresar.Image = CType(resources.GetObject("BtnIngresar.Image"), System.Drawing.Image)
         Me.BtnIngresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnIngresar.Location = New System.Drawing.Point(212, 20)
-        Me.BtnIngresar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnIngresar.Location = New System.Drawing.Point(159, 16)
         Me.BtnIngresar.Name = "BtnIngresar"
-        Me.BtnIngresar.Size = New System.Drawing.Size(184, 75)
+        Me.BtnIngresar.Size = New System.Drawing.Size(138, 61)
         Me.BtnIngresar.TabIndex = 0
         Me.BtnIngresar.Text = "Ingresar Cliente"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -317,10 +297,9 @@ Partial Class Oportunidades
         Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
         Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnModificar.Location = New System.Drawing.Point(404, 20)
-        Me.BtnModificar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnModificar.Location = New System.Drawing.Point(303, 16)
         Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(184, 75)
+        Me.BtnModificar.Size = New System.Drawing.Size(138, 61)
         Me.BtnModificar.TabIndex = 2
         Me.BtnModificar.Text = "Modificar Cliente"
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -336,10 +315,9 @@ Partial Class Oportunidades
         Me.BtnEliminar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnEliminar.Image = CType(resources.GetObject("BtnEliminar.Image"), System.Drawing.Image)
         Me.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnEliminar.Location = New System.Drawing.Point(596, 20)
-        Me.BtnEliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnEliminar.Location = New System.Drawing.Point(447, 16)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(184, 75)
+        Me.BtnEliminar.Size = New System.Drawing.Size(138, 61)
         Me.BtnEliminar.TabIndex = 1
         Me.BtnEliminar.Text = "Eliminar Cliente"
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -348,30 +326,27 @@ Partial Class Oportunidades
         'Txt_Buscar
         '
         Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txt_Buscar.Location = New System.Drawing.Point(273, 39)
-        Me.Txt_Buscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.Txt_Buscar.Location = New System.Drawing.Point(205, 32)
         Me.Txt_Buscar.Multiline = True
         Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(367, 32)
+        Me.Txt_Buscar.Size = New System.Drawing.Size(275, 26)
         Me.Txt_Buscar.TabIndex = 23
         '
         'Cmb_Buscar
         '
         Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(100, 39)
-        Me.Cmb_Buscar.Margin = New System.Windows.Forms.Padding(4)
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(75, 32)
         Me.Cmb_Buscar.Name = "Cmb_Buscar"
-        Me.Cmb_Buscar.Size = New System.Drawing.Size(159, 31)
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(120, 26)
         Me.Cmb_Buscar.TabIndex = 22
         '
         'Lb_Buscar
         '
         Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Location = New System.Drawing.Point(16, 44)
-        Me.Lb_Buscar.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Lb_Buscar.Location = New System.Drawing.Point(12, 36)
         Me.Lb_Buscar.Name = "Lb_Buscar"
-        Me.Lb_Buscar.Size = New System.Drawing.Size(71, 23)
+        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
         Me.Lb_Buscar.TabIndex = 21
         Me.Lb_Buscar.Text = "Buscar"
         '
@@ -384,10 +359,9 @@ Partial Class Oportunidades
         Me.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRegresar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnRegresar.Image = CType(resources.GetObject("BtnRegresar.Image"), System.Drawing.Image)
-        Me.BtnRegresar.Location = New System.Drawing.Point(1724, 15)
-        Me.BtnRegresar.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnRegresar.Location = New System.Drawing.Point(1293, 12)
         Me.BtnRegresar.Name = "BtnRegresar"
-        Me.BtnRegresar.Size = New System.Drawing.Size(79, 63)
+        Me.BtnRegresar.Size = New System.Drawing.Size(59, 51)
         Me.BtnRegresar.TabIndex = 2
         Me.BtnRegresar.UseVisualStyleBackColor = False
         '
@@ -396,10 +370,9 @@ Partial Class Oportunidades
         Me.Chk_Eliminar.AutoSize = True
         Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Eliminar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Chk_Eliminar.Location = New System.Drawing.Point(601, 228)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(4)
+        Me.Chk_Eliminar.Location = New System.Drawing.Point(451, 185)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
-        Me.Chk_Eliminar.Size = New System.Drawing.Size(97, 27)
+        Me.Chk_Eliminar.Size = New System.Drawing.Size(81, 22)
         Me.Chk_Eliminar.TabIndex = 20
         Me.Chk_Eliminar.Text = "Eliminar"
         Me.Chk_Eliminar.UseVisualStyleBackColor = True
@@ -434,8 +407,7 @@ Partial Class Oportunidades
         Me.Dgv_Listado.DefaultCellStyle = DataGridViewCellStyle2
         Me.Dgv_Listado.EnableHeadersVisualStyles = False
         Me.Dgv_Listado.GridColor = System.Drawing.Color.Red
-        Me.Dgv_Listado.Location = New System.Drawing.Point(601, 256)
-        Me.Dgv_Listado.Margin = New System.Windows.Forms.Padding(4)
+        Me.Dgv_Listado.Location = New System.Drawing.Point(451, 208)
         Me.Dgv_Listado.Name = "Dgv_Listado"
         Me.Dgv_Listado.ReadOnly = True
         Me.Dgv_Listado.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -450,7 +422,7 @@ Partial Class Oportunidades
         Me.Dgv_Listado.RowHeadersVisible = False
         Me.Dgv_Listado.RowHeadersWidth = 51
         Me.Dgv_Listado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dgv_Listado.Size = New System.Drawing.Size(1136, 421)
+        Me.Dgv_Listado.Size = New System.Drawing.Size(852, 342)
         Me.Dgv_Listado.TabIndex = 21
         '
         'eliminar
@@ -459,7 +431,7 @@ Partial Class Oportunidades
         Me.eliminar.MinimumWidth = 6
         Me.eliminar.Name = "eliminar"
         Me.eliminar.ReadOnly = True
-        Me.eliminar.Width = 72
+        Me.eliminar.Width = 59
         '
         'Convertir
         '
@@ -467,7 +439,7 @@ Partial Class Oportunidades
         Me.Convertir.MinimumWidth = 6
         Me.Convertir.Name = "Convertir"
         Me.Convertir.ReadOnly = True
-        Me.Convertir.Width = 79
+        Me.Convertir.Width = 62
         '
         'PictureBox1
         '
@@ -475,9 +447,8 @@ Partial Class Oportunidades
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(1819, 111)
+        Me.PictureBox1.Size = New System.Drawing.Size(1386, 90)
         Me.PictureBox1.TabIndex = 24
         Me.PictureBox1.TabStop = False
         '
@@ -488,11 +459,9 @@ Partial Class Oportunidades
         Me.GroupBox4.Controls.Add(Me.Lb_Buscar)
         Me.GroupBox4.Controls.Add(Me.Txt_Buscar)
         Me.GroupBox4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(1056, 118)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(4)
+        Me.GroupBox4.Location = New System.Drawing.Point(792, 96)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(4)
-        Me.GroupBox4.Size = New System.Drawing.Size(681, 106)
+        Me.GroupBox4.Size = New System.Drawing.Size(511, 86)
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
         '
@@ -501,10 +470,9 @@ Partial Class Oportunidades
         Me.Chk_Convertir.AutoSize = True
         Me.Chk_Convertir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Convertir.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Chk_Convertir.Location = New System.Drawing.Point(721, 228)
-        Me.Chk_Convertir.Margin = New System.Windows.Forms.Padding(4)
+        Me.Chk_Convertir.Location = New System.Drawing.Point(541, 185)
         Me.Chk_Convertir.Name = "Chk_Convertir"
-        Me.Chk_Convertir.Size = New System.Drawing.Size(190, 27)
+        Me.Chk_Convertir.Size = New System.Drawing.Size(153, 22)
         Me.Chk_Convertir.TabIndex = 26
         Me.Chk_Convertir.Text = "Convertir a Cliente"
         Me.Chk_Convertir.UseVisualStyleBackColor = True
@@ -517,19 +485,18 @@ Partial Class Oportunidades
         Me.BtnMinimizate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon
         Me.BtnMinimizate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnMinimizate.Image = CType(resources.GetObject("BtnMinimizate.Image"), System.Drawing.Image)
-        Me.BtnMinimizate.Location = New System.Drawing.Point(1637, 15)
-        Me.BtnMinimizate.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnMinimizate.Location = New System.Drawing.Point(1228, 12)
         Me.BtnMinimizate.Name = "BtnMinimizate"
-        Me.BtnMinimizate.Size = New System.Drawing.Size(79, 63)
+        Me.BtnMinimizate.Size = New System.Drawing.Size(59, 51)
         Me.BtnMinimizate.TabIndex = 32
         Me.BtnMinimizate.UseVisualStyleBackColor = False
         '
         'Oportunidades
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Window
-        Me.ClientSize = New System.Drawing.Size(1819, 706)
+        Me.ClientSize = New System.Drawing.Size(1386, 574)
         Me.Controls.Add(Me.BtnMinimizate)
         Me.Controls.Add(Me.BtnRegresar)
         Me.Controls.Add(Me.Chk_Convertir)
@@ -541,7 +508,6 @@ Partial Class Oportunidades
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Oportunidades"
         Me.Text = "Oportunidades"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

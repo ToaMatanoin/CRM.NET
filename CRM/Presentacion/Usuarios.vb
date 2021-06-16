@@ -110,18 +110,13 @@
     End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
-        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And
-            TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
+        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
 
             Restriccion.ConexionDB()
             Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomUsu.Text, "Usu_Nombre", "Usuarios")
-
             If comprobar = True Then
                 MessageBox.Show("Nombre de producto ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-
-
-
                 Try
                     Dim TablaDatos As New eUsuarios
                     Dim Funcion As New fUsuarios
@@ -143,22 +138,14 @@
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
-
-
-
             End If
-
-
-
-
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And
-            TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
+        If TxtNomUsu.Text <> "" And TxtPassUsu.Text <> "" And TxtCargoEmp.Text <> "" And TxtIDEmp.Text <> "" And TxtNomEmpl.Text <> "" Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)

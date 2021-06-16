@@ -6,8 +6,7 @@
     Public regrecargar As Integer = 0
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Cli_Nombre")
-        Cmb_Buscar.Items.Add("Cli_Telefono")
-        Cmb_Buscar.Items.Add("Cli_Email")
+        Cmb_Buscar.Items.Add("Cli_NombreEmpresa")
         Cmb_Buscar.Text = "Cli_Nombre"
 
         If regrecargar = 0 Then
@@ -243,17 +242,16 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Cliente").Value)
                         Dim TablaDatos As New eClientes
                         Dim Funcion As New fClientes
+
                         Restriccion.ConexionDB()
                         Dim IDM As String = ""
                         IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Cliente", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Cliente = LlavePrimaria
-
                         If IDM <> "" Then
                             Dim TablaDatos2 As New eMarketing
                             Dim Funcion2 As New fMarketing
                             TablaDatos2.pID_Marketing = IDM
                             If Funcion2.Eliminar(TablaDatos2) Then
-                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
@@ -290,14 +288,6 @@
             MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
-
-    'Private Sub BtnCerrar_Click(sender As Object, e As EventArgs) Handles BtnCerrar.Click
-    '    BtnCargar.Text = "Regresar"
-    '    BtnCerrar.Visible = False
-    '    regrecargar = 0
-    '    Limpiar()
-    '    Me.Close()
-    'End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         If BtnNuevo.Text = "Nuevo Cliente" Then

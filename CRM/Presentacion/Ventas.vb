@@ -356,21 +356,22 @@
                 'Registra la venta
 
                 Try
-                        Dim TablaDatos As New eVentas
-                        Dim Funcion As New fVentas
-                        TablaDatos.pID_Usuario = IniciarSesion.IDUSU
-                        TablaDatos.pID_Cliente = TxtIdclli.Text
-                        TablaDatos.pID_Producto = IDProd
-                        TablaDatos.pVen_Fecha = Dtp_fecha.Text
-                        TablaDatos.pVen_CantVendida = Txtcantidad.Text
-                        TablaDatos.pVen_subtotal = Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text)
-                        TablaDatos.pNum_venta = random
+                    Dim TablaDatos As New eVentas
+                    Dim Funcion As New fVentas
+                    TablaDatos.pID_Usuario = IniciarSesion.IDUSU
+                    TablaDatos.pID_Cliente = TxtIdclli.Text
+                    TablaDatos.pID_Producto = IDProd
+                    TablaDatos.pVen_Fecha = Dtp_fecha.Text
+                    TablaDatos.pVen_CantVendida = Txtcantidad.Text
+                    TablaDatos.pVen_subtotal = Convert.ToInt32(Txtcantidad.Text) * Convert.ToInt32(Txtpreciounidad.Text)
+                    TablaDatos.pNum_venta = random
 
-                        If Funcion.Insertar(TablaDatos) Then
-                            MessageBox.Show("Venta registrada", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Venta no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                        End If
+                    If Funcion.Insertar(TablaDatos) Then
+                        MessageBox.Show("Venta registrada", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        Txt_ID_Venta.Text = nuevo.Buscar_info(random, "Num_venta", "ID_Venta", "Ventas")
+                    Else
+                        MessageBox.Show("Venta no fue registrado correctamente", "Guardado Venta", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    End If
 
                     'restar inventario
 
@@ -399,27 +400,27 @@
                     Dim descuentos, impuestos As Double
 
 
-                        subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
+                    subtotal = subtotal + (Txtcantidad.Text * Txtpreciounidad.Text)
 
-                        TxtSubTotal.Text = subtotal
+                    TxtSubTotal.Text = subtotal
 
-                        impuestos = (subtotal * 0.15)
-                        TxtImpuesto.Text = impuestos
+                    impuestos = (subtotal * 0.15)
+                    TxtImpuesto.Text = impuestos
 
-                        If Rd_tercera_si.Checked Then
+                    If Rd_tercera_si.Checked Then
 
-                            descuentos = (subtotal * 0.085)
-                            TxtDescuento.Text = descuentos
-                        Else
-                            descuentos = 0
-                            TxtDescuento.Text = descuentos
-                        End If
+                        descuentos = (subtotal * 0.085)
+                        TxtDescuento.Text = descuentos
+                    Else
+                        descuentos = 0
+                        TxtDescuento.Text = descuentos
+                    End If
 
-                        total = subtotal + impuestos - descuentos
-                        TxtTotal.Text = total
+                    total = subtotal + impuestos - descuentos
+                    TxtTotal.Text = total
 
-                    Catch Evento As Exception
-                        MsgBox(Evento.Message)
+                Catch Evento As Exception
+                    MsgBox(Evento.Message)
                     End Try
 
 

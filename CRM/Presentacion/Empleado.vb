@@ -5,7 +5,7 @@
     Public regrecargar As Integer = 0
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
-        Cmb_Buscar.Items.Add("Emp_Email")
+        Cmb_Buscar.Items.Add("Emp_Cargo")
         Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False
 
@@ -14,13 +14,7 @@
         ElseIf regrecargar = 1 Then
             BtnCargar.Visible = True
         End If
-        'If Bandera Then
-        '    BtnCerrar.Visible = True
-        '    BtnRegresar.Visible = False
-        'Else
-        '    BtnCerrar.Visible = False
-        '    BtnRegresar.Visible = True
-        'End If
+
         Mostrar()
         Limpiar()
         BtnIngresar.Visible = False
@@ -77,7 +71,6 @@
         TxtPasswordEmail.Text = ""
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
-        'Bandera = False
 
         BtnNuevo.Visible = True
         BtnModificar.Visible = False
@@ -132,18 +125,11 @@
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
-
-
-
             Restriccion.ConexionDB()
             Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomEmp.Text, "Emp_Nombre", "Empleado")
-
             If comprobar = True Then
                 MessageBox.Show("Nombre de Empleado ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-
-
-
                 Try
                     Dim TablaDatos As New eEmpleados
                     Dim Funcion As New fEmpleados
@@ -168,18 +154,14 @@
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
-
             End If
-
-
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
-        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And
-            TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
+        If TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
 
             Dim Resultado As DialogResult
             Resultado = MessageBox.Show("Desea Modificar los datos", "Actualizando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
@@ -256,7 +238,6 @@
                             Dim Funcion2 As New fUsuarios
                             TablaDatos2.pID_Usuario = IDU
                             If Funcion2.Eliminar(TablaDatos2) Then
-                                MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MessageBox.Show("ERROR en Eliminar Usuario", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
@@ -267,7 +248,6 @@
                             Dim Funcion2 As New fMarketing
                             TablaDatos2.pID_Marketing = IDM
                             If Funcion2.Eliminar(TablaDatos2) Then
-                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
@@ -306,15 +286,6 @@
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
-        'Limpiar()
-        'If Bandera Then
-        '    BtnCerrar.Visible = True
-        '    BtnRegresar.Visible = False
-        'Else
-        '    BtnCerrar.Visible = False
-        '    BtnRegresar.Visible = True
-        'End If
-        'BtnIngresar.Visible = True
         If BtnNuevo.Text = "Nuevo Empleado" Then
             Activar()
             BtnIngresar.Visible = True

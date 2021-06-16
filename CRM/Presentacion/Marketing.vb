@@ -5,6 +5,7 @@
     Public Bandera, prueba As New Boolean
     Public marca As String
 
+
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         marca = "nada"
 
@@ -14,7 +15,12 @@
             BtnRegresar.Visible = True
         End If
 
+
+        DTPFechaInicioProyecto.Value = Date.Now
+        DTPFechaFinalProyecto.Value = Date.Today.AddDays(1)
+
         nuevo.ConexionDB()
+
 
         nuevo.llenado_cb(Cb_ID_Cli, "Cli_NombreEmpresa", "Cliente")
         nuevo.llenado_cb(Cb_ID_prod, "Pro_Nombre", "Inventario")
@@ -26,6 +32,19 @@
         Btn_ingresarPT.Visible = False
     End Sub
 
+    Private Sub ValidarFechaFin()
+
+        If DTPFechaFinalProyecto.Value < DTPFechaInicioProyecto.Value Then
+            MessageBox.Show("Ingrese la fecha final de manera correcta", "Error fecha final",
+                           MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            DTPFechaFinalProyecto.Value = Date.Today.AddDays(1)
+        End If
+
+    End Sub
+
+    Private Sub DTPFechaFinalProyecto_ValueChanged(sender As Object, e As EventArgs) Handles DTPFechaFinalProyecto.ValueChanged
+        ValidarFechaFin()
+    End Sub
 
     Private Sub Mostrar()
         Try
@@ -228,8 +247,8 @@
         txt_idproy.Text = Dgvtp.SelectedCells.Item(1).Value
         TxtNom_proyec.Text = Dgvtp.SelectedCells.Item(4).Value
         TxtDescripProyecto.Text = Dgvtp.SelectedCells.Item(5).Value
-        DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString)
-        DTPFechaFinalProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(7).Value.ToString)
+        DTPFechaInicioProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(6).Value.ToString("dd-MM-yyyy"))
+        DTPFechaFinalProyecto.Value = DateTime.Parse(Dgvtp.SelectedCells.Item(7).Value.ToString("dd-MM-yyyy"))
     End Sub
 
     Private Sub Chk_Eliminar_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_Eliminar.CheckedChanged
@@ -648,6 +667,8 @@
         nuevo.ConexionDB()
         TxtIDProducto.Text = nuevo.Buscar_info(Cb_ID_prod.Text, "Pro_Nombre", "ID_Producto", "Inventario")
     End Sub
+
+
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
         'Btn_ingresar.Enabled = True

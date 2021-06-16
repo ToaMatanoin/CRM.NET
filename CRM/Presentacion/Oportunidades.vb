@@ -359,9 +359,6 @@
 
     Private Sub TxtPosibilidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtPosibilidad.KeyPress
         Restriccion.RestringirNumero(e)
-        If Char.IsPunctuation(e.KeyChar) Then
-            e.Handled = False
-        End If
     End Sub
 
     Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click

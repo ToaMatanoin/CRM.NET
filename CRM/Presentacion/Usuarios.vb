@@ -199,7 +199,6 @@
                             Dim Funcion2 As New fMarketing
                             TablaDatos2.pID_Marketing = IDM
                             If Funcion2.Eliminar(TablaDatos2) Then
-                                MessageBox.Show("El Marketing del producto correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
                                 MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If

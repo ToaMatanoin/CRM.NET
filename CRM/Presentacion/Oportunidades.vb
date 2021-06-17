@@ -154,11 +154,9 @@
 
             Restriccion.ConexionDB()
             Dim comprobar As Boolean = Restriccion.ExistenciaTxt(TxtNomCli.Text, "Nombre_CliPoten", "Oportunidades")
-
             If comprobar = True Then
                 MessageBox.Show("Nombre de Cliente potencial ya existe", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-
                 Try
                     Dim TablaDatos As New eOportunidades
                     Dim Funcion As New fOportunides
@@ -181,13 +179,7 @@
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
-
-
-
             End If
-
-
-
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -291,7 +283,6 @@
 
                         Dim TablaDatos As New eClientes
                         Dim Funcion As New fClientes
-
                         TablaDatos.pCli_Nombre = TxtNomCli.Text
                         TablaDatos.pCli_Telefono = TxtTelCli.Text
                         TablaDatos.pCli_Email = TxtEmailCli.Text
@@ -300,12 +291,7 @@
                         TablaDatos.pCli_EmailEmpresa = ""
                         TablaDatos.pRTN = 0
 
-
                         If Funcion.Insertar(TablaDatos) Then
-                            MessageBox.Show("Converción de cliente potencial a cliente, realizada correctamente", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            'Dim Resultado As DialogResult
-                            'Resultado = MessageBox.Show("Desea Eliminar los datos", "Eliminando Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
-                            'If Resultado = Windows.Forms.DialogResult.OK Then
                             Try
                                 For Each row As DataGridViewRow In Dgv_Listado.Rows
                                     Dim LineaMarca As Boolean = Convert.ToBoolean(row.Cells("Convertir").Value)
@@ -315,22 +301,18 @@
                                         Dim Funcion2 As New fOportunides
                                         TablaDatos2.pID_ClientePot = LlavePrimaria
                                         If Funcion2.Eliminar(TablaDatos2) Then
-                                            MessageBox.Show("Cliente Potencial fue eliminado correctamente", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                            MessageBox.Show("Converción de cliente potencial a cliente, realizada correctamente", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Chk_Convertir.Checked = False
-                                            'Else
-                                            'MessageBox.Show("Cancelado  por el Usuario", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                            'Chk_Convertir.Checked = False
+                                        Else
+                                            MessageBox.Show("ERROR en eliminar Cliente Potencial", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         End If
                                     End If
                                 Next
                             Catch Evento As Exception
                                 MsgBox(Evento.Message)
                             End Try
-                            'Else
-                            '    MessageBox.Show("Cancelado por el Usuario", "Cliente Potencial", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            'End If
                         Else
-                            MessageBox.Show("Converción de cliente potencial a cliente, FALLO intento de nuevo", "Cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Converción de cliente potencial a cliente, FALLO intentelo de nuevo", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         End If
                     Catch Evento As Exception
                         MsgBox(Evento.Message)

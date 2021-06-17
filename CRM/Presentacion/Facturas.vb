@@ -2,6 +2,10 @@
 
     Private TablaDatos As New DataTable
     Private Sub Facturas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Cmb_Buscar.Items.Add("Tp_Venta")
+        Cmb_Buscar.Items.Add("Ven_Fecha")
+        Cmb_Buscar.Text = "Tp_Venta"
+
         Mostrar()
     End Sub
 
@@ -28,6 +32,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
+            VistaDatos.RowFilter = Cmb_Buscar.Text & " like '" & Txt_Buscar.Text & "%'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()
@@ -41,5 +46,9 @@
     Private Sub OcultarColumna()
         Dgv_Listado.Columns(1).Visible = False
         Dgv_Listado.Columns(2).Visible = False
+    End Sub
+
+    Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged
+        Buscar()
     End Sub
 End Class

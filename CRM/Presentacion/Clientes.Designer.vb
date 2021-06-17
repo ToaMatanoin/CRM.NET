@@ -31,9 +31,6 @@ Partial Class Clientes
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
-        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
-        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
-        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnCargar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -61,6 +58,9 @@ Partial Class Clientes
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Btnregresar = New System.Windows.Forms.Button()
         Me.BtnMinimizate = New System.Windows.Forms.Button()
+        Me.Txt_Buscar = New System.Windows.Forms.TextBox()
+        Me.Cmb_Buscar = New System.Windows.Forms.ComboBox()
+        Me.Lb_Buscar = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -154,34 +154,6 @@ Partial Class Clientes
         Me.BtnModificar.Text = "Modificar Cliente"
         Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnModificar.UseVisualStyleBackColor = False
-        '
-        'Txt_Buscar
-        '
-        Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txt_Buscar.Location = New System.Drawing.Point(241, 33)
-        Me.Txt_Buscar.Multiline = True
-        Me.Txt_Buscar.Name = "Txt_Buscar"
-        Me.Txt_Buscar.Size = New System.Drawing.Size(287, 28)
-        Me.Txt_Buscar.TabIndex = 12
-        '
-        'Cmb_Buscar
-        '
-        Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Cmb_Buscar.FormattingEnabled = True
-        Me.Cmb_Buscar.Location = New System.Drawing.Point(87, 33)
-        Me.Cmb_Buscar.Name = "Cmb_Buscar"
-        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 28)
-        Me.Cmb_Buscar.TabIndex = 11
-        '
-        'Lb_Buscar
-        '
-        Me.Lb_Buscar.AutoSize = True
-        Me.Lb_Buscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lb_Buscar.Location = New System.Drawing.Point(24, 37)
-        Me.Lb_Buscar.Name = "Lb_Buscar"
-        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
-        Me.Lb_Buscar.TabIndex = 10
-        Me.Lb_Buscar.Text = "Buscar"
         '
         'GroupBox2
         '
@@ -530,6 +502,34 @@ Partial Class Clientes
         Me.BtnMinimizate.TabIndex = 34
         Me.BtnMinimizate.UseVisualStyleBackColor = False
         '
+        'Txt_Buscar
+        '
+        Me.Txt_Buscar.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txt_Buscar.Location = New System.Drawing.Point(241, 33)
+        Me.Txt_Buscar.Multiline = True
+        Me.Txt_Buscar.Name = "Txt_Buscar"
+        Me.Txt_Buscar.Size = New System.Drawing.Size(287, 28)
+        Me.Txt_Buscar.TabIndex = 12
+        '
+        'Cmb_Buscar
+        '
+        Me.Cmb_Buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Cmb_Buscar.FormattingEnabled = True
+        Me.Cmb_Buscar.Location = New System.Drawing.Point(87, 33)
+        Me.Cmb_Buscar.Name = "Cmb_Buscar"
+        Me.Cmb_Buscar.Size = New System.Drawing.Size(148, 28)
+        Me.Cmb_Buscar.TabIndex = 11
+        '
+        'Lb_Buscar
+        '
+        Me.Lb_Buscar.AutoSize = True
+        Me.Lb_Buscar.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lb_Buscar.Location = New System.Drawing.Point(24, 37)
+        Me.Lb_Buscar.Name = "Lb_Buscar"
+        Me.Lb_Buscar.Size = New System.Drawing.Size(57, 18)
+        Me.Lb_Buscar.TabIndex = 10
+        Me.Lb_Buscar.Text = "Buscar"
+        '
         'Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -590,9 +590,6 @@ Partial Class Clientes
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtIDCliente As TextBox
     Friend WithEvents Label9 As Label
-    Friend WithEvents Txt_Buscar As TextBox
-    Friend WithEvents Cmb_Buscar As ComboBox
-    Friend WithEvents Lb_Buscar As Label
     Friend WithEvents Dgv_Listado As DataGridView
     Friend WithEvents eliminar As DataGridViewCheckBoxColumn
     Friend WithEvents Chk_Eliminar As CheckBox
@@ -601,4 +598,7 @@ Partial Class Clientes
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Btnregresar As Button
     Friend WithEvents BtnMinimizate As Button
+    Friend WithEvents Lb_Buscar As Label
+    Friend WithEvents Cmb_Buscar As ComboBox
+    Friend WithEvents Txt_Buscar As TextBox
 End Class

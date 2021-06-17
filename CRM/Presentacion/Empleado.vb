@@ -2,17 +2,17 @@
     Private TablaDatos As New DataTable
     Public Restriccion As New Conexion
     Public Bandera As New Boolean
-    Public regrecargar As Integer = 0
+    Public regrecargar As Integer
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
         Cmb_Buscar.Items.Add("Emp_Cargo")
         Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False
 
-        If regrecargar = 0 Then
-            BtnCargar.Visible = False
-        ElseIf regrecargar = 1 Then
+        If regrecargar = 1 Then
             BtnCargar.Visible = True
+        Else
+            BtnCargar.Visible = False
         End If
 
         Mostrar()
@@ -226,41 +226,59 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Empleado").Value)
                         Dim TablaDatos As New eEmpleados
                         Dim Funcion As New fEmpleados
-                        Restriccion.ConexionDB()
-                        Dim IDU As String = ""
-                        IDU = Restriccion.Buscar_info(LlavePrimaria, "ID_Empleado", "ID_Usuario", "Usuarios")
-                        Dim IDM As String = ""
-                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Empleado", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Empleado = LlavePrimaria
 
+                        Restriccion.ConexionDB()
+                        Dim IDU, IDM, IDV, IDO As String
+                        Dim TM As String = ""
+                        Dim TV As String = ""
+                        Dim TOP As String = ""
+                        IDU = Restriccion.Buscar_info(LlavePrimaria, "ID_Empleado", "ID_Usuario", "Usuarios")
+
                         If IDU <> "" Then
-                            Dim TablaDatos2 As New eUsuarios
-                            Dim Funcion2 As New fUsuarios
-                            TablaDatos2.pID_Usuario = IDU
-                            If Funcion2.Eliminar(TablaDatos2) Then
-                            Else
-                                MessageBox.Show("ERROR en Eliminar Usuario", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            End If
-                        End If
+                            IDM = Restriccion.Buscar_info(IDU, "ID_Usuario", "ID_Marketing", "Marketing")
+                            IDV = Restriccion.Buscar_info(IDU, "ID_Usuario", "ID_Venta", "Ventas")
+                            IDO = Restriccion.Buscar_info(IDU, "ID_Usuario", "ID_Oport", "Oportunidades")
 
-                        If IDM <> "" Then
-                            Dim TablaDatos2 As New eMarketing
-                            Dim Funcion2 As New fMarketing
-                            TablaDatos2.pID_Marketing = IDM
-                            If Funcion2.Eliminar(TablaDatos2) Then
-                            Else
-                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            End If
-                        End If
+                            If IDM <> "" Or IDV <> "" Or IDO <> "" Then
 
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Empleado fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            Chk_Eliminar.Checked = False
+                                If IDO <> "" Then
+                                    TOP = "OPORTUNIDADES"
+                                End If
+                                If IDV <> "" Then
+                                    TV = "VENTAS"
+                                End If
+                                If IDM <> "" Then
+                                    TM = "MARKETING"
+                                End If
+
+                                MessageBox.Show("ERROR, No se puede Eliminar EMPLEADO porque su USUARIO esta siendo utilizado en " & TM & " " & TV & " " & TOP,
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                            Else
+                                Dim TablaDatos2 As New eUsuarios
+                                Dim Funcion2 As New fUsuarios
+                                TablaDatos2.pID_Usuario = IDU
+                                If Funcion2.Eliminar(TablaDatos2) Then
+                                Else
+                                    MessageBox.Show("ERROR en Eliminar Usuario", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                End If
+
+                                If Funcion.Eliminar(TablaDatos) Then
+                                    MessageBox.Show("EMPLEADO y su USUARIO fueron eliminados correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                Else
+                                    MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                End If
+                            End If
                         Else
-                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            If Funcion.Eliminar(TablaDatos) Then
+                                MessageBox.Show("Empleado fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            Else
+                                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
                         End If
+                        Chk_Eliminar.Checked = False
                     End If
-
                 Next
                 Call Mostrar()
                 Call Limpiar()
@@ -277,11 +295,14 @@
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
         If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
             regrecargar = 0
+            Usuarios.TxtIDEmp.Text = TxtIDEmp.Text
+            Usuarios.TxtNomEmpl.Text = TxtNomEmp.Text
+            Usuarios.TxtCargoEmp.Text = TxtCargo.Text
             Me.Close()
+            Usuarios.Visible = True
         Else
             MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-
     End Sub
 
 
@@ -291,6 +312,7 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
+            BtnCargar.Visible = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
             BtnIngresar.Visible = False
@@ -318,6 +340,7 @@
             regrecargar = 0
             Limpiar()
             Me.Close()
+            Usuarios.Visible = True
         Else
             Inicio.Visible = True
             Me.Close()

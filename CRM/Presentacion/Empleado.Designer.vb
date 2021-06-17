@@ -245,6 +245,7 @@ Partial Class Empleado
         Me.BtnCargar.Size = New System.Drawing.Size(96, 66)
         Me.BtnCargar.TabIndex = 15
         Me.BtnCargar.UseVisualStyleBackColor = False
+        Me.BtnCargar.Visible = False
         '
         'Chk_Eliminar
         '

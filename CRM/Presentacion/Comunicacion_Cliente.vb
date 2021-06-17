@@ -51,10 +51,10 @@
 
     Private Sub BtnCliente_Click(sender As Object, e As EventArgs) Handles BtnCliente.Click
         Clientes.regrecargar = 1
-        Clientes.ShowDialog()
+        Clientes.Show()
 
-        TxtCliCod.Text = Clientes.TxtIDCliente.Text
-        TxtCorreoCli.Text = Clientes.TxtEmailCli.Text
+
+        Clientes.regrecargar = 0
     End Sub
 
 End Class

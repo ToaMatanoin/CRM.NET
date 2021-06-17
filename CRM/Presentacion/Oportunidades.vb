@@ -174,6 +174,7 @@
                     End If
                     Mostrar()
                     Limpiar()
+                    Desactivar()
                     BtnIngresar.Visible = False
                     BtnNuevo.Text = "   Nuevo Cliente"
                 Catch Evento As Exception

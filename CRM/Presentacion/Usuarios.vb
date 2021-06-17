@@ -189,27 +189,40 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Usuario").Value)
                         Dim TablaDatos As New eUsuarios
                         Dim Funcion As New fUsuarios
-                        Restriccion.ConexionDB()
-                        Dim IDM As String = ""
-                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Usuario", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Usuario = LlavePrimaria
 
-                        If IDM <> "" Then
-                            Dim TablaDatos2 As New eMarketing
-                            Dim Funcion2 As New fMarketing
-                            TablaDatos2.pID_Marketing = IDM
-                            If Funcion2.Eliminar(TablaDatos2) Then
+                        Restriccion.ConexionDB()
+                        Dim IDM, IDV, IDO As String
+                        Dim TM As String = ""
+                        Dim TV As String = ""
+                        Dim TOP As String = ""
+                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Usuario", "ID_Marketing", "Marketing")
+                        IDV = Restriccion.Buscar_info(LlavePrimaria, "ID_Usuario", "ID_Venta", "Ventas")
+                        IDO = Restriccion.Buscar_info(LlavePrimaria, "ID_Usuario", "ID_Oport", "Oportunidades")
+
+                        If IDM <> "" Or IDV <> "" Or IDO <> "" Then
+
+                            If IDO <> "" Then
+                                TOP = "OPORTUNIDADES"
+                            End If
+                            If IDV <> "" Then
+                                TV = "VENTAS"
+                            End If
+                            If IDM <> "" Then
+                                TM = "MARKETING"
+                            End If
+
+                            MessageBox.Show("ERROR, No se puede Eliminar USUARIO porque sus datos estan siendo utilizadas en " & TM & " " & TV & " " & TOP,
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                        Else
+                            If Funcion.Eliminar(TablaDatos) Then
+                                MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Else
-                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
                         End If
-
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Usuario fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            Chk_Eliminar.Checked = False
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
+                        Chk_Eliminar.Checked = False
                     End If
                 Next
                 Call Mostrar()
@@ -248,11 +261,9 @@
     End Sub
     Private Sub BtnEmpleado_Click(sender As Object, e As EventArgs) Handles BtnEmpleado.Click
         Empleado.regrecargar = 1
-        Empleado.ShowDialog()
-
-        TxtIDEmp.Text = Empleado.TxtIDEmp.Text
-        TxtNomEmpl.Text = Empleado.TxtNomEmp.Text
-        TxtCargoEmp.Text = Empleado.TxtCargo.Text
+        Empleado.Show()
+        Me.Hide()
+        Empleado.regrecargar = 0
     End Sub
 
     Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click

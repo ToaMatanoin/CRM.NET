@@ -213,27 +213,32 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Producto").Value)
                         Dim TablaDatos As New eInventario
                         Dim Funcion As New fInventario
-                        Restriccion.ConexionDB()
-                        Dim IDM As String = ""
-                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Producto", "ID_Marketing", "Marketing")
                         TablaDatos.pID_Producto = LlavePrimaria
 
-                        If IDM <> "" Then
-                            Dim TablaDatos2 As New eMarketing
-                            Dim Funcion2 As New fMarketing
-                            TablaDatos2.pID_Marketing = IDM
-                            If Funcion2.Eliminar(TablaDatos2) Then
+                        Restriccion.ConexionDB()
+                        Dim IDM, IDV As String
+                        IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Producto", "ID_Marketing", "Marketing")
+                        IDV = Restriccion.Buscar_info(LlavePrimaria, "ID_Producto", "ID_Venta", "Ventas")
+                        If IDM <> "" Or IDV <> "" Then
+                            If IDM <> "" And IDV <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar PRODUCTO porque sus datos estan siendo utilizadas en MARKETING y VENTAS",
+                                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ElseIf IDV <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar PRODUCTO porque sus datos estan siendo utilizadas en VENTAS",
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ElseIf IDM <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar PRODUCTO porque sus datos estan siendo utilizadas en MARKETING",
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        Else
+                            If Funcion.Eliminar(TablaDatos) Then
+                                MessageBox.Show("Producto fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                             Else
-                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
                         End If
-
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Producto fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            Chk_Eliminar.Checked = False
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
+                        Chk_Eliminar.Checked = False
                     End If
                 Next
                 Call Mostrar()

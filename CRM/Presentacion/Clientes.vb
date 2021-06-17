@@ -9,10 +9,10 @@
         Cmb_Buscar.Items.Add("Cli_NombreEmpresa")
         Cmb_Buscar.Text = "Cli_Nombre"
 
-        If regrecargar = 0 Then
-            BtnCargar.Visible = False
-        ElseIf regrecargar = 1 Then
+        If regrecargar = 1 Then
             BtnCargar.Visible = True
+        Else
+            BtnCargar.Visible = False
         End If
         'If Bandera Then
         '    BtnCerrar.Visible = True
@@ -242,27 +242,32 @@
                         Dim LlavePrimaria As Integer = Convert.ToInt32(row.Cells("ID_Cliente").Value)
                         Dim TablaDatos As New eClientes
                         Dim Funcion As New fClientes
+                        TablaDatos.pID_Cliente = LlavePrimaria
 
                         Restriccion.ConexionDB()
-                        Dim IDM As String = ""
+                        Dim IDM, IDV As String
                         IDM = Restriccion.Buscar_info(LlavePrimaria, "ID_Cliente", "ID_Marketing", "Marketing")
-                        TablaDatos.pID_Cliente = LlavePrimaria
-                        If IDM <> "" Then
-                            Dim TablaDatos2 As New eMarketing
-                            Dim Funcion2 As New fMarketing
-                            TablaDatos2.pID_Marketing = IDM
-                            If Funcion2.Eliminar(TablaDatos2) Then
+                        IDV = Restriccion.Buscar_info(LlavePrimaria, "ID_Cliente", "ID_Venta", "Ventas")
+                        If IDM <> "" Or IDV <> "" Then
+                            If IDM <> "" And IDV <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar CLIENTE porque sus datos estan siendo utilizadas en MARKETING y VENTAS",
+                                                "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ElseIf IDV <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar CLIENTE porque sus datos estan siendo utilizadas en VENTAS",
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            ElseIf IDM <> "" Then
+                                MessageBox.Show("ERROR, No se puede Eliminar CLIENTE porque sus datos estan siendo utilizadas en MARKETING",
+                                            "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            End If
+                        Else
+                            If Funcion.Eliminar(TablaDatos) Then
+                                MessageBox.Show("Cliente fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                             Else
-                                MessageBox.Show("ERROR en Eliminar Marketing", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                                MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             End If
                         End If
-
-                        If Funcion.Eliminar(TablaDatos) Then
-                            MessageBox.Show("Cliente fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                            Chk_Eliminar.Checked = False
-                        Else
-                            MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        End If
+                        Chk_Eliminar.Checked = False
                     End If
                 Next
                 Call Mostrar()
@@ -283,6 +288,8 @@
         If TxtIDCliente.Text <> "" And TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtNomEmpresa.Text <> "" And
             TxtTelEmpresa.Text <> "" And TxtEmailEmpresa.Text <> "" And TxtRTN.Text <> "" Then
             regrecargar = 0
+            Comunicacion_Cliente.TxtCliCod.Text = TxtIDCliente.Text
+            Comunicacion_Cliente.TxtCorreoCli.Text = TxtEmailCli.Text
             Me.Close()
         Else
             MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -295,6 +302,7 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
+            BtnCargar.Visible = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
             BtnIngresar.Visible = False
@@ -330,7 +338,7 @@
         End If
     End Sub
 
-    Private Sub TxtNomCli_TextChanged(sender As Object, e As EventArgs) Handles TxtNomCli.TextChanged
-
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

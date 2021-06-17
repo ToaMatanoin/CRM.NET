@@ -43,14 +43,14 @@ Partial Class Marketing
         Me.Chk_Eliminar = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.BtnEliminar = New System.Windows.Forms.Button()
-        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnNuevo = New System.Windows.Forms.Button()
         Me.BtnIngresar = New System.Windows.Forms.Button()
+        Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnRegresar = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Rb_tarea = New System.Windows.Forms.RadioButton()
         Me.txt_idproy = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Rb_tarea = New System.Windows.Forms.RadioButton()
         Me.Rb_Proyecto = New System.Windows.Forms.RadioButton()
         Me.DTPFechaFinalProyecto = New System.Windows.Forms.DateTimePicker()
         Me.DTPFechaInicioProyecto = New System.Windows.Forms.DateTimePicker()
@@ -66,8 +66,8 @@ Partial Class Marketing
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Btn_EliminarPT = New System.Windows.Forms.Button()
         Me.Btn_ingresarPT = New System.Windows.Forms.Button()
-        Me.Btn_ModificarPT = New System.Windows.Forms.Button()
         Me.Btn_NuevoPT = New System.Windows.Forms.Button()
+        Me.Btn_ModificarPT = New System.Windows.Forms.Button()
         Me.BtnMinimizate = New System.Windows.Forms.Button()
         Me.Chb_eliminarPT = New System.Windows.Forms.CheckBox()
         Me.Dgvtp = New System.Windows.Forms.DataGridView()
@@ -110,7 +110,7 @@ Partial Class Marketing
         Me.TxtIDProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDProducto.Enabled = False
         Me.TxtIDProducto.Location = New System.Drawing.Point(109, 91)
-        Me.TxtIDProducto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtIDProducto.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtIDProducto.Name = "TxtIDProducto"
         Me.TxtIDProducto.Size = New System.Drawing.Size(22, 19)
         Me.TxtIDProducto.TabIndex = 19
@@ -121,7 +121,7 @@ Partial Class Marketing
         Me.TxtIDCliente.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtIDCliente.Enabled = False
         Me.TxtIDCliente.Location = New System.Drawing.Point(109, 55)
-        Me.TxtIDCliente.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtIDCliente.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtIDCliente.Name = "TxtIDCliente"
         Me.TxtIDCliente.Size = New System.Drawing.Size(22, 19)
         Me.TxtIDCliente.TabIndex = 18
@@ -132,7 +132,7 @@ Partial Class Marketing
         Me.TxtID_Mark.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TxtID_Mark.Enabled = False
         Me.TxtID_Mark.Location = New System.Drawing.Point(162, 23)
-        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TxtID_Mark.Margin = New System.Windows.Forms.Padding(2)
         Me.TxtID_Mark.Name = "TxtID_Mark"
         Me.TxtID_Mark.Size = New System.Drawing.Size(69, 19)
         Me.TxtID_Mark.TabIndex = 17
@@ -152,7 +152,7 @@ Partial Class Marketing
         Me.Txt_Estrategia.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.Txt_Estrategia.Enabled = False
         Me.Txt_Estrategia.Location = New System.Drawing.Point(109, 123)
-        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Txt_Estrategia.Margin = New System.Windows.Forms.Padding(2)
         Me.Txt_Estrategia.MaxLength = 50
         Me.Txt_Estrategia.Name = "Txt_Estrategia"
         Me.Txt_Estrategia.Size = New System.Drawing.Size(122, 19)
@@ -164,7 +164,7 @@ Partial Class Marketing
         Me.Cb_ID_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_prod.FormattingEnabled = True
         Me.Cb_ID_prod.Location = New System.Drawing.Point(109, 87)
-        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_prod.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_prod.Name = "Cb_ID_prod"
         Me.Cb_ID_prod.Size = New System.Drawing.Size(122, 28)
         Me.Cb_ID_prod.TabIndex = 14
@@ -175,7 +175,7 @@ Partial Class Marketing
         Me.Cb_ID_Cli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Cb_ID_Cli.FormattingEnabled = True
         Me.Cb_ID_Cli.Location = New System.Drawing.Point(109, 52)
-        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Cb_ID_Cli.Margin = New System.Windows.Forms.Padding(2)
         Me.Cb_ID_Cli.Name = "Cb_ID_Cli"
         Me.Cb_ID_Cli.Size = New System.Drawing.Size(122, 28)
         Me.Cb_ID_Cli.TabIndex = 13
@@ -217,9 +217,9 @@ Partial Class Marketing
         Me.Label4.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(6, 91)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 18)
+        Me.Label4.Size = New System.Drawing.Size(75, 18)
         Me.Label4.TabIndex = 4
-        Me.Label4.Text = "ID Producto:"
+        Me.Label4.Text = "Producto:"
         '
         'Label3
         '
@@ -227,9 +227,9 @@ Partial Class Marketing
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(6, 59)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(80, 18)
+        Me.Label3.Size = New System.Drawing.Size(61, 18)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "ID Cliente:"
+        Me.Label3.Text = "Cliente:"
         '
         'Chk_Eliminar
         '
@@ -237,7 +237,7 @@ Partial Class Marketing
         Me.Chk_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chk_Eliminar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chk_Eliminar.Location = New System.Drawing.Point(256, 187)
-        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Chk_Eliminar.Margin = New System.Windows.Forms.Padding(2)
         Me.Chk_Eliminar.Name = "Chk_Eliminar"
         Me.Chk_Eliminar.Size = New System.Drawing.Size(132, 20)
         Me.Chk_Eliminar.TabIndex = 14
@@ -275,24 +275,6 @@ Partial Class Marketing
         Me.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEliminar.UseVisualStyleBackColor = False
         '
-        'BtnModificar
-        '
-        Me.BtnModificar.BackColor = System.Drawing.Color.Silver
-        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnModificar.FlatAppearance.BorderSize = 0
-        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
-        Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnModificar.Location = New System.Drawing.Point(402, 15)
-        Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(156, 61)
-        Me.BtnModificar.TabIndex = 2
-        Me.BtnModificar.Text = "Modificar Marketing"
-        Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnModificar.UseVisualStyleBackColor = False
-        '
         'BtnNuevo
         '
         Me.BtnNuevo.BackColor = System.Drawing.Color.Silver
@@ -328,6 +310,24 @@ Partial Class Marketing
         Me.BtnIngresar.Text = "Ingresar Marketing"
         Me.BtnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnIngresar.UseVisualStyleBackColor = False
+        '
+        'BtnModificar
+        '
+        Me.BtnModificar.BackColor = System.Drawing.Color.Silver
+        Me.BtnModificar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnModificar.FlatAppearance.BorderSize = 0
+        Me.BtnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnModificar.Font = New System.Drawing.Font("Arial", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnModificar.Image = CType(resources.GetObject("BtnModificar.Image"), System.Drawing.Image)
+        Me.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnModificar.Location = New System.Drawing.Point(402, 15)
+        Me.BtnModificar.Name = "BtnModificar"
+        Me.BtnModificar.Size = New System.Drawing.Size(156, 61)
+        Me.BtnModificar.TabIndex = 2
+        Me.BtnModificar.Text = "Modificar Marketing"
+        Me.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BtnModificar.UseVisualStyleBackColor = False
         '
         'BtnRegresar
         '
@@ -365,12 +365,25 @@ Partial Class Marketing
         Me.GroupBox5.TabIndex = 11
         Me.GroupBox5.TabStop = False
         '
+        'Rb_tarea
+        '
+        Me.Rb_tarea.AutoSize = True
+        Me.Rb_tarea.Enabled = False
+        Me.Rb_tarea.Location = New System.Drawing.Point(329, 16)
+        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2)
+        Me.Rb_tarea.Name = "Rb_tarea"
+        Me.Rb_tarea.Size = New System.Drawing.Size(61, 24)
+        Me.Rb_tarea.TabIndex = 1
+        Me.Rb_tarea.TabStop = True
+        Me.Rb_tarea.Text = "Tarea"
+        Me.Rb_tarea.UseVisualStyleBackColor = True
+        '
         'txt_idproy
         '
         Me.txt_idproy.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_idproy.Enabled = False
         Me.txt_idproy.Location = New System.Drawing.Point(9, 17)
-        Me.txt_idproy.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txt_idproy.Margin = New System.Windows.Forms.Padding(2)
         Me.txt_idproy.Name = "txt_idproy"
         Me.txt_idproy.Size = New System.Drawing.Size(76, 19)
         Me.txt_idproy.TabIndex = 12
@@ -379,32 +392,19 @@ Partial Class Marketing
         '
         Me.GroupBox4.Controls.Add(Me.Rb_Proyecto)
         Me.GroupBox4.Location = New System.Drawing.Point(105, 10)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Size = New System.Drawing.Size(197, 34)
         Me.GroupBox4.TabIndex = 11
         Me.GroupBox4.TabStop = False
-        '
-        'Rb_tarea
-        '
-        Me.Rb_tarea.AutoSize = True
-        Me.Rb_tarea.Enabled = False
-        Me.Rb_tarea.Location = New System.Drawing.Point(329, 16)
-        Me.Rb_tarea.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Rb_tarea.Name = "Rb_tarea"
-        Me.Rb_tarea.Size = New System.Drawing.Size(61, 24)
-        Me.Rb_tarea.TabIndex = 1
-        Me.Rb_tarea.TabStop = True
-        Me.Rb_tarea.Text = "Tarea"
-        Me.Rb_tarea.UseVisualStyleBackColor = True
         '
         'Rb_Proyecto
         '
         Me.Rb_Proyecto.AutoSize = True
         Me.Rb_Proyecto.Enabled = False
         Me.Rb_Proyecto.Location = New System.Drawing.Point(77, 6)
-        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Rb_Proyecto.Margin = New System.Windows.Forms.Padding(2)
         Me.Rb_Proyecto.Name = "Rb_Proyecto"
         Me.Rb_Proyecto.Size = New System.Drawing.Size(82, 24)
         Me.Rb_Proyecto.TabIndex = 0
@@ -601,24 +601,6 @@ Partial Class Marketing
         Me.Btn_ingresarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Btn_ingresarPT.UseVisualStyleBackColor = False
         '
-        'Btn_ModificarPT
-        '
-        Me.Btn_ModificarPT.BackColor = System.Drawing.Color.Silver
-        Me.Btn_ModificarPT.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btn_ModificarPT.FlatAppearance.BorderSize = 0
-        Me.Btn_ModificarPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
-        Me.Btn_ModificarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btn_ModificarPT.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Btn_ModificarPT.Image = CType(resources.GetObject("Btn_ModificarPT.Image"), System.Drawing.Image)
-        Me.Btn_ModificarPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Btn_ModificarPT.Location = New System.Drawing.Point(268, 16)
-        Me.Btn_ModificarPT.Name = "Btn_ModificarPT"
-        Me.Btn_ModificarPT.Size = New System.Drawing.Size(121, 61)
-        Me.Btn_ModificarPT.TabIndex = 2
-        Me.Btn_ModificarPT.Text = "Modificar "
-        Me.Btn_ModificarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Btn_ModificarPT.UseVisualStyleBackColor = False
-        '
         'Btn_NuevoPT
         '
         Me.Btn_NuevoPT.BackColor = System.Drawing.Color.Silver
@@ -637,6 +619,24 @@ Partial Class Marketing
         Me.Btn_NuevoPT.Text = "Nuevo"
         Me.Btn_NuevoPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Btn_NuevoPT.UseVisualStyleBackColor = False
+        '
+        'Btn_ModificarPT
+        '
+        Me.Btn_ModificarPT.BackColor = System.Drawing.Color.Silver
+        Me.Btn_ModificarPT.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btn_ModificarPT.FlatAppearance.BorderSize = 0
+        Me.Btn_ModificarPT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGray
+        Me.Btn_ModificarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_ModificarPT.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_ModificarPT.Image = CType(resources.GetObject("Btn_ModificarPT.Image"), System.Drawing.Image)
+        Me.Btn_ModificarPT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btn_ModificarPT.Location = New System.Drawing.Point(268, 16)
+        Me.Btn_ModificarPT.Name = "Btn_ModificarPT"
+        Me.Btn_ModificarPT.Size = New System.Drawing.Size(121, 61)
+        Me.Btn_ModificarPT.TabIndex = 2
+        Me.Btn_ModificarPT.Text = "Modificar "
+        Me.Btn_ModificarPT.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Btn_ModificarPT.UseVisualStyleBackColor = False
         '
         'BtnMinimizate
         '
@@ -659,7 +659,7 @@ Partial Class Marketing
         Me.Chb_eliminarPT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Chb_eliminarPT.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chb_eliminarPT.Location = New System.Drawing.Point(1287, 187)
-        Me.Chb_eliminarPT.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Chb_eliminarPT.Margin = New System.Windows.Forms.Padding(2)
         Me.Chb_eliminarPT.Name = "Chb_eliminarPT"
         Me.Chb_eliminarPT.Size = New System.Drawing.Size(71, 20)
         Me.Chb_eliminarPT.TabIndex = 36

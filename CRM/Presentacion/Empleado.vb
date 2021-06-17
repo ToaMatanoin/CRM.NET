@@ -312,7 +312,6 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
-            BtnCargar.Visible = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
             BtnIngresar.Visible = False
@@ -339,6 +338,9 @@
         If BtnCargar.Visible Then
             regrecargar = 0
             Limpiar()
+            Usuarios.TxtIDEmp.Text = TxtIDEmp.Text
+            Usuarios.TxtNomEmpl.Text = TxtNomEmp.Text
+            Usuarios.TxtCargoEmp.Text = TxtCargo.Text
             Me.Close()
             Usuarios.Visible = True
         Else

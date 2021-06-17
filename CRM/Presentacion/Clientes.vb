@@ -302,7 +302,6 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
-            BtnCargar.Visible = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
             BtnIngresar.Visible = False
@@ -331,6 +330,8 @@
         If BtnCargar.Visible Then
             regrecargar = 0
             Limpiar()
+            Comunicacion_Cliente.TxtCliCod.Text = TxtIDCliente.Text
+            Comunicacion_Cliente.TxtCorreoCli.Text = TxtEmailCli.Text
             Me.Close()
         Else
             Inicio.Visible = True

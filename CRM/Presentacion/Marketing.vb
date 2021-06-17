@@ -108,7 +108,9 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablatar.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            'VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
+            If TxtID_Mark.Text <> "" Then
+                VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
+            End If
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnatar()
@@ -125,7 +127,9 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(tablaproy.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            'VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
+            If TxtID_Mark.Text <> "" Then
+                VistaDatos.RowFilter = "ID_Marketing = '" & TxtID_Mark.Text & "'"
+            End If
             If VistaDatos.Count <> 0 Then
                 Dgvtp.DataSource = VistaDatos
                 OcultarColumnapr()
@@ -199,6 +203,8 @@
         TxtDescripProyecto.Text = ""
         TxtNom_proyec.Text = ""
 
+
+
         Btn_NuevoPT.Visible = True
         Btn_ModificarPT.Visible = False
         Btn_EliminarPT.Visible = False
@@ -228,6 +234,7 @@
     Private Sub DesactivarPT()
         TxtDescripProyecto.Enabled = False
         TxtNom_proyec.Enabled = False
+
         DTPFechaInicioProyecto.Enabled = False
         DTPFechaFinalProyecto.Enabled = False
     End Sub
@@ -301,10 +308,10 @@
             Else
                 BtnModificar.Visible = True
                 ActivarM()
+                Rb_Proyecto.Enabled = True
+                Rb_tarea.Enabled = True
             End If
         End If
-        Rb_Proyecto.Enabled = True
-        Rb_tarea.Enabled = True
         BtnIngresar.Visible = False
     End Sub
 
@@ -433,9 +440,12 @@
                         Limpiar()
                         Btn_ingresarPT.Visible = False
                         DesactivarPT()
+                        DesactivarM()
                         Btn_NuevoPT.Text = "Nuevo"
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -465,9 +475,12 @@
                         Limpiar()
                         Btn_ingresarPT.Visible = False
                         DesactivarPT()
+                        DesactivarM()
                         Btn_NuevoPT.Text = "Nuevo"
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -522,8 +535,11 @@
                         Limpiar()
                         LimpiarPT()
                         DesactivarPT()
+                        DesactivarM()
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -556,8 +572,11 @@
                         Limpiar()
                         LimpiarPT()
                         DesactivarPT()
+                        DesactivarM()
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -594,18 +613,21 @@
                                 TablaDatos.pID_Proyecto = LlavePrimaria
                                 If Funcion.Eliminar(TablaDatos) Then
                                     MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                                    Chb_eliminarPT.Checked = False
                                 Else
                                     MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 End If
                             End If
+                            Chb_eliminarPT.Checked = False
                         Next
                         Call Mostrar()
                         Call Limpiar()
                         DesactivarPT()
+                        DesactivarM()
                         LimpiarPT()
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -630,17 +652,22 @@
                                 TablaDatos.pID_Tarea = LlavePrimaria
                                 If Funcion.Eliminar(TablaDatos) Then
                                     MessageBox.Show("Estrategia fue eliminado correctamente", "Eliminando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
                                 Else
                                     MessageBox.Show("Cancelado por el Usuario", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 End If
                             End If
+                            Chb_eliminarPT.Checked = False
                         Next
                         Call Mostrar()
                         Call Limpiar()
                         DesactivarPT()
+                        DesactivarM()
                         LimpiarPT()
                         Btn_NuevoPT.Enabled = False
                         Chb_eliminarPT.Enabled = False
+                        Rb_Proyecto.Enabled = False
+                        Rb_tarea.Enabled = False
                     Catch Evento As Exception
                         MsgBox(Evento.Message)
                     End Try
@@ -668,7 +695,16 @@
         TxtIDProducto.Text = nuevo.Buscar_info(Cb_ID_prod.Text, "Pro_Nombre", "ID_Producto", "Inventario")
     End Sub
 
+    Private Sub TxtID_Mark_TextChanged(sender As Object, e As EventArgs) Handles TxtID_Mark.TextChanged
+        If marca = "Proyecto" Then
+            Buscarproy()
+        End If
 
+        If marca = "Tarea" Then
+            Buscartar()
+        End If
+
+    End Sub
 
     Private Sub Rb_tarea_CheckedChanged(sender As Object, e As EventArgs) Handles Rb_tarea.CheckedChanged
         'Btn_ingresar.Enabled = True
@@ -685,9 +721,10 @@
             BtnIngresar.Visible = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
-            LimpiarPT()
             Btn_NuevoPT.Enabled = False
             Chb_eliminarPT.Enabled = False
+            Rb_Proyecto.Enabled = False
+            Rb_tarea.Enabled = False
         ElseIf BtnNuevo.Text = "Cancelar" Then
             DesactivarM()
             BtnIngresar.Visible = False

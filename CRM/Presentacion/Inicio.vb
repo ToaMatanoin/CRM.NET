@@ -74,4 +74,9 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
 
+    Private Sub Inicio_VisibleChanged(sender As Object, e As EventArgs) Handles MyBase.VisibleChanged
+        Dim Dasboard As New Dashboard
+        Dasboard.ProdPreferidos()
+        Dasboard.dashboard()
+    End Sub
 End Class

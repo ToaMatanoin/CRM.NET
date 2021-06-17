@@ -43,7 +43,7 @@
             Dim ConjuntoDatos As New DataSet
             ConjuntoDatos.Tables.Add(TablaDatos.Copy)
             Dim VistaDatos As New DataView(ConjuntoDatos.Tables(0))
-            VistaDatos.RowFilter = Cmb_Buscar.Text & " like '" & Txt_Buscar.Text & "%'"
+            VistaDatos.RowFilter = "ID_Usuario = '" & IniciarSesion.IDUSU & "' And " & Cmb_Buscar.Text & " like '" & Txt_Buscar.Text & "%'"
             If VistaDatos.Count <> 0 Then
                 Dgv_Listado.DataSource = VistaDatos
                 OcultarColumna()

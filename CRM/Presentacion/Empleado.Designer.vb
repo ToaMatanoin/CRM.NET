@@ -99,7 +99,7 @@ Partial Class Empleado
         Me.TxtPasswordEmail.Name = "TxtPasswordEmail"
         Me.TxtPasswordEmail.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TxtPasswordEmail.Size = New System.Drawing.Size(213, 19)
-        Me.TxtPasswordEmail.TabIndex = 13
+        Me.TxtPasswordEmail.TabIndex = 4
         '
         'Label1
         '
@@ -119,7 +119,7 @@ Partial Class Empleado
         Me.TxtCargo.MaxLength = 20
         Me.TxtCargo.Name = "TxtCargo"
         Me.TxtCargo.Size = New System.Drawing.Size(213, 19)
-        Me.TxtCargo.TabIndex = 11
+        Me.TxtCargo.TabIndex = 6
         '
         'Label6
         '
@@ -140,7 +140,7 @@ Partial Class Empleado
         Me.TxtDireccion.Multiline = True
         Me.TxtDireccion.Name = "TxtDireccion"
         Me.TxtDireccion.Size = New System.Drawing.Size(288, 99)
-        Me.TxtDireccion.TabIndex = 9
+        Me.TxtDireccion.TabIndex = 5
         '
         'Label5
         '
@@ -179,7 +179,7 @@ Partial Class Empleado
         Me.TxtEmailEmp.MaxLength = 45
         Me.TxtEmailEmp.Name = "TxtEmailEmp"
         Me.TxtEmailEmp.Size = New System.Drawing.Size(213, 19)
-        Me.TxtEmailEmp.TabIndex = 5
+        Me.TxtEmailEmp.TabIndex = 3
         '
         'Label4
         '
@@ -199,7 +199,7 @@ Partial Class Empleado
         Me.TxtTelEmp.MaxLength = 8
         Me.TxtTelEmp.Name = "TxtTelEmp"
         Me.TxtTelEmp.Size = New System.Drawing.Size(213, 19)
-        Me.TxtTelEmp.TabIndex = 3
+        Me.TxtTelEmp.TabIndex = 2
         '
         'Label3
         '

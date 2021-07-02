@@ -3,27 +3,13 @@
     Private TablaDatos As New DataTable
     Private Restriccion As New Conexion
     Public Bandera As New Boolean
-    Public regrecargar As Integer = 0
     Private Sub Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Cli_Nombre")
         Cmb_Buscar.Items.Add("Cli_NombreEmpresa")
         Cmb_Buscar.Text = "Cli_Nombre"
-
-        If regrecargar = 1 Then
-            BtnCargar.Visible = True
-        Else
-            BtnCargar.Visible = False
-        End If
-        'If Bandera Then
-        '    BtnCerrar.Visible = True
-        '    BtnRegresar.Visible = False
-        'Else
-        '    BtnCerrar.Visible = False
-        '    BtnRegresar.Visible = True
-        'End If
         Mostrar()
         Limpiar()
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub Mostrar()
@@ -78,10 +64,9 @@
         TxtTelEmpresa.Text = ""
         TxtEmailEmpresa.Text = ""
         TxtRTN.Text = ""
-        'Bandera = False
-        BtnNuevo.Visible = True
-        BtnModificar.Visible = False
-        BtnEliminar.Visible = False
+        BtnNuevo.Enabled = True
+        BtnModificar.Enabled = False
+        BtnEliminar.Enabled = False
     End Sub
 
     Private Sub Activar()
@@ -106,18 +91,15 @@
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
-        If Bandera Then
-            BtnModificar.Visible = False
+        BtnModificar.Enabled = False
+        If Chk_Eliminar.Checked Then
+            'no mostrar modificar con el chek eliminar activo'
         Else
-            If Chk_Eliminar.Checked Then
-                'no mostrar modificar con el chek eliminar activo'
-            Else
-                BtnModificar.Visible = True
-                Activar()
-            End If
-
+            BtnModificar.Enabled = True
+            Activar()
         End If
-        BtnIngresar.Visible = False
+
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -159,15 +141,13 @@
                     End If
                     Mostrar()
                     Limpiar()
-                    BtnIngresar.Visible = False
+                    BtnIngresar.Enabled = False
                     Desactivar()
                     BtnNuevo.Text = "Nuevo Cliente"
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
                 End Try
             End If
-
-
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
@@ -218,9 +198,9 @@
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
-            BtnEliminar.Visible = True
-            BtnModificar.Visible = False
-            BtnNuevo.Visible = False
+            BtnEliminar.Enabled = True
+            BtnModificar.Enabled = False
+            BtnNuevo.Enabled = False
         End If
     End Sub
 
@@ -284,27 +264,15 @@
 
     End Sub
 
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
-        If TxtIDCliente.Text <> "" And TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtNomEmpresa.Text <> "" And
-            TxtTelEmpresa.Text <> "" And TxtEmailEmpresa.Text <> "" And TxtRTN.Text <> "" Then
-            regrecargar = 0
-            Comunicacion_Cliente.TxtCliCod.Text = TxtIDCliente.Text
-            Comunicacion_Cliente.TxtCorreoCli.Text = TxtEmailCli.Text
-            Me.Close()
-        Else
-            MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         If BtnNuevo.Text = "Nuevo Cliente" Then
             Activar()
-            BtnIngresar.Visible = True
+            BtnIngresar.Enabled = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
-            BtnIngresar.Visible = False
+            BtnIngresar.Enabled = False
             Limpiar()
             BtnNuevo.Text = "Nuevo Cliente"
         End If
@@ -326,20 +294,4 @@
         Restriccion.RestringirNumero(e)
     End Sub
 
-    Private Sub Btnregresar_Click_1(sender As Object, e As EventArgs) Handles Btnregresar.Click
-        If BtnCargar.Visible Then
-            regrecargar = 0
-            Limpiar()
-            Comunicacion_Cliente.TxtCliCod.Text = TxtIDCliente.Text
-            Comunicacion_Cliente.TxtCorreoCli.Text = TxtEmailCli.Text
-            Me.Close()
-        Else
-            Inicio.Visible = True
-            Me.Close()
-        End If
-    End Sub
-
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
 End Class

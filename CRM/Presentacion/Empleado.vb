@@ -1,23 +1,15 @@
 ﻿Public Class Empleado
     Private TablaDatos As New DataTable
     Public Restriccion As New Conexion
-    Public Bandera As New Boolean
-    Public regrecargar As Integer
     Private Sub Empleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cmb_Buscar.Items.Add("Emp_Nombre")
         Cmb_Buscar.Items.Add("Emp_Cargo")
         Cmb_Buscar.Text = "Emp_Nombre"
         TxtIDEmp.Enabled = False
 
-        If regrecargar = 1 Then
-            BtnCargar.Visible = True
-        Else
-            BtnCargar.Visible = False
-        End If
-
         Mostrar()
         Limpiar()
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
     Private Sub Mostrar()
         Try
@@ -72,9 +64,9 @@
         TxtDireccion.Text = ""
         TxtCargo.Text = ""
 
-        BtnNuevo.Visible = True
-        BtnModificar.Visible = False
-        BtnEliminar.Visible = False
+        BtnNuevo.Enabled = True
+        BtnModificar.Enabled = False
+        BtnEliminar.Enabled = False
     End Sub
 
     Private Sub Activar()
@@ -98,18 +90,16 @@
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
 
-        If Bandera Then
-            BtnModificar.Visible = False
+        BtnModificar.Enabled = False
+
+        If Chk_Eliminar.Checked Then
+            'no mostrar modificar con el chek eliminar activo'
         Else
-            If Chk_Eliminar.Checked Then
-                'no mostrar modificar con el chek eliminar activo'
-            Else
-                BtnModificar.Visible = True
-                Activar()
-            End If
+            BtnModificar.Enabled = True
+            Activar()
         End If
 
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -142,13 +132,13 @@
 
                     If Funcion.Insertar(TablaDatos) Then
                         MessageBox.Show("Empleado fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        BtnIngresar.Visible = False
+                        BtnIngresar.Enabled = False
                     Else
                         MessageBox.Show("Empleado no fue registrado correctamente", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
                     Mostrar()
                     Limpiar()
-                    BtnIngresar.Visible = False
+                    BtnIngresar.Enabled = False
                     Desactivar()
                     BtnNuevo.Text = "Nuevo Empleado"
                 Catch Evento As Exception
@@ -202,9 +192,9 @@
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
-            BtnEliminar.Visible = True
-            BtnModificar.Visible = False
-            BtnNuevo.Visible = False
+            BtnEliminar.Enabled = True
+            BtnModificar.Enabled = False
+            BtnNuevo.Enabled = False
         End If
     End Sub
 
@@ -292,29 +282,16 @@
         End If
 
     End Sub
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnCargar.Click
-        If TxtIDEmp.Text <> "" And TxtNomEmp.Text <> "" And TxtTelEmp.Text <> "" And TxtEmailEmp.Text <> "" And TxtPasswordEmail.Text <> "" And TxtDireccion.Text <> "" And TxtCargo.Text <> "" Then
-            regrecargar = 0
-            Usuarios.TxtIDEmp.Text = TxtIDEmp.Text
-            Usuarios.TxtNomEmpl.Text = TxtNomEmp.Text
-            Usuarios.TxtCargoEmp.Text = TxtCargo.Text
-            Me.Close()
-            Usuarios.Visible = True
-        Else
-            MessageBox.Show("ERROR, hay campos en blanco, llenelos antes de cargar", "ERROR cargar datos", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        End If
-    End Sub
-
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         If BtnNuevo.Text = "Nuevo Empleado" Then
             Activar()
-            BtnIngresar.Visible = True
+            BtnIngresar.Enabled = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
-            BtnIngresar.Visible = False
+            BtnIngresar.Enabled = False
             Limpiar()
             BtnNuevo.Text = "Nuevo Empleado"
         End If
@@ -325,27 +302,5 @@
     End Sub
     Private Sub TxtTelEmp_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTelEmp.KeyPress
         Restriccion.RestringirNumero(e)
-    End Sub
-    Private Sub TxtCargo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCargo.KeyPress
-        Restriccion.RestringirLetras(e)
-    End Sub
-
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        If BtnCargar.Visible Then
-            regrecargar = 0
-            Limpiar()
-            Usuarios.TxtIDEmp.Text = TxtIDEmp.Text
-            Usuarios.TxtNomEmpl.Text = TxtNomEmp.Text
-            Usuarios.TxtCargoEmp.Text = TxtCargo.Text
-            Me.Close()
-            Usuarios.Visible = True
-        Else
-            Inicio.Visible = True
-            Me.Close()
-        End If
     End Sub
 End Class

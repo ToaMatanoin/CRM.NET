@@ -14,11 +14,6 @@
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If Bandera Then
-            BtnRegresar.Visible = False
-        Else
-            BtnRegresar.Visible = True
-        End If
         'bloqueo al iniciar la ventana
         desactivar()
 
@@ -166,7 +161,7 @@
         BtnIngresar.Visible = False
     End Sub
 
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
+    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs)
         Inicio.Visible = True
         Me.Close()
     End Sub
@@ -204,7 +199,6 @@
         Try
             Dim TablaDatos As New eFactura
             Dim Funcion As New fFactura
-            Dim descuentos, impuestos As Double
 
             TablaDatos.pID_Venta = Txt_ID_Venta.Text
 
@@ -246,7 +240,7 @@
         Btn_Limpiar.Visible = False
     End Sub
 
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
+    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs)
         Me.WindowState = FormWindowState.Minimized
     End Sub
 

@@ -1,6 +1,5 @@
 ﻿Public Class Oportunidades
     Private TablaDatos As New DataTable
-    Public Bandera As New Boolean
     Public nuevo As New Conexion
     Public Restriccion As New Conexion
 
@@ -9,14 +8,9 @@
         Cmb_Buscar.Items.Add("Posibi_Nego")
         Cmb_Buscar.Text = "Nombre_CliPoten"
 
-        If Bandera Then
-            BtnRegresar.Visible = False
-        Else
-            BtnRegresar.Visible = True
-        End If
         Mostrar()
         Limpiar()
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub Mostrar()
@@ -72,10 +66,10 @@
         TxtDescripcion.Text = ""
         TxtPosibilidad.Text = ""
 
-        BtnNuevo.Visible = True
-        BtnModificar.Visible = False
-        BtnEliminar.Visible = False
-        btnConvertir.Visible = False
+        BtnNuevo.Enabled = True
+        BtnModificar.Enabled = False
+        BtnEliminar.Enabled = False
+        btnConvertir.Enabled = False
     End Sub
 
     Private Sub Activar()
@@ -96,15 +90,12 @@
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
-        If Bandera Then
-            BtnModificar.Visible = False
+        BtnModificar.Enabled = False
+        If Chk_Eliminar.Checked Or Chk_Convertir.Checked Then
+            'no mostrar modificar con el chek eliminar activo'
         Else
-            If Chk_Eliminar.Checked Or Chk_Convertir.Checked Then
-                'no mostrar modificar con el chek eliminar activo'
-            Else
-                BtnModificar.Visible = True
-                Activar()
-            End If
+            BtnModificar.Enabled = True
+            Activar()
         End If
         BtnIngresar.Visible = False
     End Sub
@@ -116,10 +107,10 @@
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
-            BtnEliminar.Visible = True
-            BtnNuevo.Visible = False
-            BtnModificar.Visible = False
-            btnConvertir.Visible = False
+            BtnEliminar.Enabled = True
+            BtnNuevo.Enabled = False
+            BtnModificar.Enabled = False
+            btnConvertir.Enabled = False
         End If
     End Sub
 
@@ -144,10 +135,6 @@
         TxtPosibilidad.Text = Dgv_Listado.SelectedCells.Item(7).Value
     End Sub
 
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        Inicio.Visible = True
-        Me.Close()
-    End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtNomCli.Text <> "" And TxtTelCli.Text <> "" And TxtEmailCli.Text <> "" And TxtDescripcion.Text <> "" And TxtPosibilidad.Text <> "" Then
@@ -175,7 +162,7 @@
                     Mostrar()
                     Limpiar()
                     Desactivar()
-                    BtnIngresar.Visible = False
+                    BtnIngresar.Enabled = False
                     BtnNuevo.Text = "   Nuevo Cliente"
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
@@ -257,12 +244,12 @@
     Private Sub BtnNuevo_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         If BtnNuevo.Text = "   Nuevo Cliente" Then
             Activar()
-            BtnIngresar.Visible = True
+            BtnIngresar.Enabled = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
-            BtnIngresar.Visible = False
+            BtnIngresar.Enabled = False
             Limpiar()
             BtnNuevo.Text = "   Nuevo Cliente"
         End If
@@ -337,10 +324,10 @@
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Convertir").Visible = True
-            btnConvertir.Visible = True
-            BtnEliminar.Visible = False
-            BtnNuevo.Visible = False
-            BtnModificar.Visible = False
+            btnConvertir.Enabled = True
+            BtnEliminar.Enabled = False
+            BtnNuevo.Enabled = False
+            BtnModificar.Enabled = False
         End If
     End Sub
 
@@ -356,7 +343,4 @@
         Restriccion.RestringirNumero(e)
     End Sub
 
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
-        Me.WindowState = FormWindowState.Minimized
-    End Sub
 End Class

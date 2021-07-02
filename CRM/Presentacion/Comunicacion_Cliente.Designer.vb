@@ -25,7 +25,6 @@ Partial Class Comunicacion_Cliente
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Comunicacion_Cliente))
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.BtnCliente = New System.Windows.Forms.Button()
-        Me.TxtCliCod = New System.Windows.Forms.TextBox()
         Me.TxtMensaje = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TxtAsunto = New System.Windows.Forms.TextBox()
@@ -45,7 +44,6 @@ Partial Class Comunicacion_Cliente
         '
         Me.GroupBox3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.GroupBox3.Controls.Add(Me.BtnCliente)
-        Me.GroupBox3.Controls.Add(Me.TxtCliCod)
         Me.GroupBox3.Controls.Add(Me.TxtMensaje)
         Me.GroupBox3.Controls.Add(Me.Label9)
         Me.GroupBox3.Controls.Add(Me.TxtAsunto)
@@ -77,15 +75,6 @@ Partial Class Comunicacion_Cliente
         Me.BtnCliente.Text = "Cliente"
         Me.BtnCliente.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.BtnCliente.UseVisualStyleBackColor = False
-        '
-        'TxtCliCod
-        '
-        Me.TxtCliCod.Enabled = False
-        Me.TxtCliCod.Location = New System.Drawing.Point(446, 31)
-        Me.TxtCliCod.Name = "TxtCliCod"
-        Me.TxtCliCod.Size = New System.Drawing.Size(35, 26)
-        Me.TxtCliCod.TabIndex = 9
-        Me.TxtCliCod.Visible = False
         '
         'TxtMensaje
         '
@@ -176,7 +165,6 @@ Partial Class Comunicacion_Cliente
         Me.BtnEnviar.Text = "      Enviar Mensaje"
         Me.BtnEnviar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnEnviar.UseVisualStyleBackColor = False
-        Me.BtnEnviar.Visible = False
         '
         'BtnEscribir
         '
@@ -198,7 +186,7 @@ Partial Class Comunicacion_Cliente
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Red
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
@@ -239,7 +227,6 @@ Partial Class Comunicacion_Cliente
     Friend WithEvents TxtMensaje As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents BtnEnviar As Button
-    Friend WithEvents TxtCliCod As TextBox
     Friend WithEvents BtnCliente As Button
     Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -17,7 +17,7 @@ Public Class Dashboard
             While (dr.Read())
                 nomprod(i) = dr.GetString(0)
                 cantprod(i) = dr.GetInt32(1)
-                i = i + 1
+                i += 1
             End While
             Inicio.chartProdPreferidos.Series(0).Points.DataBindXY(nomprod, cantprod)
             dr.Close()
@@ -28,7 +28,7 @@ Public Class Dashboard
         End Try
     End Sub
 
-    Public Sub dashboard()
+    Public Sub Dashboard()
         Try
             ConexionDB()
             ComandoSQL = New SqlCommand("DashboardDatos")
@@ -65,5 +65,4 @@ Public Class Dashboard
             DesconexionDB()
         End Try
     End Sub
-
 End Class

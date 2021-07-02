@@ -1,7 +1,6 @@
 ﻿Public Class Inventario
 
     Private TablaDatos As New DataTable
-    Public Bandera As New Boolean
     Public Restriccion As New Conexion
 
     Private Sub Inventario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -9,15 +8,9 @@
         Cmb_Buscar.Items.Add("Nombre_Compuesto")
         Cmb_Buscar.Text = "Pro_Nombre"
 
-        If Bandera Then
-            BtnRegresar.Visible = False
-        Else
-            BtnRegresar.Visible = True
-        End If
-
         Mostrar()
         Limpiar()
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub Mostrar()
@@ -85,25 +78,22 @@
         TxtPrecioComp.Text = ""
         TxtPrecioVent.Text = ""
 
-        BtnModificar.Visible = False
-        BtnEliminar.Visible = False
-        BtnNuevo.Visible = True
+        BtnModificar.Enabled = False
+        BtnEliminar.Enabled = False
+        BtnNuevo.Enabled = True
     End Sub
 
     Private Sub Dgv_Listado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellClick
         TrasladoInformacion()
-        If Bandera Then
-            BtnModificar.Visible = False
-        Else
-            If Chk_Eliminar.Checked Then
+        BtnModificar.Enabled = False
+        If Chk_Eliminar.Checked Then
                 'no mostrar modificar con el chek eliminar activo'
             Else
-                BtnModificar.Visible = True
+                BtnModificar.Enabled = True
                 Activar()
             End If
 
-        End If
-        BtnIngresar.Visible = False
+        BtnIngresar.Enabled = False
     End Sub
 
     Private Sub TrasladoInformacion()
@@ -115,10 +105,6 @@
         TxtPrecioVent.Text = Dgv_Listado.SelectedCells.Item(4).Value
     End Sub
 
-    Private Sub BtnRegresar_Click(sender As Object, e As EventArgs) Handles BtnRegresar.Click
-        Inicio.Visible = True
-        Me.Close()
-    End Sub
 
     Private Sub BtnIngresar_Click(sender As Object, e As EventArgs) Handles BtnIngresar.Click
         If TxtCantPro.Text <> "" And TxtNomPro.Text <> "" And TxtNomProveedor.Text <> "" And TxtPrecioComp.Text <> "" And TxtPrecioVent.Text <> "" Then
@@ -149,7 +135,7 @@
                     Mostrar()
                     Limpiar()
                     Desactivar()
-                    BtnIngresar.Visible = False
+                    BtnIngresar.Enabled = False
                     BtnNuevo.Text = "Nuevo Producto"
                 Catch Evento As Exception
                     MsgBox(Evento.Message)
@@ -158,10 +144,6 @@
         Else
             MessageBox.Show("Falta Informacion para almacenar", "Guardando Registro", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End If
-    End Sub
-
-    Private Sub BtnBuscar_Click(sender As Object, e As EventArgs)
-        Buscar()
     End Sub
 
     Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
@@ -265,9 +247,9 @@
             Limpiar()
         Else
             Dgv_Listado.Columns.Item("Eliminar").Visible = True
-            BtnEliminar.Visible = True
-            BtnNuevo.Visible = False
-            BtnModificar.Visible = False
+            BtnEliminar.Enabled = True
+            BtnNuevo.Enabled = False
+            BtnModificar.Enabled = False
         End If
     End Sub
     Private Sub Dgv_Listado_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dgv_Listado.CellContentClick
@@ -280,12 +262,12 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnNuevo.Click
         If BtnNuevo.Text = "Nuevo Producto" Then
             Activar()
-            BtnIngresar.Visible = True
+            BtnIngresar.Enabled = True
             BtnNuevo.Text = "Cancelar"
             Limpiar()
         ElseIf BtnNuevo.Text = "Cancelar" Then
             Desactivar()
-            BtnIngresar.Visible = False
+            BtnIngresar.Enabled = False
             Limpiar()
             BtnNuevo.Text = "Nuevo Producto"
         End If
@@ -311,10 +293,6 @@
     End Sub
     Private Sub TxtNomProveedor_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtNomProveedor.KeyPress
         Restriccion.RestringirLetras(e)
-    End Sub
-
-    Private Sub BtnMinimizate_Click(sender As Object, e As EventArgs) Handles BtnMinimizate.Click
-        Me.WindowState = FormWindowState.Minimized
     End Sub
 
     Private Sub Txt_Buscar_TextChanged(sender As Object, e As EventArgs) Handles Txt_Buscar.TextChanged

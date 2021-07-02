@@ -100,6 +100,12 @@
     <Compile Include="Entidad\eTareas_Marketing.vb" />
     <Compile Include="Entidad\eUsuarios.vb" />
     <Compile Include="Entidad\eVentas.vb" />
+    <Compile Include="Presentacion\CargarDatos.Designer.vb">
+      <DependentUpon>CargarDatos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\CargarDatos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\Clientes.Designer.vb">
       <DependentUpon>Clientes.vb</DependentUpon>
     </Compile>
@@ -115,12 +121,6 @@
     <Compile Include="Datos\Conexion.vb" />
     <Compile Include="Datos\fClientes.vb" />
     <Compile Include="Entidad\eClientes.vb" />
-    <Compile Include="Presentacion\Debolucion.Designer.vb">
-      <DependentUpon>Debolucion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\Debolucion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Presentacion\Empleado.Designer.vb">
       <DependentUpon>Empleado.vb</DependentUpon>
     </Compile>
@@ -180,10 +180,16 @@
     <Compile Include="Presentacion\Oportunidades.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\Salir.Designer.vb">
-      <DependentUpon>Salir.vb</DependentUpon>
+    <Compile Include="Presentacion\Proyectos.Designer.vb">
+      <DependentUpon>Proyectos.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Salir.vb">
+    <Compile Include="Presentacion\Proyectos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Tareas.Designer.vb">
+      <DependentUpon>Tareas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Tareas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\Usuarios.Designer.vb">
@@ -200,14 +206,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\CargarDatos.resx">
+      <DependentUpon>CargarDatos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Comunicacion_Cliente.resx">
       <DependentUpon>Comunicacion_Cliente.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Debolucion.resx">
-      <DependentUpon>Debolucion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Empleado.resx">
       <DependentUpon>Empleado.vb</DependentUpon>
@@ -236,8 +242,11 @@
     <EmbeddedResource Include="Presentacion\Oportunidades.resx">
       <DependentUpon>Oportunidades.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Salir.resx">
-      <DependentUpon>Salir.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Proyectos.resx">
+      <DependentUpon>Proyectos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Tareas.resx">
+      <DependentUpon>Tareas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Usuarios.resx">
       <DependentUpon>Usuarios.vb</DependentUpon>

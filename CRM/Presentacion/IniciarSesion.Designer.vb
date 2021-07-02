@@ -28,8 +28,8 @@ Partial Class IniciarSesion
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Inicio_Sesion = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -94,7 +94,7 @@ Partial Class IniciarSesion
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.Red
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(51, Byte), Integer), CType(CType(51, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
@@ -102,6 +102,16 @@ Partial Class IniciarSesion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(250, 330)
         Me.Panel1.TabIndex = 6
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(24, 67)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(182, 190)
+        Me.PictureBox1.TabIndex = 10
+        Me.PictureBox1.TabStop = False
         '
         'Label1
         '
@@ -113,16 +123,6 @@ Partial Class IniciarSesion
         Me.Label1.Size = New System.Drawing.Size(102, 32)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "LOGIN"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(24, 67)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(182, 190)
-        Me.PictureBox1.TabIndex = 10
-        Me.PictureBox1.TabStop = False
         '
         'Label2
         '
